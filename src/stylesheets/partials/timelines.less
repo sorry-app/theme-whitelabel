@@ -9,7 +9,7 @@
 	}
 
 	dt.heading {
-		font-size: 1.4em;
+		font-size: 1.1em;
 		font-weight: 500;
 	}
 
@@ -19,6 +19,32 @@
 
 	dd > dl > dt {
 		opacity:0.5;
+	}
+
+	@media (min-width: @grid-float-breakpoint) {
+	    dt {
+			float: left;
+			width: 180px;
+			clear: left;
+			.text-overflow();
+	    }
+
+	    dd {
+			margin-left: 200px;
+			.clearfix(); // Clear the floated `dt` if an empty `dd` is present
+
+			dl {				
+				dt {
+					width: 100px;
+					clear: none;
+				}
+
+				dd {
+					margin-left: 120px;
+				}
+			}
+
+	    }
 	}
 
 }
