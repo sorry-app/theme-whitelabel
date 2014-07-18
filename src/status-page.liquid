@@ -29,7 +29,9 @@
         <!-- Include CSS Assets. -->
         <link rel="stylesheet" href="{{ 'status-page.css' | asset_url }}" />
     </head>
-    <body>
+
+    <!-- We attach the current status to the body, for changing page styles based on current statue. -->
+    <body class="current-status {% if page.apologies.current == empty %}status-ok{% else %}state-warning{% endif %}">
         <!-- Page Header & Navbar. -->
         <header>
 
@@ -59,6 +61,39 @@
                     </div>
                 </div>
             </nav>
+
+            <!-- Current Status Message. -->
+            <section id="current-status">
+
+                <!-- Loop over the collection of current apologies. -->
+                {% for apology in page.apologies.current %}
+                    <article class="status-notice apology current-apology" id="apology-{{ apology.id }}">
+                        <div class="container">
+
+                            <dl class="dl-horizontal">
+                                <!-- Loop over any updates we have for the apology -->
+                                <!-- We reverse the order so the latest update displays first as the priority. -->
+                                {% for update in apology.updates reversed %}
+                                    <!-- Output the date for the update. -->
+                                    <dt id="update-{{ update.id }}">{{ update.created_at | time_ago_in_words }} ago</dt>
+                                        <!-- Output the text content of the update. -->
+                                        <dd>{{ update.content }}</dd>
+                                {% endfor %}
+                            </dl>
+
+                        </div>
+                    </article>
+                {% else %}
+                    <article class="status-notice status-ok">
+                        <div class="container">
+                            <!-- No current apologies found -->
+                            <!-- We have nothing to be sorry about, so all is well. -->
+                            <h2>All Is Well</h2>
+                        </div>
+                    </article>
+                {% endfor %}
+
+            </section>
 
         </header>
 
