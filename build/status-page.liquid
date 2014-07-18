@@ -111,27 +111,31 @@
 
         <!-- Main Timeline. -->
         <main>
+            <!-- Check if we have any previous apologies to display. -->
+            {% if page.apologies.recent.size > 0 %}
+                <!-- Timeline of previous apologies. -->
+                <dl class="timeline">
+                    <!-- Loop over the collection of previous apologies, order date descending. -->
+                    {% for apology in page.apologies.recent %}
+                        <!-- Start time for the apology. -->
+                        <dt id="apology-{{ apology.id }}">{{ apology.created_at | date: '%-d %B' }}</dt>
 
-            <!-- Timeline of previous apologies. -->
-            <dl class="timeline">
-                <!-- Loop over the collection of previous apologies, order date descending. -->
-                {% for apology in page.apologies.recent %}
-                    <!-- Start time for the apology. -->
-                    <dt id="apology-{{ apology.id }}">{{ apology.created_at | date: '%-d %B' }}</dt>
-
-                        <dd>
-                            <dl>
-                                <!-- Loop over the updates, showing all, in date order. -->
-                                {% for update in apology.updates %}
-                                    <dd id="update-{{ update.id }}">{{ update.created_at | date: '%R %Z' }}</dd>
-                                        <!-- Output the te%D xt content of the update. -->
-                                        <dt>{{ update.content }}</dt>
-                                {% endfor %}
-                            </dl>
-                        </dd>
-                {% endfor %}
-            </dl>
-
+                            <dd>
+                                <dl>
+                                    <!-- Loop over the updates, showing all, in date order. -->
+                                    {% for update in apology.updates %}
+                                        <dd id="update-{{ update.id }}">{{ update.created_at | date: '%R %Z' }}</dd>
+                                            <!-- Output the te%D xt content of the update. -->
+                                            <dt>{{ update.content }}</dt>
+                                    {% endfor %}
+                                </dl>
+                            </dd>
+                    {% endfor %}
+                </dl>
+            {% else %}
+                <!-- Note to say we have no recent apologies. -->
+                <p>No incidents in the past 7 days.</p>
+            {% endif %}  
         </main>
 
         <!-- Page Footer & Copyright. -->
