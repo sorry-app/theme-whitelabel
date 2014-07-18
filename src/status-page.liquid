@@ -30,6 +30,38 @@
         <link rel="stylesheet" href="{{ 'status-page.css' | asset_url }}" />
     </head>
     <body>
+        <!-- Page Header & Navbar. -->
+        <header>
+
+            <!-- Page Navbar. -->
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <!-- Toggle Button For Mobile Nav. -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#status-page-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <!-- Page Title. -->
+                        <a class="navbar-brand" href="#">{{ page.name }}</a>
+                    </div>
+
+                    <!--- Collapsable Nav On Mobile. -->
+                    <div class="collapse navbar-collapse" id="status-page-navbar-collapse-1">
+                        <!-- Main Status Page Nav. -->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#">Link One</a></li>
+                            <li><a href="#">Link Two</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+
         <!-- Boorstrap JS. -->
         <script src="{{ 'jquery-1-11-1.min.js' | asset_url }}" />
         <script src="{{ 'bootstrap.min.js' | asset_url }}" />
