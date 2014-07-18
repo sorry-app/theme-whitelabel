@@ -1,9 +1,16 @@
 .status-notice.status-ok {
+	.text-center();
+
 	h2 {
 		background-color: @color-state-ok;
 		color: #FFF;
 		border-radius: 6px;
-		padding: 20px;
-		.text-center();
+		padding: 15px 20px;
+
+		@media (min-width: @grid-float-breakpoint) {
+			display: inline-block;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }
