@@ -119,9 +119,9 @@
                                     <dl>
                                         <!-- Loop over the updates, showing all, in date order. -->
                                         {% for update in apology.updates %}
-                                            <dd id="update-{{ update.id }}">{{ update.created_at | date: '%R %Z' }}</dd>
+                                            <dt id="update-{{ update.id }}">{{ update.created_at | date: '%R %Z' }}</dt>
                                                 <!-- Output the te%D xt content of the update. -->
-                                                <dt>{{ update.content }}</dt>
+                                                <dd>{{ update.content }}</dd>
                                         {% endfor %}
                                     </dl>
                                 </dd>
