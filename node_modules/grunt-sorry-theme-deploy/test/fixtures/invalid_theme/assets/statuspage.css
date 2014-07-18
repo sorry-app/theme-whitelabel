@@ -1,0 +1,16 @@
+.jumbotron {
+  text-align: left;
+  padding-bottom:30px;
+}
+
+.lead .text-muted {
+	display: block;
+}
+
+p.update {
+	font-size: 1em;
+}
+
+p.update span {
+	padding-right:10px;
+}
