@@ -34,10 +34,9 @@
     <body class="current-status {% if page.apologies.current == empty %}status-ok{% else %}state-warning{% endif %}">
         <!-- Page Header & Navbar. -->
         <header>
-
-            <!-- Page Navbar. -->
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
+            <div class="container">
+                <!-- Page Navbar. -->
+                <nav class="navbar navbar-default" role="navigation">
                     <div class="navbar-header">
                         <!-- Toggle Button For Mobile Nav. -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#status-page-navbar-collapse-1">
@@ -59,16 +58,14 @@
                             <li><a href="#">Link Two</a></li>
                         </ul>
                     </div>
-                </div>
-            </nav>
+                </nav>
 
-            <!-- Current Status Message. -->
-            <section id="current-status">
+                <!-- Current Status Message. -->
+                <section id="current-status">
 
-                <!-- Loop over the collection of current apologies. -->
-                {% for apology in page.apologies.current %}
-                    <article class="status-notice apology current-apology" id="apology-{{ apology.id }}">
-                        <div class="container">
+                    <!-- Loop over the collection of current apologies. -->
+                    {% for apology in page.apologies.current %}
+                        <article class="status-notice apology current-apology" id="apology-{{ apology.id }}">
 
                             <dl class="dl-horizontal">
                                 <!-- Loop over any updates we have for the apology -->
@@ -81,69 +78,70 @@
                                 {% endfor %}
                             </dl>
 
-                        </div>
-                    </article>
-                {% else %}
-                    <article class="status-notice status-ok">
-                        <div class="container">
+                        </article>
+                    {% else %}
+                        <article class="status-notice status-ok">
                             <!-- No current apologies found -->
                             <!-- We have nothing to be sorry about, so all is well. -->
                             <h2>All Is Well</h2>
-                        </div>
-                    </article>
-                {% endfor %}
+                        </article>
+                    {% endfor %}
 
-            </section>
+                </section>
 
-            <section id="stay-informed-nav">
+                <section id="stay-informed-nav">
 
-                <!-- Links to keep up to date. -->
-                <!-- Usualy social links to Twitter etc. -->
-                <ul class="nav nav-pills">
-                    <li><a href="#">Link Three</a></li>
-                    <li><a href="#">Link Four</a></li>
-                    <li><a href="#">Link 5</a></li>
-                </ul>
+                    <!-- Links to keep up to date. -->
+                    <!-- Usualy social links to Twitter etc. -->
+                    <ul class="nav nav-pills">
+                        <li><a href="#">Link Three</a></li>
+                        <li><a href="#">Link Four</a></li>
+                        <li><a href="#">Link 5</a></li>
+                    </ul>
 
-            </section>
-
+                </section>
+            </div>
         </header>
 
         <!-- Main Timeline. -->
         <main>
-            <!-- Check if we have any previous apologies to display. -->
-            {% if page.apologies.recent.size > 0 %}
-                <!-- Timeline of previous apologies. -->
-                <dl class="timeline">
-                    <!-- Loop over the collection of previous apologies, order date descending. -->
-                    {% for apology in page.apologies.recent %}
-                        <!-- Start time for the apology. -->
-                        <dt id="apology-{{ apology.id }}">{{ apology.created_at | date: '%-d %B' }}</dt>
+            <div class="container">
+                <!-- Check if we have any previous apologies to display. -->
+                {% if page.apologies.recent.size > 0 %}
+                    <!-- Timeline of previous apologies. -->
+                    <dl class="timeline">
+                        <!-- Loop over the collection of previous apologies, order date descending. -->
+                        {% for apology in page.apologies.recent %}
+                            <!-- Start time for the apology. -->
+                            <dt id="apology-{{ apology.id }}">{{ apology.created_at | date: '%-d %B' }}</dt>
 
-                            <dd>
-                                <dl>
-                                    <!-- Loop over the updates, showing all, in date order. -->
-                                    {% for update in apology.updates %}
-                                        <dd id="update-{{ update.id }}">{{ update.created_at | date: '%R %Z' }}</dd>
-                                            <!-- Output the te%D xt content of the update. -->
-                                            <dt>{{ update.content }}</dt>
-                                    {% endfor %}
-                                </dl>
-                            </dd>
-                    {% endfor %}
+                                <dd>
+                                    <dl>
+                                        <!-- Loop over the updates, showing all, in date order. -->
+                                        {% for update in apology.updates %}
+                                            <dd id="update-{{ update.id }}">{{ update.created_at | date: '%R %Z' }}</dd>
+                                                <!-- Output the te%D xt content of the update. -->
+                                                <dt>{{ update.content }}</dt>
+                                        {% endfor %}
+                                    </dl>
+                                </dd>
+                        {% endfor %}
 
-                    <!-- End of Timeline. -->
-                    <dt class="end" role="presentation">No previous apologies</dt>
-                </dl>
-            {% else %}
-                <!-- Note to say we have no recent apologies. -->
-                <p>No incidents in the past 7 days.</p>
-            {% endif %}  
+                        <!-- End of Timeline. -->
+                        <dt class="end" role="presentation">No previous apologies</dt>
+                    </dl>
+                {% else %}
+                    <!-- Note to say we have no recent apologies. -->
+                    <p>No incidents in the past 7 days.</p>
+                {% endif %} 
+            </div> 
         </main>
 
         <!-- Page Footer & Copyright. -->
         <footer>
-            <p class="copyright">&copy; {{ 'now' | date: '%Y' }}</p>
+            <div class="container">
+                <p class="copyright">&copy; {{ 'now' | date: '%Y' }}</p>
+            </div>
         </footer>
 
         <!-- Boorstrap JS. -->
