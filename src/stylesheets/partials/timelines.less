@@ -22,6 +22,24 @@
 	}
 
 	@media (min-width: @grid-float-breakpoint) {
+		position: relative;
+		border-left: 1px solid #EFEFEF;
+
+		> dt:before {
+			content: " ";
+			display: block;
+			width: 16px;
+			height: 16px;
+			background-color: #EFEFEF;
+			border-radius: 50%;
+			position: absolute;
+			left: -8px;
+		}
+
+		> dt {
+			padding-left: 36px;
+		}
+
 	    dt {
 			float: left;
 			width: 180px;
