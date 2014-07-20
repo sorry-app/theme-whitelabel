@@ -61,7 +61,9 @@
                         </ul>
                     </div>
                 </nav>
+            </div>
 
+            <div class="container container-md">
                 <!-- Current Status Message. -->
                 <section id="current-status">
 
@@ -107,7 +109,7 @@
 
         <!-- Main Timeline. -->
         <main>
-            <div class="container">
+            <div class="container container-md">
                 <!-- Check if we have any previous apologies to display. -->
                 {% if page.apologies.recent.size > 0 %}
                     <!-- Timeline of previous apologies. -->
@@ -141,7 +143,7 @@
 
         <!-- Page Footer & Copyright. -->
         <footer>
-            <div class="container">
+            <div class="container container-md">
                 <p class="copyright">&copy; {{ 'now' | date: '%Y' }}</p>
             </div>
         </footer>
