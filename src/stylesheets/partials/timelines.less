@@ -1,5 +1,7 @@
 .timeline {
 
+	padding-top: @line-height-computed;
+
 	dd > dl {
 		margin-bottom: 32px;
 	}
@@ -22,6 +24,9 @@
 	}
 
 	@media (min-width: @grid-float-breakpoint) {
+
+		padding-top: (@line-height-computed * 7);
+
 		position: relative;
 		border-left: 1px solid #EFEFEF;
 
