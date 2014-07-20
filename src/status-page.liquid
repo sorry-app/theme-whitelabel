@@ -69,20 +69,21 @@
 
                     <!-- Loop over the collection of current apologies. -->
                     {% for apology in page.apologies.current %}
-                        <article class="status-notice apology current-apology" id="apology-{{ apology.id }}">
-
-                            <dl class="dl-horizontal">
-                                <!-- Loop over any updates we have for the apology -->
-                                <!-- We reverse the order so the latest update displays first as the priority. -->
-                                {% for update in apology.updates reversed %}
-                                    <!-- Output the date for the update. -->
-                                    <dt id="update-{{ update.id }}">{{ update.created_at | time_ago_in_words }} ago</dt>
-                                        <!-- Output the text content of the update. -->
-                                        <dd>{{ update.content }}</dd>
-                                {% endfor %}
-                            </dl>
-
-                        </article>
+                        <dl class="timeline">
+                            <dt class="heading" id="apology-{{ apology.id }}">Ongoing</dt>
+                                <dd>
+                                    <dl>
+                                        <!-- Loop over any updates we have for the apology -->
+                                        <!-- We reverse the order so the latest update displays first as the priority. -->
+                                        {% for update in apology.updates reversed %}
+                                            <!-- Output the date for the update. -->
+                                            <dt id="update-{{ update.id }}">{{ update.created_at | time_ago_in_words }} ago</dt>
+                                                <!-- Output the text content of the update. -->
+                                                <dd>{{ update.content }}</dd>
+                                        {% endfor %}
+                                    </dl>
+                                </dd>
+                        </dl>
                     {% else %}
                         <article class="status-notice status-ok">
                             <!-- No current apologies found -->
