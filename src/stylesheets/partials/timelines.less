@@ -54,14 +54,14 @@
 	@media (min-width: @grid-float-breakpoint) {
 
 		position: relative;
-		border-left: 1px solid #CCCCCC;
+		border-left: 1px solid darken(#FFF, 10%);;
 
 		> dt:before {
 			content: " ";
 			display: block;
 			width: 12px;
 			height: 12px;
-			background-color: #CCCCCC;
+			background-color: darken(#FFF, 10%);;
 			border-radius: 50%;
 			position: absolute;
 			left: -6px;
@@ -121,6 +121,13 @@
 	}
 
 	&.timeline-present {
+
+		border-left: 1px solid darken(@color-header-background, 10%);
+
+		> dt:before {
+			background-color: darken(@color-header-background, 10%);
+		}
+
 		/* Formatting on larger screens. */
 		@media (min-width: @screen-sm-min) {
 
