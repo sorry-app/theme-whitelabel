@@ -70,7 +70,7 @@
                     <dl class="timeline">
                         <!-- Loop over the collection of current apologies. -->
                         {% for apology in page.apologies.current %}
-                            <dt class="heading" id="apology-{{ apology.id }}">Ongoing</dt>
+                            <dt class="heading present" id="apology-{{ apology.id }}">Ongoing</dt>
                                 <dd>
                                     <dl>
                                         <!-- Loop over any updates we have for the apology -->
@@ -84,7 +84,7 @@
                                     </dl>
                                 </dd>
                         {% else %}
-                            <dt></dt>
+                            <dt class="title">Current Status</dt>
                                 <dd>
                                     <!-- No current apologies found -->
                                     <!-- We have nothing to be sorry about, so all is well. -->
@@ -119,7 +119,7 @@
                         <!-- Loop over the collection of previous apologies, order date descending. -->
                         {% for apology in page.apologies.recent %}
                             <!-- Start time for the apology. -->
-                            <dt class="heading" id="apology-{{ apology.id }}">{{ apology.created_at | date: '%a, %B %-d %Y' }}</dt>
+                            <dt class="heading past" id="apology-{{ apology.id }}">{{ apology.created_at | date: '%a, %B %-d %Y' }}</dt>
 
                                 <dd>
                                     <dl>
