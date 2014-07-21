@@ -67,9 +67,9 @@
                 <!-- Current Status Message. -->
                 <section id="current-status">
 
-                    <!-- Loop over the collection of current apologies. -->
-                    {% for apology in page.apologies.current %}
-                        <dl class="timeline">
+                    <dl class="timeline">
+                        <!-- Loop over the collection of current apologies. -->
+                        {% for apology in page.apologies.current %}
                             <dt class="heading" id="apology-{{ apology.id }}">Ongoing</dt>
                                 <dd>
                                     <dl>
@@ -83,14 +83,15 @@
                                         {% endfor %}
                                     </dl>
                                 </dd>
-                        </dl>
-                    {% else %}
-                        <article class="status-notice status-ok">
-                            <!-- No current apologies found -->
-                            <!-- We have nothing to be sorry about, so all is well. -->
-                            <h2>All systems are go</h2>
-                        </article>
-                    {% endfor %}
+                        {% else %}
+                            <dt></dt>
+                                <dd>
+                                    <!-- No current apologies found -->
+                                    <!-- We have nothing to be sorry about, so all is well. -->
+                                    <h2>All systems are go</h2>
+                                </dd>
+                        {% endfor %}
+                    </dl>
 
                 </section>
 
