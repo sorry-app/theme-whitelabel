@@ -130,7 +130,10 @@
 	&.timeline-present {
 
 		padding-bottom: @line-height-computed;
-		border-left: 1px solid darken(@color-header-background, 10%);
+
+		@media (min-width: @grid-float-breakpoint) {
+			border-left: 1px solid darken(@color-header-background, 10%);
+		}
 
 		> dt:before {
 			background-color: darken(@color-header-background, 10%);
