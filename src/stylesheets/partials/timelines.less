@@ -3,18 +3,23 @@
 	margin-bottom: 0;
 
 	dd > dl {
-		margin-bottom: 32px;
+		margin-bottom: @line-height-computed * 2;
 	}
 
 	dt.end {
 		opacity: 0.5;
 	}
 
+	> dt {
+		font-size: 1.2em;
+	}
+
 	dd {
-		margin-bottom: (@line-height-computed * 1.5);
+		margin-bottom: @line-height-computed;
 	}
 
 	dt {
+		margin-bottom: (@line-height-computed * 0.5);
 		font-weight: (@font-weight-base + 100);
 	}
 
