@@ -105,6 +105,9 @@
 	}
 
 	&.timeline-past {
+
+		padding-top: @line-height-computed;
+
 		/* Formatting on larger screens. */
 		@media (min-width: @screen-sm-min) {
 
@@ -122,6 +125,7 @@
 
 	&.timeline-present {
 
+		padding-bottom: @line-height-computed;
 		border-left: 1px solid darken(@color-header-background, 10%);
 
 		> dt:before {
