@@ -67,7 +67,7 @@
                 <!-- Current Status Message. -->
                 <section id="current-status">
 
-                    <dl class="timeline">
+                    <dl class="timeline timeline-present">
                         <!-- Loop over the collection of current apologies. -->
                         {% for apology in page.apologies.current %}
                             <dt class="heading present" id="apology-{{ apology.id }}">Ongoing</dt>
@@ -89,21 +89,21 @@
                                     <!-- No current apologies found -->
                                     <!-- We have nothing to be sorry about, so all is well. -->
                                     <h2>All systems are go</h2>
+
+                                    <section class="stay-informed-nav" id="stay-informed-nav">
+
+                                        <!-- Links to keep up to date. -->
+                                        <!-- Usualy social links to Twitter etc. -->
+                                        <ul class="nav nav-pills">
+                                            <li><a href="#">Link Three</a></li>
+                                            <li><a href="#">Link Four</a></li>
+                                            <li><a href="#">Link 5</a></li>
+                                        </ul>
+
+                                    </section>
                                 </dd>
                         {% endfor %}
                     </dl>
-
-                </section>
-
-                <section class="stay-informed-nav" id="stay-informed-nav">
-
-                    <!-- Links to keep up to date. -->
-                    <!-- Usualy social links to Twitter etc. -->
-                    <ul class="nav nav-pills">
-                        <li><a href="#">Link Three</a></li>
-                        <li><a href="#">Link Four</a></li>
-                        <li><a href="#">Link 5</a></li>
-                    </ul>
 
                 </section>
             </div>
@@ -115,7 +115,7 @@
                 <!-- Check if we have any previous apologies to display. -->
                 {% if page.apologies.recent.size > 0 %}
                     <!-- Timeline of previous apologies. -->
-                    <dl class="timeline">
+                    <dl class="timeline timeline-past">
                         <!-- Loop over the collection of previous apologies, order date descending. -->
                         {% for apology in page.apologies.recent %}
                             <!-- Start time for the apology. -->

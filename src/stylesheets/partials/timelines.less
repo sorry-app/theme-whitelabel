@@ -49,7 +49,7 @@
 	@media (min-width: @grid-float-breakpoint) {
 
 		position: relative;
-		border-left: 1px solid #EFEFEF;
+		border-left: 1px solid #CCCCCC;
 
 		> dt:before {
 			content: " ";
@@ -100,18 +100,36 @@
 	    }
 	}
 
-	/* Formatting on larger screens. */
-	@media (min-width: @screen-sm-min) {
+	&.timeline-past {
+		/* Formatting on larger screens. */
+		@media (min-width: @screen-sm-min) {
 
-		padding-top: (@line-height-computed * 3);
+			padding-top: (@line-height-computed * 3);
 
+		}
+
+		/* Formatting on larger screens. */
+		@media (min-width: @screen-lg-min) {
+
+			padding-top: (@line-height-computed * 7);
+
+		}
 	}
 
-	/* Formatting on larger screens. */
-	@media (min-width: @screen-lg-min) {
+	&.timeline-present {
+		/* Formatting on larger screens. */
+		@media (min-width: @screen-sm-min) {
 
-		padding-top: (@line-height-computed * 7);
+			padding-bottom: (@line-height-computed * 3);
 
-	}
+		}
+
+		/* Formatting on larger screens. */
+		@media (min-width: @screen-lg-min) {
+
+			padding-bottom: (@line-height-computed * 5);
+
+		}
+	}	
 
 }
