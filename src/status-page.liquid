@@ -73,7 +73,9 @@
                     <dl class="timeline timeline-present">
                         <!-- Loop over the collection of current apologies. -->
                         {% for apology in page.apologies.current %}
-                            <dt class="heading present" id="apology-{{ apology.id }}">Ongoing</dt>
+                            <dt class="heading present" id="apology-{{ apology.id }}">
+                                <span>Ongoing</span>
+                            </dt>
                                 <dd>
                                     <dl>
                                         <!-- Loop over any updates we have for the apology -->
