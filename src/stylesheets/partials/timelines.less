@@ -24,8 +24,7 @@
 	}
 
 	dt.title {
-		width: 0;
-		padding-left: 0;
+		display: none;
 
 		& + dd {
 			margin-left: 0;
@@ -43,6 +42,12 @@
 					margin-right: auto;
 				}
 			}
+		}
+
+		@media (min-width: @grid-float-breakpoint) {
+			display: inline;
+			width: 0;
+			padding-left: 0;
 		}
 	}
 
