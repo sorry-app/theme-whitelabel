@@ -5,8 +5,28 @@
 
 // Navbar
 
+@navbar-default-color:              #777;
 @navbar-default-bg:                	@navbar-background-color;
 @navbar-default-border:            	@navbar-background-color;
+
+// Navbar links
+@navbar-default-link-color:                @primary-link-color;
+@navbar-default-link-hover-color:          darken(@primary-link-color, 10%);
+@navbar-default-link-hover-bg:             transparent;
+@navbar-default-link-active-color:         darken(@primary-link-color, 15%);
+@navbar-default-link-active-bg:            transparent;
+@navbar-default-link-disabled-color:       fade(@primary-link-color, 50%);
+@navbar-default-link-disabled-bg:          transparent;
+
+// Navbar brand label
+@navbar-default-brand-color:               @primary-link-color;
+@navbar-default-brand-hover-color:         darken(@primary-link-color, 10%);
+@navbar-default-brand-hover-bg:            transparent;
+
+// Navbar toggle
+@navbar-default-toggle-hover-bg:           #ddd;
+@navbar-default-toggle-icon-bar-bg:        #ccc;
+@navbar-default-toggle-border-color:       #ddd;
 
 // Typography
 @font-family-sans-serif: 			@theme-font-base;
