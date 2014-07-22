@@ -117,34 +117,28 @@
         <!-- Main Timeline. -->
         <main>
             <div class="container container-md">
-                <!-- Check if we have any previous apologies to display. -->
-                {% if page.apologies.recent.size > 0 %}
-                    <!-- Timeline of previous apologies. -->
-                    <dl class="timeline timeline-past">
-                        <!-- Loop over the collection of previous apologies, order date descending. -->
-                        {% for apology in page.apologies.recent %}
-                            <!-- Start time for the apology. -->
-                            <dt class="heading past" id="apology-{{ apology.id }}">{{ apology.created_at | date: '%a, %B %-d %Y' }}</dt>
+                <!-- Timeline of previous apologies. -->
+                <dl class="timeline timeline-past">
+                    <!-- Loop over the collection of previous apologies, order date descending. -->
+                    {% for apology in page.apologies.recent %}
+                        <!-- Start time for the apology. -->
+                        <dt class="heading past" id="apology-{{ apology.id }}">{{ apology.created_at | date: '%a, %B %-d %Y' }}</dt>
 
-                                <dd>
-                                    <dl>
-                                        <!-- Loop over the updates, showing all, in date order. -->
-                                        {% for update in apology.updates %}
-                                            <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
-                                                <!-- Output the te%D xt content of the update. -->
-                                                <dd>{{ update.content }}</dd>
-                                        {% endfor %}
-                                    </dl>
-                                </dd>
-                        {% endfor %}
+                            <dd>
+                                <dl>
+                                    <!-- Loop over the updates, showing all, in date order. -->
+                                    {% for update in apology.updates %}
+                                        <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
+                                            <!-- Output the te%D xt content of the update. -->
+                                            <dd>{{ update.content }}</dd>
+                                    {% endfor %}
+                                </dl>
+                            </dd>
+                    {% endfor %}
 
-                        <!-- End of Timeline. -->
-                        <dt class="end" role="presentation">No previous apologies</dt>
-                    </dl>
-                {% else %}
-                    <!-- Note to say we have no recent apologies. -->
-                    <p>No incidents in the past 7 days.</p>
-                {% endif %} 
+                    <!-- End of Timeline. -->
+                    <dt class="end" role="presentation">No previous apologies</dt>
+                </dl>
             </div> 
         </main>
 
