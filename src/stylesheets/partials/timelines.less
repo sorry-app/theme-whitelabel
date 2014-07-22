@@ -80,7 +80,6 @@
 	@media (min-width: @grid-float-breakpoint) {
 
 		position: relative;
-		border-left: 1px solid darken(#FFF, 10%);;
 
 		> dt {
 			font-size: 1em;
@@ -99,10 +98,6 @@
 
 		> dt.present:before {
 			background-color: @color-state-warning;
-		}
-
-		> dt.past:before {
-			background-color: @color-state-ok;
 		}
 
 		> dt {
@@ -138,6 +133,20 @@
 
 		padding-top: @line-height-computed;
 
+		@media (min-width: @grid-float-breakpoint) {
+
+			border-left: 1px solid mix(@color-body-text, @color-body-background, 10%);
+		
+			> dt:before {
+				background-color: mix(@color-body-text, @color-body-background, 5%);
+			}
+
+			> dt.past:before {
+				background-color: @color-state-ok;
+			}
+
+		}
+
 		/* Formatting on larger screens. */
 		@media (min-width: @screen-sm-min) {
 
@@ -158,11 +167,13 @@
 		padding-bottom: @line-height-computed;
 
 		@media (min-width: @grid-float-breakpoint) {
-			border-left: 1px solid darken(@color-header-background, 10%);
-		}
+			
+			border-left: 1px solid mix(@color-header-text, @color-header-background, 10%);
+		
+			> dt:before {
+				background-color: mix(@color-header-text, @color-header-background, 5%);
+			}
 
-		> dt:before {
-			background-color: darken(@color-header-background, 10%);
 		}
 
 		/* Formatting on larger screens. */
