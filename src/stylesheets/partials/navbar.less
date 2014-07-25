@@ -1,10 +1,17 @@
 .navbar-logo {
+	padding: 0 @navbar-padding-horizontal;
+
 	line-height:50px;
 	margin-right: 15px;
 	float: left;
 
 	img {
 		max-height: 50px;
+		max-width: 180px;
+
+		@media (min-width: @grid-float-breakpoint) {
+			max-width: none;
+		}
 	}
 }
 
@@ -15,4 +22,18 @@
 		margin-bottom: (@line-height-computed * 7);
 
 	}
+}
+
+.navbar-collapse { 
+
+	background-color: darken(@color-header-background, 3%);
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+
+	@media (min-width: @grid-float-breakpoint) {
+		background-color: inherit;
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;		
+	}
+
 }
