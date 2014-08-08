@@ -33,6 +33,19 @@ module.exports = function(grunt) {
       all: ["Gruntfile.js", "src/assets/*.js"]
     },
 
+    // JS Minification + Concatination.
+    uglify: {
+      my_target: {
+        files: {
+          'build/assets/status-page.min.js': [
+            'src/javascripts/jquery-1.11.1.js', 
+            'src/javascripts/moment.js',
+            'src/javascripts/status-page.js'
+          ]
+        }
+      }
+    },
+
     // LESS CSS Compilation.
     // Compile the LESS source into the build directory.
     less: {
@@ -55,7 +68,7 @@ module.exports = function(grunt) {
           // Copy images over to the build and distribution folders.
           { expand: true, flatten: true, cwd: "src/images/", src: "**", dest: "build/assets/"},
           // Copy javascript assets.
-          { expand: true, flatten: true, cwd: "src/javascripts/", src: "**", dest: "build/assets/"},  
+          { expand: true, flatten: true, cwd: "src/javascripts/", src: "**/*.min.js", dest: "build/assets/"},
           // Copy webfont assets.
           { expand: true, flatten: true, cwd: "src/fonts/", src: "**", dest: "build/assets/"},                    
         ]
@@ -90,8 +103,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sorry-theme-deploy');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-release');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   // Default task(s).
-  grunt.registerTask("deploy", ["jshint", "clean", "less", "copy", "sorry_theme_deploy"]);
+  grunt.registerTask("deploy", ["jshint", "clean", "uglify", "less", "copy", "sorry_theme_deploy"]);
 
 };
