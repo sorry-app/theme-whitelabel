@@ -1,25 +1,36 @@
 .stay-informed-nav {
-	.text-center();
 
-	ul.nav-pills { 
-		display:inline-block; 
-	}
-	
-	li { 
-		display:inline; 
-	}
+	.nav-pills {
 
-	a { 
-		float:left; 
-	}
-}
+		width: 100%;
 
-.nav-pills {
-
-	li {
-		a {
-			background-color: @color-header-background;
+		li {
+			a {
+				background-color: @color-header-background;
+				text-align: left;
+			}
 		}
+
+	}
+
+	@media (min-width: @grid-float-breakpoint) {
+
+		.nav-pills { 
+
+			width: auto;
+			display: inline-block; 
+		
+			li { 
+				display: inline; 
+			}
+
+			a { 
+				float: left; 
+			}
+
+		}
+
 	}
 
 }
+
