@@ -17,6 +17,7 @@
 
 	> dt {
 		font-size: 1.2em;
+		margin-bottom: @line-height-computed;
 	}
 
 	dt.present + dd > dl > dt:first-child, dt.present + dd > dl > dd:nth-child(2) {
@@ -41,8 +42,11 @@
 	}
 
 	dt {
-		margin-bottom: (@line-height-computed * 0.5);
 		font-weight: (@font-weight-base + 100);
+	}
+
+	dd > dl > dt {
+		margin-bottom: (@line-height-computed * 0.5);
 	}
 
 	dd > dl > dt {
