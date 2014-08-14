@@ -21,6 +21,34 @@
 		margin-bottom: (@line-height-computed * 8);
 
 	}
+
+	@media (min-width: @grid-float-breakpoint) {
+
+		/* Double Height The Navbar. */
+		/* Set these as new configurable variables. */
+		@res-navbar-height: 100px;
+		@res-navbar-padding-vertical: ((@res-navbar-height - @line-height-computed) / 2);
+
+		// Set the height of the navbar.
+		min-height: @res-navbar-height;
+
+		// Ajust the padding on the internal element.
+		.navbar-brand {
+			padding: @res-navbar-padding-vertical @navbar-padding-horizontal;
+		}
+		.navbar-nav {
+		    > li {
+		      > a {
+		        padding-top:    @res-navbar-padding-vertical;
+		        padding-bottom: @res-navbar-padding-vertical;
+		      }
+		    }
+  		}
+  		.navbar-logo {
+			line-height: @res-navbar-height;
+		}
+		
+	}
 }
 
 .navbar-collapse { 
