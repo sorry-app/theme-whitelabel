@@ -1,15 +1,3 @@
-
-@media (min-width: @grid-float-breakpoint) {
-	.line:after {
-		content: " ";
-		width: 1px;
-		position:absolute;
-		background-color: mix(@color-header-text, @color-header-background, 20%);
-		top: 260px;
-		bottom: 0;
-	}
-}
-
 .timeline {
 
 	margin-bottom: 0;
@@ -147,8 +135,6 @@
 		padding-top: @line-height-computed;
 
 		@media (min-width: @grid-float-breakpoint) {
-
-			border-left: 1px solid mix(@color-body-text, @color-body-background, 10%);
 		
 			> dt:before {
 				background-color: mix(@color-body-text, @color-body-background, 5%);
