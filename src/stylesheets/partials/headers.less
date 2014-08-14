@@ -1,4 +1,18 @@
+// Guards are not falsy so we need to define
+// this as a default value.
+// https://github.com/less/less.js/issues/1494
+.default-background {
+    // No background imnage by default.
+    @header-background-image: false;
+} .default-background;
+
 header {
 	color: @color-header-text;
-	background: @color-header-background;
+	background-color: @color-header-background;
+
+	// Check if a background image has been defined.
+	& when not (@header-background-image = false) {
+		// We have a background image - assign it.
+		background: @color-header-background @header-background-image;
+	}
 }
