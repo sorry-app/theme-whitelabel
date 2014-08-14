@@ -84,6 +84,15 @@
 
 		position: relative;
 
+		&:before {
+			content: " ";
+			width: 1px;
+			background-color: mix(@color-header-text, @color-header-background, 20%);
+			position: absolute;
+			top: 0;
+			bottom: 0;
+		}
+
 		> dt {
 			font-size: 1em;
 		}
@@ -141,7 +150,12 @@
 		padding-top: @line-height-computed;
 
 		@media (min-width: @grid-float-breakpoint) {
-		
+	
+			&:before {
+				background-color: mix(@color-body-text, @color-body-background, 5%);
+				bottom: 32px;
+			}
+
 			> dt:before {
 				background-color: mix(@color-body-text, @color-body-background, 5%);
 			}
