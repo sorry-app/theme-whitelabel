@@ -169,7 +169,7 @@
 		/* Formatting on larger screens. */
 		@media (min-width: @screen-sm-min) {
 
-			padding-top: (@line-height-computed * 3);
+			padding-top: (@line-height-computed * 5);
 
 		}
 
@@ -183,7 +183,7 @@
 
 	&.timeline-present {
 
-		padding-bottom: @line-height-computed;
+		padding: @line-height-computed 0;
 
 		@media (min-width: @grid-float-breakpoint) {
 					
@@ -196,14 +196,22 @@
 		/* Formatting on larger screens. */
 		@media (min-width: @screen-sm-min) {
 
-			padding-bottom: (@line-height-computed * 3);
+			&:before {
+				top: (@line-height-computed * 5);
+			}
+
+			padding: (@line-height-computed * 5) 0;
 
 		}
 
 		/* Formatting on larger screens. */
 		@media (min-width: @screen-lg-min) {
 
-			padding-bottom: (@line-height-computed * 5);
+			&:before {
+				top: (@line-height-computed * 7);
+			}
+
+			padding: (@line-height-computed * 7) 0;
 
 		}
 	}	
