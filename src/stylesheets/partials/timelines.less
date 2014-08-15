@@ -148,9 +148,11 @@
 
 	&.timeline-past {
 
-		padding-top: @line-height-computed;
+		padding: 30px 10px;
 
 		@media (min-width: @grid-float-breakpoint) {
+
+			padding: 0;
 	
 			&:before {
 				background-color: mix(@color-body-text, @color-body-background, 5%);
@@ -183,8 +185,6 @@
 	}
 
 	&.timeline-present {
-
-		padding: @line-height-computed 0;
 
 		@media (min-width: @grid-float-breakpoint) {
 					
