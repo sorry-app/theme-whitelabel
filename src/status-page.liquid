@@ -129,7 +129,7 @@
                     <!-- Loop over the collection of previous apologies, order date descending. -->
                     {% for apology in page.apologies.recent %}
                         <!-- Start time for the apology. -->
-                        <dt class="heading past" id="apology-{{ apology.id }}">{{ apology.created_at | date: '%a, %B %-d %Y' }}</dt>
+                        <dt class="heading past" id="apology-{{ apology.id }}">{{ apology.created_at | date: '%a, %-d %b %Y' }}</dt>
 
                             <dd>
                                 <dl>
