@@ -23,8 +23,11 @@
             <script src="{{ 'respond-1-3-0.min.js' | asset_url }}"></script>
         <![endif]-->
 
-        <!-- Standard Favicons. -->
-        <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}"  />
+        <!-- Display favicons if one is assigned. -->
+        {% if page.brand.favicon %}
+            <!-- Standard Favicons. -->
+            <link rel="icon" type="{{ page.brand.favicon.content_type }}" href="{{ page.brand.favicon.url }}"  />
+        {% endif %}
 
         <!-- Include CSS Assets. -->
         <link rel="stylesheet" href="{{ 'status-page.css' | asset_url }}" />
