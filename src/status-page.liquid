@@ -47,9 +47,11 @@
                         </button>
 
                         <!-- Logo. -->
-                        <div class="navbar-logo">
-                            <img src="{{ 'logo.png' | asset_url }}" alt="Logo for {{ page.name }}" />
-                        </div>
+                        {% if page.brand.logo %}
+                            <div class="navbar-logo">
+                                <img src="{{ page.brand.logo.url }}" alt="Logo for {{ page.name }}" />
+                            </div>
+                        {% endif %}
 
                         <!-- Page Title. -->
                         <a class="navbar-brand hidden-xs" href="#">Service Status</a>
