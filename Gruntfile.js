@@ -80,7 +80,8 @@ module.exports = function(grunt) {
           // Copy javascript assets.
           { expand: true, flatten: true, cwd: "src/javascripts/", src: "**/*.min.js", dest: "build/assets/"},
           // Copy webfont assets.
-          { expand: true, flatten: true, cwd: "src/fonts/", src: "**", dest: "build/assets/"},                    
+          { expand: true, flatten: true, cwd: "src/fonts/", src: "**", dest: "build/assets/"},    
+          { expand: true, flatten: true, src: "src/stylesheets/test-import.less", dest: "build/assets/"},                  
         ]
       },
     },

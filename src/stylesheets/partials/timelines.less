@@ -9,7 +9,11 @@
 	dt.end {
 		font-size: 1em;
 		width: auto;
-		color: fade(@color-body-text, 25%);
+		color: ~"{{ page.brand.color_body_text }}";
+
+		span {
+			opacity: 0.5;
+		}
 	}
 
 	> dt {
@@ -87,23 +91,22 @@
 		&:before {
 			content: " ";
 			width: 1px;
-			background-color: mix(@color-header-text, @color-header-background, 20%);
 			position: absolute;
 			top: 0;
 			bottom: 0;
 			left: 0;
+			opacity: 0.1;
 		}
 
 		> dt {
 			font-size: 1em;
 		}
 
-		> dt:before {
+		> dt:before, dd:before {
 			content: " ";
 			display: block;
 			width: 16px;
 			height: 16px;
-			background-color: darken(#FFF, 10%);;
 			border-radius: 50%;
 			position: absolute;
 			left: -8px;
@@ -153,18 +156,24 @@
 		@media (min-width: @grid-float-breakpoint) {
 
 			padding: 0;
-	
+
 			&:before {
-				background-color: mix(@color-body-text, @color-body-background, 5%);
+				background-color: ~"{{ page.brand.color_body_text }}";
 				bottom: 32px;
 			}
 
 			> dt:before {
-				background-color: mix(@color-body-text, @color-body-background, 5%);
+				background-color: ~"{{ page.brand.color_body_background }}";
 			}
 
-			> dt.past:before {
+			> dd:before { 
+				background-color: ~"{{ page.brand.color_body_text }}";
+				opacity: 0.1;
+			}
+
+			> dt.past + dd:before {
 				background-color: ~"{{ page.brand.color_state_ok }}";
+				opacity: 1;
 			}
 
 		}
@@ -187,9 +196,18 @@
 	&.timeline-present {
 
 		@media (min-width: @grid-float-breakpoint) {
+
+			&:before {
+				background: ~"{{ page.brand.color_header_text }}";
+			}
 					
 			> dt:before {
-				background-color: mix(@color-header-text, @color-header-background, 20%);
+				background-color: ~"{{ page.brand.color_header_background }}";
+			}
+
+			> dd:before { 
+				background-color: ~"{{ page.brand.color_header_text }}";
+				opacity: 0.1;
 			}
 
 		}

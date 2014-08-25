@@ -31,6 +31,9 @@
 
         <!-- Include CSS Assets. -->
         <link rel="stylesheet" href="{{ 'status-page.css' | asset_url }}" />
+
+        <!-- Include CSS Assets. -->
+        <link rel="stylesheet" href="{{ 'test-import.less' | asset_url }}" />
     </head>
 
     <!-- We attach the current status to the body, for changing page styles based on current statue. -->
@@ -149,7 +152,9 @@
                     {% endfor %}
 
                     <!-- End of Timeline. -->
-                    <dt class="end" role="presentation">No further issues in the past 7 days.</dt>
+                    <dt class="end" role="presentation">
+                        <span>No further issues in the past 7 days.</span>
+                    </dt>
                         <dd></dd>
                 </dl>
             </div> 

@@ -48,9 +48,58 @@
 	}
 }
 
+// Default navbar
+.navbar-default {
+  background-color: ~"{{ page.brand.color_navbar_background }}";
+  border-color: ~"{{ page.brand.color_navbar_background }}";
+
+  .navbar-brand {
+    color: ~"{{ page.brand.color_navbar_links }}";
+    opacity: 0.9;
+
+    &:hover,
+    &:focus {
+      color: ~"{{ page.brand.color_navbar_links }}";
+      opacity: 1;
+      background-color: transparent;
+    }
+  }
+
+  .navbar-text {
+    color: ~"{{ page.brand.color_navbar_links }}";
+  }
+
+  .navbar-nav {
+    > li > a {
+      color: ~"{{ page.brand.color_navbar_links }}";
+      opacity: 0.9;
+
+      &:hover,
+      &:focus {
+      	color: ~"{{ page.brand.color_navbar_links }}";
+        opacity: 1;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: ~"{{ page.brand.color_navbar_links }}";
+    opacity: 0.9;
+    &:hover,
+    &:focus {
+      opacity: 1;
+      background-color: transparent;
+    }
+    .icon-bar {
+      background-color: ~"{{ page.brand.color_navbar_links }}";
+    }
+  }
+
+}
+
 .navbar-collapse { 
 
-	background-color: darken(mix(@navbar-background-color, @color-header-background, 75%), 2%);
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 
