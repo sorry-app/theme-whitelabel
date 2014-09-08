@@ -44,13 +44,16 @@
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
-                        <!-- Toggle Button For Mobile Nav. -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#status-page-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
+                        <!-- Nav Toggle With Support Links. -->
+                        {% if page.support.size > 0 %}
+                            <!-- Toggle Button For Mobile Nav. -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#status-page-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        {% endif %}
 
                         <!-- Brand. -->
                         {% if page.brand.logo %}
@@ -67,14 +70,24 @@
                         {% endif %}
                     </div>
 
-                    <!--- Collapsable Nav On Mobile. -->
-                    <div class="collapse navbar-collapse" id="status-page-navbar-collapse-1">
-                        <!-- Main Status Page Nav. -->
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">Primary Link One</a></li>
-                            <li><a href="#">Primary Link Two</a></li>
-                        </ul>
-                    </div>
+                    <!-- Support Links If Defined. -->
+                    {% if page.support.size > 0 %}
+                        <!-- Collapsable Nav On Mobile. -->
+                        <div class="collapse navbar-collapse" id="status-page-navbar-collapse-1">
+                            <!-- Main Status Page Nav. -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <!-- Support Email Link. -->
+                                {% if page.support.email %}
+                                    <li><a href="mailto:{{ page.support.email }}">{{ page.support.email }}</a></li>
+                                {% endif %}
+
+                                <!-- Support Telephone Link. -->
+                                {% if page.support.telephone %}
+                                    <li><a href="tel:{{ page.support.telephone }}">{{ page.support.telephone }}</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    {% endif %}
                 </div>
             </nav>
 
