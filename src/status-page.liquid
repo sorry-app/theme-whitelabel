@@ -125,19 +125,37 @@
                                     <!-- We have nothing to be sorry about, so all is well. -->
                                     <h2>All systems are go</h2>
 
-                                    <section class="stay-informed-nav" id="stay-informed-nav">
+                                    <!-- Output social links if any are defined. -->
+                                    {% if page.social.size > 0 %}
+                                        <section class="stay-informed-nav" id="stay-informed-nav">
+                                            <!-- Links to keep up to date. -->
+                                            <!-- Usualy social links to Twitter etc. -->
+                                            <ul class="nav nav-pills nav-stacked">
+                                                <li>
+                                                    <!-- Twitter Profile If Enabled. -->
+                                                    {% if page.social.twitter %}
+                                                        <a href="https://twitter.com/{{ page.social.twitter }}">
+                                                            <i class="fa fa-twitter"></i> Follow us on Twitter
+                                                        </a>
+                                                    {% endif %}
 
-                                        <!-- Links to keep up to date. -->
-                                        <!-- Usualy social links to Twitter etc. -->
-                                        <ul class="nav nav-pills nav-stacked">
-                                            <li>
-                                                <a href="#">Secondary Link One</a>
-                                                <a href="#">Secondary Link Two</a>
-                                                <a href="#">Secondary Link Three</a>
-                                            </li>
-                                        </ul>
+                                                    <!-- Facebook Profile If Enabled. -->
+                                                    {% if page.social.facebook %}
+                                                        <a href="https://www.facebook.com/{{ page.social.facebook }}">
+                                                           <i class="fa fa-facebook"></i> Friend us on Facebook
+                                                        </a>
+                                                    {% endif %}
 
-                                    </section>
+                                                    <!-- Google Plus Profile If Enabled. -->
+                                                    {% if page.social.google_plus %}
+                                                        <a href="https://plus.google.com/{{ page.social.google_plus }}/">
+                                                           <i class="fa fa-google-plus"></i> Find us on Google+
+                                                        </a>
+                                                    {% endif %}
+                                                </li>
+                                            </ul>
+                                        </section>
+                                    {% endif %}
                                 </dd>
                         {% endfor %}
                     </dl>
