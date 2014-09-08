@@ -52,15 +52,19 @@
                             <span class="icon-bar"></span>
                         </button>
 
-                        <!-- Logo. -->
+                        <!-- Brand. -->
                         {% if page.brand.logo %}
                             <div class="navbar-logo">
+                                <!-- Logo. -->
                                 <img src="{{ page.brand.logo.url }}" alt="Logo for {{ page.name }}" />
                             </div>
-                        {% endif %}
 
-                        <!-- Page Title. -->
-                        <a class="navbar-brand hidden-xs" href="#">Service Status</a>
+                            <!-- Page Title. -->
+                             <a class="navbar-brand hidden-xs" href="#">Service Status</a>
+                        {% else %}
+                            <!-- Page Name. -->
+                             <a class="navbar-brand" href="#">{{ page.name }}</a>
+                        {% endif %}
                     </div>
 
                     <!--- Collapsable Nav On Mobile. -->
