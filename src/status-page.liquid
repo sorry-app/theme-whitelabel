@@ -73,6 +73,11 @@
                         <div class="collapse navbar-collapse" id="status-page-navbar-collapse-1">
                             <!-- Main Status Page Nav. -->
                             <ul class="nav navbar-nav navbar-right">
+                                <!-- Support Link. -->
+                                {% if page.support.url %}
+                                    <li><a href="{{ page.support.url }}" target="_blank">{{ page.support.url }}</a></li>
+                                {% endif %}
+
                                 <!-- Support Email Link. -->
                                 {% if page.support.email %}
                                     <li><a href="mailto:{{ page.support.email }}">{{ page.support.email }}</a></li>
