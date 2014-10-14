@@ -44,6 +44,9 @@
 
         <!-- Include CSS Assets. -->
         <link rel="stylesheet" href="{{ 'status-page.css' | asset_url }}" />
+
+        <!-- Injected Head Content. -->
+        {{ page.content_for_head }}
     </head>
 
     <!-- We attach the current status to the body, for changing page styles based on current statue. -->
@@ -222,5 +225,8 @@
 
         <!-- Javascript Assets. -->
         <script src="{{ 'status-page.min.js' | asset_url }}"></script>
+
+        <!-- Injected Head Content. -->
+        {{ page.content_for_body }}
     </body>
 </html>
