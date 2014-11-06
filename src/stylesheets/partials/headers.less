@@ -7,4 +7,16 @@ header {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
+
+	a {
+		color: ~"{{ page.brand.color_header_links }}";
+		opacity: 0.9;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+			color: ~"{{ page.brand.color_header_links }}";
+		}
+	}
+
 }
