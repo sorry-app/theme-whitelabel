@@ -2,10 +2,6 @@
 
 	margin-bottom: 0;
 
-	dd > dl {
-		margin-bottom: @line-height-computed * 2;
-	}
-
 	dt.end {
 		font-size: 1em;
 		width: auto;
@@ -195,6 +191,17 @@
 
 	&.timeline-present {
 
+		> dd > dl {
+			margin-top: -(@line-height-computed / 2);
+			padding: (@line-height-computed / 2);
+			border-radius: @border-radius-large;
+			background-color: ~"{{ page.brand.color_header_background }}";
+		}
+
+		> dd > dl > dd:last-child {
+			margin-bottom: 0;
+		}
+
 		@media (min-width: @grid-float-breakpoint) {
 
 			&:before {
@@ -216,7 +223,7 @@
 		@media (min-width: @screen-sm-min) {
 
 			&:before {
-				top: (@line-height-computed * 5);
+				top: (@line-height-computed * 5) + (@line-height-computed / 2);
 			}
 
 			padding: (@line-height-computed * 5) 0;
@@ -227,7 +234,7 @@
 		@media (min-width: @screen-lg-min) {
 
 			&:before {
-				top: (@line-height-computed * 7);
+				top: (@line-height-computed * 7) + (@line-height-computed / 2);
 			}
 
 			padding: (@line-height-computed * 7) 0;
