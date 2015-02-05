@@ -88,7 +88,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <!-- Support Link. -->
                                 {% if page.support.url %}
-                                    <li><a href="{{ page.support.url }}" target="_blank">{{ page.support.url }}</a></li>
+                                    <li><a href="{{ page.support.url }}" target="_blank">{{ page.support.url | remove: "https://" | remove: "http://" }}</a></li>
                                 {% endif %}
 
                                 <!-- Support Email Link. -->
