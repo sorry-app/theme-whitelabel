@@ -63,12 +63,12 @@
 				border-radius: 6px;
 				padding: 15px 20px;
 				margin-bottom: (@line-height-computed * 2);
+				margin-top:-24px;
 
 				@media (min-width: @grid-float-breakpoint) {
 					display: inline-block;
 					margin-left: auto;
 					margin-right: auto;
-					margin-top: -32px; // Half the height of the element.
 				}
 			}
 		}
@@ -191,11 +191,15 @@
 
 	&.timeline-present {
 
+		margin-top: @line-height-computed * 2;
+
+		> dd:last-child {
+			margin-bottom: 0;
+		}
+
 		> dd > dl {
 			margin-top: -(@line-height-computed / 2);
 			padding: (@line-height-computed / 2);
-			border-radius: @border-radius-large;
-			background-color: ~"{{ page.brand.color_header_background }}";
 		}
 
 		> dd > dl > dd:last-child {

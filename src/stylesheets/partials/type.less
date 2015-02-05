@@ -6,7 +6,17 @@ html, body {
 
 /* Footers & Copyrights. */
 
+footer {
+	.text-center();
+}
+
 .copyright {
 	opacity: 0.5;
-	.text-center();
+	color: ~"{{ page.brand.color_body_text }}";
+
+	&:hover, &:active, &:visited {
+		color: ~"{{ page.brand.color_body_text }}";
+		opacity: 1;
+		text-decoration: none;
+	}
 }
