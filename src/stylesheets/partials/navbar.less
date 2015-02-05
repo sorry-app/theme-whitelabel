@@ -36,11 +36,13 @@
 		.navbar-nav {
 		    > li {
 		      > a {
+		      	font-size: @font-size-large;
 		        padding-top:    @res-navbar-padding-vertical;
 		        padding-bottom: @res-navbar-padding-vertical;
 		      }
 		    }
   		}
+
   		.navbar-logo {
 			line-height: @res-navbar-height;
 		}
@@ -55,7 +57,7 @@
 
   .navbar-brand {
     color: ~"{{ page.brand.color_navbar_links }}";
-    opacity: 0.9;
+    opacity: 0.7;
 
     &:hover,
     &:focus {
@@ -72,7 +74,7 @@
   .navbar-nav {
     > li > a {
       color: ~"{{ page.brand.color_navbar_links }}";
-      opacity: 0.9;
+      opacity: 0.7;
 
       &:hover,
       &:focus {
