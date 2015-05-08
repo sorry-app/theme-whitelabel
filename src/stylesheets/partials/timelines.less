@@ -1,89 +1,197 @@
-.timeline {
+//
+// Timelines
+// --------------------------------------------------
 
-	margin-bottom: 0;
+// Top level timeline element.
+dl.timeline {
+	// Position to contain key date bullets inside.
+	// Also add some initial padding.
+	position: relative;
+	padding: @timeline-padding (@timeline-padding / 2);
 
-	dt.end {
-		font-size: 1em;
-		width: auto;
-		color: ~"{{ page.brand.color_body_text }}";
-
-		span {
-			opacity: 0.5;
-		}
+	// Main container/wrapper for each timeline event.
+	> dt { 
+		// Doesn't need content, so shrink the font.
+		// We don't want to use display:none as otherwise we can't use the :before bullet point.
+		font-size: 0;
 	}
 
-	> dt {
-		font-size: 1.2em;
-		margin-bottom: @line-height-computed;
-	}
+	// Special title timeline item.
+	> dt.title + dd {
+		/* Center align the notice. */
+		text-align: center;
+		margin-left: -10px;
+		margin-right: -10px;
 
-	dt.present + dd > dl > dt:first-child, dt.present + dd > dl > dd:nth-child(2) {
-		font-size:1.2em;
-	}
-
-	dt.heading.present {
-		overflow: visible !important;
-
-		span {
-			background-color: ~"{{ page.brand.color_state_warning }}";
+		/* Style the 'all systems are go' notice as a green box. */
+		h2, .h2 {
+			// Style the header as a large coloured block.
+			background-color: ~"{{ page.brand.color_state_ok }}";
 			color: #FFF;
 			border-radius: 6px;
-			padding: 5px 10px;
-			display: inline-block;
-			margin-top: -5px;
+			padding: 15px 20px;
+			font-size: 24px;
+			text-align: left;
+			margin-top: 0;
+
+			// Tick icon within the header.
+			i {
+				float: right;
+				line-height: 1.1;
+				margin-top: 2px;
+			}
+
+			@media (min-width: @grid-float-breakpoint) {
+				// Make more centered block on non-mobile devices.
+				display: inline-block;
+				margin-top: -24px;
+				width: 512px;
+				font-size: 30px;
+			}
 		}
+
+		// Remove the indent.
+		@media (min-width: @grid-float-breakpoint) { margin-left: -(@timeline-horizontal-spacing * 2); }
 	}
 
-	dd {
-		margin-bottom: @line-height-computed;
-	}
+	// Standard timeline item.
+	> dt + dd {
+		// Second level timeline, one for each notice.
+		> dl {
+			// Spacing under each timeline event, with border.
+			margin-bottom: @timeline-vertical-spacing * 2;
+			padding-bottom: @timeline-vertical-spacing * 1;
 
-	dt {
-		font-weight: (@font-weight-base + 100);
-	}
-
-	dd > dl > dt {
-		margin-bottom: (@line-height-computed * 0.5);
-	}
-
-	dd > dl > dt {
-		opacity: 0.5;
-	}
-
-	dt.title {
-		display: none;
-
-		& + dd {
-			margin-left: 0;
-			text-align: center;
-
-			h2, .h2 {
-				background-color: ~"{{ page.brand.color_state_ok }}";
-				color: #FFF;
+			// The main date stamp.
+			> dt {
+				// Style the date with a soft grey box surround.
+				margin-bottom: @timeline-vertical-spacing;
+				background-color: rgba(0, 0, 0, 0.02);
+				padding: 5px 10px;
 				border-radius: 6px;
-				padding: 15px 20px;
-				margin-bottom: (@line-height-computed * 2);
-				margin-top:-24px;
+				font-weight: (@font-weight-base + 100);
+				opacity: 0.7;
 
+				// Cancel out the padding to maintain text alignment with other elements.
+				margin-left: -10px;
+				margin-right: -10px;
+
+				// First date in set for notice.
+				// Make this stand out more than the other datestamps.
+				&:first-child { 
+					opacity: 1;
+					font-size: 120%;
+				}
+
+				// Graphical timeline on larger scale devices.
 				@media (min-width: @grid-float-breakpoint) {
-					display: inline-block;
-					margin-left: auto;
-					margin-right: auto;
+					/* Horizontal alignment of dates/times. */
+					width: @timeline-date-width;
+					margin-top: -5px;
+					margin-left: 0;
+					margin-right: 0;
+					margin-bottom: 0;
+
+					&:first-child {
+						font-size: 100%;
+					}
+				}
+			}
+
+			// Container for a given dates notices.
+			> dd {
+				// Third level timeline, one for each date group.
+				> dl {
+					// Remove the default bootstrap margin.
+					margin-bottom: 0;
+
+					// Timestamp for each update.
+					> dt {
+						opacity: 0.5;
+						font-weight: @font-weight-base;
+
+						// Graphical timeline on larger scale devices.
+						@media (min-width: @grid-float-breakpoint) {
+							/* Horizontal alignment of dates/times. */
+							width: @timeline-time-width;
+						}
+					}
+
+					// Main text body for each update.
+					> dd {
+						margin-bottom: @timeline-vertical-spacing;
+
+						// Graphical timeline on larger scale devices.
+						@media (min-width: @grid-float-breakpoint) {
+							/* Horizontal alignment of dates/times. */
+							padding-left: (@timeline-time-width + @timeline-horizontal-spacing);
+						}
+					}
+				}
+
+				// Graphical timeline on larger scale devices.
+				@media (min-width: @grid-float-breakpoint) {
+					/* Horizontal alignment of dates/times. */
+					padding-left: (@timeline-date-width + @timeline-horizontal-spacing);
 				}
 			}
 		}
 
-		@media (min-width: @grid-float-breakpoint) {
-			display: inline;
-			width: 0;
-			padding-left: 0;
+		// Remove margin from the last instance.
+		&:last-child > dl { 
+			margin-bottom: 0; 
+			padding-bottom: 0;
 		}
 	}
 
+	// Special event types.
+	// --------------------------------------------------
+
+	// Ongoing event type.
+	> dt.event.event-ongoing {
+		// Special colour style for the ongoing message.
+		& + dd > dl > dt {
+			// Use the theme colours for this.
+			background-color: ~"{{ page.brand.color_state_warning }}";
+			color: #FFF;
+
+			// Little bullhorn icon for the notice.
+			i {
+				float: right;
+				margin-top: 3px;
+			}
+		}
+	}
+
+	// Resolved event.
+	> dt.event.event-resolved {
+		// Green marker on the timeline.
+		& + dd:before {
+			background-color: ~"{{ page.brand.color_state_ok }}";
+			opacity: 1;
+		}
+	}
+
+	// Ongoing event.
+	> dt.event.event-ongoing {
+		// Green marker on the timeline.
+		& + dd:before {
+			background-color: ~"{{ page.brand.color_state_warning }}";
+			opacity: 1;
+		}
+	}	
+
+	// Timeline footer.
+	> dt.event.event-final {
+		// Fade out the bullet nice and soft.
+		& + dd:before { opacity: 0.1; }
+	}	
+
+	// Graphical timeline on larger scale devices.
+	// --------------------------------------------------
+
 	@media (min-width: @grid-float-breakpoint) {
-
-		position: relative;
-
+		// Vertical timeline line.
 		&:before {
 			content: " ";
 			width: 1px;
@@ -92,154 +200,122 @@
 			bottom: 0;
 			left: -1px;
 			opacity: 0.1;
+			background-color: #000;
 		}
 
-		> dt {
-			font-size: 1em;
-		}
+		// Pad the left side of the timeline.
+		padding: 0;
+		margin: 0;
+		padding-left: @timeline-horizontal-spacing + (@timeline-bullet-size / 2);
 
-		> dt:before, dd:before {
-			content: " ";
-			display: block;
-			width: 16px;
-			height: 16px;
-			border-radius: 50%;
-			position: absolute;
-			left: -8px;
-		}
+		// Add a bullet to the timeline on larger screens.
+		> dt, > dt + dd { .timeline-bullet(); }
 
-		> dt.present:before {
-			background-color: ~"{{ page.brand.color_state_warning }}";
-		}
-
-		> dt {
-			padding-left: 72px;
-		}
-
-	    dt {
-			float: left;
-			width: 200px;
-			clear: left;
-			.text-overflow();
-	    }
-
-	    dd {
-			margin-left: 232px;
-			.clearfix(); // Clear the floated `dt` if an empty `dd` is present
-
-			dl {				
-				dt {
-					width: 130px;
-					clear: none;
-				}
-
-				dd {
-					margin-left: 150px;
-				}
+		// Horizontal layout for the events.
+		> dt.event + dd > dl {
+			dt {
+				float: left;
+				.text-overflow();
 			}
 
-	    }
-
-	    dt.end { 
-	    	text-align: left;
-	    }
-	}
-
-	&.timeline-past {
-
-		padding: 30px 10px;
-
-		@media (min-width: @grid-float-breakpoint) {
-
-			padding: 0;
-
-			&:before {
-				background-color: ~"{{ page.brand.color_body_text }}";
-				bottom: 32px;
-			}
-
-			> dt:before {
-				background-color: ~"{{ page.brand.color_body_background }}";
-			}
-
-			> dd:before { 
-				background-color: ~"{{ page.brand.color_body_text }}";
-				opacity: 0.1;
-			}
-
-			> dt.past + dd:before {
-				background-color: ~"{{ page.brand.color_state_ok }}";
-				opacity: 1;
-			}
-
+			dd { .clearfix(); }
 		}
 
-		/* Formatting on larger screens. */
-		@media (min-width: @screen-sm-min) {
+		// Specific styles for the timeline when used in the page header.
+		&.timeline-header {
+			// Vertical timeline line.
+			&:before { background: ~"{{ page.brand.color_header_text }}"; }
 
-			padding-top: (@line-height-computed * 5);
+			// Timeline key date bullets.
+			> dt:before { background-color: ~"{{ page.brand.color_header_background }}"; }
 
+			// Text colour marker on the timeline.
+			> dt + dd:before { background-color: ~"{{ page.brand.color_header_text }}"; }
 		}
 
-		/* Formatting on larger screens. */
-		@media (min-width: @screen-lg-min) {
+		// Specific styles for the timeline when used in the page body.
+		&.timeline-body {
+			// Vertical timeline line.
+			&:before { background-color: ~"{{ page.brand.color_body_text }}"; }
 
-			padding-top: (@line-height-computed * 7);
+			// Timeline key date bullets.
+			> dt:before { background-color: ~"{{ page.brand.color_body_background }}"; }
 
+			// Text marker on the timeline.
+			> dt + dd:before { background-color: ~"{{ page.brand.color_body_text }}"; }			
 		}
 	}
 
-	&.timeline-present {
+	// Vartical paddings and margin for different devices.
+	// --------------------------------------------------
 
-		margin-top: @line-height-computed * 2;
+	@media (min-width: @screen-sm-min) {
 
-		> dd:last-child {
-			margin-bottom: 0;
+		// Specific styles for the timeline when used in the page header.
+		&.timeline-header {
+			// Pad the top of the timeline.
+			padding-bottom: @timeline-vertical-spacing-sm;
+			margin-top: (@timeline-vertical-spacing-sm + @timeline-vertical-spacing);
 		}
 
-		> dd > dl {
-			margin-top: -(@line-height-computed / 2);
-			padding: (@line-height-computed / 2);
+		// Specific styles for the timeline when used in the page body.
+		&.timeline-body {
+			// Pad the top of the timeline.
+			padding-top: @timeline-vertical-spacing-sm;
 		}
 
-		> dd > dl > dd:last-child {
-			margin-bottom: 0;
+	}
+
+	@media (min-width: @screen-md-min) {
+
+		// Specific styles for the timeline when used in the page header.
+		&.timeline-header {
+			// Pad the top of the timeline.
+			padding-bottom: @timeline-vertical-spacing-md;
+			margin-top: (@timeline-vertical-spacing-md + @timeline-vertical-spacing);
 		}
 
-		@media (min-width: @grid-float-breakpoint) {
-
-			&:before {
-				background: ~"{{ page.brand.color_header_text }}";
-			}
-
-			> dt:before { 
-				background-color: ~"{{ page.brand.color_header_text }}";
-				opacity: 0.1;
-			}
-
+		// Specific styles for the timeline when used in the page body.
+		&.timeline-body {
+			// Pad the top of the timeline.
+			padding-top: @timeline-vertical-spacing-md;
 		}
 
-		/* Formatting on larger screens. */
-		@media (min-width: @screen-sm-min) {
-
-			&:before {
-				top: (@line-height-computed * 5) + 16px;
-			}
-
-			padding: (@line-height-computed * 5) 0;
-
-		}
-
-		/* Formatting on larger screens. */
-		@media (min-width: @screen-lg-min) {
-
-			&:before {
-				top: (@line-height-computed * 7) + 16px;
-			}
-
-			padding: (@line-height-computed * 7) 0;
-
-		}
 	}	
 
+	@media (min-width: @screen-lg-min) {
+
+		// Specific styles for the timeline when used in the page header.
+		&.timeline-header {
+			// Pad the top of the timeline.
+			padding-bottom: @timeline-vertical-spacing-lg;
+			margin-top: (@timeline-vertical-spacing-lg + @timeline-vertical-spacing);
+		}
+
+		// Specific styles for the timeline when used in the page body.
+		&.timeline-body {
+			// Pad the top of the timeline.
+			padding-top: @timeline-vertical-spacing-lg;
+		}
+
+	}	
+
+	// Timeline Mixins.
+	// --------------------------------------------------
+
+	// Round marker on timeline for larger services.
+	// This is used a background-coloured base to overlay coloured markers on.
+	.timeline-bullet(@color: #333, @size: @timeline-bullet-size) {
+		&:before {
+			content: " ";
+			display: block;
+			width: @size;
+			height: @size;
+			border-radius: 50%;
+			position: absolute;
+			left: -(@size / 2);
+			background-color: @color;
+			opacity: 0.1;
+		}
+	}
 }

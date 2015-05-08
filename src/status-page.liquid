@@ -76,10 +76,10 @@
                             </div>
 
                             <!-- Page Title. -->
-                            <a class="navbar-brand hidden-xs" href="#">System Status</a>
+                            <span class="navbar-brand hidden-xs">System Status</span>
                         {% else %}
                             <!-- Page Name. -->
-                             <a class="navbar-brand" href="#">{{ page.name }}</a>
+                            <span class="navbar-brand">{{ page.name }}</span>
                         {% endif %}
                     </div>
 
@@ -113,27 +113,30 @@
                 <!-- Current Status Message. -->
                 <section id="current-status">
 
-                    <dl class="timeline timeline-present">
+                    <dl class="timeline timeline-header">
                         <!-- Loop over the collection of current apologies. -->
                         {% for apology in page.apologies.current %}
-                            <dt class="heading present" id="apology-{{ apology.id }}">
-                                <span>Ongoing</span>
-                            </dt>
+                            <dt class="event event-ongoing" id="apology-{{ apology.id }}">Notice #{{ apology.id }}</dt>
                                 <dd>
                                     <dl>
-                                        <!-- Loop over any updates we have for the apology -->
-                                        <!-- We reverse the order so the latest update displays first as the priority. -->
-                                        {% for update in apology.updates reversed %}
-                                            <!-- Output the date for the update. -->
-                                            <dt id="update-{{ update.id }}">
-                                                <!-- Datetime, augmented to 'time_ago_in_words' by moment.js -->
-                                                <time class="ago" datetime="{{ update.created_at }}">
-                                                    {{ update.created_at | date: '%FT%TZ' }}
-                                                </time>
-                                            </dt>
-                                                <!-- Output the text content of the update. -->
-                                                <dd>{{ update.content }}</dd>
-                                        {% endfor %}
+                                        <dt>Ongoing <i class="fa fa-bullhorn"></i></dt>
+                                            <dd>
+                                                <dl>
+                                                    <!-- Loop over any updates we have for the apology -->
+                                                    <!-- We reverse the order so the latest update displays first as the priority. -->
+                                                    {% for update in apology.updates reversed %}
+                                                        <!-- Output the date for the update. -->
+                                                        <dt id="update-{{ update.id }}">
+                                                            <!-- Datetime, augmented to 'time_ago_in_words' by moment.js -->
+                                                            <time class="ago" datetime="{{ update.created_at }}">
+                                                                {{ update.created_at | date: '%FT%TZ' }}
+                                                            </time>
+                                                        </dt>
+                                                            <!-- Output the text content of the update. -->
+                                                            <dd>{{ update.content }}</dd>
+                                                    {% endfor %}
+                                                </dl>
+                                            </dd>
                                     </dl>
                                 </dd>
                         {% else %}
@@ -141,7 +144,7 @@
                                 <dd>
                                     <!-- No current apologies found -->
                                     <!-- We have nothing to be sorry about, so all is well. -->
-                                    <h2>All systems are go</h2>
+                                    <h2>All systems are go <i class="fa fa-check-circle-o"></i></h2>
 
                                     <!-- Output social links if any are defined. -->
                                     {% if page.social.size > 0 %}
@@ -149,31 +152,32 @@
                                             <!-- Links to keep up to date. -->
                                             <!-- Usualy social links to Twitter etc. -->
                                             <ul class="nav nav-pills nav-stacked">
-                                                <li>
-                                                    <!-- Twitter Profile If Enabled. -->
-                                                    {% if page.social.twitter %}
+                                                <!-- Twitter Profile If Enabled. -->
+                                                {% if page.social.twitter %}
+                                                    <li>
                                                         <a href="https://twitter.com/{{ page.social.twitter }}" target="_blank">
                                                             <i class="fa fa-twitter fa-fw"></i> Follow us on Twitter
                                                         </a>
-                                                    {% endif %}
-                                                </li>
-                                                <li>
-                                                    <!-- Facebook Profile If Enabled. -->
-                                                    {% if page.social.facebook %}
+                                                    </li>
+                                                {% endif %}
+
+                                                <!-- Facebook Profile If Enabled. -->
+                                                {% if page.social.facebook %}
+                                                    <li>
                                                         <a href="https://www.facebook.com/{{ page.social.facebook }}" target="_blank">
                                                            <i class="fa fa-facebook fa-fw"></i> Friend us on Facebook
                                                         </a>
-                                                    {% endif %}
-                                                </li>
+                                                    </li>
+                                                {% endif %}
 
-                                                <li>
-                                                    <!-- Google Plus Profile If Enabled. -->
-                                                    {% if page.social.google_plus %}
+                                                <!-- Google Plus Profile If Enabled. -->
+                                                {% if page.social.google_plus %}
+                                                    <li>
                                                         <a href="https://plus.google.com/{{ page.social.google_plus }}/" target="_blank">
                                                            <i class="fa fa-google-plus fa-fw"></i> Find us on Google+
                                                         </a>
-                                                    {% endif %}
-                                                </li>
+                                                    </li>
+                                                {% endif %}
                                             </ul>
                                         </section>
                                     {% endif %}
@@ -189,29 +193,59 @@
         <main>
             <div class="container container-md">
                 <!-- Timeline of previous apologies. -->
-                <dl class="timeline timeline-past">
+                <dl class="timeline timeline-body">
                     <!-- Loop over the collection of previous apologies, order date descending. -->
                     {% for apology in page.apologies.recent %}
-                        <!-- Start time for the apology. -->
-                        <dt class="heading past" id="apology-{{ apology.id }}">{{ apology.created_at | date: '%a, %-d %b %Y' }}</dt>
+                        <dt class="event event-resolved" id="apology-{{ apology.id }}">Notice #{{ apology.id }}</dt>
+                        <dd>
+                            <dl>
+                                <!-- Loop over the updates for this apology, which we want to group by date. -->
+                                {% for update in apology.updates  %}
+                                    <!-- Snapshot the date by which we want to group updates. -->
+                                    {% capture grouped_date %}{{ update.created_at | date: '%a, %-d %b %Y' }}{% endcapture %}
 
-                            <dd>
-                                <dl>
-                                    <!-- Loop over the updates, showing all, in date order. -->
-                                    {% for update in apology.updates %}
-                                        <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
-                                            <!-- Output the te%D xt content of the update. -->
-                                            <dd>{{ update.content }}</dd>
-                                    {% endfor %}
-                                </dl>
-                            </dd>
+                                    <!-- See if this is the first iteration of the loop. -->
+                                    {% if forloop.first %}
+                                        <!-- First itteration, as a date stamp to it. -->
+                                        <dt>{{ grouped_date }}</dt>
+                                        <dd>
+                                            <dl>
+                                    {% else %}
+                                        <!-- Not the first instance -->
+                                        {% if grouped_date != last_grouped_date %}
+                                            <!-- close of the previous nest. -->
+                                                </dl>
+                                            </dd>
+
+                                            <!-- End start a new nested collection. -->
+                                            <dt>{{ grouped_date }}</dt>
+                                            <dd>
+                                                <dl>
+                                        {% endif %}
+                                    {% endif %}
+
+                                    <!-- Output the time for the given update. -->
+                                    <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
+                                        <!-- Output the text content of the update. -->
+                                        <dd>{{ update.content }}</dd>
+
+                                    <!-- Check if this is the last instance of the loop. -->
+                                    {% if forloop.last %}
+                                        <!-- Close off the nested list. -->
+                                            </dl>
+                                        </dd>
+                                    {% endif %}
+
+                                    <!-- Set a snapshot of the previously looped group. -->
+                                    {% capture last_grouped_date %}{{ grouped_date }}{% endcapture %}
+                                {% endfor %}
+                            </dl>
+                        </dd>
                     {% endfor %}
 
                     <!-- End of Timeline. -->
-                    <dt class="end" role="presentation">
-                        <span>No further issues in the past 7 days.</span>
-                    </dt>
-                        <dd></dd>
+                    <dt class="event event-final" role="presentation">Past notices</dt>
+                        <dd>No further notices from the past 7 days.</dd>
                 </dl>
             </div> 
         </main>
