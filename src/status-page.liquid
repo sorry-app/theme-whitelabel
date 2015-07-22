@@ -52,7 +52,7 @@
         {{ page.content_for_head }}
     </head>
     <!-- We attach the current status to the body, for changing page styles based on current statue. -->
-    <body class="current-status {% if page.apologies.current == empty %}status-ok{% else %}state-warning{% endif %}">
+    <body class="current-status {% if page.apologies.current == empty %}status-ok{% else %}state-warning{% endif %} locale-{{ page.locale }}">
         <!-- Page Header & Navbar. -->
         <header>        
             <!-- Page Navbar. -->
