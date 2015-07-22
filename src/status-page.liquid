@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<!-- Add RTL text direction for locales which require it. -->
+<!-- List of RTL locales taken from https://en.wikipedia.org/wiki/Right-to-left -->
+<html {% if 'ar,fa,sd,arc,glk,ug,bcc,he,ur,bqi,mzn,ur,ckb,pnb,yi,dv,ps' contains page.locale %}dir="rtl"{% endif %}>
     <head>
+        <!-- Charset is very importsnt for locale support. -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,7 +51,6 @@
         <!-- Injected Head Content. -->
         {{ page.content_for_head }}
     </head>
-
     <!-- We attach the current status to the body, for changing page styles based on current statue. -->
     <body class="current-status {% if page.apologies.current == empty %}status-ok{% else %}state-warning{% endif %}">
         <!-- Page Header & Navbar. -->
