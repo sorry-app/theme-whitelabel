@@ -1,6 +1,9 @@
 // Wait for the document to be ready.
 $(document).ready(function() {
 
+	// Configure Moment.js with the correct Locale.
+	moment.locale($('body').data('locale'));
+
 	// Use moment.js to format all the datetimes.
 	$('time.ago').each(function(index) {
 		// Calculate the time ago in words from the dattime.
