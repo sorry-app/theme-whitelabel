@@ -227,7 +227,17 @@
                                     {% endif %}
 
                                     <!-- Output the time for the given update. -->
-                                    <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
+                                    <dt id="update-{{ update.id }}">
+                                        <!-- Times don't use timezone in Hebrew. -->
+                                        <!-- Check hebrew locale. -->
+                                        {% if page.locale == 'he' %}
+                                            <!-- This is Hebrew locale, set without zone. -->
+                                            {{ update.created_at | date: '%X' }}
+                                        {% else %}
+                                            <!-- This is non-Hebrew, use Timezone. -->
+                                            {{ update.created_at | date: '%X %Z' }}
+                                        {% endif %}
+                                    </dt>
                                         <!-- Output the text content of the update. -->
                                         <dd>{{ update.content }}</dd>
 
