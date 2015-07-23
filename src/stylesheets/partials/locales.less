@@ -96,7 +96,7 @@
 
 			// Pad the right side of the timeline.
 			padding-left: 0;
-			padding-right: @timeline-horizontal-spacing + (@timeline-bullet-size / 2);
+			padding-right: (@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2);
 
 			// Add a bullet to the timeline on larger screens.
 			> dt, > dt + dd { &:before { left: intial; right: -(@timeline-bullet-size / 2);} }

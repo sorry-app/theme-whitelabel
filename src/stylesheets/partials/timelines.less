@@ -201,7 +201,7 @@ dl.timeline {
 		// Pad the left side of the timeline.
 		padding: 0;
 		margin: 0;
-		padding-left: @timeline-horizontal-spacing + (@timeline-bullet-size / 2);
+		padding-left: (@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2);
 
 		// Add a bullet to the timeline on larger screens.
 		> dt, > dt + dd { .timeline-bullet(); }
