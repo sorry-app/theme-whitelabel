@@ -81,6 +81,8 @@ module.exports = function(grunt) {
           { expand: true, flatten: true, cwd: "src/javascripts/", src: "**/*.min.js", dest: "build/assets/"},
           // Copy webfont assets.
           { expand: true, flatten: true, cwd: "src/fonts/", src: "**", dest: "build/assets/"},    
+           // Copy image assets.
+          { expand: true, flatten: true, cwd: "src/images/", src: "**", dest: "build/assets/"},
           // Copy Locale files.
           { expand: true, flatten: true, cwd: "src/locales/", src: "**", dest: "build/locales"},   
         ]

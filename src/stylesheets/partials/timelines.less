@@ -168,6 +168,7 @@ dl.timeline {
 		// Green marker on the timeline.
 		& + dd:before {
 			background-color: ~"{{ page.brand.color_state_ok }}";
+			background-image: none; // Remove the shader.
 			opacity: 1;
 		}
 	}
@@ -177,6 +178,7 @@ dl.timeline {
 		// Green marker on the timeline.
 		& + dd:before {
 			background-color: ~"{{ page.brand.color_state_warning }}";
+			background-image: none; // Remove the shader.
 			opacity: 1;
 		}
 	}
@@ -193,8 +195,7 @@ dl.timeline {
 			top: 0;
 			bottom: 0;
 			left: -1px;
-			opacity: @timeline-opacity;
-			background-color: #000;
+			background-image: url(~'{{ "shader-pixel.png" | asset_url }}');
 		}
 
 		// Pad the left side of the timeline.
@@ -218,25 +219,19 @@ dl.timeline {
 		// Specific styles for the timeline when used in the page header.
 		&.timeline-header {
 			// Vertical timeline line.
-			&:before { background: ~"{{ page.brand.color_header_text }}"; top: 2px; }
+			&:before { background-color: ~"{{ page.brand.color_header_background }}"; top: 2px; }
 
 			// Timeline key date bullets.
-			> dt:before { background-color: ~"{{ page.brand.color_header_background }}"; opacity: 1; }
-
-			// Text colour marker on the timeline.
-			> dt + dd:before { background-color: ~"{{ page.brand.color_header_text }}"; }
+			> dt:before, > dt + dd:before { background-color: ~"{{ page.brand.color_header_background }}"; }
 		}
 
 		// Specific styles for the timeline when used in the page body.
 		&.timeline-body {
 			// Vertical timeline line.
-			&:before { background-color: ~"{{ page.brand.color_body_text }}"; bottom: 2px; }
+			&:before { background-color: ~"{{ page.brand.color_body_background }}"; bottom: 2px; }
 
 			// Timeline key date bullets.
-			> dt:before { background-color: ~"{{ page.brand.color_body_background }}"; opacity: 1; }
-
-			// Text marker on the timeline.
-			> dt + dd:before { background-color: ~"{{ page.brand.color_body_text }}"; }			
+			> dt:before, > dt + dd:before { background-color: ~"{{ page.brand.color_body_background }}"; }		
 		}
 	}
 
@@ -309,8 +304,7 @@ dl.timeline {
 			position: absolute;
 			left: -(@size / 2);
 			margin-top: 2px;
-			background-color: red;
-			opacity: @timeline-opacity;
+			background-image: url(~'{{ "shader-pixel.png" | asset_url }}');
 		}
 	}
 }
