@@ -204,7 +204,7 @@
                                 <!-- Loop over the updates for this apology, which we want to group by date. -->
                                 {% for update in apology.updates  %}
                                     <!-- Snapshot the date by which we want to group updates. -->
-                                    {% capture grouped_date %}{{ update.created_at | date: '%a, %-d %b %Y' }}{% endcapture %}
+                                    {% capture grouped_date %}{{ update.created_at | date: '%a %-d %b %Y' }}{% endcapture %}
 
                                     <!-- See if this is the first iteration of the loop. -->
                                     {% if forloop.first %}
