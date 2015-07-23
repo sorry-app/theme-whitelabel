@@ -179,13 +179,7 @@ dl.timeline {
 			background-color: ~"{{ page.brand.color_state_warning }}";
 			opacity: 1;
 		}
-	}	
-
-	// Timeline footer.
-	> dt.event.event-final {
-		// Fade out the bullet nice and soft.
-		& + dd:before { opacity: 0.1; }
-	}	
+	}
 
 	// Graphical timeline on larger scale devices.
 	// --------------------------------------------------
@@ -224,10 +218,10 @@ dl.timeline {
 		// Specific styles for the timeline when used in the page header.
 		&.timeline-header {
 			// Vertical timeline line.
-			&:before { background: ~"{{ page.brand.color_header_text }}"; }
+			&:before { background: ~"{{ page.brand.color_header_text }}"; top: 2px; }
 
 			// Timeline key date bullets.
-			> dt:before { background-color: ~"{{ page.brand.color_header_background }}"; }
+			> dt:before { background-color: ~"{{ page.brand.color_header_background }}"; opacity: 1; }
 
 			// Text colour marker on the timeline.
 			> dt + dd:before { background-color: ~"{{ page.brand.color_header_text }}"; }
@@ -236,10 +230,10 @@ dl.timeline {
 		// Specific styles for the timeline when used in the page body.
 		&.timeline-body {
 			// Vertical timeline line.
-			&:before { background-color: ~"{{ page.brand.color_body_text }}"; }
+			&:before { background-color: ~"{{ page.brand.color_body_text }}"; bottom: 2px; }
 
 			// Timeline key date bullets.
-			> dt:before { background-color: ~"{{ page.brand.color_body_background }}"; }
+			> dt:before { background-color: ~"{{ page.brand.color_body_background }}"; opacity: 1; }
 
 			// Text marker on the timeline.
 			> dt + dd:before { background-color: ~"{{ page.brand.color_body_text }}"; }			
@@ -314,7 +308,8 @@ dl.timeline {
 			border-radius: 50%;
 			position: absolute;
 			left: -(@size / 2);
-			background-color: @color;
+			margin-top: 2px;
+			background-color: red;
 			opacity: 0.2;
 		}
 	}
