@@ -8,5 +8,6 @@
 	"twitter": "Follow us on Twitter",
 	"facebook": "Friend us on Facebook",
 	"google-plus": "Find us on Google+",
-	"no-more-notices": "No further notices from the past 7 days."
+	"no-more-notices": "No further notices from the past 7 days.",
+	"default_date_format": "י%a, %-d %b %Y"
 }
