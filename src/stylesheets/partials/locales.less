@@ -1,0 +1,122 @@
+/*
+	 Right-To-Left Text Direction.
+*/
+.locale-ar,
+.locale-fa,
+.locale-sd,
+.locale-arc,
+.locale-glk,
+.locale-ug,
+.locale-bcc,
+.locale-he,
+.locale-ur,
+.locale-bqi,
+.locale-mzn,
+.locale-ur,
+.locale-ckb,
+.locale-pnb,
+.locale-yi,
+.locale-dv,
+.locale-ps {
+    // Import the Bootstrap alterations for RTL.
+    @import "../vendor/bootstrap-rtl/bootstrap-rtl.less";
+
+	// Set default direction.
+	direction: rtl !important;
+
+	//
+	// Timelines
+	// --------------------------------------------------
+
+	// Top level timeline element.
+	dl.timeline {
+		// Special title timeline item.
+		> dt.title + dd {
+			/* Style the 'all systems are go' notice as a green box. */
+			h2, .h2 {
+				// Tick icon within the header.
+				i {
+					float: left;
+				}
+			}
+		}
+
+		// Standard timeline item.
+		> dt + dd {
+			// Second level timeline, one for each notice.
+			> dl {
+				// Container for a given dates notices.
+				> dd {
+					// Third level timeline, one for each date group.
+					> dl {
+						// Main text body for each update.
+						> dd {
+							// Graphical timeline on larger scale devices.
+							@media (min-width: @grid-float-breakpoint) {
+								/* Horizontal alignment of dates/times. */
+								padding-left: initial;
+								padding-right: (@timeline-time-width + @timeline-horizontal-spacing);
+							}
+						}
+					}
+
+					// Graphical timeline on larger scale devices.
+					@media (min-width: @grid-float-breakpoint) {
+						/* Horizontal alignment of dates/times. */
+						padding-left: initial;
+						padding-right: (@timeline-date-width + @timeline-horizontal-spacing);
+					}
+				}
+			}
+		}
+
+		// Special event types.
+		// --------------------------------------------------
+
+		// Ongoing event type.
+		> dt.event.event-ongoing {
+			// Special colour style for the ongoing message.
+			& + dd > dl > dt {
+				// Little bullhorn icon for the notice.
+				i {
+					float: left;
+				}
+			}
+		}
+
+		// Graphical timeline on larger scale devices.
+		// --------------------------------------------------
+
+		@media (min-width: @grid-float-breakpoint) {
+			// Vertical timeline line.
+			&:before {
+				right: -1px;
+				left: initial;
+			}
+
+			// Pad the right side of the timeline.
+			padding-left: 0;
+			padding-right: (@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2);
+
+			// Add a bullet to the timeline on larger screens.
+			> dt, > dt + dd { &:before { left: intial; right: -(@timeline-bullet-size / 2);} }
+
+			// Horizontal layout for the events.
+			> dt.event + dd > dl {
+				dt {
+					float: right;
+				}
+			}
+		}
+	}
+}
+
+.locale-he {
+	// Switch to using OpenSans Hebrew Font.
+	font-family: "Open Sans Hebrew", Arial, sans-serif !important;
+	
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		font-family: "Open Sans Hebrew", Arial, sans-serif !important;
+	}
+}

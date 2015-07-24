@@ -1,0 +1,21 @@
+{
+	"navbar": {
+		"title": "",
+		"toggle-navigation": "הצג ניווט",
+		"logo-for": "לוגו ל"
+	},
+	"states": {
+		"current-status": "מצב נוכחי",
+		"all-systems-are-go": "כל המערכות עובדות",
+		"ongoing": "מתמשך",
+		"no-more-notices": "אין הודעות נוספות מהשבוע האחרון"
+	},
+	"social": {
+		"twitter": "עקבו אחרינו בטוויטר",
+		"facebook": "חפשו אותנו בפייסבוק"
+	},
+	"date_formats": {
+		"default": "%a, %-d %b %Y",
+		"timestamp": "%X %Z"
+	}
+}
