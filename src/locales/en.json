@@ -10,7 +10,7 @@
 	"google-plus": "Find us on Google+",
 	"no-more-notices": "No further notices from the past 7 days.",
 	"date_formats": {
-		"default": "י%a, %-d %b %Y",
+		"default": "%a, %-d %b %Y",
 		"timestamp": "%X %Z"
 	}
 }
