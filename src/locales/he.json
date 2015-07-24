@@ -8,6 +8,5 @@
 	"twitter": "עקבו אחרינו בטוויטר",
 	"facebook": "חפשו אותנו בפייסבוק",
 	"no-more-notices": "אין הודעות נוספות מהשבוע האחרון",
-	"powered-by": "מונע ע\"י",
-	"powered-by-title": "Learn more about the company who provides this status page."
+	"default_date_format": "יום %a', %-d %B %Y"
 }

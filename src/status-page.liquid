@@ -78,7 +78,13 @@
                             </div>
 
                             <!-- Page Title. -->
-                            <span class="navbar-brand hidden-xs">{{ 'title' | t }}</span>
+                            <!-- Title is optional for locales. -->
+                            {% assign title = 'title' | t  %}
+
+                            <!-- Display the title only if one exists. -->
+                            {% if title != '' %}
+                                <span class="navbar-brand hidden-xs">{{ title }}</span>
+                            {% endif %}
                         {% else %}
                             <!-- Page Name. -->
                             <span class="navbar-brand">{{ page.name }}</span>
@@ -204,7 +210,7 @@
                                 <!-- Loop over the updates for this apology, which we want to group by date. -->
                                 {% for update in apology.updates  %}
                                     <!-- Snapshot the date by which we want to group updates. -->
-                                    {% capture grouped_date %}{{ update.created_at | date: '%a %-d %b %Y' }}{% endcapture %}
+                                    {% capture grouped_date %}{{ update.created_at | date: "י%a, %-d %b %Y" }}{% endcapture %}
 
                                     <!-- See if this is the first iteration of the loop. -->
                                     {% if forloop.first %}
@@ -266,7 +272,7 @@
         <footer>
             <div class="container container-md">
                 <!-- Accreditation link, we'd love it if you'd leave this in place, but no hard feelings if you don't. -->
-                <bdo dir="ltr"><a href="http://www.sorryapp.com" target="_blank" title="{{ 'powered-by-title' | t }}" class="copyright">{{ 'powered-by' | t }} Sorry&#8482;</a></bdo>
+                <bdo dir="ltr"><a href="http://www.sorryapp.com" target="_blank" title="Learn more about the company who provides this status page." class="copyright">Powered By Sorry&#8482;</a></bdo>
             </div>
         </footer>
 
