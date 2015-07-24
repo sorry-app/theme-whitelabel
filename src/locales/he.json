@@ -15,7 +15,7 @@
 		"facebook": "חפשו אותנו בפייסבוק"
 	},
 	"date_formats": {
-		"default": "%a, %-d %b %Y",
-		"timestamp": "%X %Z"
+		"default": "יום %a', %-d %B %Y",
+		"timestamp": "%X"
 	}
 }
