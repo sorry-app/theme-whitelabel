@@ -8,5 +8,8 @@
 	"twitter": "עקבו אחרינו בטוויטר",
 	"facebook": "חפשו אותנו בפייסבוק",
 	"no-more-notices": "אין הודעות נוספות מהשבוע האחרון",
-	"default_date_format": "יום %a', %-d %B %Y"
+	"date_formats": {
+		"default": "יום %a', %-d %B %Y",
+		"timestamp": "%X"
+	}	
 }
