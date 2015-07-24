@@ -63,7 +63,7 @@
                         {% if page.support.size > 0 %}
                             <!-- Toggle Button For Mobile Nav. -->
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#status-page-navbar-collapse-1">
-                                <span class="sr-only">{{ 'toggle-navigation' | t }}</span>
+                                <span class="sr-only">{{ 'navbar.toggle-navigation' | t }}</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -74,12 +74,12 @@
                         {% if page.brand.logo %}
                             <div class="navbar-logo">
                                 <!-- Logo. -->
-                                <img src="{{ page.brand.logo.url }}" alt="{{ 'logo-for' | t }} {{ page.name }}" />
+                                <img src="{{ page.brand.logo.url }}" alt="{{ 'navbar.logo-for' | t }} {{ page.name }}" />
                             </div>
 
                             <!-- Page Title. -->
                             <!-- Title is optional for locales. -->
-                            {% assign title = 'title' | t  %}
+                            {% assign title = 'navbar.title' | t  %}
 
                             <!-- Display the title only if one exists. -->
                             {% if title != '' %}
@@ -127,7 +127,7 @@
                             <dt class="event event-ongoing" id="apology-{{ apology.id }}">Notice #{{ apology.id }}</dt>
                                 <dd>
                                     <dl>
-                                        <dt>{{ 'ongoing' | t }} <i class="fa fa-bullhorn"></i></dt>
+                                        <dt>{{ 'states.ongoing' | t }} <i class="fa fa-bullhorn"></i></dt>
                                             <dd>
                                                 <dl>
                                                     <!-- Loop over any updates we have for the apology -->
@@ -148,11 +148,11 @@
                                     </dl>
                                 </dd>
                         {% else %}
-                            <dt class="title">{{ 'current-status' | t }}</dt>
+                            <dt class="title">{{ 'states.current-status' | t }}</dt>
                                 <dd>
                                     <!-- No current apologies found -->
                                     <!-- We have nothing to be sorry about, so all is well. -->
-                                    <h2>{{ 'all-systems-are-go' | t }} <i class="fa fa-check-circle-o"></i></h2>
+                                    <h2>{{ 'states.all-systems-are-go' | t }} <i class="fa fa-check-circle-o"></i></h2>
 
                                     <!-- Output social links if any are defined. -->
                                     {% if page.social.size > 0 %}
@@ -164,7 +164,7 @@
                                                 {% if page.social.twitter %}
                                                     <li>
                                                         <a href="https://twitter.com/{{ page.social.twitter }}" target="_blank">
-                                                            <i class="fa fa-twitter fa-fw"></i> {{ 'twitter' | t }}
+                                                            <i class="fa fa-twitter fa-fw"></i> {{ 'social.twitter' | t }}
                                                         </a>
                                                     </li>
                                                 {% endif %}
@@ -173,7 +173,7 @@
                                                 {% if page.social.facebook %}
                                                     <li>
                                                         <a href="https://www.facebook.com/{{ page.social.facebook }}" target="_blank">
-                                                           <i class="fa fa-facebook fa-fw"></i> {{ 'facebook' | t }}
+                                                           <i class="fa fa-facebook fa-fw"></i> {{ 'social.facebook' | t }}
                                                         </a>
                                                     </li>
                                                 {% endif %}
@@ -182,7 +182,7 @@
                                                 {% if page.social.google_plus %}
                                                     <li>
                                                         <a href="https://plus.google.com/{{ page.social.google_plus }}/" target="_blank">
-                                                           <i class="fa fa-google-plus fa-fw"></i> {{ 'google-plus' | t }}
+                                                           <i class="fa fa-google-plus fa-fw"></i> {{ 'social.google-plus' | t }}
                                                         </a>
                                                     </li>
                                                 {% endif %}
@@ -253,7 +253,7 @@
 
                     <!-- End of Timeline. -->
                     <dt class="event event-final" role="presentation">Past notices</dt>
-                        <dd>{{ 'no-more-notices' | t }}</dd>
+                        <dd>{{ 'states.no-more-notices' | t }}</dd>
                 </dl>
             </div> 
         </main>
@@ -262,7 +262,7 @@
         <footer>
             <div class="container container-md">
                 <!-- Accreditation link, we'd love it if you'd leave this in place, but no hard feelings if you don't. -->
-                <bdo dir="ltr"><a href="http://www.sorryapp.com" target="_blank" title="Learn more about the company who provides this status page." class="copyright">Powered By Sorry&#8482;</a></bdo>
+                <bdo dir="ltr"><a href="http://www.sorryapp.com" target="_blank" title="Learn more about the company who provides this status page." class="copyright">Powered by Sorry&#8482;</a></bdo>
             </div>
         </footer>
 

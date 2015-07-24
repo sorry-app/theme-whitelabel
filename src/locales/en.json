@@ -1,14 +1,20 @@
 {
-	"title": "System Status",
-	"toggle-navigation": "Toggle navigation",
-	"logo-for": "Logo for",
-	"current-status": "Current Status",
-	"all-systems-are-go": "All systems are go",
-	"ongoing": "Ongoing",
-	"twitter": "Follow us on Twitter",
-	"facebook": "Friend us on Facebook",
-	"google-plus": "Find us on Google+",
-	"no-more-notices": "No further notices from the past 7 days.",
+	"navbar": {
+		"title": "System Status",
+		"toggle-navigation": "Toggle navigation",
+		"logo-for": "Logo for"
+	},
+	"states": {
+		"current-status": "Current Status",
+		"all-systems-are-go": "All systems are go",
+		"ongoing": "Ongoing",
+		"no-more-notices": "No further notices from the past 7 days."
+	},
+	"social": {
+		"twitter": "Follow us on Twitter",
+		"facebook": "Friend us on Facebook",
+		"google-plus": "Find us on Google+"
+	},
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
 		"timestamp": "%X %Z"
