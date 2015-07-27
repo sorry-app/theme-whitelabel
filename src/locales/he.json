@@ -7,7 +7,7 @@
 	"states": {
 		"current-status": "מצב נוכחי",
 		"all-systems-are-go": "כל המערכות עובדות",
-		"ongoing": "מתמשך",
+		"ongoing": "בתהליך",
 		"no-more-notices": "אין הודעות נוספות מהשבוע האחרון"
 	},
 	"social": {
