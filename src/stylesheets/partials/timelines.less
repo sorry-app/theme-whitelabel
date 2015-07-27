@@ -195,7 +195,6 @@ dl.timeline {
 			top: 0;
 			bottom: 0;
 			left: -1px;
-			background-image: url(~'{{ "shader-pixel.png" | asset_url }}');
 		}
 
 		// Pad the left side of the timeline.
@@ -219,19 +218,25 @@ dl.timeline {
 		// Specific styles for the timeline when used in the page header.
 		&.timeline-header {
 			// Vertical timeline line.
-			&:before { background-color: ~"{{ page.brand.color_header_background }}"; top: 2px; }
+			&:before { top: 2px; }
 
 			// Timeline key date bullets.
-			> dt:before, > dt + dd:before { background-color: ~"{{ page.brand.color_header_background }}"; }
+			&:before, > dt:before, > dt + dd:before { 
+				background-color: ~"{{ page.brand.color_header_background }}"; 
+				.pixel-shader('{{ page.brand.color_header_text }}');
+			}
 		}
 
 		// Specific styles for the timeline when used in the page body.
 		&.timeline-body {
 			// Vertical timeline line.
-			&:before { background-color: ~"{{ page.brand.color_body_background }}"; bottom: 2px; }
+			&:before { bottom: 2px; }
 
 			// Timeline key date bullets.
-			> dt:before, > dt + dd:before { background-color: ~"{{ page.brand.color_body_background }}"; }		
+			&:before, > dt:before, > dt + dd:before { 
+				background-color: ~"{{ page.brand.color_body_background }}"; 
+				.pixel-shader('{{ page.brand.color_body_text }}');
+			}		
 		}
 	}
 
@@ -304,7 +309,11 @@ dl.timeline {
 			position: absolute;
 			left: -(@size / 2);
 			margin-top: 2px;
-			background-image: url(~'{{ "shader-pixel.png" | asset_url }}');
 		}
+	}
+
+	// Shade overlay a background using a dynamic shader pixel.
+	.pixel-shader(@color: #333) {
+		background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg width="1px" height="1px" viewBox="0 0 1 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="shader-pixel-artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect id="shader-pixel" fill-opacity="0.25" fill="@{color}" x="0" y="0" width="1" height="1"></rect></g></svg>');
 	}
 }
