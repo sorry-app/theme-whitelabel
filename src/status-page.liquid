@@ -136,7 +136,7 @@
                                                         <!-- Output the date for the update. -->
                                                         <dt id="update-{{ update.id }}">
                                                             <!-- Datetime, augmented to 'time_ago_in_words' by moment.js -->
-                                                            <time class="ago" datetime="{{ update.created_at }}">
+                                                            <time class="ago" datetime="{{ update.created_at | date: '%FT%T%z' }}">
                                                                 {{ update.created_at | date: '%FT%TZ' }}
                                                             </time>
                                                         </dt>
