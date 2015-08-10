@@ -104,11 +104,6 @@
                         <div class="collapse navbar-collapse" id="status-page-navbar-collapse-1">
                             <!-- Main Status Page Nav. -->
                             <ul class="nav navbar-nav navbar-right">
-                                <!-- Subscribe Button. -->
-                                {% if page.subscription_options.size > 0 %}
-                                     Subscribe
-                                {% endif %}
-
                                 <!-- Support Link. -->
                                 {% if page.support.url %}
                                     <li><a href="{{ page.support.url }}" target="_blank">{{ page.support.url | remove: "https://" | remove: "http://" }}</a></li>
