@@ -91,14 +91,17 @@
                         {% endif %}
                     </div>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Link to the Contact Support section. -->
-                        <!-- If there are any support or social links configurede. -->
-                        {% if page.support.size > 0 or page.social.size > 0 %}
-                            <!-- Anchor link to the bottom of the page where support links are. -->
-                            <li><a href="#contact-support">{{ 'support.contact-support' | t }}</a></li>
-                        {% endif %}
-                    </ul>
+                    <!-- Link to the Contact Support section. -->
+                    <!-- If there are any support or social links configurede. -->
+                    {% if page.support.size > 0 or page.social.size > 0 %}
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="status-page-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <!-- Anchor link to the bottom of the page where support links are. -->
+                                <li><a href="#contact-support">{{ 'support.contact-support' | t }}</a></li>
+                            </ul>
+                        </div>
+                    {% endif %}
                 </div>
             </nav>
 
