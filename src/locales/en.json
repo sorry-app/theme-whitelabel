@@ -22,5 +22,8 @@
 	"support": {
 		"disagree": "Don’t agree with this status?",
 		"contact-support": "Contact Support"
+	},
+	"subscriptions": {
+		"slack": "Get Updates via Slack"
 	}
 }
