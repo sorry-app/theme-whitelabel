@@ -18,5 +18,9 @@
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
 		"timestamp": "%X %Z"
+	},
+	"support": {
+		"disagree": "Don’t agree with this status?",
+		"contact-support": "Contact Support"
 	}
 }

@@ -92,35 +92,13 @@
                     </div>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <!-- Subscribe Button. -->
-                        {% if page.subscription_options.size > 0 %}
-                             <li><a class="btn btn-default navbar-btn" href="{{ page.subscription_options.first.url }}">Subscribe via {{ page.subscription_options.first.type | capitalize }} <i class="{{ page.subscription_options.first.icon }}"></i></a></li>
+                        <!-- Link to the Contact Support section. -->
+                        <!-- If there are any support or social links configurede. -->
+                        {% if page.support.size > 0 or page.social.size > 0 %}
+                            <!-- Anchor link to the bottom of the page where support links are. -->
+                            <li><a href="#contact-support">{{ 'support.contact-support' | t }}</a></li>
                         {% endif %}
                     </ul>
-
-                    <!-- Support Links If Defined. -->
-                    {% if page.support.size > 0 %}
-                        <!-- Collapsable Nav On Mobile. -->
-                        <div class="collapse navbar-collapse" id="status-page-navbar-collapse-1">
-                            <!-- Main Status Page Nav. -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <!-- Support Link. -->
-                                {% if page.support.url %}
-                                    <li><a href="{{ page.support.url }}" target="_blank">{{ page.support.url | remove: "https://" | remove: "http://" }}</a></li>
-                                {% endif %}
-
-                                <!-- Support Email Link. -->
-                                {% if page.support.email %}
-                                    <li><a href="mailto:{{ page.support.email }}">{{ page.support.email }}</a></li>
-                                {% endif %}
-
-                                <!-- Support Telephone Link. -->
-                                {% if page.support.telephone %}
-                                    <li><a href="tel:{{ page.support.telephone }}">{{ page.support.telephone }}</a></li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                    {% endif %}
                 </div>
             </nav>
 
@@ -160,42 +138,6 @@
                                     <!-- No current apologies found -->
                                     <!-- We have nothing to be sorry about, so all is well. -->
                                     <h2>{{ 'states.all-systems-are-go' | t }} <i class="fa fa-check-circle-o"></i></h2>
-
-                                    <!-- Output social links if any are defined. -->
-                                    {% if page.social.size > 0 %}
-                                        <section class="stay-informed-nav" id="stay-informed-nav">
-                                            <!-- Links to keep up to date. -->
-                                            <!-- Usualy social links to Twitter etc. -->
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <!-- Twitter Profile If Enabled. -->
-                                                {% if page.social.twitter %}
-                                                    <li>
-                                                        <a href="https://twitter.com/{{ page.social.twitter }}" target="_blank">
-                                                            <i class="fa fa-twitter fa-fw"></i> {{ 'social.twitter' | t }}
-                                                        </a>
-                                                    </li>
-                                                {% endif %}
-
-                                                <!-- Facebook Profile If Enabled. -->
-                                                {% if page.social.facebook %}
-                                                    <li>
-                                                        <a href="https://www.facebook.com/{{ page.social.facebook }}" target="_blank">
-                                                           <i class="fa fa-facebook fa-fw"></i> {{ 'social.facebook' | t }}
-                                                        </a>
-                                                    </li>
-                                                {% endif %}
-
-                                                <!-- Google Plus Profile If Enabled. -->
-                                                {% if page.social.google_plus %}
-                                                    <li>
-                                                        <a href="https://plus.google.com/{{ page.social.google_plus }}/" target="_blank">
-                                                           <i class="fa fa-google-plus fa-fw"></i> {{ 'social.google-plus' | t }}
-                                                        </a>
-                                                    </li>
-                                                {% endif %}
-                                            </ul>
-                                        </section>
-                                    {% endif %}
                                 </dd>
                         {% endfor %}
                     </dl>
@@ -268,8 +210,68 @@
         <!-- Page Footer & Copyright. -->
         <footer>
             <div class="container container-md">
+                <!-- Support Links If Defined. -->
+                {% if page.support.size > 0 or page.social.size > 0 %}
+                    <div class="support" id="contact-support">
+                        <h4>{{ 'support.contact-support' | t }}</h4>
+
+                        <!-- Main Status Page Nav. -->
+                        <ul class="list-inline">
+                            <!-- Support Link. -->
+                            {% if page.support.url %}
+                                <li>
+                                    <a href="{{ page.support.url }}" target="_blank">{{ page.support.url | remove: "https://" | remove: "http://" }}</a>
+                                </li>
+                            {% endif %}
+
+                            <!-- Support Email Link. -->
+                            {% if page.support.email %}
+                                <li>
+                                    <a href="mailto:{{ page.support.email }}">{{ page.support.email }}</a>
+                                </li>
+                            {% endif %}
+
+                            <!-- Support Telephone Link. -->
+                            {% if page.support.telephone %}
+                                <li>
+                                    <a href="tel:{{ page.support.telephone }}">{{ page.support.telephone }}</a>
+                                </li>
+                            {% endif %}
+
+                            <!-- Twitter Profile If Enabled. -->
+                            {% if page.social.twitter %}
+                                <li>
+                                    <a href="https://twitter.com/{{ page.social.twitter }}" target="_blank">
+                                        <i class="fa fa-twitter fa-fw"></i> {{ 'social.twitter' | t }}
+                                    </a>
+                                </li>
+                            {% endif %}
+
+                            <!-- Facebook Profile If Enabled. -->
+                            {% if page.social.facebook %}
+                                <li>
+                                    <a href="https://www.facebook.com/{{ page.social.facebook }}" target="_blank">
+                                       <i class="fa fa-facebook fa-fw"></i> {{ 'social.facebook' | t }}
+                                    </a>
+                                </li>
+                            {% endif %}
+
+                            <!-- Google Plus Profile If Enabled. -->
+                            {% if page.social.google_plus %}
+                                <li>
+                                    <a href="https://plus.google.com/{{ page.social.google_plus }}/" target="_blank">
+                                       <i class="fa fa-google-plus fa-fw"></i> {{ 'social.google-plus' | t }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                {% endif %}
+
                 <!-- Accreditation link, we'd love it if you'd leave this in place, but no hard feelings if you don't. -->
-                <bdo dir="ltr"><a href="http://www.sorryapp.com" target="_blank" title="Learn more about the company who provides this status page." class="copyright">Powered by Sorry&#8482;</a></bdo>
+                <div class="powered-by">
+                    <bdo dir="ltr"><a href="http://www.sorryapp.com" target="_blank" title="Learn more about the company who provides this status page." class="copyright">Powered by Sorry&#8482;</a></bdo>
+                </div>
             </div>
         </footer>
 
