@@ -1,5 +1,4 @@
 footer {
-
 	margin-bottom: @line-height-computed;
 
 	@media (min-width: @screen-sm-min) {
@@ -12,5 +11,25 @@ footer {
 
 		margin-bottom: (@line-height-computed * 7);
 
+	}
+
+	.footer-body {
+		margin-bottom: (@line-height-computed * 3);
+		line-height: 1.8;
+
+		h4 {
+			margin-bottom: @line-height-computed;
+		}
+	}
+
+	a, a:active, a:visited {
+		color: ~"{{ page.brand.color_body_links }}";
+		opacity: 0.9;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+			color: ~"{{ page.brand.color_body_links }}";
+		}
 	}
 }
