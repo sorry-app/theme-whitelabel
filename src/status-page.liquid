@@ -138,6 +138,10 @@
                                     <!-- No current apologies found -->
                                     <!-- We have nothing to be sorry about, so all is well. -->
                                     <h2>{{ 'states.all-systems-are-go' | t }} <i class="fa fa-check-circle-o"></i></h2>
+                                        <!-- Link to contact if any are provided. -->
+                                        {% if page.support.size > 0 or page.social.size > 0 %}
+                                            <p class="disagree">{{ 'support.disagree' | t }} <a href="#contact-support">{{ 'support.contact-support' | t }}</a></p>
+                                        {% endif %}
                                 </dd>
                         {% endfor %}
                     </dl>
