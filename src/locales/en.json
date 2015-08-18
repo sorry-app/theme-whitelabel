@@ -24,6 +24,7 @@
 		"contact-support": "Contact Support"
 	},
 	"subscriptions": {
+		"default": "Subscribe",
 		"slack": "Get Updates via Slack"
 	}
 }

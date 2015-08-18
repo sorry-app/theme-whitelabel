@@ -59,17 +59,6 @@
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
-                        <!-- Nav Toggle With Support Links. -->
-                        {% if page.support.size > 0 %}
-                            <!-- Toggle Button For Mobile Nav. -->
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#status-page-navbar-collapse-1">
-                                <span class="sr-only">{{ 'navbar.toggle-navigation' | t }}</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        {% endif %}
-
                         <!-- Brand. -->
                         {% if page.brand.logo %}
                             <div class="navbar-logo">
@@ -89,34 +78,18 @@
                             <!-- Page Name. -->
                             <span class="navbar-brand">{{ page.name }}</span>
                         {% endif %}
+
+                        <!-- If slack is enabled display the subscription button. -->
+                        {% if page.subscription_options.slack %}
+                            <form action="{{ page.subscription_options.slack.url }}" method="get">
+                                <button class="btn btn-subscribe navbar-btn navbar-header-btn">
+                                    <i class="fa fa-bell"></i> 
+                                        <span class="visible-xs-inline">{{ 'subscriptions.default' | t }}</span>
+                                        <span class="hidden-xs">{{ 'subscriptions.slack' | t }}</span>
+                                </button>
+                            </form>
+                        {% endif %}                        
                     </div>
-
-                    <!-- Link to the Contact Support section. -->
-                    <!-- If there are any support or social links configurede. -->
-                    {% if page.support.size > 0 or page.social.size > 0 or page.subscription_options.slack %}
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="status-page-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-right">
-                                {% if page.support.size > 0 or page.social.size > 0 %}
-                                    <!-- Anchor link to the bottom of the page where support links are. -->
-                                    <li>
-                                        <a href="#contact-support">{{ 'support.contact-support' | t }}</a>
-                                    </li>
-                                {% endif %}
-
-                                <!-- If slack is enabled display the subscription button. -->
-                                {% if page.subscription_options.slack %}
-                                    <li>
-                                        <form action="{{ page.subscription_options.slack.url }}" method="get">
-                                            <button class="btn btn-subscribe navbar-btn">
-                                                <i class="fa fa-bell"></i> {{ 'subscriptions.slack' | t }}
-                                            </button>
-                                        </form>
-                                    </li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                    {% endif %}
                 </div>
             </nav>
 
