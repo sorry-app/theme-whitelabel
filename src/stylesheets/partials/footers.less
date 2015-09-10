@@ -34,7 +34,21 @@ footer {
 			}
 		}
 
-		ul.list-support-links { margin-bottom: @line-height-computed * 2; }
+		ul.list-support-links { 
+			margin-bottom: @line-height-computed * 2; 
+
+			@media (min-width: @screen-xs-max) {
+				// Remove link styling on larger screens.
+				li a[href^=tel] {
+					text-decoration: none !important;
+					color: ~"{{ page.brand.color_body_text }}" !important;
+
+					&:hover, &:active {
+						cursor: text;
+					}
+				}
+			}
+		}
 
 		ul.list-social-links {
 			margin-bottom: 0;
