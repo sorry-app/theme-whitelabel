@@ -11,13 +11,24 @@ footer {
 
 }
 
+a {
+	text-decoration: underline;
+	opacity: 0.9;
+
+	&:hover, &:active { opacity: 1; }
+}
+
 .copyright {
 	opacity: 0.5;
 	color: ~"{{ page.brand.color_body_text }}";
+	text-decoration: none !important;
 
 	&:hover, &:active, &:visited {
 		color: ~"{{ page.brand.color_body_text }}";
 		opacity: 1;
-		text-decoration: none;
 	}
+}
+
+.disagree {
+	font-size: 16px;
 }
