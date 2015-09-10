@@ -10,18 +10,14 @@
 		"ongoing": "Ongoing",
 		"no-more-notices": "No further notices from the past 7 days."
 	},
-	"social": {
-		"twitter": "Follow us on Twitter",
-		"facebook": "Friend us on Facebook",
-		"google-plus": "Find us on Google+"
-	},
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
 		"timestamp": "%X %Z"
 	},
 	"support": {
 		"disagree": "Don’t agree with this status?",
-		"contact-support": "Contact Support"
+		"contact-support": "Contact Support",
+		"need-support": "Need Support?"
 	},
 	"subscriptions": {
 		"default": "Subscribe",
