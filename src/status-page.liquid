@@ -238,7 +238,7 @@
                             <!-- Twitter Profile If Enabled. -->
                             {% if page.social.twitter %}
                                 <li>
-                                    <a href="https://twitter.com/{{ page.social.twitter }}" target="_blank">
+                                    <a href="https://twitter.com/{{ page.social.twitter }}" target="_blank" title="{{ 'social.twitter' | t }}">
                                         <i class="fa fa-twitter fa-fw"></i>
                                     </a>
                                 </li>
@@ -247,7 +247,7 @@
                             <!-- Facebook Profile If Enabled. -->
                             {% if page.social.facebook %}
                                 <li>
-                                    <a href="https://www.facebook.com/{{ page.social.facebook }}" target="_blank">
+                                    <a href="https://www.facebook.com/{{ page.social.facebook }}" target="_blank" title="{{ 'social.facebook' | t }}">
                                        <i class="fa fa-facebook fa-fw"></i>
                                     </a>
                                 </li>
@@ -256,7 +256,7 @@
                             <!-- Google Plus Profile If Enabled. -->
                             {% if page.social.google_plus %}
                                 <li>
-                                    <a href="https://plus.google.com/{{ page.social.google_plus }}/" target="_blank">
+                                    <a href="https://plus.google.com/{{ page.social.google_plus }}/" target="_blank" title="{{ 'social.google-plus' | t }}">
                                        <i class="fa fa-google-plus fa-fw"></i>
                                     </a>
                                 </li>

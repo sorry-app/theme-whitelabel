@@ -19,6 +19,11 @@
 		"contact-support": "Contact Support",
 		"need-support": "Need Support?"
 	},
+	"social": {
+		"twitter": "Follow us on Twitter",
+		"facebook": "Friend us on Facebook",
+		"google-plus": "Find us on Google+"
+	},
 	"subscriptions": {
 		"default": "Subscribe",
 		"slack": "Get Updates via Slack"
