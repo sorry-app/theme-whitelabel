@@ -1,3 +1,5 @@
+@footer-spacing: (@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2);
+
 footer {
 	// Spacing based on screensize.
 	margin-bottom: @line-height-computed;
@@ -7,6 +9,10 @@ footer {
 	// Main body content contains support and social links.
 	.footer-body {
 		margin-bottom: (@line-height-computed * 3);
+		text-align: left;
+		.pixel-shader('{{ page.brand.color_body_text }}', 0.025);
+		border-radius: 6px;
+		padding: (@footer-spacing / 1.5) @footer-spacing;
 
 		h4 {
 			margin-bottom: @line-height-computed;
@@ -14,6 +20,7 @@ footer {
 
 		ul > li {
 			margin-bottom: (@line-height-computed / 2);
+			font-size: 16px;
 
 			a, a:active, a:visited {
 				color: ~"{{ page.brand.color_body_links }}";
@@ -23,6 +30,23 @@ footer {
 				&:focus {
 					opacity: 1;
 					color: ~"{{ page.brand.color_body_links }}";
+				}
+			}
+		}
+
+		ul.list-support-links { margin-bottom: @line-height-computed * 2; }
+
+		ul.list-social-links {
+			margin-bottom: 0;
+
+			li {
+				margin-bottom: 0;
+
+				a {
+					color: ~"{{ page.brand.color_body_text }}" !important;
+					opacity: 0.3;
+
+					&:hover, &:active { opacity: 1; }
 				}
 			}
 		}
