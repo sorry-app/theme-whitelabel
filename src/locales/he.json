@@ -1,7 +1,6 @@
 {
 	"navbar": {
 		"title": "",
-		"toggle-navigation": "הצג ניווט",
 		"logo-for": "לוגו ל"
 	},
 	"states": {
@@ -10,9 +9,13 @@
 		"ongoing": "בתהליך",
 		"no-more-notices": "אין הודעות נוספות מהשבוע האחרון"
 	},
+	"support": {
+		"need-support": "זקוק לתמיכה ?"
+	},	
 	"social": {
 		"twitter": "עקבו אחרינו בטוויטר",
-		"facebook": "חפשו אותנו בפייסבוק"
+		"facebook": "חפשו אותנו בפייסבוק",
+		"google-plus": "מצא אותנוב- Google"
 	},
 	"date_formats": {
 		"default": "יום %a', %-d %B %Y",
