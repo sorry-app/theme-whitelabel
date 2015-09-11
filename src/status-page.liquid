@@ -210,60 +210,64 @@
                     <div class="footer-body" id="contact-support">
                         <div class="row">
                             <div class="col-sm-12">
-                                <h4>{{ 'support.need-support' | t }}</h4>
+                                {% if page.support.size > 0 %}
+                                    <h4>{{ 'support.need-support' | t }}</h4>
 
-                                <!-- Main Status Page Nav. -->
-                                <ul class="list-unstyled list-support-links">
-                                    <!-- Support Link. -->
-                                    {% if page.support.url %}
-                                        <li>
-                                            <a href="{{ page.support.url }}" target="_blank">{{ page.support.url }}</a>
-                                        </li>
-                                    {% endif %}
+                                    <!-- Main Status Page Nav. -->
+                                    <ul class="list-unstyled list-support-links">
+                                        <!-- Support Link. -->
+                                        {% if page.support.url %}
+                                            <li>
+                                                <a href="{{ page.support.url }}" target="_blank">{{ page.support.url }}</a>
+                                            </li>
+                                        {% endif %}
 
-                                    <!-- Support Email Link. -->
-                                    {% if page.support.email %}
-                                        <li>
-                                            <a href="mailto:{{ page.support.email }}">{{ page.support.email }}</a>
-                                        </li>
-                                    {% endif %}
+                                        <!-- Support Email Link. -->
+                                        {% if page.support.email %}
+                                            <li>
+                                                <a href="mailto:{{ page.support.email }}">{{ page.support.email }}</a>
+                                            </li>
+                                        {% endif %}
 
-                                    <!-- Support Telephone Link. -->
-                                    {% if page.support.telephone %}
-                                        <li>
-                                            <a href="tel:{{ page.support.telephone }}">{{ page.support.telephone }}</a>
-                                        </li>
-                                    {% endif %}
-                                </ul>
+                                        <!-- Support Telephone Link. -->
+                                        {% if page.support.telephone %}
+                                            <li>
+                                                <a href="tel:{{ page.support.telephone }}">{{ page.support.telephone }}</a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                {% endif %}
 
-                                <ul class="list-inline list-social-links">
-                                    <!-- Twitter Profile If Enabled. -->
-                                    {% if page.social.twitter %}
-                                        <li>
-                                            <a href="https://twitter.com/{{ page.social.twitter }}" target="_blank" title="{{ 'social.twitter' | t }}">
-                                                <i class="fa fa-twitter fa-fw"></i>
-                                            </a>
-                                        </li>
-                                    {% endif %}
+                                {% if page.social.size > 0 %}
+                                    <ul class="list-inline list-social-links">
+                                        <!-- Twitter Profile If Enabled. -->
+                                        {% if page.social.twitter %}
+                                            <li>
+                                                <a href="https://twitter.com/{{ page.social.twitter }}" target="_blank" title="{{ 'social.twitter' | t }}">
+                                                    <i class="fa fa-twitter fa-fw"></i>
+                                                </a>
+                                            </li>
+                                        {% endif %}
 
-                                    <!-- Facebook Profile If Enabled. -->
-                                    {% if page.social.facebook %}
-                                        <li>
-                                            <a href="https://www.facebook.com/{{ page.social.facebook }}" target="_blank" title="{{ 'social.facebook' | t }}">
-                                               <i class="fa fa-facebook fa-fw"></i>
-                                            </a>
-                                        </li>
-                                    {% endif %}
+                                        <!-- Facebook Profile If Enabled. -->
+                                        {% if page.social.facebook %}
+                                            <li>
+                                                <a href="https://www.facebook.com/{{ page.social.facebook }}" target="_blank" title="{{ 'social.facebook' | t }}">
+                                                   <i class="fa fa-facebook fa-fw"></i>
+                                                </a>
+                                            </li>
+                                        {% endif %}
 
-                                    <!-- Google Plus Profile If Enabled. -->
-                                    {% if page.social.google_plus %}
-                                        <li>
-                                            <a href="https://plus.google.com/{{ page.social.google_plus }}/" target="_blank" title="{{ 'social.google-plus' | t }}">
-                                               <i class="fa fa-google-plus fa-fw"></i>
-                                            </a>
-                                        </li>
-                                    {% endif %}
-                                </ul>
+                                        <!-- Google Plus Profile If Enabled. -->
+                                        {% if page.social.google_plus %}
+                                            <li>
+                                                <a href="https://plus.google.com/{{ page.social.google_plus }}/" target="_blank" title="{{ 'social.google-plus' | t }}">
+                                                   <i class="fa fa-google-plus fa-fw"></i>
+                                                </a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
