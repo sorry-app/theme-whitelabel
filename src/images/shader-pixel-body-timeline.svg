@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1px" height="1px" viewBox="0 0 1 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="shader-pixel-artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="shader-pixel" fill-opacity="0.2" fill="{{ page.brand.color_body_text }}" x="0" y="0" width="1" height="1"></rect>
+    </g>
+</svg>

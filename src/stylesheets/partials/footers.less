@@ -12,7 +12,7 @@ footer {
 		text-align: left;
 		border-radius: 6px;
 		padding: (@timeline-padding / 2);
-		.pixel-shader('{{ page.brand.color_body_text }}', 0.03);
+		background-image: url(~"{{ 'shader-pixel-footer.svg' | asset_url }}");
 
 		@media (min-width: @grid-float-breakpoint) { padding: (@footer-padding / 2) @footer-padding }
 

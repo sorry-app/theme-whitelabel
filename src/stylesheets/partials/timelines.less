@@ -224,7 +224,7 @@ dl.timeline {
 			// Timeline key date bullets.
 			&:before, > dt:before, > dt + dd:before { 
 				background-color: ~"{{ page.brand.color_header_background }}"; 
-				.pixel-shader('{{ page.brand.color_header_text }}');
+				background-image: url(~"{{ 'shader-pixel-header-timeline.svg' | asset_url }}");
 			}
 		}
 
@@ -236,7 +236,7 @@ dl.timeline {
 			// Timeline key date bullets.
 			&:before, > dt:before, > dt + dd:before { 
 				background-color: ~"{{ page.brand.color_body_background }}"; 
-				.pixel-shader('{{ page.brand.color_body_text }}');
+				background-image: url(~"{{ 'shader-pixel-body-timeline.svg' | asset_url }}");
 			}		
 		}
 	}
