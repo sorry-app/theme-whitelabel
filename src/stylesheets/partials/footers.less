@@ -1,4 +1,4 @@
-@footer-spacing: (@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2);
+@footer-padding: ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
 
 footer {
 	// Spacing based on screensize.
@@ -10,12 +10,21 @@ footer {
 	.footer-body {
 		margin-bottom: (@line-height-computed * 3);
 		text-align: left;
-		.pixel-shader('{{ page.brand.color_body_text }}', 0.025);
 		border-radius: 6px;
-		padding: (@footer-spacing / 2) @footer-spacing;
+		padding: (@timeline-padding / 2);
+		.pixel-shader('{{ page.brand.color_body_text }}', 0.03);
+
+		@media (min-width: @grid-float-breakpoint) { padding: (@footer-padding / 2) @footer-padding }
 
 		h4 {
 			margin-bottom: @line-height-computed;
+			margin-top: 0;
+		}
+
+		ul {
+			margin-bottom: @line-height-computed;
+
+			&:last-child { margin-bottom: 0; }
 		}
 
 		ul > li {
@@ -35,8 +44,6 @@ footer {
 		}
 
 		ul.list-support-links { 
-			margin-bottom: @line-height-computed * 2; 
-
 			@media (min-width: @screen-xs-max) {
 				// Remove link styling on larger screens.
 				li a[href^=tel] {
@@ -51,10 +58,8 @@ footer {
 		}
 
 		ul.list-social-links {
-			margin-bottom: 0;
-
 			li {
-				margin-bottom: 0;
+				margin-bottom: 0 !important;
 
 				a {
 					color: ~"{{ page.brand.color_body_text }}" !important;
