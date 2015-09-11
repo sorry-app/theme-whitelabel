@@ -49,9 +49,6 @@ dl.timeline {
 				font-size: 30px;
 			}
 		}
-
-		// Remove the indent.
-		@media (min-width: @grid-float-breakpoint) { margin-left: -(@timeline-horizontal-spacing * 2); }
 	}
 
 	// Standard timeline item.
@@ -198,9 +195,8 @@ dl.timeline {
 		}
 
 		// Pad the left side of the timeline.
-		padding: 0;
+		padding: 0 ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
 		margin: 0;
-		padding-left: (@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2);
 
 		// Add a bullet to the timeline on larger screens.
 		> dt, > dt + dd { .timeline-bullet(); }
