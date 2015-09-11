@@ -1,7 +1,6 @@
 {
 	"navbar": {
 		"title": "System Status",
-		"toggle-navigation": "Toggle navigation",
 		"logo-for": "Logo for"
 	},
 	"states": {
@@ -10,13 +9,7 @@
 		"ongoing": "Ongoing",
 		"no-more-notices": "No further notices from the past 7 days."
 	},
-	"date_formats": {
-		"default": "%a, %-d %b %Y",
-		"timestamp": "%X %Z"
-	},
 	"support": {
-		"disagree": "Don’t agree with this status?",
-		"contact-support": "Contact Support",
 		"need-support": "Need Support?"
 	},
 	"social": {
@@ -27,5 +20,9 @@
 	"subscriptions": {
 		"default": "Subscribe",
 		"slack": "Get Updates via Slack"
+	},	
+	"date_formats": {
+		"default": "%a, %-d %b %Y",
+		"timestamp": "%X %Z"
 	}
 }
