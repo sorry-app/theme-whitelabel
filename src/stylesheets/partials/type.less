@@ -19,13 +19,15 @@ a {
 }
 
 .copyright {
-	opacity: 0.5;
-	color: ~"{{ page.brand.color_body_text }}";
-	text-decoration: none !important;
+	a {
+		opacity: 0.5;
+		color: ~"{{ page.brand.color_body_text }}" !important;
+		text-decoration: none !important;
 
-	&:hover, &:active, &:visited {
-		color: ~"{{ page.brand.color_body_text }}";
-		opacity: 1;
+		&:hover, &:active, &:visited {
+			color: ~"{{ page.brand.color_body_text }}";
+			opacity: 1;
+		}
 	}
 }
 
