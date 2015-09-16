@@ -1,0 +1,54 @@
+@footer-padding: ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
+
+footer {
+	// Spacing based on screensize.
+	margin-bottom: @line-height-computed;
+	@media (min-width: @screen-sm-min) { margin-bottom: (@line-height-computed * 3); }
+	@media (min-width: @screen-lg-min) { margin-bottom: (@line-height-computed * 7); }
+
+	// Main body content contains support and social links.
+	.footer-body {
+		margin-bottom: (@line-height-computed * 3);
+
+		h4 {
+			margin-bottom: @line-height-computed;
+			margin-top: 0;
+		}
+
+		ul {
+			margin-bottom: @line-height-computed;
+
+			&:last-child { margin-bottom: 0; }
+		}
+
+		ul > li {
+			margin-bottom: (@line-height-computed / 2);
+			font-size: 16px;
+
+			a, a:active, a:visited {
+				color: ~"{{ page.brand.color_body_links }}";
+				opacity: 0.9;
+
+				&:hover,
+				&:focus {
+					opacity: 1;
+					color: ~"{{ page.brand.color_body_links }}";
+				}
+			}
+		}
+
+		ul.list-support-links { 
+			@media (min-width: @screen-xs-max) {
+				// Remove link styling on larger screens.
+				li a[href^=tel] {
+					text-decoration: none !important;
+					color: ~"{{ page.brand.color_body_text }}" !important;
+
+					&:hover, &:active {
+						cursor: text;
+					}
+				}
+			}
+		}
+	}
+}

@@ -59,17 +59,6 @@
             <nav class="navbar navbar-default" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
-                        <!-- Nav Toggle With Support Links. -->
-                        {% if page.support.size > 0 %}
-                            <!-- Toggle Button For Mobile Nav. -->
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#status-page-navbar-collapse-1">
-                                <span class="sr-only">{{ 'navbar.toggle-navigation' | t }}</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        {% endif %}
-
                         <!-- Brand. -->
                         {% if page.brand.logo %}
                             <div class="navbar-logo">
@@ -89,31 +78,18 @@
                             <!-- Page Name. -->
                             <span class="navbar-brand">{{ page.name }}</span>
                         {% endif %}
+
+                        <!-- If slack is enabled display the subscription button. -->
+                        {% if page.subscription_options.slack %}
+                            <form action="{{ page.subscription_options.slack.url }}" method="get">
+                                <button class="btn btn-subscribe navbar-btn navbar-header-btn">
+                                    <i class="fa fa-slack"></i> 
+                                        <span class="visible-xs-inline">{{ 'subscriptions.default' | t }}</span>
+                                        <span class="hidden-xs">{{ 'subscriptions.slack' | t }}</span>
+                                </button>
+                            </form>
+                        {% endif %}                        
                     </div>
-
-                    <!-- Support Links If Defined. -->
-                    {% if page.support.size > 0 %}
-                        <!-- Collapsable Nav On Mobile. -->
-                        <div class="collapse navbar-collapse" id="status-page-navbar-collapse-1">
-                            <!-- Main Status Page Nav. -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <!-- Support Link. -->
-                                {% if page.support.url %}
-                                    <li><a href="{{ page.support.url }}" target="_blank">{{ page.support.url | remove: "https://" | remove: "http://" }}</a></li>
-                                {% endif %}
-
-                                <!-- Support Email Link. -->
-                                {% if page.support.email %}
-                                    <li><a href="mailto:{{ page.support.email }}">{{ page.support.email }}</a></li>
-                                {% endif %}
-
-                                <!-- Support Telephone Link. -->
-                                {% if page.support.telephone %}
-                                    <li><a href="tel:{{ page.support.telephone }}">{{ page.support.telephone }}</a></li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                    {% endif %}
                 </div>
             </nav>
 
@@ -153,7 +129,7 @@
                                     <!-- No current apologies found -->
                                     <!-- We have nothing to be sorry about, so all is well. -->
                                     <h2>{{ 'states.all-systems-are-go' | t }} <i class="fa fa-check-circle-o"></i></h2>
-
+                                
                                     <!-- Output social links if any are defined. -->
                                     {% if page.social.size > 0 %}
                                         <section class="stay-informed-nav" id="stay-informed-nav">
@@ -188,11 +164,10 @@
                                                 {% endif %}
                                             </ul>
                                         </section>
-                                    {% endif %}
+                                    {% endif %}                                
                                 </dd>
                         {% endfor %}
                     </dl>
-
                 </section>
             </div>
         </header>
@@ -261,8 +236,45 @@
         <!-- Page Footer & Copyright. -->
         <footer>
             <div class="container container-md">
+                <!-- Support Links If Defined. -->
+                {% if page.support.size > 0 %}
+                    <div class="footer-body" id="contact-support">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4>{{ 'support.need-support' | t }}</h4>
+
+                                <!-- Main Status Page Nav. -->
+                                <ul class="list-inline list-support-links">
+                                    <!-- Support Link. -->
+                                    {% if page.support.url %}
+                                        <li>
+                                            <a href="{{ page.support.url }}" target="_blank">{{ page.support.url }}</a>
+                                        </li>
+                                    {% endif %}
+
+                                    <!-- Support Email Link. -->
+                                    {% if page.support.email %}
+                                        <li>
+                                            <a href="mailto:{{ page.support.email }}">{{ page.support.email }}</a>
+                                        </li>
+                                    {% endif %}
+
+                                    <!-- Support Telephone Link. -->
+                                    {% if page.support.telephone %}
+                                        <li>
+                                            <a href="tel:{{ page.support.telephone }}">{{ page.support.telephone }}</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+
                 <!-- Accreditation link, we'd love it if you'd leave this in place, but no hard feelings if you don't. -->
-                <bdo dir="ltr"><a href="http://www.sorryapp.com" target="_blank" title="Learn more about the company who provides this status page." class="copyright">Powered by Sorry&#8482;</a></bdo>
+                <div class="footer-footer">
+                    <bdo dir="ltr"><a href="http://www.sorryapp.com" target="_blank" title="Learn more about the company who provides this status page." class="copyright">Powered by Sorry&#8482;</a></bdo>
+                </div>
             </div>
         </footer>
 

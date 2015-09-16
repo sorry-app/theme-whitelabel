@@ -31,7 +31,7 @@ dl.timeline {
 			border-radius: 6px;
 			padding: 15px 20px;
 			font-size: 24px;
-			text-align: initial;
+			text-align: left;
 			margin-top: 0;
 
 			// Tick icon within the header.
@@ -49,9 +49,6 @@ dl.timeline {
 				font-size: 30px;
 			}
 		}
-
-		// Remove the indent.
-		@media (min-width: @grid-float-breakpoint) { margin-left: -(@timeline-horizontal-spacing * 2); }
 	}
 
 	// Standard timeline item.
@@ -198,9 +195,8 @@ dl.timeline {
 		}
 
 		// Pad the left side of the timeline.
-		padding: 0;
+		padding: 0 ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
 		margin: 0;
-		padding-left: (@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2);
 
 		// Add a bullet to the timeline on larger screens.
 		> dt, > dt + dd { .timeline-bullet(); }
@@ -223,7 +219,7 @@ dl.timeline {
 			// Timeline key date bullets.
 			&:before, > dt:before, > dt + dd:before { 
 				background-color: ~"{{ page.brand.color_header_background }}"; 
-				.pixel-shader('{{ page.brand.color_header_text }}');
+				background-image: url(~"{{ 'shader-pixel-header-timeline.svg' | asset_url }}");
 			}
 		}
 
@@ -235,7 +231,7 @@ dl.timeline {
 			// Timeline key date bullets.
 			&:before, > dt:before, > dt + dd:before { 
 				background-color: ~"{{ page.brand.color_body_background }}"; 
-				.pixel-shader('{{ page.brand.color_body_text }}');
+				background-image: url(~"{{ 'shader-pixel-body-timeline.svg' | asset_url }}");
 			}		
 		}
 	}
@@ -256,6 +252,7 @@ dl.timeline {
 		&.timeline-body {
 			// Pad the top of the timeline.
 			padding-top: @timeline-vertical-spacing-sm;
+			margin-bottom: @timeline-vertical-spacing-sm;
 		}
 
 	}
@@ -273,6 +270,7 @@ dl.timeline {
 		&.timeline-body {
 			// Pad the top of the timeline.
 			padding-top: @timeline-vertical-spacing-md;
+			margin-bottom: @timeline-vertical-spacing-md;
 		}
 
 	}	
@@ -290,6 +288,7 @@ dl.timeline {
 		&.timeline-body {
 			// Pad the top of the timeline.
 			padding-top: @timeline-vertical-spacing-lg;
+			margin-bottom: @timeline-vertical-spacing-lg;
 		}
 
 	}	
@@ -310,10 +309,5 @@ dl.timeline {
 			left: -(@size / 2);
 			margin-top: 2px;
 		}
-	}
-
-	// Shade overlay a background using a dynamic shader pixel.
-	.pixel-shader(@color: #333) {
-		background-image: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg width="1px" height="1px" viewBox="0 0 1 1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="shader-pixel-artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect id="shader-pixel" fill-opacity="0.25" fill="@{color}" x="0" y="0" width="1" height="1"></rect></g></svg>');
 	}
 }
