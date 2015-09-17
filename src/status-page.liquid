@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- Add RTL text direction for locales which require it. -->
 <!-- List of RTL locales taken from https://en.wikipedia.org/wiki/Right-to-left -->
-<html {% if 'ar,fa,sd,arc,glk,ug,bcc,he,ur,bqi,mzn,ur,ckb,pnb,yi,dv,ps' contains page.locale %}dir="rtl"{% endif %}>
+<html lang="{{ page.locale }}" {% if 'ar,fa,sd,arc,glk,ug,bcc,he,ur,bqi,mzn,ur,ckb,pnb,yi,dv,ps' contains page.locale %}dir="rtl"{% endif %}>
     <head>
         <!-- Charset is very importsnt for locale support. -->
         <meta charset="utf-8">
