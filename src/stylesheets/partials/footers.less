@@ -6,6 +6,9 @@ footer {
 	@media (min-width: @screen-sm-min) { margin-bottom: (@line-height-computed * 3); }
 	@media (min-width: @screen-lg-min) { margin-bottom: (@line-height-computed * 7); }
 
+	// Align content to the left.
+	.text-center();
+
 	// Main body content contains support and social links.
 	.footer-body {
 		margin-bottom: (@line-height-computed * 3);
@@ -15,15 +18,17 @@ footer {
 			margin-top: 0;
 		}
 
-		ul {
+		ul.list-support-links {
+			.list-unstyled();
 			margin-bottom: @line-height-computed;
 
 			&:last-child { margin-bottom: 0; }
+
+			@media (min-width: @screen-xs-max) { .list-inline(); }
 		}
 
-		ul > li {
+		ul.list-support-links > li {
 			margin-bottom: (@line-height-computed / 2);
-			font-size: 16px;
 
 			a, a:active, a:visited {
 				color: ~"{{ page.brand.color_body_links }}";
@@ -34,6 +39,13 @@ footer {
 					opacity: 1;
 					color: ~"{{ page.brand.color_body_links }}";
 				}
+			}
+
+			i { 
+				margin-right: (@line-height-computed / 5);
+				text-align: left; 
+
+				@media (min-width: @screen-xs-max) { text-align: center; }
 			}
 		}
 
@@ -49,8 +61,6 @@ footer {
 					}
 				}
 			}
-
-			li a i { margin-right: (@line-height-computed / 5); }
 		}
 	}
 }
