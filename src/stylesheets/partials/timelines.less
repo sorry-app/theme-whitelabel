@@ -51,27 +51,22 @@ dl.timeline {
 		}
 	}
 
+	// Special end event style.
+	> dt.event-final + dd { opacity: 0.5; }
+
 	// Standard timeline item.
 	> dt + dd {
 		// Second level timeline, one for each notice.
 		> dl {
 			// Spacing under each timeline event, with border.
 			margin-bottom: @timeline-vertical-spacing * 2;
-			padding-bottom: @timeline-vertical-spacing * 1;
 
 			// The main date stamp.
 			> dt {
 				// Style the date with a soft grey box surround.
 				margin-bottom: @timeline-vertical-spacing;
-				background-color: rgba(0, 0, 0, 0.02);
-				padding: 5px 10px;
-				border-radius: 6px;
 				font-weight: (@font-weight-base + 100);
 				opacity: 0.7;
-
-				// Cancel out the padding to maintain text alignment with other elements.
-				margin-left: -10px;
-				margin-right: -10px;
 
 				// First date in set for notice.
 				// Make this stand out more than the other datestamps.
@@ -82,6 +77,11 @@ dl.timeline {
 
 				// Graphical timeline on larger scale devices.
 				@media (min-width: @grid-float-breakpoint) {
+					// Make the dates solid colour background bubbles.
+					background-color: rgba(0, 0, 0, 0.02);
+					padding: 5px 10px;
+					border-radius: 6px;
+
 					/* Horizontal alignment of dates/times. */
 					width: @timeline-date-width;
 					margin-top: -5px;
@@ -151,6 +151,8 @@ dl.timeline {
 			// Use the theme colours for this.
 			background-color: ~"{{ page.brand.color_state_warning }}";
 			color: #FFF;
+			padding: 5px 10px;
+			border-radius: 6px;
 
 			// Little bullhorn icon for the notice.
 			i {
