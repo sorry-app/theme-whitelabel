@@ -6,7 +6,7 @@ footer {
 	padding: @timeline-padding (@timeline-padding / 2); // Match the padding of the timeline.
 
 	// Responsive padding and text alignment.
-	@media (min-width: @grid-float-breakpoint) { .text-center(); }
+	@media (min-width: @screen-xs-min) { .text-center(); }
 	@media (min-width: @screen-sm-min) { margin-bottom: (@line-height-computed * 3); }
 	@media (min-width: @screen-lg-min) { margin-bottom: (@line-height-computed * 7); }
 
@@ -25,7 +25,7 @@ footer {
 
 			&:last-child { margin-bottom: 0; }
 
-			@media (min-width: @screen-xs-max) { .list-inline(); }
+			@media (min-width: @screen-xs-min) { .list-inline(); }
 		}
 
 		ul.list-support-links > li {
@@ -46,7 +46,7 @@ footer {
 				margin-right: (@line-height-computed / 5);
 				text-align: left; 
 
-				@media (min-width: @screen-xs-max) { text-align: center; }
+				@media (min-width: @screen-xs-min) { text-align: center; }
 			}
 		}
 
