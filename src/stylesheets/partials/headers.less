@@ -17,6 +17,11 @@ header {
 			opacity: 1;
 			color: ~"{{ page.brand.color_header_links }}";
 		}
+
+		&:not([href]) { 
+			color: ~"{{ page.brand.color_header_text }}";
+			text-decoration: none;
+		}
 	}
 
 }

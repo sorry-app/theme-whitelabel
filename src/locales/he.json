@@ -10,7 +10,11 @@
 		"no-more-notices": "אין הודעות נוספות מהשבוע האחרון"
 	},
 	"support": {
-		"need-support": "זקוק לתמיכה ?"
+		"disagree": {
+			"question": "לא מסכים עם זה?",
+			"answer": "אנא יידעו אותנו"
+		},		
+		"need-support": "זקוק לתמיכה?"
 	},	
 	"social": {
 		"twitter": "עקבו אחרינו בטוויטר",
