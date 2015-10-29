@@ -3,14 +3,17 @@
 footer {
 	// Spacing based on screensize.
 	margin-bottom: @line-height-computed;
+	padding: @timeline-padding (@timeline-padding / 2); // Match the padding of the timeline.
+
+	// Responsive padding and text alignment.
+	@media (min-width: @grid-float-breakpoint) { .text-center(); }
 	@media (min-width: @screen-sm-min) { margin-bottom: (@line-height-computed * 3); }
 	@media (min-width: @screen-lg-min) { margin-bottom: (@line-height-computed * 7); }
 
-	// Align content to the left.
-	.text-center();
-
 	// Main body content contains support and social links.
 	.footer-body {
+		margin-bottom: @line-height-computed;
+
 		h4 {
 			margin-bottom: @line-height-computed;
 			margin-top: 0;
