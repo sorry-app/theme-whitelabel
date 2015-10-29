@@ -209,26 +209,14 @@
 
                                 <!-- Main Status Page Nav. -->
                                 <ul class="list-support-links">
-                                    <!-- Support Link. -->
-                                    {% if page.support.url %}
-                                        <li>
-                                            <a href="{{ page.support.url }}" target="_blank">{{ page.support.url }}</a>
+                                    <!-- Loop over the supplied support options. -->
+                                    {% for link in page.support %}
+                                        <!-- Provide a list item for each. -->
+                                        <li class="support-link-{{ link[0] }}">
+                                            <!-- Conditionaly append mailto: and tel: for appropriate actions. -->
+                                            <a href="{% case link[0] %}{% when 'email' %}mailto:{% when 'telephone' %}tel:{% endcase %}{{ link[1] }}">{{ link[1] }}</a>
                                         </li>
-                                    {% endif %}
-
-                                    <!-- Support Email Link. -->
-                                    {% if page.support.email %}
-                                        <li>
-                                            <a href="mailto:{{ page.support.email }}">{{ page.support.email }}</a>
-                                        </li>
-                                    {% endif %}
-
-                                    <!-- Support Telephone Link. -->
-                                    {% if page.support.telephone %}
-                                        <li>
-                                            <a href="tel:{{ page.support.telephone }}">{{ page.support.telephone }}</a>
-                                        </li>
-                                    {% endif %}
+                                    {% endfor %}
 
                                     <!-- Twitter Profile If Enabled. -->
                                     {% if page.social.twitter %}
