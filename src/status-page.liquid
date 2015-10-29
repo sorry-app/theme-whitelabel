@@ -218,32 +218,17 @@
                                         </li>
                                     {% endfor %}
 
-                                    <!-- Twitter Profile If Enabled. -->
-                                    {% if page.social.twitter %}
-                                        <li>
-                                            <a href="https://twitter.com/{{ page.social.twitter }}" target="_blank">
-                                                <i class="fa fa-twitter fa-fw"></i>{{ 'social.twitter' | t }}
+                                    <!-- Loop over the supplied social accounts. -->
+                                    {% for link in page.social %}
+                                        <!-- Output a link for each social channel. -->
+                                        <li class="support-link-{{ link[0] }}">
+                                            <!-- Dynamicly build a link to each type. -->
+                                            <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_blank">
+                                                <!-- Use the locale switched string for each type too. -->
+                                                <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'social.' | append: link[0] | t }}
                                             </a>
                                         </li>
-                                    {% endif %}
-
-                                    <!-- Facebook Profile If Enabled. -->
-                                    {% if page.social.facebook %}
-                                        <li>
-                                            <a href="https://www.facebook.com/{{ page.social.facebook }}" target="_blank">
-                                               <i class="fa fa-facebook fa-fw"></i>{{ 'social.facebook' | t }}
-                                            </a>
-                                        </li>
-                                    {% endif %}
-
-                                    <!-- Google Plus Profile If Enabled. -->
-                                    {% if page.social.google_plus %}
-                                        <li>
-                                            <a href="https://plus.google.com/{{ page.social.google_plus }}/" target="_blank">
-                                               <i class="fa fa-google-plus fa-fw"></i>{{ 'social.google-plus' | t }}
-                                            </a>
-                                        </li>
-                                    {% endif %}
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>

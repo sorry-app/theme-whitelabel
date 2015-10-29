@@ -15,7 +15,7 @@
 	"social": {
 		"twitter": "עקבו אחרינו בטוויטר",
 		"facebook": "חפשו אותנו בפייסבוק",
-		"google-plus": "מצא אותנוב- Google"
+		"google_plus": "מצא אותנוב- Google"
 	},
 	"date_formats": {
 		"default": "יום %a', %-d %B %Y",

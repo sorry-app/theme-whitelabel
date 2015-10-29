@@ -15,7 +15,7 @@
 	"social": {
 		"twitter": "Follow us on Twitter",
 		"facebook": "Friend us on Facebook",
-		"google-plus": "Find us on Google+"
+		"google_plus": "Find us on Google+"
 	},
 	"subscriptions": {
 		"default": "Subscribe",
