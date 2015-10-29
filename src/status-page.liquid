@@ -129,6 +129,9 @@
                                     <!-- No current apologies found -->
                                     <!-- We have nothing to be sorry about, so all is well. -->
                                     <h2>{{ 'states.all-systems-are-go' | t }} <i class="fa fa-check-circle-o"></i></h2>
+                                        <!-- Add a reference to support links. -->
+                                        <!-- Use the smart acnhor plugin to link/not-link based on visibility. -->
+                                        <p>{{ 'support.disagree.question' | t }} <a data-smart-anchor="#contact-support">{{ 'support.disagree.answer' | t }}</a></p>
                                 </dd>
                         {% endfor %}
                     </dl>

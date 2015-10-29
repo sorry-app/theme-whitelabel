@@ -10,6 +10,10 @@
 		"no-more-notices": "No further notices from the past 7 days."
 	},
 	"support": {
+		"disagree": {
+			"question": "Don't agree with this?",
+			"answer": "Please let us know"
+		},
 		"need-support": "Need Support?"
 	},
 	"social": {

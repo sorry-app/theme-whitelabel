@@ -52,6 +52,8 @@ module.exports = function(grunt) {
             //'src/javascripts/tab.js',
             //'src/javascripts/affix.js',
             'src/javascripts/moment.js',
+            'src/javascripts/is-element-in-viewport.js',
+            'src/javascripts/smart-anchor.js',
             'src/javascripts/status-page.js'
           ]
         }
