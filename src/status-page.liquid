@@ -117,7 +117,7 @@
                                                             </time>
                                                         </dt>
                                                             <!-- Output the text content of the update. -->
-                                                            <dd>{{ update.content }}</dd>
+                                                            <dd>{{ update.content | simple_format }}</dd>
                                                     {% endfor %}
                                                 </dl>
                                             </dd>
@@ -180,7 +180,7 @@
                                     <!-- Output the time for the given update. -->
                                     <dt id="update-{{ update.id }}">{{ update.created_at | date: 'timestamp' }}</dt>
                                         <!-- Output the text content of the update. -->
-                                        <dd>{{ update.content }}</dd>
+                                        <dd>{{ update.content | simple_format }}</dd>
 
                                     <!-- Check if this is the last instance of the loop. -->
                                     {% if forloop.last %}
