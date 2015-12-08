@@ -41,7 +41,7 @@ module.exports = function(grunt) {
             'src/javascripts/vendor/jquery-2.1.4.js',          
             //'src/javascripts/vendor/bootstrap/transition.js',
             //'src/javascripts/vendor/bootstrap/alert.js',
-            'src/javascripts/vendor/bootstrap/button.js',
+            //'src/javascripts/vendor/bootstrap/button.js',
             //'src/javascripts/vendor/bootstrap/carousel.js',
             //'src/javascripts/vendor/bootstrap/collapse.js',
             'src/javascripts/vendor/bootstrap/dropdown.js',
