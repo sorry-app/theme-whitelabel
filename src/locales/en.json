@@ -22,7 +22,7 @@
 		"google_plus": "Find us on Google+"
 	},
 	"subscriptions": {
-		"default": "Subscribe",
+		"default": "Get Updates",
 		"slack": "Get Updates via Slack",
 		"email": "Get Updates via Email"
 	},	
