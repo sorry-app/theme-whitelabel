@@ -91,14 +91,14 @@
                             </form>
                         {% elsif page.subscription_options.size > 1 %}
                             <!-- Button group containing the dropdown. -->
-                            <div class="btn-group">
+                            <div class="btn-group navbar-header-btn">
                                 <!-- Core subscription button, activates dropdown for choices. -->
-                                <button class="btn btn-subscribe navbar-btn navbar-header-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-subscribe navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Get Updates <span class="caret"></span>
                                 </button>
 
                                 <!-- Dropdown with subscription options in it. -->
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu dropdown-menu-right">
                                     <!-- Loop over the collection of subscription options. -->
                                     {% for option in page.subscription_options %}
                                         <!-- Output a link for this subscription option. -->
