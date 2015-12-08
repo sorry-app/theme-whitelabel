@@ -79,16 +79,34 @@
                             <span class="navbar-brand">{{ page.name }}</span>
                         {% endif %}
 
-                        <!-- If slack is enabled display the subscription button. -->
-                        {% if page.subscription_options.slack %}
-                            <form action="{{ page.subscription_options.slack.url }}" method="get">
+                        <!-- Subscription button based on the various options for the page. -->
+                        {% if page.subscription_options.size == 1 %}
+                            <!-- Page only has a single subscription option, display a consolidated button. -->
+                            <form action="{{ page.subscription_options.first[1].url }}" method="get">
                                 <button class="btn btn-subscribe navbar-btn navbar-header-btn">
-                                    <i class="fa fa-slack"></i> 
+                                    <i class="{{ page.subscription_options.first[1].icon }}"></i> 
                                         <span class="visible-xs-inline">{{ 'subscriptions.default' | t }}</span>
-                                        <span class="hidden-xs">{{ 'subscriptions.slack' | t }}</span>
+                                        <span class="hidden-xs">{{ 'subscriptions.' | append: page.subscription_options.first[0] | t }}</span>
                                 </button>
                             </form>
-                        {% endif %}                        
+                        {% elsif page.subscription_options.size > 1 %}
+                            <!-- Button group containing the dropdown. -->
+                            <div class="btn-group">
+                                <!-- Core subscription button, activates dropdown for choices. -->
+                                <button class="btn btn-subscribe navbar-btn navbar-header-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Get Updates <span class="caret"></span>
+                                </button>
+
+                                <!-- Dropdown with subscription options in it. -->
+                                <ul class="dropdown-menu">
+                                    <!-- Loop over the collection of subscription options. -->
+                                    {% for option in page.subscription_options %}
+                                        <!-- Output a link for this subscription option. -->
+                                        <li><a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'subscriptions.' | append: option[0] | t }}</a></li>
+                                    {% endfor %}
+                                </ul>                            
+                            </div>
+                        {% endif %}                       
                     </div>
                 </div>
             </nav>

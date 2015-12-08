@@ -23,7 +23,8 @@
 	},
 	"subscriptions": {
 		"default": "Subscribe",
-		"slack": "Get Updates via Slack"
+		"slack": "Get Updates via Slack",
+		"email": "Get Updates via Email"
 	},	
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
