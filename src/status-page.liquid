@@ -102,7 +102,9 @@
                                     <!-- Loop over the collection of subscription options. -->
                                     {% for option in page.subscription_options %}
                                         <!-- Output a link for this subscription option. -->
-                                        <li><a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'subscriptions.' | append: option[0] | t }}</a></li>
+                                        <li>
+                                            <a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'subscriptions.' | append: option[0] | append: '.name' | t }} <small>{{ 'subscriptions.' | append: option[0] | append: '.description' | t }}</small></a>
+                                        </li>
                                     {% endfor %}
                                 </ul>                            
                             </div>

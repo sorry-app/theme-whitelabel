@@ -23,8 +23,14 @@
 	},
 	"subscriptions": {
 		"default": "Get Updates",
-		"slack": "Get Updates via Slack",
-		"email": "Get Updates via Email"
+		"slack": {
+			"name": "Slack",
+			"description": "Posted live to a Slack #channel of your choice."
+		},
+		"email": {
+			"name": "Email",
+			"description": "Messages delivered right into your inbox."
+		}
 	},	
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
