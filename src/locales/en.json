@@ -25,7 +25,7 @@
 		"default": "Get Updates",
 		"slack": {
 			"name": "Slack",
-			"description": "Posted live to a Slack #channel of your choice."
+			"description": "Posted live to a #channel of your choice."
 		},
 		"email": {
 			"name": "Email",
