@@ -23,6 +23,7 @@
 	},
 	"subscriptions": {
 		"default": "Get Updates",
+		"via": "via",
 		"slack": {
 			"name": "Slack",
 			"description": "Posted live to a #channel of your choice."

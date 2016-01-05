@@ -86,7 +86,7 @@
                                 <button class="btn btn-subscribe navbar-btn navbar-header-btn">
                                     <i class="{{ page.subscription_options.first[1].icon }}"></i> 
                                         <span class="visible-xs-inline">{{ 'subscriptions.default' | t }}</span>
-                                        <span class="hidden-xs">{{ 'subscriptions.' | append: page.subscription_options.first[0] | t }}</span>
+                                        <span class="hidden-xs">{{ 'subscriptions.default' | t }} {{ 'subscriptions.via' | t }} {{ 'subscriptions.' | append: page.subscription_options.first[0] | append: '.name' | t }}</span>
                                 </button>
                             </form>
                         {% elsif page.subscription_options.size > 1 %}
