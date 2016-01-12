@@ -22,8 +22,16 @@
 		"google_plus": "Find us on Google+"
 	},
 	"subscriptions": {
-		"default": "Subscribe",
-		"slack": "Get Updates via Slack"
+		"default": "Get Updates",
+		"via": "via",
+		"slack": {
+			"name": "Slack",
+			"description": "Posted live to a #channel of your choice."
+		},
+		"email": {
+			"name": "Email",
+			"description": "Messages delivered right into your inbox."
+		}
 	},	
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
