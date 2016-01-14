@@ -1,277 +1,214 @@
-<!DOCTYPE html>
-<!-- Add RTL text direction for locales which require it. -->
-<!-- List of RTL locales taken from https://en.wikipedia.org/wiki/Right-to-left -->
-<html lang="{{ page.locale }}" {% if 'ar,fa,sd,arc,glk,ug,bcc,he,ur,bqi,mzn,ur,ckb,pnb,yi,dv,ps' contains page.locale %}dir="rtl"{% endif %}>
-    <head>
-        <!-- Charset is very importsnt for locale support. -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!--- Enable page refresh every 30 seconds. -->
-        <meta http-equiv="refresh" content="30" />
-
-        <!-- Favicons. -->
-        <!-- App Details. -->
-        <meta name="application-name" content="{{ page.name }}"/>
-        <meta name="apple-mobile-web-app-title" content="{{ page.name }}" />
-
-        <!-- Dynamicly set the title using the helper methoe. -->
-        <title>{{ page.meta_title }}</title>
-
-        <!-- Display a meta description. -->
-        <meta name="description" content="{{ page.meta_description }}" />
-
-        <!-- Control the indexability of the page using the meta tags. -->
-        <!-- This is also controlled from /robots.txt but meta gives us slight more control. -->
-        {% if page.visible_to_search %}
-            <!-- Allow indexing and following of links. -->
-            <meta name="robots" content="index, follow" />
-        {% else %}
-            <!-- Disallow indexing and following of links. -->
-            <meta name="robots" content="noindex, nofollow" />
-        {% endif %}
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="{{ 'html5shiv-3-7-0.min.js' | asset_url }}"></script>
-            <script src="{{ 'respond-1-3-0.min.js' | asset_url }}"></script>
-        <![endif]-->
-
-        <!-- Display favicons if one is assigned. -->
-        {% if page.brand.favicon %}
-            <!-- Standard Favicons. -->
-            <link rel="icon" type="{{ page.brand.favicon.content_type }}" href="{{ page.brand.favicon.url }}"  />
-        {% endif %}
-
-        <!-- Include CSS Assets. -->
-        <link rel="stylesheet" href="{{ 'status-page.css' | asset_url }}" />
-
-        <!-- Injected Head Content. -->
-        {{ page.content_for_head }}
-    </head>
-    <!-- We attach the current status to the body, for changing page styles based on current statue. -->
-    <body class="current-status {% if page.apologies.current == empty %}status-ok{% else %}state-warning{% endif %} locale-{{ page.locale }}" data-locale="{{ page.locale }}">
-        <!-- Page Header & Navbar. -->
-        <header>        
-            <!-- Page Navbar. -->
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <!-- Brand. -->
-                        {% if page.brand.logo %}
-                            <div class="navbar-logo">
-                                <!-- Logo. -->
-                                <img src="{{ page.brand.logo.url }}" alt="{{ 'navbar.logo-for' | t }} {{ page.name }}" />
-                            </div>
-
-                            <!-- Page Title. -->
-                            <!-- Title is optional for locales. -->
-                            {% assign title = 'navbar.title' | t  %}
-
-                            <!-- Display the title only if one exists. -->
-                            {% if title != '' %}
-                                <span class="navbar-brand hidden-xs">{{ title }}</span>
-                            {% endif %}
-                        {% else %}
-                            <!-- Page Name. -->
-                            <span class="navbar-brand">{{ page.name }}</span>
-                        {% endif %}
-
-                        <!-- Subscription button based on the various options for the page. -->
-                        {% if page.subscription_options.size == 1 %}
-                            <!-- Page only has a single subscription option, display a consolidated button. -->
-                            <form action="{{ page.subscription_options.first[1].url }}" method="get">
-                                <button class="btn btn-subscribe navbar-btn navbar-header-btn">
-                                    <i class="{{ page.subscription_options.first[1].icon }}"></i> 
-                                        <span class="visible-xs-inline">{{ 'subscriptions.default' | t }}</span>
-                                        <span class="hidden-xs">{{ 'subscriptions.default' | t }} {{ 'subscriptions.via' | t }} {{ 'subscriptions.' | append: page.subscription_options.first[0] | append: '.name' | t }}</span>
-                                </button>
-                            </form>
-                        {% elsif page.subscription_options.size > 1 %}
-                            <!-- Button group containing the dropdown. -->
-                            <div class="btn-group navbar-header-btn navbar-btn">
-                                <!-- Core subscription button, activates dropdown for choices. -->
-                                <button class="btn btn-subscribe dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-bell hidden-xs"></i> {{ 'subscriptions.default' | t }} <span class="caret"></span>
-                                </button>
-
-                                <!-- Dropdown with subscription options in it. -->
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <!-- Loop over the collection of subscription options. -->
-                                    {% for option in page.subscription_options %}
-                                        <!-- Output a link for this subscription option. -->
-                                        <li>
-                                            <a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'subscriptions.' | append: option[0] | append: '.name' | t }} <small>{{ 'subscriptions.' | append: option[0] | append: '.description' | t }}</small></a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>                            
-                            </div>
-                        {% endif %}                       
+<!-- Page Header & Navbar. -->
+<header>        
+    <!-- Page Navbar. -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Brand. -->
+                {% if page.brand.logo %}
+                    <div class="navbar-logo">
+                        <!-- Logo. -->
+                        <img src="{{ page.brand.logo.url }}" alt="{{ 'navbar.logo-for' | t }} {{ page.name }}" />
                     </div>
-                </div>
-            </nav>
 
-            <div class="container container-md">
-                <!-- Current Status Message. -->
-                <section id="current-status">
+                    <!-- Page Title. -->
+                    <!-- Title is optional for locales. -->
+                    {% assign title = 'navbar.title' | t  %}
 
-                    <dl class="timeline timeline-header">
-                        <!-- Loop over the collection of current apologies. -->
-                        {% for apology in page.apologies.current %}
-                            <dt class="event event-ongoing" id="apology-{{ apology.id }}">Notice #{{ apology.id }}</dt>
-                                <dd>
-                                    <dl>
-                                        <dt><i class="fa fa-bullhorn"></i> {{ 'states.ongoing' | t }}</dt>
-                                            <dd>
-                                                <dl>
-                                                    <!-- Loop over any updates we have for the apology -->
-                                                    <!-- We reverse the order so the latest update displays first as the priority. -->
-                                                    {% for update in apology.updates reversed %}
-                                                        <!-- Output the date for the update. -->
-                                                        <dt id="update-{{ update.id }}">
-                                                            <!-- Datetime, augmented to 'time_ago_in_words' by moment.js -->
-                                                            <time class="ago" datetime="{{ update.created_at | date: '%FT%T%z' }}">
-                                                                {{ update.created_at | date: '%FT%TZ' }}
-                                                            </time>
-                                                        </dt>
-                                                            <!-- Output the text content of the update. -->
-                                                            <dd>{{ update.content | simple_format }}</dd>
-                                                    {% endfor %}
-                                                </dl>
-                                            </dd>
-                                    </dl>
-                                </dd>
-                        {% else %}
-                            <dt class="title">{{ 'states.current-status' | t }}</dt>
-                                <dd>
-                                    <!-- No current apologies found -->
-                                    <!-- We have nothing to be sorry about, so all is well. -->
-                                    <h2>{{ 'states.all-systems-are-go' | t }} <i class="fa fa-check-circle-o"></i></h2>
-                                        <!-- Check if any support / social links exists. -->
-                                        {% if page.support.size > 0 or page.social.size > 0 %}
-                                            <!-- Add a reference to support links. -->
-                                            <!-- Use the smart acnhor plugin to link/not-link based on visibility. -->
-                                            <p>{{ 'support.disagree.question' | t }} <a data-smart-anchor="#contact-support">{{ 'support.disagree.answer' | t }}</a></p>
-                                        {% endif %}
-                                </dd>
-                        {% endfor %}
-                    </dl>
-                </section>
-            </div>
-        </header>
-
-        <!-- Main Timeline. -->
-        <main>
-            <div class="container container-md">
-                <!-- Timeline of previous apologies. -->
-                <dl class="timeline timeline-body">
-                    <!-- Loop over the collection of previous apologies, order date descending. -->
-                    {% for apology in page.apologies.recent %}
-                        <dt class="event event-resolved" id="apology-{{ apology.id }}">#{{ apology.id }}</dt>
-                        <dd>
-                            <dl>
-                                <!-- Loop over the updates for this apology, which we want to group by date. -->
-                                {% for update in apology.updates  %}
-                                    <!-- Snapshot the date by which we want to group updates. -->
-                                    {% capture grouped_date %}{{ update.created_at | date }}{% endcapture %}
-
-                                    <!-- See if this is the first iteration of the loop. -->
-                                    {% if forloop.first %}
-                                        <!-- First itteration, as a date stamp to it. -->
-                                        <dt>{{ grouped_date }}</dt>
-                                        <dd>
-                                            <dl>
-                                    {% else %}
-                                        <!-- Not the first instance -->
-                                        {% if grouped_date != last_grouped_date %}
-                                            <!-- close of the previous nest. -->
-                                                </dl>
-                                            </dd>
-
-                                            <!-- End start a new nested collection. -->
-                                            <dt>{{ grouped_date }}</dt>
-                                            <dd>
-                                                <dl>
-                                        {% endif %}
-                                    {% endif %}
-
-                                    <!-- Output the time for the given update. -->
-                                    <dt id="update-{{ update.id }}">{{ update.created_at | date: 'timestamp' }}</dt>
-                                        <!-- Output the text content of the update. -->
-                                        <dd>{{ update.content | simple_format }}</dd>
-
-                                    <!-- Check if this is the last instance of the loop. -->
-                                    {% if forloop.last %}
-                                        <!-- Close off the nested list. -->
-                                            </dl>
-                                        </dd>
-                                    {% endif %}
-
-                                    <!-- Set a snapshot of the previously looped group. -->
-                                    {% capture last_grouped_date %}{{ grouped_date }}{% endcapture %}
-                                {% endfor %}
-                            </dl>
-                        </dd>
-                    {% endfor %}
-
-                    <!-- End of Timeline. -->
-                    <dt class="event event-final" role="presentation">Past notices</dt>
-                        <dd>{{ 'states.no-more-notices' | t }}</dd>
-                </dl>
-            </div> 
-        </main>
-
-        <!-- Page Footer & Copyright. -->
-        <footer>
-            <div class="container container-xs">
-                <!-- Support Links If Defined. -->
-                {% if page.support.size > 0 or page.social.size > 0 %}
-                    <div class="footer-body" id="contact-support">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <h4>{{ 'support.need-support' | t }}</h4>
-
-                                <!-- Main Status Page Nav. -->
-                                <ul class="list-support-links">
-                                    <!-- Loop over the supplied support options. -->
-                                    {% for link in page.support %}
-                                        <!-- Provide a list item for each. -->
-                                        <li class="support-link-{{ link[0] }}">
-                                            <!-- Conditionaly append mailto: and tel: for appropriate actions. -->
-                                            <a href="{% case link[0] %}{% when 'email' %}mailto:{% when 'telephone' %}tel:{% endcase %}{{ link[1] }}">{{ link[1] }}</a>
-                                        </li>
-                                    {% endfor %}
-
-                                    <!-- Loop over the supplied social accounts. -->
-                                    {% for link in page.social %}
-                                        <!-- Output a link for each social channel. -->
-                                        <li class="support-link-{{ link[0] }}">
-                                            <!-- Dynamicly build a link to each type. -->
-                                            <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_blank">
-                                                <!-- Use the locale switched string for each type too. -->
-                                                <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'social.' | append: link[0] | t }}
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Display the title only if one exists. -->
+                    {% if title != '' %}
+                        <span class="navbar-brand hidden-xs">{{ title }}</span>
+                    {% endif %}
+                {% else %}
+                    <!-- Page Name. -->
+                    <span class="navbar-brand">{{ page.name }}</span>
                 {% endif %}
 
-                <!-- Accreditation link, we'd love it if you'd leave this in place, but no hard feelings if you don't. -->
-                <div class="footer-footer">
-                    <bdo dir="ltr" class="copyright">{{ page.copyright }}</bdo>
+                <!-- Subscription button based on the various options for the page. -->
+                {% if page.subscription_options.size == 1 %}
+                    <!-- Page only has a single subscription option, display a consolidated button. -->
+                    <form action="{{ page.subscription_options.first[1].url }}" method="get">
+                        <button class="btn btn-subscribe navbar-btn navbar-header-btn">
+                            <i class="{{ page.subscription_options.first[1].icon }}"></i> 
+                                <span class="visible-xs-inline">{{ 'subscriptions.default' | t }}</span>
+                                <span class="hidden-xs">{{ 'subscriptions.default' | t }} {{ 'subscriptions.via' | t }} {{ 'subscriptions.' | append: page.subscription_options.first[0] | append: '.name' | t }}</span>
+                        </button>
+                    </form>
+                {% elsif page.subscription_options.size > 1 %}
+                    <!-- Button group containing the dropdown. -->
+                    <div class="btn-group navbar-header-btn navbar-btn">
+                        <!-- Core subscription button, activates dropdown for choices. -->
+                        <button class="btn btn-subscribe dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bell hidden-xs"></i> {{ 'subscriptions.default' | t }} <span class="caret"></span>
+                        </button>
+
+                        <!-- Dropdown with subscription options in it. -->
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <!-- Loop over the collection of subscription options. -->
+                            {% for option in page.subscription_options %}
+                                <!-- Output a link for this subscription option. -->
+                                <li>
+                                    <a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'subscriptions.' | append: option[0] | append: '.name' | t }} <small>{{ 'subscriptions.' | append: option[0] | append: '.description' | t }}</small></a>
+                                </li>
+                            {% endfor %}
+                        </ul>                            
+                    </div>
+                {% endif %}                       
+            </div>
+        </div>
+    </nav>
+
+    <div class="container container-md">
+        <!-- Current Status Message. -->
+        <section id="current-status">
+
+            <dl class="timeline timeline-header">
+                <!-- Loop over the collection of current apologies. -->
+                {% for apology in page.apologies.current %}
+                    <dt class="event event-ongoing" id="apology-{{ apology.id }}">Notice #{{ apology.id }}</dt>
+                        <dd>
+                            <dl>
+                                <dt><i class="fa fa-bullhorn"></i> {{ 'states.ongoing' | t }}</dt>
+                                    <dd>
+                                        <dl>
+                                            <!-- Loop over any updates we have for the apology -->
+                                            <!-- We reverse the order so the latest update displays first as the priority. -->
+                                            {% for update in apology.updates reversed %}
+                                                <!-- Output the date for the update. -->
+                                                <dt id="update-{{ update.id }}">
+                                                    <!-- Datetime, augmented to 'time_ago_in_words' by moment.js -->
+                                                    <time class="ago" datetime="{{ update.created_at | date: '%FT%T%z' }}">
+                                                        {{ update.created_at | date: '%FT%TZ' }}
+                                                    </time>
+                                                </dt>
+                                                    <!-- Output the text content of the update. -->
+                                                    <dd>{{ update.content | simple_format }}</dd>
+                                            {% endfor %}
+                                        </dl>
+                                    </dd>
+                            </dl>
+                        </dd>
+                {% else %}
+                    <dt class="title">{{ 'states.current-status' | t }}</dt>
+                        <dd>
+                            <!-- No current apologies found -->
+                            <!-- We have nothing to be sorry about, so all is well. -->
+                            <h2>{{ 'states.all-systems-are-go' | t }} <i class="fa fa-check-circle-o"></i></h2>
+                                <!-- Check if any support / social links exists. -->
+                                {% if page.support.size > 0 or page.social.size > 0 %}
+                                    <!-- Add a reference to support links. -->
+                                    <!-- Use the smart acnhor plugin to link/not-link based on visibility. -->
+                                    <p>{{ 'support.disagree.question' | t }} <a data-smart-anchor="#contact-support">{{ 'support.disagree.answer' | t }}</a></p>
+                                {% endif %}
+                        </dd>
+                {% endfor %}
+            </dl>
+        </section>
+    </div>
+</header>
+
+<!-- Main Timeline. -->
+<main>
+    <div class="container container-md">
+        <!-- Timeline of previous apologies. -->
+        <dl class="timeline timeline-body">
+            <!-- Loop over the collection of previous apologies, order date descending. -->
+            {% for apology in page.apologies.recent %}
+                <dt class="event event-resolved" id="apology-{{ apology.id }}">#{{ apology.id }}</dt>
+                <dd>
+                    <dl>
+                        <!-- Loop over the updates for this apology, which we want to group by date. -->
+                        {% for update in apology.updates  %}
+                            <!-- Snapshot the date by which we want to group updates. -->
+                            {% capture grouped_date %}{{ update.created_at | date }}{% endcapture %}
+
+                            <!-- See if this is the first iteration of the loop. -->
+                            {% if forloop.first %}
+                                <!-- First itteration, as a date stamp to it. -->
+                                <dt>{{ grouped_date }}</dt>
+                                <dd>
+                                    <dl>
+                            {% else %}
+                                <!-- Not the first instance -->
+                                {% if grouped_date != last_grouped_date %}
+                                    <!-- close of the previous nest. -->
+                                        </dl>
+                                    </dd>
+
+                                    <!-- End start a new nested collection. -->
+                                    <dt>{{ grouped_date }}</dt>
+                                    <dd>
+                                        <dl>
+                                {% endif %}
+                            {% endif %}
+
+                            <!-- Output the time for the given update. -->
+                            <dt id="update-{{ update.id }}">{{ update.created_at | date: 'timestamp' }}</dt>
+                                <!-- Output the text content of the update. -->
+                                <dd>{{ update.content | simple_format }}</dd>
+
+                            <!-- Check if this is the last instance of the loop. -->
+                            {% if forloop.last %}
+                                <!-- Close off the nested list. -->
+                                    </dl>
+                                </dd>
+                            {% endif %}
+
+                            <!-- Set a snapshot of the previously looped group. -->
+                            {% capture last_grouped_date %}{{ grouped_date }}{% endcapture %}
+                        {% endfor %}
+                    </dl>
+                </dd>
+            {% endfor %}
+
+            <!-- End of Timeline. -->
+            <dt class="event event-final" role="presentation">Past notices</dt>
+                <dd>{{ 'states.no-more-notices' | t }}</dd>
+        </dl>
+    </div> 
+</main>
+
+<!-- Page Footer & Copyright. -->
+<footer>
+    <div class="container container-xs">
+        <!-- Support Links If Defined. -->
+        {% if page.support.size > 0 or page.social.size > 0 %}
+            <div class="footer-body" id="contact-support">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4>{{ 'support.need-support' | t }}</h4>
+
+                        <!-- Main Status Page Nav. -->
+                        <ul class="list-support-links">
+                            <!-- Loop over the supplied support options. -->
+                            {% for link in page.support %}
+                                <!-- Provide a list item for each. -->
+                                <li class="support-link-{{ link[0] }}">
+                                    <!-- Conditionaly append mailto: and tel: for appropriate actions. -->
+                                    <a href="{% case link[0] %}{% when 'email' %}mailto:{% when 'telephone' %}tel:{% endcase %}{{ link[1] }}">{{ link[1] }}</a>
+                                </li>
+                            {% endfor %}
+
+                            <!-- Loop over the supplied social accounts. -->
+                            {% for link in page.social %}
+                                <!-- Output a link for each social channel. -->
+                                <li class="support-link-{{ link[0] }}">
+                                    <!-- Dynamicly build a link to each type. -->
+                                    <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_blank">
+                                        <!-- Use the locale switched string for each type too. -->
+                                        <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'social.' | append: link[0] | t }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </footer>
+        {% endif %}
 
-        <!-- Javascript Assets. -->
-        <script src="{{ 'status-page.min.js' | asset_url }}"></script>
-
-        <!-- Injected Head Content. -->
-        {{ page.content_for_body }}
-    </body>
-</html>
+        <!-- Accreditation link, we'd love it if you'd leave this in place, but no hard feelings if you don't. -->
+        <div class="footer-footer">
+            <bdo dir="ltr" class="copyright">{{ page.copyright }}</bdo>
+        </div>
+    </div>
+</footer>

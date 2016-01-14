@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Add RTL text direction for locales which require it. -->
+<!-- List of RTL locales taken from https://en.wikipedia.org/wiki/Right-to-left -->
+<html lang="{{ page.locale }}" {% if 'ar,fa,sd,arc,glk,ug,bcc,he,ur,bqi,mzn,ur,ckb,pnb,yi,dv,ps' contains page.locale %}dir="rtl"{% endif %}>
+    <head>
+        <!-- Charset is very importsnt for locale support. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--- Enable page refresh every 30 seconds. -->
+        <meta http-equiv="refresh" content="30" />
+
+        <!-- Favicons. -->
+        <!-- App Details. -->
+        <meta name="application-name" content="{{ page.name }}"/>
+        <meta name="apple-mobile-web-app-title" content="{{ page.name }}" />
+
+        <!-- Dynamicly set the title using the helper methoe. -->
+        <title>{{ page.meta_title }}</title>
+
+        <!-- Display a meta description. -->
+        <meta name="description" content="{{ page.meta_description }}" />
+
+        <!-- Control the indexability of the page using the meta tags. -->
+        <!-- This is also controlled from /robots.txt but meta gives us slight more control. -->
+        {% if page.visible_to_search %}
+            <!-- Allow indexing and following of links. -->
+            <meta name="robots" content="index, follow" />
+        {% else %}
+            <!-- Disallow indexing and following of links. -->
+            <meta name="robots" content="noindex, nofollow" />
+        {% endif %}
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="{{ 'html5shiv-3-7-0.min.js' | asset_url }}"></script>
+            <script src="{{ 'respond-1-3-0.min.js' | asset_url }}"></script>
+        <![endif]-->
+
+        <!-- Display favicons if one is assigned. -->
+        {% if page.brand.favicon %}
+            <!-- Standard Favicons. -->
+            <link rel="icon" type="{{ page.brand.favicon.content_type }}" href="{{ page.brand.favicon.url }}"  />
+        {% endif %}
+
+        <!-- Include CSS Assets. -->
+        <link rel="stylesheet" href="{{ 'status-page.css' | asset_url }}" />
+
+        <!-- Injected Head Content. -->
+        {{ page.content_for_head }}
+    </head>
+    <!-- We attach the current status to the body, for changing page styles based on current statue. -->
+    <body class="current-status {% if page.apologies.current == empty %}status-ok{% else %}state-warning{% endif %} locale-{{ page.locale }}" data-locale="{{ page.locale }}">
+
+        <!-- Include the individual page template content. -->
+        {{ content_for_layout }}
+
+        <!-- Javascript Assets. -->
+        <script src="{{ 'status-page.min.js' | asset_url }}"></script>
+
+        <!-- Injected Head Content. -->
+        {{ page.content_for_body }}
+    </body>
+</html>
