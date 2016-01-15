@@ -5,8 +5,10 @@
 		background-color: #ccc;
 		display: inline-block;
 		border-radius: 6px;
-		padding: 40px 60px;
+		padding: 30px 50px;
 		margin: 50px auto;
+		background-color: ~"{{ page.brand.color_header_background }}"; 
+		background-image: url(~"{{ 'shader-pixel-header-timeline.svg' | asset_url }}");
 	}
 
 	h2 {
