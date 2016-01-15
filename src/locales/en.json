@@ -38,6 +38,9 @@
 		"timestamp": "%X %Z"
 	},
 	"error-page": {
+		"navbar": {
+			"title": "500 Error"
+		},
 		"title": "Sorry, something has gone wrong",
 		"subtitle": "It’s not you, it’s us.",
 		"retry": "But give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",

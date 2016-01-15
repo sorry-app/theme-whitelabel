@@ -1,19 +1,48 @@
 <header>
-	<!-- Headline notice to state a problem has ocurred. -->
-	<h1>{{ 'error-page.title' | t }}</h1>
+    <!-- Page Navbar. -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Brand. -->
+                {% if page.brand.logo %}
+                	<!-- Display a logo if one is assigned. -->
+                    <div class="navbar-logo">
+                        <!-- Logo. -->
+                        <img src="{{ page.brand.logo.url }}" alt="{{ 'navbar.logo-for' | t }} {{ page.name }}" />
+                    </div>
+                {% else %}
+                	<!-- Otherwise display the error page title. -->
+                    <!-- Title is optional for locales. -->
+                    {% assign title = 'error-page.navbar.title' | t  %}
+
+                    <!-- Display the title only if one exists. -->
+                    {% if title != '' %}
+                        <span class="navbar-brand hidden-xs">{{ title }}</span>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>    	
+    </nav>
+
+	<div class="container container-sm">
+		<!-- Headline notice to state a problem has ocurred. -->
+		<h1>{{ 'error-page.title' | t }}</h1>
+	</div>
 </header>
 
 <main>
-	<!-- Apologise, and suggest the users retry. -->
-	<h2>{{ 'error-page.subtitle' | t }}</h2>
-		<p>{{ 'error-page.retry' | t }}</p>
+	<div class="container container-sm">
+		<!-- Apologise, and suggest the users retry. -->
+		<h2>{{ 'error-page.subtitle' | t }}</h2>
+			<p>{{ 'error-page.retry' | t }}</p>
 
-	<!-- Check to see if the status page has any notices on it. -->
-	{% if page.apologies.current.size > 0 %}
-		<!-- The SP does have noticed, display an ongoing statement and link. -->
-		<p>{{ 'error-page.states.ongoing' | t }}</p>
-		<p><a href="{{ page.link }}" target="_blank" class="btn btn-info btn-lg">{{ 'error-page.sp-link' | t }}</a></p>
-	{% endif %}
+		<!-- Check to see if the status page has any notices on it. -->
+		{% if page.apologies.current.size > 0 %}
+			<!-- The SP does have noticed, display an ongoing statement and link. -->
+			<p>{{ 'error-page.states.ongoing' | t }}</p>
+			<p><a href="{{ page.link }}" target="_blank" class="btn btn-info btn-lg">{{ 'error-page.sp-link' | t }}</a></p>
+		{% endif %}
+	</div>
 </main>
 
 <!-- Page Footer & Copyright. -->
