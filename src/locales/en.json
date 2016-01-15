@@ -36,5 +36,17 @@
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
 		"timestamp": "%X %Z"
+	},
+	"error-page": {
+		"title": "Sorry, something has gone wrong",
+		"subtitle": "It’s not you, it’s us.",
+		"retry": "But give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
+		"states": {
+			"ongoing": "We are having issues at the moment which may be related to this error, please take a look at our Status Page for more information."
+		},
+		"sp-link": "Visit our Status Page",
+		"support": {
+			"need-support": "Want to talk to us about this error?"
+		}
 	}
 }
