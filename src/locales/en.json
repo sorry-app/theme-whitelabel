@@ -36,5 +36,27 @@
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
 		"timestamp": "%X %Z"
+	},
+	"error-page": {
+		"meta": {
+			"title": "Error Page",
+			"description": "Sorry, something has gone wrong"
+		},
+		"navbar": {
+			"title": "500 Error"
+		},
+		"title": "Sorry, something has gone wrong",
+		"subtitle": "It’s not you, it’s us",
+		"retry": "Give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
+		"states": {
+			"ongoing": {
+				"heading": "We are having issues at the moment.",
+				"body": "These may be related to this error, please take a look at our Status Page for more information."
+			}
+		},
+		"sp-link": "Visit our Status Page",
+		"support": {
+			"need-support": "Want to talk to us about this error?"
+		}
 	}
 }
