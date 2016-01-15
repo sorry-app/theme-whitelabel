@@ -9,6 +9,7 @@
 		margin: 0;
 		background-color: ~"{{ page.brand.color_header_background }}"; 
 		background-image: url(~"{{ 'shader-pixel-header-timeline.svg' | asset_url }}");
+		line-height: 1.4;
 	}
 
 	h2 {
@@ -16,10 +17,18 @@
 		margin-bottom: 1em;
 	}
 
-	.content-block {
+	.content-block, header .error-page-header {
 		p {
 			margin-bottom: 20px;
 			font-size: 18px;
+
+			&:last-child { margin-bottom: 0; }
+		}
+
+		padding: @timeline-padding (@timeline-padding / 2);
+
+		@media (min-width: @grid-float-breakpoint) {
+			padding: ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
 		}
 	}
 }
