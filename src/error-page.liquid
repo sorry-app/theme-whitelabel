@@ -1,30 +1,21 @@
 <!-- Create a container for the template specific styles. -->
 <div class="template-error-page">
 	<header>
-	    <!-- Page Navbar. -->
-	    <nav class="navbar navbar-default navbar-center" role="navigation">
-	        <div class="container">
-	            <div class="navbar-header">
-	                <!-- Brand. -->
-	                {% if page.brand.logo %}
+		<!-- Navbar if a logo is available. -->
+		{% if page.brand.logo %}
+		    <!-- Page Navbar. -->
+		    <nav class="navbar navbar-default navbar-center" role="navigation">
+		        <div class="container">
+		            <div class="navbar-header">
 	                	<!-- Display a logo if one is assigned. -->
 	                    <div class="navbar-logo">
 	                        <!-- Logo. -->
 	                        <img src="{{ page.brand.logo.url }}" alt="{{ 'navbar.logo-for' | t }} {{ page.name }}" />
 	                    </div>
-	                {% else %}
-	                	<!-- Otherwise display the error page title. -->
-	                    <!-- Title is optional for locales. -->
-	                    {% assign title = 'error-page.navbar.title' | t  %}
-
-	                    <!-- Display the title only if one exists. -->
-	                    {% if title != '' %}
-	                        <span class="navbar-brand">{{ title }}</span>
-	                    {% endif %}
-	                {% endif %}
-	            </div>
-	        </div>    	
-	    </nav>
+		            </div>
+		        </div>    	
+		    </nav>
+	    {% endif %}
 
 		<div class="container container-sm">
 			<section class="error-page-header">
