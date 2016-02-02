@@ -34,12 +34,11 @@ npm will look at [package.json](package.json) and automatically install the nece
 
 ### Authenticating with Sorry
 
-We need somewhere to keep your Sorry login credentials. In the root of your project create a file called `sorry.json` which contains your username and password - don't worry, this will NOT be commited to your repo as we've included it in `.gitignore`.
+We need somewhere to keep your Sorry login credentials. In the root of your project create a file called `sorry.json` which contains your access token - don't worry, this will NOT be commited to your repo as we've included it in `.gitignore`.
 
 ```json
 {
-  "username": "your email address goes here",
-  "password": "your password goes here"
+  "accessToken": "your access tokens go here."
 }
 ```
 
