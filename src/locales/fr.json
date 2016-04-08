@@ -1,0 +1,59 @@
+{
+	"navbar": {
+		"title": "État du service",
+		"logo-for": "Logo"
+	},
+	"states": {
+		"current-status": "Statut actuel",
+		"all-systems-are-go": "Tous les systèmes sont opérationnels.",
+		"ongoing": "En cours",
+		"no-more-notices": "Aucun incident signalé sur les 7 derniers jours."
+	},
+	"support": {
+		"disagree": {
+			"question": "Vous rencontrer un problème ?",
+			"answer": "N'hésitez pas à nous le faire savoir."
+		},
+		"need-support": "Besoin d'aide ?"
+	},
+	"social": {
+		"twitter": "Suivez-nous sur Twitter",
+		"facebook": "Rejoignez-nous sur Facebook",
+		"google_plus": "Suivez-nous sur Google+"
+	},
+	"subscriptions": {
+		"default": "Mettre à jour",
+		"via": "via",
+		"slack": {
+			"name": "Slack",
+			"description": "Publié en direct au #channel de votre choix."
+		},
+		"email": {
+			"name": "Email",
+			"description": "Les messages sont envoyés directement dans votre boite de réception. "
+		}
+	},
+	"date_formats": {
+		"default": "%a, %-d %b %Y",
+		"timestamp": "%X %Z"
+	},
+	"error-page": {
+		"meta": {
+			"title": "Page d'erreur",
+			"description": "Nous sommes désolés, la page n’est pas accessible pour le moment."
+		},
+		"title": "Nous sommes désolés, une erreur s'est produite.",
+		"subtitle": "Ne vous inquiétez pas, nos équipes vont corriger le bug.",
+		"retry": "Veuillez actualiser la page et réessayer, si cela ne fonctionne toujours pas, merci de réessayer ultérieurement, le temps pour nos équipes de corriger le bug.",
+		"states": {
+			"ongoing": {
+				"heading": "Oups, quelque chose s'est mal passé.",
+				"body": "Ceci est peut-être lié à un problème en cours, s'il vous plait, consultez notre page d’état du service pour plus d'informations."
+			}
+		},
+		"sp-link": "Parcourez notre page d’état du service ",
+		"support": {
+			"need-support": "Parlez-en avec un de nos experts."
+		}
+	}
+}

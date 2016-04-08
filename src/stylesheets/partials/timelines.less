@@ -40,13 +40,14 @@ dl.timeline {
 				float: right;
 				line-height: 1.1;
 				margin-top: 2px;
+				margin-left: @line-height-computed;
 			}
 
 			@media (min-width: @grid-float-breakpoint) {
 				// Make more centered block on non-mobile devices.
 				display: inline-block;
 				margin-top: -24px;
-				width: 512px;
+				min-width: 512px;
 				font-size: 30px;
 			}
 		}
