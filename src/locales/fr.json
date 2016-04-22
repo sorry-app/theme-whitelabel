@@ -7,7 +7,7 @@
 		"current-status": "Statut actuel",
 		"all-systems-are-go": "Tous les systèmes sont opérationnels.",
 		"ongoing": "En cours",
-		"no-more-notices": "Aucun incident signalé sur les 7 derniers jours."
+		"no-more-notices": "Aucun incident signalé sur les %{days} derniers jours."
 	},
 	"support": {
 		"disagree": {

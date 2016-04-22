@@ -163,7 +163,7 @@
 
                 <!-- End of Timeline. -->
                 <dt class="event event-final" role="presentation">Past notices</dt>
-                    <dd>{{ 'states.no-more-notices' | t }}</dd>
+                    <dd>{{ 'states.no-more-notices' | t: days: page.timeline_threshold_in_days }}</dd>
             </dl>
         </div> 
     </main>
