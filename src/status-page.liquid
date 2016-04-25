@@ -71,9 +71,11 @@
                                     <dt><i class="fa fa-bullhorn"></i> {{ 'states.ongoing' | t }}</dt>
                                         <dd>
                                             <dl>
+                                                <!-- Force sorting in reverse order for open notices. -->
+                                                {% assign ordered_updates = apology.updates | sort: 'created_at' %}
                                                 <!-- Loop over any updates we have for the apology -->
                                                 <!-- We reverse the order so the latest update displays first as the priority. -->
-                                                {% for update in apology.updates reversed %}
+                                                {% for update in ordered_updates reversed %}
                                                     <!-- Output the date for the update. -->
                                                     <dt id="update-{{ update.id }}">
                                                         <!-- Datetime, augmented to 'time_ago_in_words' by moment.js -->
