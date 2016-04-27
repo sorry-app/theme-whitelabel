@@ -12,8 +12,7 @@
 			"disagree": {
 				"question": "Er du ikke enig?",
 				"answer": "Så kontakt os her"
-			},
-			"need-support": "Har du brug for support?"
+			}
 		},
 		"subscribe-button": {
 			"default": "Få opdateringer",
@@ -26,6 +25,9 @@
 				"name": "Email",
 				"description": "Opdateringer leveret direkte på din email."
 			}
+		},
+		"footer": {
+			"need-support": "Har du brug for support?"
 		}
 	},
 	"error-page": {
@@ -39,7 +41,7 @@
 			}
 		},
 		"sp-link": "Besøg vores statusside",
-		"support": {
+		"footer": {
 			"need-support": "Ønsker du at kontakte os vedrørende denne fejl?"
 		}
 	},

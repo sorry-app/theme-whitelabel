@@ -12,7 +12,9 @@
 			"disagree": {
 				"question": "לא מסכים עם זה?",
 				"answer": "אנא יידעו אותנו"
-			},		
+			}
+		},
+		"footer": {
 			"need-support": "זקוק לתמיכה?"
 		}
 	},

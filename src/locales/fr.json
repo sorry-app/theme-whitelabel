@@ -12,8 +12,7 @@
 			"disagree": {
 				"question": "Vous rencontrez un problème ?",
 				"answer": "N'hésitez pas à nous le faire savoir."
-			},
-			"need-support": "Besoin d'aide ?"
+			}
 		},
 		"subscribe-button": {
 			"default": "Mettre à jour",
@@ -26,6 +25,9 @@
 				"name": "Email",
 				"description": "Les messages sont envoyés directement dans votre boite de réception. "
 			}
+		},
+		"footer": {
+			"need-support": "Besoin d'aide ?"
 		}
 	},
 	"error-page": {
@@ -39,7 +41,7 @@
 			}
 		},
 		"sp-link": "Parcourez notre page d’état du service ",
-		"support": {
+		"footer": {
 			"need-support": "Parlez-en avec un de nos experts."
 		}
 	},

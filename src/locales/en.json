@@ -12,8 +12,7 @@
 			"disagree": {
 				"question": "Don't agree with this?",
 				"answer": "Please let us know"
-			},
-			"need-support": "Need Support?"
+			}
 		},
 		"subscribe-button": {
 			"default": "Get Updates",
@@ -26,6 +25,9 @@
 				"name": "Email",
 				"description": "Messages delivered right into your inbox."
 			}
+		},
+		"footer": {
+			"need-support": "Need Support?"
 		}
 	},
 	"error-page": {
@@ -39,7 +41,7 @@
 			}
 		},
 		"sp-link": "Visit our Status Page",
-		"support": {
+		"footer": {
 			"need-support": "Want to talk to us about this error?"
 		}
 	},
