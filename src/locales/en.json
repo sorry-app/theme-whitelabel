@@ -15,7 +15,7 @@
 			},
 			"need-support": "Need Support?"
 		},
-		"subscriptions": {
+		"subscribe-button": {
 			"default": "Get Updates",
 			"via": "via",
 			"slack": {

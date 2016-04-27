@@ -15,7 +15,7 @@
 			},
 			"need-support": "Har du brug for support?"
 		},
-		"subscriptions": {
+		"subscribe-button": {
 			"default": "Få opdateringer",
 			"via": "via",
 			"slack": {

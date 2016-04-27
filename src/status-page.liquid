@@ -31,15 +31,15 @@
                         <!-- Page only has a single subscription option, display a consolidated button. -->
                         <a href="{{ page.subscription_options.first[1].url }}" class="btn btn-subscribe navbar-btn navbar-header-btn">
                             <i class="{{ page.subscription_options.first[1].icon }}"></i> 
-                                <span class="visible-xs-inline">{{ 'status-page.subscriptions.default' | t }}</span>
-                                <span class="hidden-xs">{{ 'status-page.subscriptions.default' | t }} {{ 'status-page.subscriptions.via' | t }} {{ 'status-page.subscriptions.' | append: page.subscription_options.first[0] | append: '.name' | t }}</span>
+                                <span class="visible-xs-inline">{{ 'status-page.subscribe-button.default' | t }}</span>
+                                <span class="hidden-xs">{{ 'status-page.subscribe-button.default' | t }} {{ 'status-page.subscribe-button.via' | t }} {{ 'status-page.subscribe-button.' | append: page.subscription_options.first[0] | append: '.name' | t }}</span>
                         </a>
                     {% elsif page.subscription_options.size > 1 %}
                         <!-- Button group containing the dropdown. -->
                         <div class="btn-group navbar-header-btn navbar-btn">
                             <!-- Core subscription button, activates dropdown for choices. -->
                             <button class="btn btn-subscribe dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell hidden-xs"></i> {{ 'status-page.subscriptions.default' | t }} <span class="caret"></span>
+                                <i class="fa fa-bell hidden-xs"></i> {{ 'status-page.subscribe-button.default' | t }} <span class="caret"></span>
                             </button>
 
                             <!-- Dropdown with subscription options in it. -->
@@ -48,7 +48,7 @@
                                 {% for option in page.subscription_options %}
                                     <!-- Output a link for this subscription option. -->
                                     <li>
-                                        <a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'status-page.subscriptions.' | append: option[0] | append: '.name' | t }} <small>{{ 'status-page.subscriptions.' | append: option[0] | append: '.description' | t }}</small></a>
+                                        <a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'status-page.subscribe-button.' | append: option[0] | append: '.name' | t }} <small>{{ 'status-page.subscribe-button.' | append: option[0] | append: '.description' | t }}</small></a>
                                     </li>
                                 {% endfor %}
                             </ul>                            
