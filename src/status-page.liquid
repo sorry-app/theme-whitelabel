@@ -10,12 +10,12 @@
                     {% if page.brand.logo %}
                         <div class="navbar-logo">
                             <!-- Logo. -->
-                            <img src="{{ page.brand.logo.url }}" alt="{{ 'navbar.logo-for' | t }} {{ page.name }}" />
+                            <img src="{{ page.brand.logo.url }}" alt="{{ 'status-page.navbar.logo-for' | t }} {{ page.name }}" />
                         </div>
 
                         <!-- Page Title. -->
                         <!-- Title is optional for locales. -->
-                        {% assign title = 'navbar.title' | t  %}
+                        {% assign title = 'status-page.navbar.title' | t  %}
 
                         <!-- Display the title only if one exists. -->
                         {% if title != '' %}
@@ -31,15 +31,15 @@
                         <!-- Page only has a single subscription option, display a consolidated button. -->
                         <a href="{{ page.subscription_options.first[1].url }}" class="btn btn-subscribe navbar-btn navbar-header-btn">
                             <i class="{{ page.subscription_options.first[1].icon }}"></i> 
-                                <span class="visible-xs-inline">{{ 'subscriptions.default' | t }}</span>
-                                <span class="hidden-xs">{{ 'subscriptions.default' | t }} {{ 'subscriptions.via' | t }} {{ 'subscriptions.' | append: page.subscription_options.first[0] | append: '.name' | t }}</span>
+                                <span class="visible-xs-inline">{{ 'status-page.subscriptions.default' | t }}</span>
+                                <span class="hidden-xs">{{ 'status-page.subscriptions.default' | t }} {{ 'status-page.subscriptions.via' | t }} {{ 'status-page.subscriptions.' | append: page.subscription_options.first[0] | append: '.name' | t }}</span>
                         </a>
                     {% elsif page.subscription_options.size > 1 %}
                         <!-- Button group containing the dropdown. -->
                         <div class="btn-group navbar-header-btn navbar-btn">
                             <!-- Core subscription button, activates dropdown for choices. -->
                             <button class="btn btn-subscribe dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell hidden-xs"></i> {{ 'subscriptions.default' | t }} <span class="caret"></span>
+                                <i class="fa fa-bell hidden-xs"></i> {{ 'status-page.subscriptions.default' | t }} <span class="caret"></span>
                             </button>
 
                             <!-- Dropdown with subscription options in it. -->
@@ -48,7 +48,7 @@
                                 {% for option in page.subscription_options %}
                                     <!-- Output a link for this subscription option. -->
                                     <li>
-                                        <a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'subscriptions.' | append: option[0] | append: '.name' | t }} <small>{{ 'subscriptions.' | append: option[0] | append: '.description' | t }}</small></a>
+                                        <a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'status-page.subscriptions.' | append: option[0] | append: '.name' | t }} <small>{{ 'status-page.subscriptions.' | append: option[0] | append: '.description' | t }}</small></a>
                                     </li>
                                 {% endfor %}
                             </ul>                            
@@ -68,7 +68,7 @@
                         <dt class="event event-ongoing" id="apology-{{ apology.id }}">Notice #{{ apology.id }}</dt>
                             <dd>
                                 <dl>
-                                    <dt><i class="fa fa-bullhorn"></i> {{ 'states.ongoing' | t }}</dt>
+                                    <dt><i class="fa fa-bullhorn"></i> {{ 'status-page.states.ongoing' | t }}</dt>
                                         <dd>
                                             <dl>
                                                 <!-- Force sorting in reverse order for open notices. -->
@@ -91,16 +91,16 @@
                                 </dl>
                             </dd>
                     {% else %}
-                        <dt class="title">{{ 'states.current-status' | t }}</dt>
+                        <dt class="title">{{ 'status-page.states.current-status' | t }}</dt>
                             <dd>
                                 <!-- No current apologies found -->
                                 <!-- We have nothing to be sorry about, so all is well. -->
-                                <h2><i class="fa fa-check-circle-o"></i> {{ 'states.all-systems-are-go' | t }}</h2>
+                                <h2><i class="fa fa-check-circle-o"></i> {{ 'status-page.states.all-systems-are-go' | t }}</h2>
                                     <!-- Check if any support / social links exists. -->
                                     {% if page.support.size > 0 or page.social.size > 0 %}
                                         <!-- Add a reference to support links. -->
                                         <!-- Use the smart acnhor plugin to link/not-link based on visibility. -->
-                                        <p>{{ 'support.disagree.question' | t }} <a data-smart-anchor="#contact-support">{{ 'support.disagree.answer' | t }}</a></p>
+                                        <p>{{ 'status-page.support.disagree.question' | t }} <a data-smart-anchor="#contact-support">{{ 'status-page.support.disagree.answer' | t }}</a></p>
                                     {% endif %}
                             </dd>
                     {% endfor %}
@@ -165,7 +165,7 @@
 
                 <!-- End of Timeline. -->
                 <dt class="event event-final" role="presentation">Past notices</dt>
-                    <dd>{{ 'states.no-more-notices' | t: days: page.timeline_threshold_in_days }}</dd>
+                    <dd>{{ 'status-page.states.no-more-notices' | t: days: page.timeline_threshold_in_days }}</dd>
             </dl>
         </div> 
     </main>
@@ -178,7 +178,7 @@
                 <div class="footer-body" id="contact-support">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4>{{ 'support.need-support' | t }}</h4>
+                            <h4>{{ 'status-page.support.need-support' | t }}</h4>
 
                             <!-- Main Status Page Nav. -->
                             <ul class="list-support-links">
@@ -198,7 +198,7 @@
                                         <!-- Dynamicly build a link to each type. -->
                                         <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_blank">
                                             <!-- Use the locale switched string for each type too. -->
-                                            <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'social.' | append: link[0] | t }}
+                                            <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'status-page.social.' | append: link[0] | t }}
                                         </a>
                                     </li>
                                 {% endfor %}

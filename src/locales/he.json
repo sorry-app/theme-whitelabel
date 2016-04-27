@@ -1,25 +1,27 @@
 {
-	"navbar": {
-		"title": "",
-		"logo-for": "לוגו ל"
-	},
-	"states": {
-		"current-status": "מצב נוכחי",
-		"all-systems-are-go": "כל המערכות עובדות",
-		"ongoing": "בתהליך",
-		"no-more-notices": "אין הודעות נוספות מהשבוע האחרון"
-	},
-	"support": {
-		"disagree": {
-			"question": "לא מסכים עם זה?",
-			"answer": "אנא יידעו אותנו"
-		},		
-		"need-support": "זקוק לתמיכה?"
-	},	
-	"social": {
-		"twitter": "עקבו אחרינו בטוויטר",
-		"facebook": "חפשו אותנו בפייסבוק",
-		"google_plus": "מצא אותנוב- Google"
+	"status-page": {	
+		"navbar": {
+			"title": "",
+			"logo-for": "לוגו ל"
+		},
+		"states": {
+			"current-status": "מצב נוכחי",
+			"all-systems-are-go": "כל המערכות עובדות",
+			"ongoing": "בתהליך",
+			"no-more-notices": "אין הודעות נוספות מהשבוע האחרון"
+		},
+		"support": {
+			"disagree": {
+				"question": "לא מסכים עם זה?",
+				"answer": "אנא יידעו אותנו"
+			},		
+			"need-support": "זקוק לתמיכה?"
+		},	
+		"social": {
+			"twitter": "עקבו אחרינו בטוויטר",
+			"facebook": "חפשו אותנו בפייסבוק",
+			"google_plus": "מצא אותנוב- Google"
+		}
 	},
 	"date_formats": {
 		"default": "יום %a', %-d %B %Y",

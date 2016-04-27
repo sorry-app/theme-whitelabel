@@ -1,41 +1,39 @@
 {
-	"navbar": {
-		"title": "System Status",
-		"logo-for": "Logo for"
-	},
-	"states": {
-		"current-status": "Current Status",
-		"all-systems-are-go": "All systems are go",
-		"ongoing": "Ongoing",
-		"no-more-notices": "No further notices from the past %{days} days."
-	},
-	"support": {
-		"disagree": {
-			"question": "Don't agree with this?",
-			"answer": "Please let us know"
+	"status-page": {
+		"navbar": {
+			"title": "System Status",
+			"logo-for": "Logo for"
 		},
-		"need-support": "Need Support?"
-	},
-	"social": {
-		"twitter": "Follow us on Twitter",
-		"facebook": "Friend us on Facebook",
-		"google_plus": "Find us on Google+"
-	},
-	"subscriptions": {
-		"default": "Get Updates",
-		"via": "via",
-		"slack": {
-			"name": "Slack",
-			"description": "Posted live to a #channel of your choice."
+		"states": {
+			"current-status": "Current Status",
+			"all-systems-are-go": "All systems are go",
+			"ongoing": "Ongoing",
+			"no-more-notices": "No further notices from the past %{days} days."
 		},
-		"email": {
-			"name": "Email",
-			"description": "Messages delivered right into your inbox."
+		"support": {
+			"disagree": {
+				"question": "Don't agree with this?",
+				"answer": "Please let us know"
+			},
+			"need-support": "Need Support?"
+		},
+		"social": {
+			"twitter": "Follow us on Twitter",
+			"facebook": "Friend us on Facebook",
+			"google_plus": "Find us on Google+"
+		},
+		"subscriptions": {
+			"default": "Get Updates",
+			"via": "via",
+			"slack": {
+				"name": "Slack",
+				"description": "Posted live to a #channel of your choice."
+			},
+			"email": {
+				"name": "Email",
+				"description": "Messages delivered right into your inbox."
+			}
 		}
-	},	
-	"date_formats": {
-		"default": "%a, %-d %b %Y",
-		"timestamp": "%X %Z"
 	},
 	"error-page": {
 		"meta": {
@@ -55,5 +53,9 @@
 		"support": {
 			"need-support": "Want to talk to us about this error?"
 		}
+	},
+	"date_formats": {
+		"default": "%a, %-d %b %Y",
+		"timestamp": "%X %Z"
 	}
 }
