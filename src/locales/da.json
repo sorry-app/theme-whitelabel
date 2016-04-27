@@ -29,10 +29,6 @@
 		}
 	},
 	"error-page": {
-		"meta": {
-			"title": "Fejl",
-			"description": "Beklager, der er sket en fejl"
-		},
 		"title": "Beklager, der er sket en fejl",
 		"subtitle": "Det er ikke dig - det er os",
 		"retry": "Giv det endnu it forsøg, og hvis det stadig ikke virker, så stol på at vi er i gang med at fikse det.",

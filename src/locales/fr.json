@@ -29,10 +29,6 @@
 		}
 	},
 	"error-page": {
-		"meta": {
-			"title": "Page d'erreur",
-			"description": "Nous sommes désolés, la page n’est pas accessible pour le moment."
-		},
 		"title": "Nous sommes désolés, une erreur s'est produite.",
 		"subtitle": "Ne vous inquiétez pas, nos équipes vont corriger le bug.",
 		"retry": "Veuillez actualiser la page et réessayer, si cela ne fonctionne toujours pas, merci de réessayer ultérieurement, le temps pour nos équipes de corriger le bug.",
