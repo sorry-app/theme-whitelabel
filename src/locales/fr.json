@@ -4,7 +4,6 @@
 			"title": "État du service"
 		},
 		"states": {
-			"current-status": "Statut actuel",
 			"all-systems-are-go": "Tous les systèmes sont opérationnels.",
 			"ongoing": "En cours",
 			"no-more-notices": "Aucun incident signalé sur les %{days} derniers jours."

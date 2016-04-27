@@ -4,7 +4,6 @@
 			"title": "Status for systemet"
 		},
 		"states": {
-			"current-status": "Status lige nu",
 			"all-systems-are-go": "Alt kører normalt",
 			"ongoing": "Igangværende",
 			"no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."

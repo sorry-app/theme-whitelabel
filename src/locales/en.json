@@ -4,7 +4,6 @@
 			"title": "System Status"
 		},
 		"states": {
-			"current-status": "Current Status",
 			"all-systems-are-go": "All systems are go",
 			"ongoing": "Ongoing",
 			"no-more-notices": "No further notices from the past %{days} days."
