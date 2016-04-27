@@ -1,8 +1,7 @@
 {
 	"status-page": {	
 		"navbar": {
-			"title": "",
-			"logo-for": "לוגו ל"
+			"title": ""
 		},
 		"states": {
 			"current-status": "מצב נוכחי",
@@ -16,12 +15,12 @@
 				"answer": "אנא יידעו אותנו"
 			},		
 			"need-support": "זקוק לתמיכה?"
-		},	
-		"social": {
-			"twitter": "עקבו אחרינו בטוויטר",
-			"facebook": "חפשו אותנו בפייסבוק",
-			"google_plus": "מצא אותנוב- Google"
 		}
+	},
+	"social": {
+		"twitter": "עקבו אחרינו בטוויטר",
+		"facebook": "חפשו אותנו בפייסבוק",
+		"google_plus": "מצא אותנוב- Google"
 	},
 	"date_formats": {
 		"default": "יום %a', %-d %B %Y",

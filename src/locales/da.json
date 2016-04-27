@@ -1,8 +1,7 @@
 {
 	"status-page": {
 		"navbar": {
-			"title": "Status for systemet",
-			"logo-for": "Logo for"
+			"title": "Status for systemet"
 		},
 		"states": {
 			"current-status": "Status lige nu",
@@ -16,11 +15,6 @@
 				"answer": "Så kontakt os her"
 			},
 			"need-support": "Har du brug for support?"
-		},
-		"social": {
-			"twitter": "Følg os på Twitter",
-			"facebook": "Bliv venner med os på Facebook",
-			"google_plus": "Find os på Google+"
 		},
 		"subscriptions": {
 			"default": "Få opdateringer",
@@ -53,6 +47,11 @@
 		"support": {
 			"need-support": "Ønsker du at kontakte os vedrørende denne fejl?"
 		}
+	},
+	"social-links": {
+		"twitter": "Følg os på Twitter",
+		"facebook": "Bliv venner med os på Facebook",
+		"google_plus": "Find os på Google+"
 	},
 	"date_formats": {
 		"default": "%a, %-d %b %Y",

@@ -10,7 +10,7 @@
                     {% if page.brand.logo %}
                         <div class="navbar-logo">
                             <!-- Logo. -->
-                            <img src="{{ page.brand.logo.url }}" alt="{{ 'status-page.navbar.logo-for' | t }} {{ page.name }}" />
+                            <img src="{{ page.brand.logo.url }}" alt="logo" />
                         </div>
 
                         <!-- Page Title. -->
@@ -198,7 +198,7 @@
                                         <!-- Dynamicly build a link to each type. -->
                                         <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_blank">
                                             <!-- Use the locale switched string for each type too. -->
-                                            <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'status-page.social.' | append: link[0] | t }}
+                                            <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'social-links.' | append: link[0] | t }}
                                         </a>
                                     </li>
                                 {% endfor %}

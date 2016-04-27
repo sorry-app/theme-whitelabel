@@ -1,8 +1,7 @@
 {
 	"status-page": {
 		"navbar": {
-			"title": "État du service",
-			"logo-for": "Logo"
+			"title": "État du service"
 		},
 		"states": {
 			"current-status": "Statut actuel",
@@ -16,11 +15,6 @@
 				"answer": "N'hésitez pas à nous le faire savoir."
 			},
 			"need-support": "Besoin d'aide ?"
-		},
-		"social": {
-			"twitter": "Suivez-nous sur Twitter",
-			"facebook": "Rejoignez-nous sur Facebook",
-			"google_plus": "Suivez-nous sur Google+"
 		},
 		"subscriptions": {
 			"default": "Mettre à jour",
@@ -54,6 +48,11 @@
 			"need-support": "Parlez-en avec un de nos experts."
 		}
 	},
+	"social-links": {
+		"twitter": "Suivez-nous sur Twitter",
+		"facebook": "Rejoignez-nous sur Facebook",
+		"google_plus": "Suivez-nous sur Google+"
+	},	
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
 		"timestamp": "%X %Z"

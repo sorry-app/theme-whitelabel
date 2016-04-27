@@ -1,8 +1,7 @@
 {
 	"status-page": {
 		"navbar": {
-			"title": "System Status",
-			"logo-for": "Logo for"
+			"title": "System Status"
 		},
 		"states": {
 			"current-status": "Current Status",
@@ -16,11 +15,6 @@
 				"answer": "Please let us know"
 			},
 			"need-support": "Need Support?"
-		},
-		"social": {
-			"twitter": "Follow us on Twitter",
-			"facebook": "Friend us on Facebook",
-			"google_plus": "Find us on Google+"
 		},
 		"subscriptions": {
 			"default": "Get Updates",
@@ -54,6 +48,11 @@
 			"need-support": "Want to talk to us about this error?"
 		}
 	},
+	"social-links": {
+		"twitter": "Follow us on Twitter",
+		"facebook": "Friend us on Facebook",
+		"google_plus": "Find us on Google+"
+	},	
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
 		"timestamp": "%X %Z"
