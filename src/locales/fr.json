@@ -55,9 +55,5 @@
 		"twitter": "Suivez-nous sur Twitter",
 		"facebook": "Rejoignez-nous sur Facebook",
 		"google_plus": "Suivez-nous sur Google+"
-	},	
-	"date_formats": {
-		"default": "%a, %-d %b %Y",
-		"timestamp": "%X %Z"
-	}	
+	}
 }

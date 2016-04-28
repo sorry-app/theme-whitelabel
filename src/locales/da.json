@@ -55,9 +55,5 @@
 		"twitter": "Følg os på Twitter",
 		"facebook": "Bliv venner med os på Facebook",
 		"google_plus": "Find os på Google+"
-	},
-	"date_formats": {
-		"default": "%a, %-d %b %Y",
-		"timestamp": "%X %Z"
 	}
 }

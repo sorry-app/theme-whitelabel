@@ -113,7 +113,7 @@
                             <!-- Loop over the updates for this apology, which we want to group by date. -->
                             {% for update in apology.updates  %}
                                 <!-- Snapshot the date by which we want to group updates. -->
-                                {% capture grouped_date %}{{ update.created_at | date }}{% endcapture %}
+                                {% capture grouped_date %}{{ update.created_at | date: '%a, %-d %b %Y' }}{% endcapture %}
 
                                 <!-- See if this is the first iteration of the loop. -->
                                 {% if forloop.first %}
@@ -136,7 +136,7 @@
                                 {% endif %}
 
                                 <!-- Output the time for the given update. -->
-                                <dt id="update-{{ update.id }}">{{ update.created_at | date: 'timestamp' }}</dt>
+                                <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
                                     <!-- Output the text content of the update. -->
                                     <dd>{{ update.content | simple_format }}</dd>
 
