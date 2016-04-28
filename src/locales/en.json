@@ -55,9 +55,5 @@
 		"twitter": "Follow us on Twitter",
 		"facebook": "Friend us on Facebook",
 		"google_plus": "Find us on Google+"
-	},	
-	"date_formats": {
-		"default": "%a, %-d %b %Y",
-		"timestamp": "%X %Z"
 	}
 }
