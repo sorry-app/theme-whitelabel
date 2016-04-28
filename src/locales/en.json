@@ -1,46 +1,52 @@
 {
 	"status-page": {
 		"navbar": {
-			"title": "System Status"
+			"title": "System Status",
+			"subscribe-button": {
+				"default": "Get Updates",
+				"via": "via",
+				"slack": {
+					"name": "Slack",
+					"description": "Posted live to a #channel of your choice."
+				},
+				"email": {
+					"name": "Email",
+					"description": "Messages delivered right into your inbox."
+				}
+			}
 		},
-		"states": {
-			"all-systems-are-go": "All systems are go",
-			"ongoing": "Ongoing",
-			"no-more-notices": "No further notices from the past %{days} days."
-		},
-		"support": {
+		"header": {
+			"states": {
+				"all-systems-are-go": "All systems are go",
+				"ongoing": "Ongoing"
+			},
 			"disagree": {
 				"question": "Don't agree with this?",
 				"answer": "Please let us know"
-			}
+			}			
 		},
-		"subscribe-button": {
-			"default": "Get Updates",
-			"via": "via",
-			"slack": {
-				"name": "Slack",
-				"description": "Posted live to a #channel of your choice."
-			},
-			"email": {
-				"name": "Email",
-				"description": "Messages delivered right into your inbox."
-			}
+		"body": {
+			"no-more-notices": "No further notices from the past %{days} days."
 		},
 		"footer": {
 			"need-support": "Need Support?"
 		}
 	},
 	"error-page": {
-		"title": "Sorry, something has gone wrong",
-		"subtitle": "It’s not you, it’s us",
-		"retry": "Give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
-		"states": {
-			"ongoing": {
-				"heading": "We are having issues at the moment.",
-				"body": "These may be related to this error, please take a look at our Status Page for more information."
+		"header": {
+			"title": "Sorry, something has gone wrong"
+		},
+		"body": {
+			"subtitle": "It’s not you, it’s us",
+			"retry": "Give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
+			"states": {
+				"ongoing": {
+					"heading": "We are having issues at the moment.",
+					"body": "These may be related to this error, please take a look at our Status Page for more information.",
+					"sp-link": "Visit our Status Page"
+				}
 			}
 		},
-		"sp-link": "Visit our Status Page",
 		"footer": {
 			"need-support": "Want to talk to us about this error?"
 		}
