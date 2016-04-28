@@ -1,22 +1,26 @@
 {
-	"navbar": {
-		"title": "",
-		"logo-for": "לוגו ל"
+	"status-page": {	
+		"navbar": {
+			"title": ""
+		},
+		"header": {
+			"states": {
+				"all-systems-are-go": "כל המערכות עובדות",
+				"ongoing": "בתהליך"
+			},
+			"disagree": {
+				"question": "לא מסכים עם זה?",
+				"answer": "אנא יידעו אותנו"
+			}
+		},
+		"body": {
+			"no-more-notices": "אין הודעות נוספות מהשבוע האחרון"
+		},
+		"footer": {
+			"need-support": "זקוק לתמיכה?"
+		}
 	},
-	"states": {
-		"current-status": "מצב נוכחי",
-		"all-systems-are-go": "כל המערכות עובדות",
-		"ongoing": "בתהליך",
-		"no-more-notices": "אין הודעות נוספות מהשבוע האחרון"
-	},
-	"support": {
-		"disagree": {
-			"question": "לא מסכים עם זה?",
-			"answer": "אנא יידעו אותנו"
-		},		
-		"need-support": "זקוק לתמיכה?"
-	},	
-	"social": {
+	"social-links": {
 		"twitter": "עקבו אחרינו בטוויטר",
 		"facebook": "חפשו אותנו בפייסבוק",
 		"google_plus": "מצא אותנוב- Google"

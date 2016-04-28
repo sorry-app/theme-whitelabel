@@ -1,59 +1,63 @@
 {
-	"navbar": {
-		"title": "System Status",
-		"logo-for": "Logo for"
-	},
-	"states": {
-		"current-status": "Current Status",
-		"all-systems-are-go": "All systems are go",
-		"ongoing": "Ongoing",
-		"no-more-notices": "No further notices from the past %{days} days."
-	},
-	"support": {
-		"disagree": {
-			"question": "Don't agree with this?",
-			"answer": "Please let us know"
+	"status-page": {
+		"navbar": {
+			"title": "System Status",
+			"subscribe-button": {
+				"default": "Get Updates",
+				"via": "via",
+				"slack": {
+					"name": "Slack",
+					"description": "Posted live to a #channel of your choice."
+				},
+				"email": {
+					"name": "Email",
+					"description": "Messages delivered right into your inbox."
+				}
+			}
 		},
-		"need-support": "Need Support?"
+		"header": {
+			"states": {
+				"all-systems-are-go": "All systems are go",
+				"ongoing": "Ongoing"
+			},
+			"disagree": {
+				"question": "Don't agree with this?",
+				"answer": "Please let us know"
+			}			
+		},
+		"body": {
+			"no-more-notices": "No further notices from the past %{days} days."
+		},
+		"footer": {
+			"need-support": "Need Support?"
+		}
 	},
-	"social": {
+	"error-page": {
+		"header": {
+			"title": "Sorry, something has gone wrong"
+		},
+		"body": {
+			"subtitle": "It’s not you, it’s us",
+			"retry": "Give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
+			"states": {
+				"ongoing": {
+					"heading": "We are having issues at the moment.",
+					"body": "These may be related to this error, please take a look at our Status Page for more information.",
+					"sp-link": "Visit our Status Page"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Want to talk to us about this error?"
+		}
+	},
+	"social-links": {
 		"twitter": "Follow us on Twitter",
 		"facebook": "Friend us on Facebook",
 		"google_plus": "Find us on Google+"
-	},
-	"subscriptions": {
-		"default": "Get Updates",
-		"via": "via",
-		"slack": {
-			"name": "Slack",
-			"description": "Posted live to a #channel of your choice."
-		},
-		"email": {
-			"name": "Email",
-			"description": "Messages delivered right into your inbox."
-		}
 	},	
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
 		"timestamp": "%X %Z"
-	},
-	"error-page": {
-		"meta": {
-			"title": "Error Page",
-			"description": "Sorry, something has gone wrong"
-		},
-		"title": "Sorry, something has gone wrong",
-		"subtitle": "It’s not you, it’s us",
-		"retry": "Give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
-		"states": {
-			"ongoing": {
-				"heading": "We are having issues at the moment.",
-				"body": "These may be related to this error, please take a look at our Status Page for more information."
-			}
-		},
-		"sp-link": "Visit our Status Page",
-		"support": {
-			"need-support": "Want to talk to us about this error?"
-		}
 	}
 }

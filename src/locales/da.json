@@ -1,59 +1,63 @@
 {
-	"navbar": {
-		"title": "Status for systemet",
-		"logo-for": "Logo for"
-	},
-	"states": {
-		"current-status": "Status lige nu",
-		"all-systems-are-go": "Alt kører normalt",
-		"ongoing": "Igangværende",
-		"no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."
-	},
-	"support": {
-		"disagree": {
-			"question": "Er du ikke enig?",
-			"answer": "Så kontakt os her"
+	"status-page": {
+		"navbar": {
+			"title": "Status for systemet",
+			"subscribe-button": {
+				"default": "Få opdateringer",
+				"via": "via",
+				"slack": {
+					"name": "Slack",
+					"description": "Send direkte til en #kanal som du vælger."
+				},
+				"email": {
+					"name": "Email",
+					"description": "Opdateringer leveret direkte på din email."
+				}
+			}
 		},
-		"need-support": "Har du brug for support?"
+		"header": {
+			"states": {
+				"all-systems-are-go": "Alt kører normalt",
+				"ongoing": "Igangværende"
+			},
+			"disagree": {
+				"question": "Er du ikke enig?",
+				"answer": "Så kontakt os her"
+			}			
+		},
+		"body": {
+			"no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."			
+		},
+		"footer": {
+			"need-support": "Har du brug for support?"
+		}
 	},
-	"social": {
+	"error-page": {
+		"header": {
+			"title": "Beklager, der er sket en fejl"
+		},
+		"body": {
+			"subtitle": "Det er ikke dig - det er os",
+			"retry": "Giv det endnu it forsøg, og hvis det stadig ikke virker, så stol på at vi er i gang med at fikse det.",
+			"states": {
+				"ongoing": {
+					"heading": "Vi har problemer i øjeblikket.",
+					"body": "Måske er problemerne relateret til denne fejl. Check status her.",
+					"sp-link": "Besøg vores statusside"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Ønsker du at kontakte os vedrørende denne fejl?"
+		}
+	},
+	"social-links": {
 		"twitter": "Følg os på Twitter",
 		"facebook": "Bliv venner med os på Facebook",
 		"google_plus": "Find os på Google+"
 	},
-	"subscriptions": {
-		"default": "Få opdateringer",
-		"via": "via",
-		"slack": {
-			"name": "Slack",
-			"description": "Send direkte til en #kanal som du vælger."
-		},
-		"email": {
-			"name": "Email",
-			"description": "Opdateringer leveret direkte på din email."
-		}
-	},	
 	"date_formats": {
 		"default": "%a, %-d %b %Y",
 		"timestamp": "%X %Z"
-	},
-	"error-page": {
-		"meta": {
-			"title": "Fejl",
-			"description": "Beklager, der er sket en fejl"
-		},
-		"title": "Beklager, der er sket en fejl",
-		"subtitle": "Det er ikke dig - det er os",
-		"retry": "Giv det endnu it forsøg, og hvis det stadig ikke virker, så stol på at vi er i gang med at fikse det.",
-		"states": {
-			"ongoing": {
-				"heading": "Vi har problemer i øjeblikket.",
-				"body": "Måske er problemerne relateret til denne fejl. Check status her."
-			}
-		},
-		"sp-link": "Besøg vores statusside",
-		"support": {
-			"need-support": "Ønsker du at kontakte os vedrørende denne fejl?"
-		}
 	}
 }
