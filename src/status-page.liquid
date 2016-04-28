@@ -12,19 +12,10 @@
                             <!-- Logo. -->
                             <img src="{{ page.brand.logo.url }}" alt="logo" />
                         </div>
-
-                        <!-- Page Title. -->
-                        <!-- Title is optional for locales. -->
-                        {% assign title = 'status-page.navbar.title' | t  %}
-
-                        <!-- Display the title only if one exists. -->
-                        {% if title != '' %}
-                            <span class="navbar-brand hidden-xs">{{ title }}</span>
-                        {% endif %}
-                    {% else %}
-                        <!-- Page Name. -->
-                        <span class="navbar-brand">{{ page.name }}</span>
                     {% endif %}
+
+                    <!-- Page Title. -->
+                    <span class="navbar-brand">{{ 'status-page.navbar.title' | t }}</span>
 
                     <!-- Subscription button based on the various options for the page. -->
                     {% if page.subscription_options.size == 1 %}
