@@ -1,0 +1,59 @@
+{
+	"status-page": {
+		"navbar": {
+			"title": "Systemstatus",
+			"subscribe-button": {
+				"default": "Få uppdateringar",
+				"via": "via",
+				"slack": {
+					"name": "Slack",
+					"description": "Skickad direkt till en #kanal du väljer."
+				},
+				"email": {
+					"name": "E-post",
+					"description": "Uppdateringar levererade direkt till din mejl."
+				}
+			}
+		},
+		"header": {
+			"states": {
+				"all-systems-are-go": "Allt fungerar normalt",
+				"ongoing": "Pågående"
+			},
+			"disagree": {
+				"question": "Är du inte enig?",
+				"answer": "Så kontakta oss här "
+			}			
+		},
+		"body": {
+			"no-more-notices": "Inga ytterligare meddelanden de senaste %dagarna."
+		},
+		"footer": {
+			"need-support": "Behöver du hjälp?"
+		}
+	},
+	"error-page": {
+		"header": {
+			"title": "Beklagar, det har uppstått ett fel"
+		},
+		"body": {
+			"subtitle": "Det är inte du - det är vi",
+			"retry": "Försök igen och fungerar det fortfarande inte så var säker på att vi försöker att ordna det.",
+			"states": {
+				"ongoing": {
+					"heading": "Vi har problem för närvarande.",
+					"body": "Problemen har eventuellt orsakats av det här felet. Kontrollera status här.",
+					"sp-link": "Besök vår statussida"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Vill du kontakta oss angående detta fel?"
+		}
+	},
+	"social-links": {
+		"twitter": "Följ oss på Twitter",
+		"facebook": "Bli vän med oss på Facebook",
+		"google_plus": "Hitta oss på Google+"
+	}
+}
