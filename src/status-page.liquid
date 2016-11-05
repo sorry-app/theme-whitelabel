@@ -61,6 +61,13 @@
                                 <dl>
                                     <dt><i class="fa fa-bullhorn"></i> {{ 'status-page.header.states.ongoing' | t }}</dt>
                                         <dd>
+                                            <!-- Optional subject line for the notice. -->
+                                            <!--- It's optional because we didn't used to support subjects. -->
+                                            {% unless apology.subject == blank %}
+                                                <!-- Has a subject, display it. -->
+                                                <h3 class="notice-subject">{{ apology.subject }}</h3>
+                                            {% endunless %}
+
                                             <dl>
                                                 <!-- Force sorting in reverse order for open notices. -->
                                                 {% assign ordered_updates = apology.updates | sort: 'created_at' %}
@@ -110,6 +117,13 @@
                     <dt class="event event-resolved" id="apology-{{ apology.id }}">#{{ apology.id }}</dt>
                     <dd>
                         <dl>
+                            <!-- Optional subject line for the notice. -->
+                            <!--- It's optional because we didn't used to support subjects. -->
+                            {% unless apology.subject == blank %}
+                                <!-- Has a subject, display it. -->
+                                <h4 class="notice-subject">{{ apology.subject }}</h4>
+                            {% endunless %}
+
                             <!-- Loop over the updates for this apology, which we want to group by date. -->
                             {% for update in apology.updates  %}
                                 <!-- Snapshot the date by which we want to group updates. -->
