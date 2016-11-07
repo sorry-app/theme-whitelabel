@@ -53,6 +53,23 @@ dl.timeline {
 		}
 	}
 
+	// Subject Lines.
+	// Applied to various h tags but standardizes type.
+	.notice-subject {
+		font-size: 20px;
+		margin-top: 0;
+		margin-bottom: 15px;
+
+		// Bump the spacing on larger devices. */
+		@media (min-width: @grid-float-breakpoint) { margin-bottom: 30px; }
+	}		
+	// Padding on the previous timeline subjects to
+	// match the indents on the date boxes. */
+	h4.notice-subject  { 
+		/* Indent only applied on desktop devices. */
+		@media (min-width: @grid-float-breakpoint) { padding: 0 10px; }
+	}
+
 	// Special end event style.
 	> dt.event-final + dd { opacity: 0.5; }
 
@@ -230,7 +247,7 @@ dl.timeline {
 		// Specific styles for the timeline when used in the page body.
 		&.timeline-body {
 			// Vertical timeline line.
-			&:before { bottom: 2px; }
+			&:before { bottom: 10px; }
 
 			// Timeline key date bullets.
 			&:before, > dt:before, > dt + dd:before { 
