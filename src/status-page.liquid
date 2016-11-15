@@ -54,24 +54,24 @@
             <section id="current-status">
 
                 <dl class="timeline timeline-header">
-                    <!-- Loop over the collection of current apologies. -->
-                    {% for apology in page.apologies.current %}
-                        <dt class="event event-ongoing" id="apology-{{ apology.id }}">Notice #{{ apology.id }}</dt>
+                    <!-- Loop over the collection of current notices. -->
+                    {% for notice in page.notices.present %}
+                        <dt class="event event-ongoing" id="notice-{{ notice.id }}">Notice #{{ notice.id }}</dt>
                             <dd>
                                 <dl>
                                     <dt><i class="fa fa-bullhorn"></i> {{ 'status-page.header.states.ongoing' | t }}</dt>
                                         <dd>
                                             <!-- Optional subject line for the notice. -->
                                             <!--- It's optional because we didn't used to support subjects. -->
-                                            {% unless apology.subject == blank %}
+                                            {% unless notice.subject == blank %}
                                                 <!-- Has a subject, display it. -->
-                                                <h3 class="notice-subject">{{ apology.subject }}</h3>
+                                                <h3 class="notice-subject">{{ notice.subject }}</h3>
                                             {% endunless %}
 
                                             <dl>
                                                 <!-- Force sorting in reverse order for open notices. -->
-                                                {% assign ordered_updates = apology.updates | sort: 'created_at' %}
-                                                <!-- Loop over any updates we have for the apology -->
+                                                {% assign ordered_updates = notice.updates | sort: 'created_at' %}
+                                                <!-- Loop over any updates we have for the notice -->
                                                 <!-- We reverse the order so the latest update displays first as the priority. -->
                                                 {% for update in ordered_updates reversed %}
                                                     <!-- Output the date for the update. -->
@@ -91,7 +91,7 @@
                     {% else %}
                         <dt class="title">&nbsp;</dt>
                             <dd>
-                                <!-- No current apologies found -->
+                                <!-- No current notices found -->
                                 <!-- We have nothing to be sorry about, so all is well. -->
                                 <h2><i class="fa fa-check-circle-o"></i> {{ 'status-page.header.states.all-systems-are-go' | t }}</h2>
                                     <!-- Check if any support / social links exists. -->
@@ -110,22 +110,22 @@
     <!-- Main Timeline. -->
     <main>
         <div class="container container-md">
-            <!-- Timeline of previous apologies. -->
+            <!-- Timeline of previous notices. -->
             <dl class="timeline timeline-body">
-                <!-- Loop over the collection of previous apologies, order date descending. -->
-                {% for apology in page.apologies.recent %}
-                    <dt class="event event-resolved" id="apology-{{ apology.id }}">#{{ apology.id }}</dt>
+                <!-- Loop over the collection of previous notices, order date descending. -->
+                {% for notice in page.notices.past_recent %}
+                    <dt class="event event-resolved" id="notice-{{ notice.id }}">#{{ notice.id }}</dt>
                     <dd>
                         <dl>
                             <!-- Optional subject line for the notice. -->
                             <!--- It's optional because we didn't used to support subjects. -->
-                            {% unless apology.subject == blank %}
+                            {% unless notice.subject == blank %}
                                 <!-- Has a subject, display it. -->
-                                <h4 class="notice-subject">{{ apology.subject }}</h4>
+                                <h4 class="notice-subject">{{ notice.subject }}</h4>
                             {% endunless %}
 
-                            <!-- Loop over the updates for this apology, which we want to group by date. -->
-                            {% for update in apology.updates  %}
+                            <!-- Loop over the updates for this notice, which we want to group by date. -->
+                            {% for update in notice.updates  %}
                                 <!-- Snapshot the date by which we want to group updates. -->
                                 {% capture grouped_date %}{{ update.created_at | date: '%a, %-d %b %Y' }}{% endcapture %}
 

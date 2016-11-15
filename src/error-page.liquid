@@ -33,7 +33,7 @@
 					<p>{{ 'error-page.body.retry' | t }}</p>
 
 				<!-- Check to see if the status page has any notices on it. -->
-				{% if page.apologies.current.size > 0 %}
+				{% if page.notices.present.size > 0 %}
 					<!-- The SP does have noticed, display an ongoing statement and link. -->
 					<p><strong>{{ 'error-page.body.states.ongoing.heading' | t }}</strong> {{ 'error-page.body.states.ongoing.body' | t }}</p>
 
