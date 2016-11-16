@@ -56,10 +56,10 @@
                 <dl class="timeline timeline-header">
                     <!-- Loop over the collection of current notices. -->
                     {% for notice in page.notices.present %}
-                        <dt class="event event-ongoing" id="notice-{{ notice.id }}">Notice #{{ notice.id }}</dt>
+                        <dt class="event event-{{ notice.state }} event-{{ notice.timeline_state }} event-{{ notice.type }}" id="notice-{{ notice.id }}">Notice #{{ notice.id }}</dt>
                             <dd>
                                 <dl>
-                                    <dt><i class="fa fa-bullhorn"></i> {{ 'status-page.header.states.ongoing' | t }}</dt>
+                                    <dt><i class="fa fa-notice-state"></i> {{ 'status-page.header.states.' | append: notice.state | t }}</dt>
                                         <dd>
                                             <!-- Optional subject line for the notice. -->
                                             <!--- It's optional because we didn't used to support subjects. -->

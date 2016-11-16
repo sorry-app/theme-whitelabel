@@ -18,7 +18,8 @@
 		"header": {
 			"states": {
 				"all-systems-are-go": "Allt fungerar normalt",
-				"ongoing": "Pågående"
+				"open": "Pågående",
+				"underway": "På gång"
 			},
 			"disagree": {
 				"question": "Är du inte enig?",

@@ -164,22 +164,39 @@ dl.timeline {
 	// --------------------------------------------------
 
 	// Ongoing event type.
-	> dt.event.event-ongoing {
+	> dt.event.event-present {
 		// Special colour style for the ongoing message.
 		& + dd > dl > dt {
 			// Use the theme colours for this.
-			background-color: ~"{{ page.brand.color_state_warning }}";
 			color: #FFF;
 			padding: 5px 10px;
 			border-radius: 6px;
 
 			// Little bullhorn icon for the notice.
-			i {
+			.fa {
 				float: right;
 				margin-top: 3px;
 			}
 		}
 	}
+	> dt.event.event-apology {
+		& + dd > dl > dt {
+			// Use the theme colours for this.
+			background-color: ~"{{ page.brand.color_state_warning }}";
+
+			// Use the bullhorn icon.
+			.fa:before { content: '\f0a1' }
+		}		
+	}
+	> dt.event.event-scheduled-maintenance {
+		& + dd > dl > dt {
+			// Use the theme colours for this.
+			background-color: ~"{{ page.brand.color_state_info }}";
+
+			// Use the bullhorn icon.
+			.fa:before { content: '\f0ad' }			
+		}
+	}	
 
 	// Resolved event.
 	> dt.event.event-resolved {
@@ -192,14 +209,17 @@ dl.timeline {
 	}
 
 	// Ongoing event.
-	> dt.event.event-ongoing {
+	> dt.event.event-present {
 		// Green marker on the timeline.
 		& + dd:before {
-			background-color: ~"{{ page.brand.color_state_warning }}";
 			background-image: none; // Remove the shader.
 			opacity: 1;
 		}
 	}
+	// Color the dots based on the state of the notice.
+	> dt.event.event-open + dd:before { background-color: ~"{{ page.brand.color_state_warning }}"; }
+	> dt.event.event-underway + dd:before { background-color: ~"{{ page.brand.color_state_info }}"; }
+
 
 	// Graphical timeline on larger scale devices.
 	// --------------------------------------------------

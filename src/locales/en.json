@@ -18,7 +18,8 @@
 		"header": {
 			"states": {
 				"all-systems-are-go": "All systems are go",
-				"ongoing": "Ongoing"
+				"open": "Ongoing",
+				"underway": "Underway"
 			},
 			"disagree": {
 				"question": "Don't agree with this?",

@@ -18,7 +18,8 @@
 		"header": {
 			"states": {
 				"all-systems-are-go": "Tous les systèmes sont opérationnels.",
-				"ongoing": "En cours"
+				"open": "En cours",
+				"underway": "En cours"
 			},
 			"disagree": {
 				"question": "Vous rencontrez un problème ?",

@@ -18,7 +18,8 @@
 		"header": {
 			"states": {
 				"all-systems-are-go": "Alt kører normalt",
-				"ongoing": "Igangværende"
+				"open": "Igangværende",
+				"underway": "Undervejs"
 			},
 			"disagree": {
 				"question": "Er du ikke enig?",
