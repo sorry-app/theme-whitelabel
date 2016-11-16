@@ -112,6 +112,9 @@
         <div class="container container-md">
             <!-- Timeline of previous notices. -->
             <dl class="timeline timeline-body">
+                <!-- Heading for the list. -->
+                <lh>{{ 'status-page.body.heading' | t }}</lh>
+
                 <!-- Loop over the collection of previous notices, order date descending. -->
                 {% for notice in page.notices.past_recent %}
                     <dt class="event event-resolved" id="notice-{{ notice.id }}">#{{ notice.id }}</dt>

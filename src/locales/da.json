@@ -27,6 +27,7 @@
 			}			
 		},
 		"body": {
+			"heading": "Tidligere Hændelser",
 			"no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."			
 		},
 		"footer": {

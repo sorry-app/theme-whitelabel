@@ -27,6 +27,7 @@
 			}			
 		},
 		"body": {
+			"heading": "Tidigare Incidenter",
 			"no-more-notices": "Inga ytterligare meddelanden de senaste %{days} dagarna."
 		},
 		"footer": {

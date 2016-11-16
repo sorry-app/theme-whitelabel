@@ -9,6 +9,20 @@ dl.timeline {
 	position: relative;
 	padding: @timeline-padding (@timeline-padding / 2);
 
+	// Style the heading/caption for the list.
+	> lh {
+		display: block;
+		font-size: 24px;
+		font-weight: 500;
+		margin-bottom: @timeline-vertical-spacing;
+
+		/* Indent only applied on desktop devices. */
+		@media (min-width: @grid-float-breakpoint) { 
+			padding: 0 10px; 
+			margin-bottom: @timeline-vertical-spacing * 3;
+		}
+	}
+
 	// Main container/wrapper for each timeline event.
 	> dt { 
 		// Doesn't need content, so shrink the font.
