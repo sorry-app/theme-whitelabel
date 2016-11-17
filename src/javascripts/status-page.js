@@ -7,10 +7,26 @@ $(document).ready(function() {
 	// Use moment.js to format all the datetimes.
 	$('time.ago').each(function(index) {
 		// Calculate the time ago in words from the dattime.
-		var time_ago_in_words = moment($(this).attr('datetime')).fromNow();;
+		var time_ago_in_words = moment($(this).attr('datetime')).fromNow();
 		
 		// Update the test of the element to the time ago in words.
 		$(this).text(time_ago_in_words);
 	});
+
+	// Use moment.js to format all the durection timestamps.
+	$('time.duration').each(function(index) {
+		// Get the datetime attribute which contains an HTML valid
+		// duration which we can pass to moment.
+		//
+		// Stripe the 's' from the end of the datetime attribute which is required
+		// to make it a valid <time> tag based on the HTML spec.
+		var duration_s = $(this).attr('datetime').replace(/\D/g,'');
+
+		// Calculate a friendly duration.
+		var distance_of_time_in_words = moment.duration({seconds: duration_s}).humanize();
+		
+		// Update the test of the element to the time ago in words.
+		$(this).text(distance_of_time_in_words);
+	});	
 
 });

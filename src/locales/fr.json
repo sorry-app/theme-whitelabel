@@ -26,6 +26,10 @@
 				"answer": "N'hésitez pas à nous le faire savoir."
 			}
 		},
+		"future": {
+			"heading": "Entretien",
+			"duration": "Attendu de prendre"
+		},
 		"body": {
 			"heading": "Incidents Précédents",
 			"no-more-notices": "Aucun incident signalé sur les %{days} derniers jours."

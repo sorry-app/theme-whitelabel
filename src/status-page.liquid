@@ -112,12 +112,54 @@
         <div class="container container-md">
             <!-- Timeline of previous notices. -->
             <dl class="timeline timeline-body">
+                <!-- Timeline of upcomming notices. -->
+                <!-- Only display if they exist. -->
+                {% if page.notices.future.size > 0 %}
+                    <!-- Heading for the list. -->
+                    <lh>{{ 'status-page.future.heading' | t }}</lh>
+
+                    <!-- Loop over the collection of future notices. -->
+                    {% for notice in page.notices.future %}
+                        <!-- Output details of the notice. -->
+                        <dt class="event event-{{ notice.timeline_state }} event-{{ notice.type }} event-{{ notice.state }}" id="notice-{{ notice.id }}"></dt>
+                            <dd>
+                                <dl>
+                                    <!-- Date of the event. -->
+                                    <dt>{{ notice.begins_at | date: '%a, %-d %b %Y' }}</dt>
+                                        <dd>
+                                            <dl>
+                                                <!-- Time the event is to begin. -->
+                                                <dt>{{ notice.begins_at | date: '%X %Z' }}</dt>
+                                                <dd>
+                                                    <!-- Optional subject line for the notice. -->
+                                                    <!--- It's optional because we didn't used to support subjects. -->
+                                                    {% unless notice.subject == blank %}
+                                                        <!-- Has a subject, display it. -->
+                                                        <h4>{{ notice.subject }}</h4>
+                                                    {% endunless %}
+
+                                                    <!-- Description / First-Comment -->
+                                                    {{ notice.updates.first.content | simple_format }}
+
+                                                    <!-- Expected Duration. -->
+                                                    <strong>{{ 'status-page.future.duration' | t }} <time datetime="{{ notice.expected_duration }}s" class="duration">{{ notice.expected_duration | distance_of_time_in_words }}</time></strong>
+                                                </dd>
+                                            </dl>
+                                        </dd>
+                                </dl>
+                            </dd>
+                    {% endfor %}
+
+                    <!-- Seperator between timeline sections. -->
+                    <hr />
+                {% endif %}
+
                 <!-- Heading for the list. -->
                 <lh>{{ 'status-page.body.heading' | t }}</lh>
 
                 <!-- Loop over the collection of previous notices, order date descending. -->
                 {% for notice in page.notices.past_recent %}
-                    <dt class="event event-resolved" id="notice-{{ notice.id }}">#{{ notice.id }}</dt>
+                    <dt class="event event-past event-{{ notice.type }} event-resolved" id="notice-{{ notice.id }}">#{{ notice.id }}</dt>
                     <dd>
                         <dl>
                             <!-- Optional subject line for the notice. -->
@@ -175,7 +217,7 @@
                 <dt class="event event-final" role="presentation">Past notices</dt>
                     <dd>{{ 'status-page.body.no-more-notices' | t: days: page.timeline_threshold_in_days }}</dd>
             </dl>
-        </div> 
+        </div>
     </main>
 
     <!-- Page Footer & Copyright. -->

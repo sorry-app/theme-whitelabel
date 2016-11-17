@@ -23,6 +23,28 @@ dl.timeline {
 		}
 	}
 
+	// Timeline horizontal dividers used to split
+	// up certain parts of the timeline.
+	> hr {
+		border: none;
+		margin-top: @timeline-vertical-spacing;
+		margin-bottom: @timeline-vertical-spacing;
+
+		// Scalable size on larger devices.
+		@media (min-width: @screen-sm-min) {
+			margin-top: @timeline-vertical-spacing-sm;
+			margin-bottom: @timeline-vertical-spacing-sm;			
+		}
+		@media (min-width: @screen-md-min) {
+			margin-top: @timeline-vertical-spacing-md;
+			margin-bottom: @timeline-vertical-spacing-md;			
+		}
+		@media (min-width: @screen-lg-min) {
+			margin-top: @timeline-vertical-spacing-lg;
+			margin-bottom: @timeline-vertical-spacing-lg;			
+		}				
+	}
+
 	// Main container/wrapper for each timeline event.
 	> dt { 
 		// Doesn't need content, so shrink the font.
@@ -193,7 +215,7 @@ dl.timeline {
 			}
 		}
 	}
-	> dt.event.event-apology {
+	> dt.event.event-present.event-apology {
 		& + dd > dl > dt {
 			// Use the theme colours for this.
 			background-color: ~"{{ page.brand.color_state_warning }}";
@@ -202,7 +224,7 @@ dl.timeline {
 			.fa:before { content: '\f0a1' }
 		}		
 	}
-	> dt.event.event-scheduled-maintenance {
+	> dt.event.event-present.event-scheduled-maintenance {
 		& + dd > dl > dt {
 			// Use the theme colours for this.
 			background-color: ~"{{ page.brand.color_state_info }}";

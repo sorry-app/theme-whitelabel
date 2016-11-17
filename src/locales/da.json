@@ -26,6 +26,10 @@
 				"answer": "Så kontakt os her"
 			}			
 		},
+		"future": {
+			"heading": "Upcomming Vedligeholdelse",
+			"duration": "Forventes at tage"
+		},	
 		"body": {
 			"heading": "Tidligere Hændelser",
 			"no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."			

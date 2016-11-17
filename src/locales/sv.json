@@ -26,6 +26,10 @@
 				"answer": "Så kontakta oss här "
 			}			
 		},
+		"future": {
+			"heading": "Om Aktuella Underhåll",
+			"duration": "Förväntas ta"
+		},		
 		"body": {
 			"heading": "Tidigare Incidenter",
 			"no-more-notices": "Inga ytterligare meddelanden de senaste %{days} dagarna."

@@ -26,6 +26,10 @@
 				"answer": "Please let us know"
 			}			
 		},
+		"future": {
+			"heading": "Upcomming Maintenance",
+			"duration": "Expected to take"
+		},
 		"body": {
 			"heading": "Previous Incidents",
 			"no-more-notices": "No further notices from the past %{days} days."
