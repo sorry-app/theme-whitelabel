@@ -1,3 +1,104 @@
 <!-- Create a container for the template specific styles. -->
 <div class="template-maintenance-page">
+	<header>
+		<!-- Navbar if a logo is available. -->
+		{% if page.brand.logo %}
+		    <!-- Page Navbar. -->
+		    <nav class="navbar navbar-default navbar-center" role="navigation">
+		        <div class="container">
+		            <div class="navbar-header">
+	                	<!-- Display a logo if one is assigned. -->
+	                    <div class="navbar-logo">
+	                        <!-- Logo. -->
+	                        <img src="{{ page.brand.logo.url }}" alt="logo" />
+	                    </div>
+		            </div>
+		        </div>    	
+		    </nav>
+	    {% endif %}
+
+		<div class="container container-sm">
+			<section class="maintenance-page-header">
+				<!-- Headline notice to state a problem has ocurred. -->
+				<h1>
+					{{ 'maintenance-page.header.title' | t }}
+
+					<!-- Display a duration if we have an open maintenance. -->
+					{% if page.notices.planned.present.size > 0 %}
+						<!-- We have open maintenance, display the duration. -->
+						<small>{{ 'maintenance-page.header.subtitles.with-maintenance' | t: ends_at: page.notices.planned.present.first.ends_at }}</small>
+					{% else %}
+						<!-- We don't have open maintenance, display generic message. -->
+						<small>{{ 'maintenance-page.header.subtitles.without-maintenance' | t }}</small>
+					{% endif %}
+				</h1>
+			</section>
+		</div>
+	</header>
+
+	<main>
+		<div class="container container-sm">
+			<div class="content-block">
+				<!-- Check to see if the status page has any notices on it. -->
+				{% if page.notices.planned.present.size > 0 %}
+					<!-- The SP does have noticed, display an ongoing statement and link. -->
+					<h2 class="h4">
+						{{ page.notices.planned.present.first.subject }} <small></small>
+					</h2>
+					<p>{{ page.notices.planned.present.first.synopsis | simple_format }}</p>
+					<p><small><strong>{{ 'maintenance-page.body.states.underway.began_at' | t }}:</strong> {{ page.notices.planned.present.first.began_at | date: '%A, %-d %b %Y %X %Z' }} <br /> <strong>{{ 'maintenance-page.body.states.underway.duration' | t }}:</strong> <time class="duration" datetime="{{ page.notices.planned.present.first.expected_duration }}s">{{ page.notices.planned.present.first.expected_duration | distance_of_time_in_words }}</time></small></p>
+
+					<div class="spacer spacer-md"></div>
+
+					<!-- Include a link to the status page for more details. -->
+					<a href="{{ page.link }}" target="_blank" class="btn btn-link btn-lg btn-external">{{ 'maintenance-page.body.states.underway.sp-link' | t }}</a>
+				{% endif %}
+			</div>
+		</div>
+	</main>
+
+	<!-- Page Footer & Copyright. -->
+	<footer>
+	    <div class="container container-xs">
+	        <!-- Support Links If Defined. -->
+	        {% if page.support.size > 0 or page.social.size > 0 %}
+	            <div class="footer-body" id="contact-support">
+	                <div class="row">
+	                    <div class="col-sm-12">
+	                        <h4>{{ 'maintenance-page.footer.need-support' | t }}</h4>
+
+	                        <!-- Main Status Page Nav. -->
+	                        <ul class="list-support-links">
+	                            <!-- Loop over the supplied support options. -->
+	                            {% for link in page.support %}
+	                                <!-- Provide a list item for each. -->
+	                                <li class="support-link-{{ link[0] }}">
+	                                    <!-- Conditionaly append mailto: and tel: for appropriate actions. -->
+	                                    <a href="{% case link[0] %}{% when 'email' %}mailto:{% when 'telephone' %}tel:{% endcase %}{{ link[1] }}">{{ link[1] }}</a>
+	                                </li>
+	                            {% endfor %}
+
+	                            <!-- Loop over the supplied social accounts. -->
+	                            {% for link in page.social %}
+	                                <!-- Output a link for each social channel. -->
+	                                <li class="support-link-{{ link[0] }}">
+	                                    <!-- Dynamicly build a link to each type. -->
+	                                    <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_blank">
+	                                        <!-- Use the locale switched string for each type too. -->
+	                                        <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'social-links.' | append: link[0] | t }}
+	                                    </a>
+	                                </li>
+	                            {% endfor %}
+	                        </ul>
+	                    </div>
+	                </div>
+	            </div>
+	        {% endif %}
+
+	        <!-- Accreditation link, we'd love it if you'd leave this in place, but no hard feelings if you don't. -->
+	        <div class="footer-footer">
+	            <bdo dir="ltr" class="copyright">{{ page.copyright }}</bdo>
+	        </div>
+	    </div>
+	</footer>
 </div>

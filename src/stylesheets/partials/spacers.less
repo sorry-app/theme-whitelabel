@@ -1,0 +1,17 @@
+/*
+ * Vertical spacers are block elements you can use
+ * to bump some additional whitespace when you need it.
+ *
+ * A bit like a horizontal rule, but without the line or
+ * semantics that the <hr /> tag brings.
+ */
+.spacer {
+	/* Basic block element properties. */
+	display: block;
+	clear: both;
+	margin: 0;
+
+	/* Sized variants, based on lineheights. */
+	&.spacer-sm { margin: @line-height-computed 0; }
+	&.spacer-md { margin: (@line-height-computed * 2) 0; }
+}
