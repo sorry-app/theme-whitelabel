@@ -25,8 +25,10 @@
 
 					<!-- Display a duration if we have an open maintenance. -->
 					{% if page.notices.planned.present.size > 0 %}
+						<!-- Determin the longest running notice, based on it's expected end time. -->
+						{% assign longest_notice = page.notices.planned.present | sort: 'expected_ended_at' | last %}
 						<!-- We have open maintenance, display the duration. -->
-						<small>{{ 'maintenance-page.header.subtitles.with-maintenance' | t: ends_at: page.notices.planned.present.first.ends_at }}</small>
+						<small>{{ 'maintenance-page.header.subtitles.with-maintenance' | t: ends_at: longest_notice.expected_ended_at }}</small>
 					{% else %}
 						<!-- We don't have open maintenance, display generic message. -->
 						<small>{{ 'maintenance-page.header.subtitles.without-maintenance' | t }}</small>
