@@ -27,8 +27,10 @@
 					{% if page.notices.planned.present.size > 0 %}
 						<!-- Determin the longest running notice, based on it's expected end time. -->
 						{% assign longest_notice = page.notices.planned.present | sort: 'expected_ended_at' | last %}
+						<!-- Format the datetime in ISO format so moment.js doesn't get upset. -->
+						{% assign latest_ended_at = longest_notice.expected_ended_at | date: '%FT%T%z' %}
 						<!-- We have open maintenance, display the duration. -->
-						<small>{{ 'maintenance-page.header.subtitles.with-maintenance' | t: ends_at: longest_notice.expected_ended_at }}</small>
+						<small>{{ 'maintenance-page.header.subtitles.with-maintenance' | t: ends_at: latest_ended_at }}</small>
 					{% else %}
 						<!-- We don't have open maintenance, display generic message. -->
 						<small>{{ 'maintenance-page.header.subtitles.without-maintenance' | t }}</small>
