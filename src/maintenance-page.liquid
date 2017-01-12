@@ -43,14 +43,17 @@
 			<div class="content-block">
 				<!-- Check to see if the status page has any notices on it. -->
 				{% if page.notices.planned.present.size > 0 %}
-					<!-- The SP does have noticed, display an ongoing statement and link. -->
-					<h2 class="h4">
-						{{ page.notices.planned.present.first.subject }} <small></small>
-					</h2>
-					<p>{{ page.notices.planned.present.first.synopsis | simple_format }}</p>
-					<p><small><strong>{{ 'maintenance-page.body.states.underway.began_at' | t }}:</strong> {{ page.notices.planned.present.first.began_at | date: '%A, %-d %b %Y %X %Z' }} <br /> <strong>{{ 'maintenance-page.body.states.underway.duration' | t }}:</strong> <time class="duration" datetime="{{ page.notices.planned.present.first.expected_duration }}s">{{ page.notices.planned.present.first.expected_duration | distance_of_time_in_words }}</time></small></p>
+					<!-- Display a synopsis of details about each maintenance. -->
+					{% for notice in page.notices.planned.present %}
+						<div class="notice" id="{{ notice.id }}">
+							<!-- The SP does have noticed, display an ongoing statement and link. -->
+							<h2 class="h4 notice-subject">{{ notice.subject }}</h2>
+								<p class="notice-synopsis">{{ notice.synopsis | simple_format }}</p>
+								<p class="notice-schedule"><small><strong>{{ 'maintenance-page.body.states.underway.began_at' | t }}:</strong> {{ notice.began_at | date: '%A, %-d %b %Y %X %Z' }} <br /> <strong>{{ 'maintenance-page.body.states.underway.duration' | t }}:</strong> <time class="duration" datetime="{{ notice.expected_duration }}s">{{ notice.expected_duration | distance_of_time_in_words }}</time></small></p>
+						</div>
 
-					<div class="spacer spacer-md"></div>
+						<div class="spacer spacer-md"></div>
+					{% endfor %}
 
 					<!-- Include a link to the status page for more details. -->
 					<a href="{{ page.link }}" target="_blank" class="btn btn-link btn-lg btn-external">{{ 'maintenance-page.body.states.underway.sp-link' | t }}</a>
