@@ -49,7 +49,7 @@
 		"body": {
 			"states": {
 				"without-maintenance": {
-					"content": "We always try our best to pre-plan maintenance, however this can't always be garaunteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+					"content": "We always try our best to pre-plan maintenance, however this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
 				},
 				"with-maintenance": {
 					"began_at": "Started at",
