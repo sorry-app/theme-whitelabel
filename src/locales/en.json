@@ -48,7 +48,10 @@
 		},
 		"body": {
 			"states": {
-				"underway": {
+				"without-maintenance": {
+					"content": "We always try our best to pre-plan maintenance, however this can't always be garaunteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+				},
+				"with-maintenance": {
 					"began_at": "Started at",
 					"duration": "Expected to take",
 					"sp-link": "Follow our progress"
