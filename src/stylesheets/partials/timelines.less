@@ -94,7 +94,7 @@ dl.timeline {
 	.notice-subject {
 		font-size: 20px;
 		margin-top: 0;
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 
 		// Bump the spacing on larger devices. */
 		@media (min-width: @grid-float-breakpoint) { margin-bottom: 30px; }
@@ -104,6 +104,15 @@ dl.timeline {
 	h4.notice-subject  { 
 		/* Indent only applied on desktop devices. */
 		@media (min-width: @grid-float-breakpoint) { padding: 0 10px; }
+
+		/* Subheading styles. */
+		small { 
+			display: block;
+			opacity: 0.6;
+			padding-top: 10px;
+			font-size: 85%;
+			line-height: 1.41;
+		}
 	}
 
 	// Special end event style.

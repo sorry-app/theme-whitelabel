@@ -15,7 +15,7 @@
                     {% endif %}
 
                     <!-- Page Title. -->
-                    <span class="navbar-brand">{{ 'status-page.navbar.title' | t }}</span>
+                    <span class="navbar-brand">{{ 'status-page.navbar.title' | t }}</span> 
 
                     <!-- Subscription button based on the various options for the page. -->
                     {% if page.subscription_options.size == 1 %}
@@ -166,7 +166,14 @@
                             <!--- It's optional because we didn't used to support subjects. -->
                             {% unless notice.subject == blank %}
                                 <!-- Has a subject, display it. -->
-                                <h4 class="notice-subject">{{ notice.subject }}</h4>
+                                <h4 class="notice-subject">
+                                    {{ notice.subject }}
+
+                                    <!-- Determine the friedly duration. -->
+                                    {% assign duration = notice.duration | distance_of_time_in_words %}
+                                    <!-- Display a simple subheading. -->
+                                    <small class="notice-type">{{ 'status-page.body.subheading.' | append: notice.type | t: duration: duration }}</small>
+                                </h4>
                             {% endunless %}
 
                             <!-- Loop over the updates for this notice, which we want to group by date. -->
