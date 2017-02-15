@@ -36,6 +36,7 @@
 				"apology": "This was an unplanned incident, it lasted %{duration}.",
 				"scheduled-maintenance": "This was a planned incident, it took %{duration}."
 			},
+			"posted-at": "Posted on",
 			"no-more-notices": "No further notices from the past %{days} days."
 		},
 		"footer": {

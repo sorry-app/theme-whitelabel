@@ -139,10 +139,13 @@
                                                     {% endunless %}
 
                                                     <!-- Description / First-Comment -->
-                                                    {{ notice.updates.first.content | simple_format }}
+                                                    <p>{{ notice.updates.first.content | simple_format }}</p>
 
                                                     <!-- Expected Duration. -->
-                                                    <strong>{{ 'status-page.future.duration' | t }} <time datetime="{{ notice.expected_duration }}s" class="duration">{{ notice.expected_duration | distance_of_time_in_words }}</time></strong>
+                                                    <p><strong>{{ 'status-page.future.duration' | t }} <time datetime="{{ notice.expected_duration }}s" class="duration">{{ notice.expected_duration | distance_of_time_in_words }}</time></strong></p>
+                                                
+                                                    <!-- Include the date this was posted. -->
+                                                    <p class="notice-posted-at text-muted">{{ 'status-page.body.posted-at' | t }} {{ notice.created_at | date: '%a, %-d %b %Y %X %Z' }}</p>
                                                 </dd>
                                             </dl>
                                         </dd>
