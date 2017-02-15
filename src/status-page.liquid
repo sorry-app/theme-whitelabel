@@ -65,7 +65,15 @@
                                             <!--- It's optional because we didn't used to support subjects. -->
                                             {% unless notice.subject == blank %}
                                                 <!-- Has a subject, display it. -->
-                                                <h3 class="notice-subject">{{ notice.subject }}</h3>
+                                                <h3 class="notice-subject">
+                                                    {{ notice.subject }}
+
+                                                    <!-- Display appropriate schedule information if we have it. -->
+                                                    {% if notice.type == 'scheduled-maintenance' %}
+                                                        <!-- Display the schedule/runtime. -->
+                                                        <small>{{ 'status-page.header.subheading.scheduled-maintenance' | t: ends_at: notice.expected_ended_at }}</small>
+                                                    {% endif %}
+                                                </h3>
                                             {% endunless %}
 
                                             <dl>
