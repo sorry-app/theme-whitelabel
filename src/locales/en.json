@@ -38,6 +38,8 @@
 				"complete": "Complete",
 				"closed": "Resolved"
 			},
+			"scheduled-for": "Scheduled for",
+			"duration": "Expected to take",
 			"heading": "Previous Incidents",
 			"subheading": {
 				"apology": "This was an unplanned incident, it lasted %{duration}.",
