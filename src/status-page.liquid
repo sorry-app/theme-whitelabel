@@ -184,7 +184,7 @@
                                     <!-- Determine the friedly duration. -->
                                     {% assign duration = notice.duration | distance_of_time_in_words %}
                                     <!-- Display a simple subheading. -->
-                                    <small class="notice-type">{{ 'status-page.body.subheading.' | append: notice.type | t: duration: duration }}</small>
+                                    <small class="notice-type"><i class="fa fa-clock-o"></i> {{ 'status-page.body.subheading.' | append: notice.type | t: duration: duration }}</small>
                                 </h4>
                             {% endunless %}
 
