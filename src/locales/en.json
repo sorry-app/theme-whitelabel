@@ -31,10 +31,14 @@
 		},
 		"future": {
 			"heading": "Upcomming Maintenance",
-			"duration": "Expected to take"
+			"duration": "Expected to take",
+			"subheading": {
+				"scheduled-maintenance": "Expected to happen <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>"
+			}
 		},
 		"body": {
 			"states": {
+				"scheduled": "Scheduled",
 				"complete": "Complete",
 				"closed": "Resolved"
 			},

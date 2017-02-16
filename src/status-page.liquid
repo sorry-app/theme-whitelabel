@@ -149,31 +149,76 @@
                         <dt class="event event-{{ notice.timeline_state }} event-{{ notice.type }} event-{{ notice.state }}" id="notice-{{ notice.id }}"></dt>
                             <dd>
                                 <dl>
-                                    <!-- Date of the event. -->
-                                    <dt>{{ notice.begins_at | date: '%a, %-d %b %Y' }}</dt>
-                                        <dd>
-                                            <dl>
-                                                <!-- Time the event is to begin. -->
-                                                <dt>{{ notice.begins_at | date: '%X %Z' }}</dt>
-                                                <dd>
-                                                    <!-- Optional subject line for the notice. -->
-                                                    <!--- It's optional because we didn't used to support subjects. -->
-                                                    {% unless notice.subject == blank %}
-                                                        <!-- Has a subject, display it. -->
-                                                        <h4>{{ notice.subject }}</h4>
-                                                    {% endunless %}
+                                    <!-- Optional subject line for the notice. -->
+                                    <!--- It's optional because we didn't used to support subjects. -->
+                                    {% unless notice.subject == blank %}
+                                        <!-- Has a subject, display it. -->
+                                        <h4 class="notice-subject">
+                                            <!-- Subject and current state. -->
+                                            <span class="notice-state">[{{ 'status-page.body.states.' | append: notice.state | t }}]</span> {{ notice.subject }}
 
-                                                    <!-- Description / First-Comment -->
-                                                    <p>{{ notice.updates.first.content | simple_format }}</p>
+                                            <!-- Display a simple subheading. -->
+                                            <small class="notice-type"><i class="fa fa-clock-o"></i> {{ 'status-page.future.subheading.' | append: notice.type | t: begins_at: notice.begins_at }}</small>
+                                        </h4>
+                                    {% endunless %}
 
-                                                    <!-- Expected Duration. -->
-                                                    <p><strong>{{ 'status-page.future.duration' | t }} <time datetime="{{ notice.expected_duration }}s" class="duration">{{ notice.expected_duration | distance_of_time_in_words }}</time></strong></p>
-                                                
-                                                    <!-- Include the date this was posted. -->
-                                                    <p class="notice-posted-at text-muted">{{ 'status-page.body.posted-at' | t }} {{ notice.created_at | date: '%a, %-d %b %Y %X %Z' }}</p>
+                                    <!-- Loop over the updates for this notice, which we want to group by date. -->
+                                    {% for update in notice.updates  %}
+                                        <!-- Snapshot the date by which we want to group updates. -->
+                                        {% capture grouped_date %}{{ update.created_at | date: '%a, %-d %b %Y' }}{% endcapture %}
+
+                                        <!-- See if this is the first iteration of the loop. -->
+                                        {% if forloop.first %}
+                                            <!-- First itteration, as a date stamp to it. -->
+                                            <dt>{{ grouped_date }}</dt>
+                                            <dd>
+                                                <dl>
+                                        {% else %}
+                                            <!-- Not the first instance -->
+                                            {% if grouped_date != last_grouped_date %}
+                                                <!-- close of the previous nest. -->
+                                                    </dl>
                                                 </dd>
-                                            </dl>
-                                        </dd>
+
+                                                <!-- End start a new nested collection. -->
+                                                <dt>{{ grouped_date }}</dt>
+                                                <dd>
+                                                    <dl>
+                                            {% endif %}
+                                        {% endif %}
+
+                                        <!-- Output the time for the given update. -->
+                                        <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
+                                            <!-- Output the text content of the update. -->
+                                            <dd>
+                                                <!-- Check if this is a synopsis for the schedule. -->
+                                                {% if forloop.first and notice.type == 'scheduled-maintenance' %}
+                                                    <!-- Include the synopsis header. -->
+                                                    <h5>{{ 'status-page.body.synopsis' | t }}</h5>
+                                                {% endif %}
+
+                                                <!-- Include the basic text. -->
+                                                {{ update.content | simple_format }}
+
+                                                <!-- Check if we have schedule to show. -->
+                                                {% if forloop.first and notice.type == 'scheduled-maintenance' %}
+                                                    <!-- Display the initial schedule information. -->
+                                                    <p class="text-muted notice-schedule"><i class="fa fa-fw fa-calendar"></i> {{ 'status-page.body.scheduled-for' | t }} {{ notice.begins_at }}</p>
+                                                    <!-- And the expected duration. -->
+                                                    <p class="text-muted notice-duration"><i class="fa fa-fw fa-clock-o"></i> {{ 'status-page.body.duration' | t }} <time datetime="{{ notice.expected_duration }}s" class="duration">{{ notice.expected_duration | distance_of_time_in_words }}</time></p>
+                                                {% endif %}
+                                            </dd>
+
+                                        <!-- Check if this is the last instance of the loop. -->
+                                        {% if forloop.last %}
+                                            <!-- Close off the nested list. -->
+                                                </dl>
+                                            </dd>
+                                        {% endif %}
+
+                                        <!-- Set a snapshot of the previously looped group. -->
+                                        {% capture last_grouped_date %}{{ grouped_date }}{% endcapture %}
+                                    {% endfor %}
                                 </dl>
                             </dd>
                     {% endfor %}
