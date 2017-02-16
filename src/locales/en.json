@@ -34,6 +34,10 @@
 			"duration": "Expected to take"
 		},
 		"body": {
+			"states": {
+				"complete": "Complete",
+				"closed": "Resolved"
+			},
 			"heading": "Previous Incidents",
 			"subheading": {
 				"apology": "This was an unplanned incident, it lasted %{duration}.",
