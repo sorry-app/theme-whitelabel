@@ -39,6 +39,7 @@
 				"closed": "Resolved"
 			},
 			"scheduled-for": "Scheduled for",
+			"synopsis": "Synopsis",
 			"duration": "Expected to take",
 			"heading": "Previous Incidents",
 			"subheading": {

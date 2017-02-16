@@ -217,6 +217,13 @@
                                 <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
                                     <!-- Output the text content of the update. -->
                                     <dd>
+                                        <!-- Check if this is a synopsis for the schedule. -->
+                                        {% if forloop.first and notice.type == 'scheduled-maintenance' %}
+                                            <!-- Include the synopsis header. -->
+                                            <h5>{{ 'status-page.body.synopsis' | t }}</h5>
+                                        {% endif %}
+
+                                        <!-- Include the basic text. -->
                                         {{ update.content | simple_format }}
 
                                         <!-- Check if we have schedule to show. -->
