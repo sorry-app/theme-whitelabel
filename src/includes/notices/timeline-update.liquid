@@ -27,19 +27,34 @@
     <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
         <!-- Output the text content of the update. -->
         <dd>
-            <!-- Check if this is a synopsis for the schedule. -->
-            {% if forloop.first and notice.type == 'scheduled-maintenance' %}
-                <!-- Include the synopsis header. -->
-                <h5>{{ 'status-page.body.synopsis' | t }}</h5>
+            <!-- 
+                If this is the synopsis/first update on planned notice
+                we want to display a heading, and an overview of the planned
+                incident schedule/
+            -->
+            <!-- The update we class as a synopsis depends on the sort order of the timeline. -->
+            {% if page.timeline_sort_order == 'asc' %}
+                <!-- Ascencing order, first update is synopsis. -->
+                {% assign synopsis = notice.updates.first %}
+            {% elsif page.timeline_sort_order == 'desc' %}
+                <!-- Descending sort order, last is synopsis. -->
+                {% assign synopsis = notice.updates.last %}
             {% endif %}
 
-            <!-- Include the basic text. -->
-            {{ update.content | simple_format }}
+            <!-- Check if this is maintenance and synopsis. -->
+            {% if notice.type == 'scheduled-maintenance' and update.id == synopsis.id %}
+                <!-- This is a planned notice synopsis, so we want heading + schedule -->
+                <!-- Include the synopsis header. -->
+                <h5>{{ 'status-page.body.synopsis' | t }}</h5>
 
-            <!-- Check if we have schedule to show. -->
-            {% if forloop.first and notice.type == 'scheduled-maintenance' %}
+                <!-- Just a standard update, output the content. -->
+                {{ update.content | simple_format }}
+
                 <!-- Include the schedule overview. -->
                 {% include 'notices/schedule-overview' %}
+            {% else %}
+                <!-- Just a standard update, output the content. -->
+                {{ update.content | simple_format }}
             {% endif %}
         </dd>
 
