@@ -5,7 +5,10 @@
             <!-- Has a subject, display it. -->
             <h4 class="notice-subject">
                 <!-- Subject and current state. -->
-                <span class="notice-state">[{{ 'status-page.body.states.' | append: notice.state | t }}]</span> {{ notice.subject }}
+                <span class="notice-state">[{{ 'status-page.body.states.' | append: notice.state | t }}]</span> 
+
+                <!-- The subject for the notice. -->
+                {{ notice.subject }}
 
                 <!-- Include the timeliness subheading. -->
                 {% include 'notices/timeliness' %}
