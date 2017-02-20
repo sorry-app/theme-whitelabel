@@ -31,12 +31,14 @@
 		},
 		"future": {
 			"heading": "Upcomming Maintenance",
-			"duration": "Expected to take",
-			"subheading": {
-				"scheduled-maintenance": "Expected to happen <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>"
-			}
+			"duration": "Expected to take"
 		},
 		"body": {
+			"timeliness": {
+				"scheduled": "Expected to happen <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
+				"complete": "This was a planned incident, it took %{duration}.",
+				"closed": "This was an unplanned incident, it lasted %{duration}."
+			},
 			"states": {
 				"scheduled": "Scheduled",
 				"complete": "Complete",
@@ -46,10 +48,6 @@
 			"synopsis": "Synopsis",
 			"duration": "Expected to take",
 			"heading": "Previous Incidents",
-			"subheading": {
-				"apology": "This was an unplanned incident, it lasted %{duration}.",
-				"scheduled-maintenance": "This was a planned incident, it took %{duration}."
-			},
 			"posted-at": "Posted on",
 			"no-more-notices": "No further notices from the past %{days} days."
 		},

@@ -143,80 +143,8 @@
 
                     <!-- Loop over the collection of future notices. -->
                     {% for notice in page.notices.future %}
-                        <!-- Output details of the notice. -->
-                        <dt class="event event-{{ notice.timeline_state }} event-{{ notice.type }} event-{{ notice.state }}" id="notice-{{ notice.id }}"></dt>
-                            <dd>
-                                <dl>
-                                    <!-- Optional subject line for the notice. -->
-                                    <!--- It's optional because we didn't used to support subjects. -->
-                                    {% unless notice.subject == blank %}
-                                        <!-- Has a subject, display it. -->
-                                        <h4 class="notice-subject">
-                                            <!-- Subject and current state. -->
-                                            <span class="notice-state">[{{ 'status-page.body.states.' | append: notice.state | t }}]</span> {{ notice.subject }}
-
-                                            <!-- Display a simple subheading. -->
-                                            <small class="notice-type"><i class="fa fa-clock-o"></i> {{ 'status-page.future.subheading.' | append: notice.type | t: begins_at: notice.begins_at }}</small>
-                                        </h4>
-                                    {% endunless %}
-
-                                    <!-- Loop over the updates for this notice, which we want to group by date. -->
-                                    {% for update in notice.updates  %}
-                                        <!-- Snapshot the date by which we want to group updates. -->
-                                        {% capture grouped_date %}{{ update.created_at | date: '%a, %-d %b %Y' }}{% endcapture %}
-
-                                        <!-- See if this is the first iteration of the loop. -->
-                                        {% if forloop.first %}
-                                            <!-- First itteration, as a date stamp to it. -->
-                                            <dt>{{ grouped_date }}</dt>
-                                            <dd>
-                                                <dl>
-                                        {% else %}
-                                            <!-- Not the first instance -->
-                                            {% if grouped_date != last_grouped_date %}
-                                                <!-- close of the previous nest. -->
-                                                    </dl>
-                                                </dd>
-
-                                                <!-- End start a new nested collection. -->
-                                                <dt>{{ grouped_date }}</dt>
-                                                <dd>
-                                                    <dl>
-                                            {% endif %}
-                                        {% endif %}
-
-                                        <!-- Output the time for the given update. -->
-                                        <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
-                                            <!-- Output the text content of the update. -->
-                                            <dd>
-                                                <!-- Check if this is a synopsis for the schedule. -->
-                                                {% if forloop.first and notice.type == 'scheduled-maintenance' %}
-                                                    <!-- Include the synopsis header. -->
-                                                    <h5>{{ 'status-page.body.synopsis' | t }}</h5>
-                                                {% endif %}
-
-                                                <!-- Include the basic text. -->
-                                                {{ update.content | simple_format }}
-
-                                                <!-- Check if we have schedule to show. -->
-                                                {% if forloop.first and notice.type == 'scheduled-maintenance' %}
-                                                    <!-- Include the schedule overview. -->
-                                                    {% include 'notices/schedule-overview' %}
-                                                {% endif %}
-                                            </dd>
-
-                                        <!-- Check if this is the last instance of the loop. -->
-                                        {% if forloop.last %}
-                                            <!-- Close off the nested list. -->
-                                                </dl>
-                                            </dd>
-                                        {% endif %}
-
-                                        <!-- Set a snapshot of the previously looped group. -->
-                                        {% capture last_grouped_date %}{{ grouped_date }}{% endcapture %}
-                                    {% endfor %}
-                                </dl>
-                            </dd>
+                        <!-- Include the timeline for each notice. -->
+                        {% include 'notices/timeline-notice' %}
                     {% endfor %}
 
                     <!-- Seperator between timeline sections. -->
@@ -228,81 +156,8 @@
 
                 <!-- Loop over the collection of previous notices, order date descending. -->
                 {% for notice in page.notices.past_recent %}
-                    <dt class="event event-past event-{{ notice.type }} event-resolved" id="notice-{{ notice.id }}">#{{ notice.id }}</dt>
-                    <dd>
-                        <dl>
-                            <!-- Optional subject line for the notice. -->
-                            <!--- It's optional because we didn't used to support subjects. -->
-                            {% unless notice.subject == blank %}
-                                <!-- Has a subject, display it. -->
-                                <h4 class="notice-subject">
-                                    <!-- Subject and current state. -->
-                                    <span class="notice-state">[{{ 'status-page.body.states.' | append: notice.state | t }}]</span> {{ notice.subject }}
-
-                                    <!-- Determine the friedly duration. -->
-                                    {% assign duration = notice.duration | distance_of_time_in_words %}
-                                    <!-- Display a simple subheading. -->
-                                    <small class="notice-type"><i class="fa fa-clock-o"></i> {{ 'status-page.body.subheading.' | append: notice.type | t: duration: duration }}</small>
-                                </h4>
-                            {% endunless %}
-
-                            <!-- Loop over the updates for this notice, which we want to group by date. -->
-                            {% for update in notice.updates  %}
-                                <!-- Snapshot the date by which we want to group updates. -->
-                                {% capture grouped_date %}{{ update.created_at | date: '%a, %-d %b %Y' }}{% endcapture %}
-
-                                <!-- See if this is the first iteration of the loop. -->
-                                {% if forloop.first %}
-                                    <!-- First itteration, as a date stamp to it. -->
-                                    <dt>{{ grouped_date }}</dt>
-                                    <dd>
-                                        <dl>
-                                {% else %}
-                                    <!-- Not the first instance -->
-                                    {% if grouped_date != last_grouped_date %}
-                                        <!-- close of the previous nest. -->
-                                            </dl>
-                                        </dd>
-
-                                        <!-- End start a new nested collection. -->
-                                        <dt>{{ grouped_date }}</dt>
-                                        <dd>
-                                            <dl>
-                                    {% endif %}
-                                {% endif %}
-
-                                <!-- Output the time for the given update. -->
-                                <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
-                                    <!-- Output the text content of the update. -->
-                                    <dd>
-                                        <!-- Check if this is a synopsis for the schedule. -->
-                                        {% if forloop.first and notice.type == 'scheduled-maintenance' %}
-                                            <!-- Include the synopsis header. -->
-                                            <h5>{{ 'status-page.body.synopsis' | t }}</h5>
-                                        {% endif %}
-
-                                        <!-- Include the basic text. -->
-                                        {{ update.content | simple_format }}
-
-                                        <!-- Check if we have schedule to show. -->
-                                        {% if forloop.first and notice.type == 'scheduled-maintenance' %}
-                                            <!-- Include the schedule overview. -->
-                                            {% include 'notices/schedule-overview' %}
-                                        {% endif %}
-                                    </dd>
-
-                                <!-- Check if this is the last instance of the loop. -->
-                                {% if forloop.last %}
-                                    <!-- Close off the nested list. -->
-                                        </dl>
-                                    </dd>
-                                {% endif %}
-
-                                <!-- Set a snapshot of the previously looped group. -->
-                                {% capture last_grouped_date %}{{ grouped_date }}{% endcapture %}
-                            {% endfor %}
-                        </dl>
-                    </dd>
+                    <!-- Include the timeline for each notice. -->
+                    {% include 'notices/timeline-notice' %}
                 {% endfor %}
 
                 <!-- End of Timeline. -->

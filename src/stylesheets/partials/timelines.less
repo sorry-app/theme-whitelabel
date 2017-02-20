@@ -244,7 +244,7 @@ dl.timeline {
 	}	
 
 	// Resolved event.
-	> dt.event.event-resolved {
+	> dt.event.event-closed, > dt.event.event-complete {
 		// Green marker on the timeline.
 		& + dd:before {
 			background-color: ~"{{ page.brand.color_state_ok }}";
