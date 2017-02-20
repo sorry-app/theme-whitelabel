@@ -102,10 +102,8 @@
 
                                                             <!-- Check if we have schedule to show. -->
                                                             {% if forloop.last and notice.type == 'scheduled-maintenance' %}
-                                                                <!-- Display the initial schedule information. -->
-                                                                <p class="text-muted notice-schedule"><i class="fa fa-fw fa-calendar"></i> {{ 'status-page.body.scheduled-for' | t }} {{ notice.begins_at }}</p>
-                                                                <!-- And the expected duration. -->
-                                                                <p class="text-muted notice-duration"><i class="fa fa-fw fa-clock-o"></i> {{ 'status-page.body.duration' | t }} <time datetime="{{ notice.expected_duration }}s" class="duration">{{ notice.expected_duration | distance_of_time_in_words }}</time></p>
+                                                                <!-- Include the schedule overview. -->
+                                                                {% include 'notices/schedule-overview' %}
                                                             {% endif %}
                                                         </dd>
                                                 {% endfor %}
@@ -202,10 +200,8 @@
 
                                                 <!-- Check if we have schedule to show. -->
                                                 {% if forloop.first and notice.type == 'scheduled-maintenance' %}
-                                                    <!-- Display the initial schedule information. -->
-                                                    <p class="text-muted notice-schedule"><i class="fa fa-fw fa-calendar"></i> {{ 'status-page.body.scheduled-for' | t }} {{ notice.begins_at }}</p>
-                                                    <!-- And the expected duration. -->
-                                                    <p class="text-muted notice-duration"><i class="fa fa-fw fa-clock-o"></i> {{ 'status-page.body.duration' | t }} <time datetime="{{ notice.expected_duration }}s" class="duration">{{ notice.expected_duration | distance_of_time_in_words }}</time></p>
+                                                    <!-- Include the schedule overview. -->
+                                                    {% include 'notices/schedule-overview' %}
                                                 {% endif %}
                                             </dd>
 
@@ -290,10 +286,8 @@
 
                                         <!-- Check if we have schedule to show. -->
                                         {% if forloop.first and notice.type == 'scheduled-maintenance' %}
-                                            <!-- Display the initial schedule information. -->
-                                            <p class="text-muted notice-schedule"><i class="fa fa-fw fa-calendar"></i> {{ 'status-page.body.scheduled-for' | t }} {{ notice.begins_at }}</p>
-                                            <!-- And the expected duration. -->
-                                            <p class="text-muted notice-duration"><i class="fa fa-fw fa-clock-o"></i> {{ 'status-page.body.duration' | t }} <time datetime="{{ notice.expected_duration }}s" class="duration">{{ notice.expected_duration | distance_of_time_in_words }}</time></p>
+                                            <!-- Include the schedule overview. -->
+                                            {% include 'notices/schedule-overview' %}
                                         {% endif %}
                                     </dd>
 

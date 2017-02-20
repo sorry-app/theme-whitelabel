@@ -92,6 +92,8 @@ module.exports = function(grunt) {
           { expand: true, flatten: true, cwd: "src/images/", src: "**", dest: "build/assets/"},
           // Copy Locale files.
           { expand: true, flatten: true, cwd: "src/locales/", src: "**", dest: "build/locales"},
+          // Copy include files, mainteain nested directory.
+          { expand: true, flatten: false, cwd: "src/includes/", src: "**", dest: "build/includes"}
         ]
       },
     },
