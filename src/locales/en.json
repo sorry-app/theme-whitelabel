@@ -39,7 +39,7 @@
 			},			
 			"timeliness": {
 				"planned": {
-					"scheduled": "Expected to happen <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
+					"scheduled": "Expected to begin <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
 					"complete": "This was a planned incident, it took %{duration}."
 				},
 				"unplanned": {
@@ -48,8 +48,8 @@
 			},
 			"schedule": {
 				"synopsis": "Overview",
-				"for": "Scheduled for",
-				"expected_duration": "Expected to take"
+				"for": "Scheduled for %{begins_at}",
+				"expected_duration": "Expected to take %{expected_duration}"
 			},
 			"heading": "Previous Incidents",
 			"no-more-notices": "No further notices from the past %{days} days."
