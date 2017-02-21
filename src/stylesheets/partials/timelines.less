@@ -182,6 +182,9 @@ dl.timeline {
 					> dd {
 						margin-bottom: @timeline-vertical-spacing;
 
+						// Header for planned notices.
+						.update-heading { line-height: @line-height-computed; }
+
 						// Graphical timeline on larger scale devices.
 						@media (min-width: @grid-float-breakpoint) {
 							/* Horizontal alignment of dates/times. */
