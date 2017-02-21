@@ -90,22 +90,7 @@
                                                         </time>
                                                     </dt>
                                                         <!-- Output the text content of the update. -->
-                                                        <dd>
-                                                            <!-- Check if this is a synopsis for the schedule. -->
-                                                            {% if forloop.last and notice.type == 'planned' %}
-                                                                <!-- Include the synopsis header. -->
-                                                                <h5>{{ 'status-page.body.synopsis' | t }}</h5>
-                                                            {% endif %}
-
-                                                            <!-- Include the basic text. -->                
-                                                            {{ update.content | simple_format }}
-
-                                                            <!-- Check if we have schedule to show. -->
-                                                            {% if forloop.last and notice.type == 'planned' %}
-                                                                <!-- Include the schedule overview. -->
-                                                                {% include 'notices/schedule-overview' %}
-                                                            {% endif %}
-                                                        </dd>
+                                                        <dd>{% include 'notices/update-content' %}</dd>
                                                 {% endfor %}
                                             </dl>
                                         </dd>
