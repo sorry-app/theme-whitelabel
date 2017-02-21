@@ -69,7 +69,7 @@
                                                 <!-- Display appropriate schedule information if we have it. -->
                                                 {% if notice.type == 'planned' %}
                                                     <!-- Display the schedule/runtime. -->
-                                                    <small>{{ 'status-page.header.subheading.planned' | t: ends_at: notice.expected_ended_at }}</small>
+                                                    <small>{{ 'status-page.header.timeliness.planned.underway' | t: ends_at: notice.expected_ended_at }}</small>
                                                 {% endif %}
                                             </h3>
 

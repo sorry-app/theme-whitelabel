@@ -12,9 +12,9 @@
 -->
 <ul class="list-unstyled list-schedule-overview text-muted" id="#schedule-overview-{{ notice.id }}">
 	<li class="schedule-datetime">
-		<i class="fa fa-fw fa-calendar"></i> {{ 'status-page.body.scheduled-for' | t }} {{ notice.begins_at }}		
+		<i class="fa fa-fw fa-calendar"></i> {{ 'status-page.body.schedule.for' | t }} {{ notice.begins_at }}		
 	</li>
 	<li class="schedule-duration">
-		<i class="fa fa-fw fa-clock-o"></i> {{ 'status-page.body.duration' | t }} <time datetime="{{ notice.expected_duration }}s" class="duration">{{ notice.expected_duration | distance_of_time_in_words }}</time>	
+		<i class="fa fa-fw fa-clock-o"></i> {{ 'status-page.body.schedule.expected_duration' | t }} <time datetime="{{ notice.expected_duration }}s" class="duration">{{ notice.expected_duration | distance_of_time_in_words }}</time>	
 	</li>
 </ul>

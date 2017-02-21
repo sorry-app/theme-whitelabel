@@ -21,34 +21,37 @@
 				"open": "Ongoing",
 				"underway": "Underway"
 			},
+			"timeliness": {
+				"planned": {
+					"underway": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
+				}
+			},			
 			"disagree": {
 				"question": "Don't agree with this?",
 				"answer": "Please let us know"
-			},
-			"subheading": {
-				"planned": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
 			}		
 		},
-		"future": {
-			"heading": "Upcomming Maintenance",
-			"duration": "Expected to take"
-		},
 		"body": {
-			"timeliness": {
-				"scheduled": "Expected to happen <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
-				"complete": "This was a planned incident, it took %{duration}.",
-				"closed": "This was an unplanned incident, it lasted %{duration}."
-			},
 			"states": {
 				"scheduled": "Scheduled",
 				"complete": "Complete",
 				"closed": "Resolved"
+			},			
+			"timeliness": {
+				"planned": {
+					"scheduled": "Expected to happen <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
+					"complete": "This was a planned incident, it took %{duration}."
+				},
+				"unplanned": {
+					"closed": "This was an unplanned incident, it lasted %{duration}."
+				}
 			},
-			"scheduled-for": "Scheduled for",
-			"synopsis": "Synopsis",
-			"duration": "Expected to take",
+			"schedule": {
+				"synopsis": "Overview",
+				"for": "Scheduled for",
+				"expected_duration": "Expected to take"
+			},
 			"heading": "Previous Incidents",
-			"posted-at": "Posted on",
 			"no-more-notices": "No further notices from the past %{days} days."
 		},
 		"footer": {
