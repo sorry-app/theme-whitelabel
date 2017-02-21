@@ -170,11 +170,13 @@ dl.timeline {
 					> dt {
 						opacity: 0.5;
 						font-weight: @font-weight-base;
+						margin-bottom: (@line-height-computed / 2);
 
 						// Graphical timeline on larger scale devices.
 						@media (min-width: @grid-float-breakpoint) {
 							/* Horizontal alignment of dates/times. */
 							width: @timeline-time-width;
+							margin-bottom: 0;
 						}
 					}
 
