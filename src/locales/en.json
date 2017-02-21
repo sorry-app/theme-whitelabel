@@ -26,7 +26,7 @@
 				"answer": "Please let us know"
 			},
 			"subheading": {
-				"scheduled-maintenance": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
+				"planned": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
 			}		
 		},
 		"future": {

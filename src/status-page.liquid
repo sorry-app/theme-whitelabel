@@ -69,9 +69,9 @@
                                                     {{ notice.subject }}
 
                                                     <!-- Display appropriate schedule information if we have it. -->
-                                                    {% if notice.type == 'scheduled-maintenance' %}
+                                                    {% if notice.type == 'planned' %}
                                                         <!-- Display the schedule/runtime. -->
-                                                        <small><i class="fa fa-fw fa-clock-o"></i> {{ 'status-page.header.subheading.scheduled-maintenance' | t: ends_at: notice.expected_ended_at }}</small>
+                                                        <small><i class="fa fa-fw fa-clock-o"></i> {{ 'status-page.header.subheading.planned' | t: ends_at: notice.expected_ended_at }}</small>
                                                     {% endif %}
                                                 </h3>
                                             {% endunless %}
@@ -92,7 +92,7 @@
                                                         <!-- Output the text content of the update. -->
                                                         <dd>
                                                             <!-- Check if this is a synopsis for the schedule. -->
-                                                            {% if forloop.last and notice.type == 'scheduled-maintenance' %}
+                                                            {% if forloop.last and notice.type == 'planned' %}
                                                                 <!-- Include the synopsis header. -->
                                                                 <h5>{{ 'status-page.body.synopsis' | t }}</h5>
                                                             {% endif %}
@@ -101,7 +101,7 @@
                                                             {{ update.content | simple_format }}
 
                                                             <!-- Check if we have schedule to show. -->
-                                                            {% if forloop.last and notice.type == 'scheduled-maintenance' %}
+                                                            {% if forloop.last and notice.type == 'planned' %}
                                                                 <!-- Include the schedule overview. -->
                                                                 {% include 'notices/schedule-overview' %}
                                                             {% endif %}

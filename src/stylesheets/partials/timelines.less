@@ -224,7 +224,7 @@ dl.timeline {
 			}
 		}
 	}
-	> dt.event.event-present.event-apology {
+	> dt.event.event-present.event-unplanned {
 		& + dd > dl > dt {
 			// Use the theme colours for this.
 			background-color: ~"{{ page.brand.color_state_warning }}";
@@ -233,7 +233,7 @@ dl.timeline {
 			.fa:before { content: '\f0a1' }
 		}		
 	}
-	> dt.event.event-present.event-scheduled-maintenance {
+	> dt.event.event-present.event-planned {
 		& + dd > dl > dt {
 			// Use the theme colours for this.
 			background-color: ~"{{ page.brand.color_state_info }}";
