@@ -89,6 +89,19 @@ dl.timeline {
 		}
 	}
 
+	// Special styles for future timeline events.
+	dt.event-future + dd {
+		// Hide the datetimes that each of the updates
+		// was posted as it causes a conflict/confusion with the
+		// datetime that the maintenance is scheduled for.
+		dl > dt { display: none; }
+		dl > dd { 
+ 			@media (min-width: @grid-float-breakpoint) { 
+ 				padding: 0 5px; 
+ 			}
+ 		}
+	}
+
 	// Subject Lines.
 	// Applied to various h tags but standardizes type.
 	.notice-subject {
