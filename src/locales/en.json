@@ -51,7 +51,10 @@
 				"for": "Scheduled for %{begins_at}",
 				"expected_duration": "Expected to take %{expected_duration}"
 			},
-			"heading": "Previous Incidents",
+			"timeline-heading": {
+				"future": "Upcoming Maintenance",
+				"past_recent": "Previous Incidents"
+			},
 			"no-more-notices": "No further notices from the past %{days} days."
 		},
 		"footer": {

@@ -121,7 +121,7 @@
                 <!-- Only display if they exist. -->
                 {% if page.notices.future.size > 0 %}
                     <!-- Heading for the list. -->
-                    <lh>{{ 'status-page.future.heading' | t }}</lh>
+                    <lh>{{ 'status-page.body.timeline-heading.future' | t }}</lh>
 
                     <!-- Loop over the collection of future notices. -->
                     {% for notice in page.notices.future %}
@@ -134,7 +134,7 @@
                 {% endif %}
 
                 <!-- Heading for the list. -->
-                <lh>{{ 'status-page.body.heading' | t }}</lh>
+                <lh>{{ 'status-page.body.timeline-heading.past_recent' | t }}</lh>
 
                 <!-- Loop over the collection of previous notices, order date descending. -->
                 {% for notice in page.notices.past_recent %}
