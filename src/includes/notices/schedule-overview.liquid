@@ -1,15 +1,4 @@
-<!--
-	SCHEDULE OVERVIEW
-
-	This include details the scheduled datetime and expected
-	duration of the notice.
-
-	Variables:
-
-	- Notice (required)
-	  Preferably one of type 'planned' which contains schedule information otherwise you
-	  may get strange results.
--->
+<!-- This include details the scheduled datetime and expected duration of the notice. -->
 <ul class="list-unstyled list-schedule-overview text-muted" id="#schedule-overview-{{ notice.id }}">
 	<li class="schedule-datetime">
 		<i class="fa fa-fw fa-calendar"></i> {{ 'status-page.body.schedule.for' | t: begins_at: notice.begins_at }}
