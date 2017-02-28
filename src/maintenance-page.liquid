@@ -1,0 +1,72 @@
+<!-- Create a container for the template specific styles. -->
+<div class="template-maintenance-page">
+	<header>
+		<!-- Navbar if a logo is available. -->
+		{% if page.brand.logo %}
+		    <!-- Page Navbar. -->
+		    <nav class="navbar navbar-default navbar-center" role="navigation">
+		        <div class="container">
+		            <div class="navbar-header">
+	                	<!-- Display a logo if one is assigned. -->
+	                    <div class="navbar-logo">
+	                        <!-- Logo. -->
+	                        <img src="{{ page.brand.logo.url }}" alt="logo" />
+	                    </div>
+		            </div>
+		        </div>    	
+		    </nav>
+	    {% endif %}
+
+		<div class="container container-sm">
+			<section class="maintenance-page-header">
+				<!-- Headline notice to state a problem has ocurred. -->
+				<h1>
+					{{ 'maintenance-page.header.title' | t }}
+
+					<!-- Display a duration if we have an open maintenance. -->
+					{% if page.notices.planned.present.size > 0 %}
+						<!-- Determin the longest running notice, based on it's expected end time. -->
+						{% assign longest_notice = page.notices.planned.present | sort: 'expected_ended_at' | last %}
+						<!-- Format the datetime in ISO format so moment.js doesn't get upset. -->
+						{% assign latest_ended_at = longest_notice.expected_ended_at | date: '%FT%T%z' %}
+						<!-- We have open maintenance, display the duration. -->
+						<small>{{ 'maintenance-page.header.subtitles.with-maintenance' | t: ends_at: latest_ended_at }}</small>
+					{% else %}
+						<!-- We don't have open maintenance, display generic message. -->
+						<small>{{ 'maintenance-page.header.subtitles.without-maintenance' | t }}</small>
+					{% endif %}
+				</h1>
+			</section>
+		</div>
+	</header>
+
+	<main>
+		<div class="container container-sm">
+			<div class="content-block">
+				<!-- Check to see if the status page has any notices on it. -->
+				{% if page.notices.planned.present.size > 0 %}
+					<!-- Display a synopsis of details about each maintenance. -->
+					{% for notice in page.notices.planned.present %}
+						<div class="notice" id="{{ notice.id }}">
+							<!-- The SP does have noticed, display an ongoing statement and link. -->
+							<h2 class="h4 notice-subject">{{ notice.subject }}</h2>
+								<p class="notice-synopsis">{{ notice.synopsis | simple_format }}</p>
+								<p class="notice-schedule"><small><strong>{{ 'maintenance-page.body.states.with-maintenance.began_at' | t }}:</strong> {{ notice.began_at | date: '%A, %-d %b %Y %X %Z' }} <br /> <strong>{{ 'maintenance-page.body.states.with-maintenance.duration' | t }}:</strong> <time class="duration" datetime="{{ notice.expected_duration }}s">{{ notice.expected_duration | distance_of_time_in_words }}</time></small></p>
+						</div>
+
+						<div class="spacer spacer-md"></div>
+					{% endfor %}
+
+					<!-- Include a link to the status page for more details. -->
+					<a href="{{ page.link }}" target="_blank" class="btn btn-link btn-lg btn-external">{{ 'maintenance-page.body.states.with-maintenance.sp-link' | t }}</a>
+				{% else %}
+					<!-- We don't have any maintenance underway, display a default message. -->
+					<p>{{ 'maintenance-page.body.states.without-maintenance.content' | t }}</p>
+				{% endif %}
+			</div>
+		</div>
+	</main>
+
+    <!-- Include the page footer. -->
+    {% include 'footer' %}
+</div>

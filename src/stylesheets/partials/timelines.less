@@ -9,6 +9,42 @@ dl.timeline {
 	position: relative;
 	padding: @timeline-padding (@timeline-padding / 2);
 
+	// Style the heading/caption for the list.
+	> lh {
+		display: block;
+		font-size: 24px;
+		font-weight: 500;
+		margin-bottom: @timeline-vertical-spacing;
+
+		/* Indent only applied on desktop devices. */
+		@media (min-width: @grid-float-breakpoint) { 
+			padding: 0 10px; 
+			margin-bottom: @timeline-vertical-spacing * 3;
+		}
+	}
+
+	// Timeline horizontal dividers used to split
+	// up certain parts of the timeline.
+	> hr {
+		border: none;
+		margin-top: @timeline-vertical-spacing;
+		margin-bottom: @timeline-vertical-spacing;
+
+		// Scalable size on larger devices.
+		@media (min-width: @screen-sm-min) {
+			margin-top: @timeline-vertical-spacing-sm;
+			margin-bottom: @timeline-vertical-spacing-sm;			
+		}
+		@media (min-width: @screen-md-min) {
+			margin-top: @timeline-vertical-spacing-md;
+			margin-bottom: @timeline-vertical-spacing-md;			
+		}
+		@media (min-width: @screen-lg-min) {
+			margin-top: @timeline-vertical-spacing-lg;
+			margin-bottom: @timeline-vertical-spacing-lg;			
+		}				
+	}
+
 	// Main container/wrapper for each timeline event.
 	> dt { 
 		// Doesn't need content, so shrink the font.
@@ -53,12 +89,34 @@ dl.timeline {
 		}
 	}
 
+	// Special styles for future timeline events.
+	dt.event-future + dd {
+		// Hide the datetimes that each of the updates
+		// was posted as it causes a conflict/confusion with the
+		// datetime that the maintenance is scheduled for.
+		dl > dt { display: none; }
+		dl > dd { 
+ 			@media (min-width: @grid-float-breakpoint) { 
+ 				padding: 0 5px; 
+ 			}
+ 		}
+	}
+
 	// Subject Lines.
 	// Applied to various h tags but standardizes type.
 	.notice-subject {
 		font-size: 20px;
 		margin-top: 0;
-		margin-bottom: 15px;
+		margin-bottom: 20px;
+
+		/* Subheading styles. */
+		small { 
+			display: block;
+			opacity: 0.6;
+			padding-top: 10px;
+			font-size: 85%;
+			line-height: 1.41;
+		}
 
 		// Bump the spacing on larger devices. */
 		@media (min-width: @grid-float-breakpoint) { margin-bottom: 30px; }
@@ -125,17 +183,22 @@ dl.timeline {
 					> dt {
 						opacity: 0.5;
 						font-weight: @font-weight-base;
+						margin-bottom: (@line-height-computed / 2);
 
 						// Graphical timeline on larger scale devices.
 						@media (min-width: @grid-float-breakpoint) {
 							/* Horizontal alignment of dates/times. */
 							width: @timeline-time-width;
+							margin-bottom: 0;
 						}
 					}
 
 					// Main text body for each update.
 					> dd {
 						margin-bottom: @timeline-vertical-spacing;
+
+						// Header for planned notices.
+						.update-heading { line-height: @line-height-computed; }
 
 						// Graphical timeline on larger scale devices.
 						@media (min-width: @grid-float-breakpoint) {
@@ -164,25 +227,42 @@ dl.timeline {
 	// --------------------------------------------------
 
 	// Ongoing event type.
-	> dt.event.event-ongoing {
+	> dt.event.event-present {
 		// Special colour style for the ongoing message.
 		& + dd > dl > dt {
 			// Use the theme colours for this.
-			background-color: ~"{{ page.brand.color_state_warning }}";
 			color: #FFF;
 			padding: 5px 10px;
 			border-radius: 6px;
 
 			// Little bullhorn icon for the notice.
-			i {
+			.fa {
 				float: right;
 				margin-top: 3px;
 			}
 		}
 	}
+	> dt.event.event-present.event-unplanned {
+		& + dd > dl > dt {
+			// Use the theme colours for this.
+			background-color: ~"{{ page.brand.color_state_warning }}";
+
+			// Use the bullhorn icon.
+			.fa:before { content: '\f0a1' }
+		}		
+	}
+	> dt.event.event-present.event-planned {
+		& + dd > dl > dt {
+			// Use the theme colours for this.
+			background-color: ~"{{ page.brand.color_state_info }}";
+
+			// Use the bullhorn icon.
+			.fa:before { content: '\f0ad' }			
+		}
+	}	
 
 	// Resolved event.
-	> dt.event.event-resolved {
+	> dt.event.event-closed, > dt.event.event-complete {
 		// Green marker on the timeline.
 		& + dd:before {
 			background-color: ~"{{ page.brand.color_state_ok }}";
@@ -192,14 +272,17 @@ dl.timeline {
 	}
 
 	// Ongoing event.
-	> dt.event.event-ongoing {
+	> dt.event.event-present {
 		// Green marker on the timeline.
 		& + dd:before {
-			background-color: ~"{{ page.brand.color_state_warning }}";
 			background-image: none; // Remove the shader.
 			opacity: 1;
 		}
 	}
+	// Color the dots based on the state of the notice.
+	> dt.event.event-open + dd:before { background-color: ~"{{ page.brand.color_state_warning }}"; }
+	> dt.event.event-underway + dd:before { background-color: ~"{{ page.brand.color_state_info }}"; }
+
 
 	// Graphical timeline on larger scale devices.
 	// --------------------------------------------------

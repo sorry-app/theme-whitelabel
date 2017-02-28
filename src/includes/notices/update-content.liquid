@@ -1,0 +1,25 @@
+<!--  If this is the synopsis/first update on planned notic we want to display a heading, and an overview of the planned incident schedule -->
+<!-- The update we class as a synopsis depends on the sort order of the timeline. -->
+{% if page.timeline_sort_order == 'asc' %}
+    <!-- Ascencing order, first update is synopsis. -->
+    {% assign synopsis = notice.updates.first %}
+{% elsif page.timeline_sort_order == 'desc' %}
+    <!-- Descending sort order, last is synopsis. -->
+    {% assign synopsis = notice.updates.last %}
+{% endif %}
+
+<!-- Check if this is maintenance and synopsis. -->
+{% if notice.type == 'planned' and update.id == synopsis.id %}
+    <!-- This is a planned notice synopsis, so we want heading + schedule -->
+    <!-- Include the synopsis header. -->
+    <h5 class="update-heading">{{ 'status-page.body.schedule.synopsis' | t }}</h5>
+
+    <!-- Just a standard update, output the content. -->
+    {{ update.content | simple_format }}
+
+    <!-- Include the schedule overview. -->
+    {% include 'notices/schedule-overview' %}
+{% else %}
+    <!-- Just a standard update, output the content. -->
+    {{ update.content | simple_format }}
+{% endif %}

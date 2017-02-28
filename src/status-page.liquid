@@ -15,7 +15,7 @@
                     {% endif %}
 
                     <!-- Page Title. -->
-                    <span class="navbar-brand">{{ 'status-page.navbar.title' | t }}</span>
+                    <span class="navbar-brand">{{ 'status-page.navbar.title' | t }}</span> 
 
                     <!-- Subscription button based on the various options for the page. -->
                     {% if page.subscription_options.size == 1 %}
@@ -56,17 +56,22 @@
                 <dl class="timeline timeline-header">
                     <!-- Loop over the collection of current notices. -->
                     {% for notice in page.notices.present %}
-                        <dt class="event event-ongoing" id="notice-{{ notice.id }}">Notice #{{ notice.id }}</dt>
+                        <dt class="event event-{{ notice.state }} event-{{ notice.timeline_state }} event-{{ notice.type }}" id="notice-{{ notice.id }}">Notice #{{ notice.id }}</dt>
                             <dd>
                                 <dl>
-                                    <dt><i class="fa fa-bullhorn"></i> {{ 'status-page.header.states.ongoing' | t }}</dt>
+                                    <dt><i class="fa fa-notice-state"></i> {{ 'status-page.header.states.' | append: notice.state | t }}</dt>
                                         <dd>
-                                            <!-- Optional subject line for the notice. -->
-                                            <!--- It's optional because we didn't used to support subjects. -->
-                                            {% unless notice.subject == blank %}
-                                                <!-- Has a subject, display it. -->
-                                                <h3 class="notice-subject">{{ notice.subject }}</h3>
-                                            {% endunless %}
+                                            <!-- Has a subject, display it. -->
+                                            <h3 class="notice-subject">
+                                                <!-- The basic subject line. -->
+                                                {{ notice.subject }}
+
+                                                <!-- Display appropriate schedule information if we have it. -->
+                                                {% if notice.type == 'planned' %}
+                                                    <!-- Display the schedule/runtime. -->
+                                                    <small>{{ 'status-page.header.timeliness.planned.underway' | t: ends_at: notice.expected_ended_at }}</small>
+                                                {% endif %}
+                                            </h3>
 
                                             <dl>
                                                 <!-- Force sorting in reverse order for open notices. -->
@@ -82,7 +87,7 @@
                                                         </time>
                                                     </dt>
                                                         <!-- Output the text content of the update. -->
-                                                        <dd>{{ update.content | simple_format }}</dd>
+                                                        <dd>{% include 'notices/update-content' %}</dd>
                                                 {% endfor %}
                                             </dl>
                                         </dd>
@@ -112,111 +117,38 @@
         <div class="container container-md">
             <!-- Timeline of previous notices. -->
             <dl class="timeline timeline-body">
+                <!-- Timeline of upcomming notices. -->
+                <!-- Only display if they exist. -->
+                {% if page.notices.future.size > 0 %}
+                    <!-- Heading for the list. -->
+                    <lh>{{ 'status-page.body.timeline-heading.future' | t }}</lh>
+
+                    <!-- Loop over the collection of future notices. -->
+                    {% for notice in page.notices.future %}
+                        <!-- Include the timeline for each notice. -->
+                        {% include 'notices/timeline-notice' %}
+                    {% endfor %}
+
+                    <!-- Seperator between timeline sections. -->
+                    <hr />
+                {% endif %}
+
+                <!-- Heading for the list. -->
+                <lh>{{ 'status-page.body.timeline-heading.past_recent' | t }}</lh>
+
                 <!-- Loop over the collection of previous notices, order date descending. -->
                 {% for notice in page.notices.past_recent %}
-                    <dt class="event event-resolved" id="notice-{{ notice.id }}">#{{ notice.id }}</dt>
-                    <dd>
-                        <dl>
-                            <!-- Optional subject line for the notice. -->
-                            <!--- It's optional because we didn't used to support subjects. -->
-                            {% unless notice.subject == blank %}
-                                <!-- Has a subject, display it. -->
-                                <h4 class="notice-subject">{{ notice.subject }}</h4>
-                            {% endunless %}
-
-                            <!-- Loop over the updates for this notice, which we want to group by date. -->
-                            {% for update in notice.updates  %}
-                                <!-- Snapshot the date by which we want to group updates. -->
-                                {% capture grouped_date %}{{ update.created_at | date: '%a, %-d %b %Y' }}{% endcapture %}
-
-                                <!-- See if this is the first iteration of the loop. -->
-                                {% if forloop.first %}
-                                    <!-- First itteration, as a date stamp to it. -->
-                                    <dt>{{ grouped_date }}</dt>
-                                    <dd>
-                                        <dl>
-                                {% else %}
-                                    <!-- Not the first instance -->
-                                    {% if grouped_date != last_grouped_date %}
-                                        <!-- close of the previous nest. -->
-                                            </dl>
-                                        </dd>
-
-                                        <!-- End start a new nested collection. -->
-                                        <dt>{{ grouped_date }}</dt>
-                                        <dd>
-                                            <dl>
-                                    {% endif %}
-                                {% endif %}
-
-                                <!-- Output the time for the given update. -->
-                                <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
-                                    <!-- Output the text content of the update. -->
-                                    <dd>{{ update.content | simple_format }}</dd>
-
-                                <!-- Check if this is the last instance of the loop. -->
-                                {% if forloop.last %}
-                                    <!-- Close off the nested list. -->
-                                        </dl>
-                                    </dd>
-                                {% endif %}
-
-                                <!-- Set a snapshot of the previously looped group. -->
-                                {% capture last_grouped_date %}{{ grouped_date }}{% endcapture %}
-                            {% endfor %}
-                        </dl>
-                    </dd>
+                    <!-- Include the timeline for each notice. -->
+                    {% include 'notices/timeline-notice' %}
                 {% endfor %}
 
                 <!-- End of Timeline. -->
                 <dt class="event event-final" role="presentation">Past notices</dt>
                     <dd>{{ 'status-page.body.no-more-notices' | t: days: page.timeline_threshold_in_days }}</dd>
             </dl>
-        </div> 
+        </div>
     </main>
 
-    <!-- Page Footer & Copyright. -->
-    <footer>
-        <div class="container container-xs">
-            <!-- Support Links If Defined. -->
-            {% if page.support.size > 0 or page.social.size > 0 %}
-                <div class="footer-body" id="contact-support">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h4>{{ 'status-page.footer.need-support' | t }}</h4>
-
-                            <!-- Main Status Page Nav. -->
-                            <ul class="list-support-links">
-                                <!-- Loop over the supplied support options. -->
-                                {% for link in page.support %}
-                                    <!-- Provide a list item for each. -->
-                                    <li class="support-link-{{ link[0] }}">
-                                        <!-- Conditionaly append mailto: and tel: for appropriate actions. -->
-                                        <a href="{% case link[0] %}{% when 'email' %}mailto:{% when 'telephone' %}tel:{% endcase %}{{ link[1] }}">{{ link[1] }}</a>
-                                    </li>
-                                {% endfor %}
-
-                                <!-- Loop over the supplied social accounts. -->
-                                {% for link in page.social %}
-                                    <!-- Output a link for each social channel. -->
-                                    <li class="support-link-{{ link[0] }}">
-                                        <!-- Dynamicly build a link to each type. -->
-                                        <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_blank">
-                                            <!-- Use the locale switched string for each type too. -->
-                                            <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'social-links.' | append: link[0] | t }}
-                                        </a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
-
-            <!-- Accreditation link, we'd love it if you'd leave this in place, but no hard feelings if you don't. -->
-            <div class="footer-footer">
-                <bdo dir="ltr" class="copyright">{{ page.copyright }}</bdo>
-            </div>
-        </div>
-    </footer>
+    <!-- Include the page footer. -->
+    {% include 'footer' %}
 </div>

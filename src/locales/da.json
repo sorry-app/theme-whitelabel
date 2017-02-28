@@ -18,20 +18,73 @@
 		"header": {
 			"states": {
 				"all-systems-are-go": "Alt kører normalt",
-				"ongoing": "Igangværende"
+				"open": "Igangværende",
+				"underway": "Undervejs"
 			},
+			"timeliness": {
+				"planned": {
+					"underway": "Vi forventer at være færdige på <time class=\"ago\" datetime=\"%{ends_at}\">%{ends_at}</time>"
+				}
+			},				
 			"disagree": {
 				"question": "Er du ikke enig?",
 				"answer": "Så kontakt os her"
 			}			
 		},
 		"body": {
+			"states": {
+				"scheduled": "Planlagt",
+				"complete": "Komplet",
+				"closed": "løst"
+			},			
+			"timeliness": {
+				"planned": {
+					"scheduled": "Forventes at begynde <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
+					"complete": "Dette var et planlagt hændelse, tog det %{duration}."
+				},
+				"unplanned": {
+					"closed": "Det var en ikke-planlagt hændelse, det varede %{duration}."
+				}
+			},
+			"schedule": {
+				"synopsis": "Oversigt",
+				"for": "Planlagt til %{begins_at}",
+				"expected_duration": "Forventes at tage %{expected_duration}"
+			},
+			"timeline-heading": {
+				"future": "Kommende Vedligeholdelse",
+				"past_recent": "Tidligere Hændelser"
+			},			
 			"no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."			
 		},
 		"footer": {
 			"need-support": "Har du brug for support?"
 		}
 	},
+	"maintenance-page": {
+		"header": {
+			"title": "Vi udfører nogle vedligeholdelse",
+			"subtitles": {
+				"with-maintenance": "Vi forventer at være færdige på <time class=\"ago\" datetime=\"%{ends_at}\">%{ends_at}</time>",
+				"without-maintenance": "Dette er uplanlagt akut vedligeholdelse"
+			}
+		},
+		"body": {
+			"states": {
+				"without-maintenance": {
+					"content": "Vi forsøger altid vores bedste for at pre-plan vedligeholdelse, men dette kan ikke altid garanteres. Vi sætter pris på din tålmodighed, og håber at være oppe at køre igen så hurtigt som muligt."
+				},
+				"with-maintenance": {
+					"began_at": "startede på",
+					"duration": "Forventes at tage",
+					"sp-link": "Følg vores fremskridt"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Ønsker du at tale med os om denne vedligeholdelse?"
+		}		
+	},	
 	"error-page": {
 		"header": {
 			"title": "Beklager, der er sket en fejl"

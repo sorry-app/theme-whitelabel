@@ -45,48 +45,6 @@
 		</div>
 	</main>
 
-	<!-- Page Footer & Copyright. -->
-	<footer>
-	    <div class="container container-xs">
-	        <!-- Support Links If Defined. -->
-	        {% if page.support.size > 0 or page.social.size > 0 %}
-	            <div class="footer-body" id="contact-support">
-	                <div class="row">
-	                    <div class="col-sm-12">
-	                        <h4>{{ 'error-page.footer.need-support' | t }}</h4>
-
-	                        <!-- Main Status Page Nav. -->
-	                        <ul class="list-support-links">
-	                            <!-- Loop over the supplied support options. -->
-	                            {% for link in page.support %}
-	                                <!-- Provide a list item for each. -->
-	                                <li class="support-link-{{ link[0] }}">
-	                                    <!-- Conditionaly append mailto: and tel: for appropriate actions. -->
-	                                    <a href="{% case link[0] %}{% when 'email' %}mailto:{% when 'telephone' %}tel:{% endcase %}{{ link[1] }}">{{ link[1] }}</a>
-	                                </li>
-	                            {% endfor %}
-
-	                            <!-- Loop over the supplied social accounts. -->
-	                            {% for link in page.social %}
-	                                <!-- Output a link for each social channel. -->
-	                                <li class="support-link-{{ link[0] }}">
-	                                    <!-- Dynamicly build a link to each type. -->
-	                                    <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_blank">
-	                                        <!-- Use the locale switched string for each type too. -->
-	                                        <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'social-links.' | append: link[0] | t }}
-	                                    </a>
-	                                </li>
-	                            {% endfor %}
-	                        </ul>
-	                    </div>
-	                </div>
-	            </div>
-	        {% endif %}
-
-	        <!-- Accreditation link, we'd love it if you'd leave this in place, but no hard feelings if you don't. -->
-	        <div class="footer-footer">
-	            <bdo dir="ltr" class="copyright">{{ page.copyright }}</bdo>
-	        </div>
-	    </div>
-	</footer>
+    <!-- Include the page footer. -->
+    {% include 'footer' %}
 </div>

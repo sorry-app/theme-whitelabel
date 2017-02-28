@@ -66,6 +66,10 @@ Bumps the [version number](#versioning) and creates a new git tag for the theme.
 
 *You don't need to use the release task, it can just be handy to organise released versions of the theme.*
 
+## Language Support
+
+This theme supports multiple languages (`English (en)`, `Danish (da)`, `French (fr)` and `Swedish (sv)`) using various [locale files](https://docs.sorryapp.com/themes/getting-started/the-locales-folder.html) - to contribute your own translation make a copy of the `en.json` file and rename it with the correct [ISO 639-2 two character code](https://en.wikipedia.org/wiki/List_of_ISO_639-2_codes).
+
 ## Contributing
 
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

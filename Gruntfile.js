@@ -80,6 +80,8 @@ module.exports = function(grunt) {
           { expand: true, flatten: true, src: "src/status-page.liquid", dest: "build/"},
           // Copy the error page template into the build folder.
           { expand: true, flatten: true, src: "src/error-page.liquid", dest: "build/"},
+          // Copy the maintenance page template into the build folder.
+          { expand: true, flatten: true, src: "src/maintenance-page.liquid", dest: "build/"},          
           // Copy the various layout files to the dist folder.
           { expand: true, flatten: true, cwd: "src/layouts/", src: "**", dest: "build/layouts"}, 
           // Copy javascript assets.
@@ -90,6 +92,8 @@ module.exports = function(grunt) {
           { expand: true, flatten: true, cwd: "src/images/", src: "**", dest: "build/assets/"},
           // Copy Locale files.
           { expand: true, flatten: true, cwd: "src/locales/", src: "**", dest: "build/locales"},
+          // Copy include files, mainteain nested directory.
+          { expand: true, flatten: false, cwd: "src/includes/", src: "**", dest: "build/includes"}
         ]
       },
     },

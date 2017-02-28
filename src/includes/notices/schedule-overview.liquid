@@ -1,0 +1,12 @@
+<!-- This include details the scheduled datetime and expected duration of the notice. -->
+<ul class="list-unstyled list-schedule-overview text-muted" id="#schedule-overview-{{ notice.id }}">
+	<li class="schedule-datetime">
+		<i class="fa fa-fw fa-calendar"></i> {{ 'status-page.body.schedule.for' | t: begins_at: notice.begins_at }}
+	</li>
+	<li class="schedule-duration">
+		<!-- Create a friendly version of the duration. -->
+		{% assign expected_duration = notice.expected_duration | distance_of_time_in_words %}
+		<!-- Output the duration. -->
+		<i class="fa fa-fw fa-clock-o"></i> {{ 'status-page.body.schedule.expected_duration' | t: expected_duration: expected_duration }}
+	</li>
+</ul>

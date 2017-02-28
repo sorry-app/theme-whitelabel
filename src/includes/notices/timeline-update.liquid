@@ -1,0 +1,40 @@
+<!-- Loop over the updates for this notice, which we want to group by date. -->
+{% for update in notice.updates  %}
+    <!-- Snapshot the date by which we want to group updates. -->
+    {% capture grouped_date %}{{ update.created_at | date: '%a, %-d %b %Y' }}{% endcapture %}
+
+    <!-- See if this is the first iteration of the loop. -->
+    {% if forloop.first %}
+        <!-- First itteration, as a date stamp to it. -->
+        <dt>{{ grouped_date }}</dt>
+        <dd>
+            <dl>
+    {% else %}
+        <!-- Not the first instance -->
+        {% if grouped_date != last_grouped_date %}
+            <!-- close of the previous nest. -->
+                </dl>
+            </dd>
+
+            <!-- End start a new nested collection. -->
+            <dt>{{ grouped_date }}</dt>
+            <dd>
+                <dl>
+        {% endif %}
+    {% endif %}
+
+    <!-- Output the time for the given update. -->
+    <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
+        <!-- Output the text content of the update. -->
+        <dd>{% include 'notices/update-content' %}</dd>
+
+    <!-- Check if this is the last instance of the loop. -->
+    {% if forloop.last %}
+        <!-- Close off the nested list. -->
+            </dl>
+        </dd>
+    {% endif %}
+
+    <!-- Set a snapshot of the previously looped group. -->
+    {% capture last_grouped_date %}{{ grouped_date }}{% endcapture %}
+{% endfor %}

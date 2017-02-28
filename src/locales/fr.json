@@ -18,20 +18,73 @@
 		"header": {
 			"states": {
 				"all-systems-are-go": "Tous les systèmes sont opérationnels.",
-				"ongoing": "En cours"
+				"open": "En cours",
+				"underway": "En cours"
 			},
+			"timeliness": {
+				"planned": {
+					"underway": "Nous prévoyons avoir terminé <time class=\"ago\" datetime=\"%{ends_at}\">à %{ends_at}</time>"
+				}
+			},		
 			"disagree": {
 				"question": "Vous rencontrez un problème ?",
 				"answer": "N'hésitez pas à nous le faire savoir."
 			}
-		},
+		},		
 		"body": {
+			"states": {
+				"scheduled": "Prévu",
+				"complete": "Achevée",
+				"closed": "Résolu"
+			},			
+			"timeliness": {
+				"planned": {
+					"scheduled": "Prévu pour commencer <time class=\"ago\" datetime=\"%{begins_at}\">à %{begins_at}</time>",
+					"complete": "Il s'agissait d'un incident planifié %{duration}."
+				},
+				"unplanned": {
+					"closed": "Il s'agissait d'un incident non planifié %{duration}."
+				}
+			},
+			"schedule": {
+				"synopsis": "Vue d'ensemble",
+				"for": "Planifié pour %{begins_at}",
+				"expected_duration": "Prévu pour prendre %{expected_duration}"
+			},
+			"timeline-heading": {
+				"future": "Maintenance à venir",
+				"past_recent": "Incidents Précédents"
+			},
 			"no-more-notices": "Aucun incident signalé sur les %{days} derniers jours."
 		},
 		"footer": {
 			"need-support": "Besoin d'aide ?"
 		}
 	},
+	"maintenance-page": {
+		"header": {
+			"title": "Nous effectuons des travaux d'entretien",
+			"subtitles": {
+				"with-maintenance": "Nous prévoyons avoir terminé <time class=\"ago\" datetime=\"%{ends_at}\">à %{ends_at}</time>",
+				"without-maintenance": "Il s'agit d'une maintenance d'urgence non planifiée"
+			}
+		},
+		"body": {
+			"states": {
+				"without-maintenance": {
+					"content": "Nous faisons toujours de notre mieux pour pré-planifier l'entretien, mais cela ne peut pas toujours être garanti. Nous vous remercions de votre patience et espérons être de nouveau en service dès que possible."
+				},
+				"with-maintenance": {
+					"began_at": "Commencé à",
+					"duration": "Prévu pour prendre",
+					"sp-link": "Suivre nos progrès"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Vous voulez nous parler de cet entretien?"
+		}		
+	},	
 	"error-page": {
 		"header": {
 			"title": "Nous sommes désolés, une erreur s'est produite."
