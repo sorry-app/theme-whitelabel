@@ -30,7 +30,7 @@
 				"question": "Er du ikke enig?",
 				"answer": "Så kontakt os her"
 			}			
-		}
+		},
 		"body": {
 			"states": {
 				"scheduled": "Planlagt",
