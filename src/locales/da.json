@@ -31,7 +31,29 @@
 			"duration": "Forventes at tage"
 		},	
 		"body": {
-			"heading": "Tidligere Hændelser",
+			"states": {
+				"scheduled": "Scheduled",
+				"complete": "Complete",
+				"closed": "Resolved"
+			},			
+			"timeliness": {
+				"planned": {
+					"scheduled": "Expected to begin <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
+					"complete": "This was a planned incident, it took %{duration}."
+				},
+				"unplanned": {
+					"closed": "This was an unplanned incident, it lasted %{duration}."
+				}
+			},
+			"schedule": {
+				"synopsis": "Overview",
+				"for": "Scheduled for %{begins_at}",
+				"expected_duration": "Expected to take %{expected_duration}"
+			},
+			"timeline-heading": {
+				"future": "Upcoming Maintenance",
+				"past_recent": "Tidligere Hændelser"
+			},			
 			"no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."			
 		},
 		"footer": {

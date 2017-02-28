@@ -21,23 +21,70 @@
 				"open": "En cours",
 				"underway": "En cours"
 			},
+			"timeliness": {
+				"planned": {
+					"underway": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
+				}
+			},		
 			"disagree": {
 				"question": "Vous rencontrez un problème ?",
 				"answer": "N'hésitez pas à nous le faire savoir."
 			}
-		},
-		"future": {
-			"heading": "Entretien",
-			"duration": "Attendu de prendre"
-		},
+		},		
 		"body": {
-			"heading": "Incidents Précédents",
+			"states": {
+				"scheduled": "Scheduled",
+				"complete": "Complete",
+				"closed": "Resolved"
+			},			
+			"timeliness": {
+				"planned": {
+					"scheduled": "Expected to begin <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
+					"complete": "This was a planned incident, it took %{duration}."
+				},
+				"unplanned": {
+					"closed": "This was an unplanned incident, it lasted %{duration}."
+				}
+			},
+			"schedule": {
+				"synopsis": "Overview",
+				"for": "Scheduled for %{begins_at}",
+				"expected_duration": "Expected to take %{expected_duration}"
+			},
+			"timeline-heading": {
+				"future": "Upcoming Maintenance",
+				"past_recent": "Incidents Précédents"
+			},
 			"no-more-notices": "Aucun incident signalé sur les %{days} derniers jours."
 		},
 		"footer": {
 			"need-support": "Besoin d'aide ?"
 		}
 	},
+	"maintenance-page": {
+		"header": {
+			"title": "We're performing some maintenance",
+			"subtitles": {
+				"with-maintenance": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>",
+				"without-maintenance": "This is unplanned emergency maintenance"
+			}
+		},
+		"body": {
+			"states": {
+				"without-maintenance": {
+					"content": "We always try our best to pre-plan maintenance, yet this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+				},
+				"with-maintenance": {
+					"began_at": "Started at",
+					"duration": "Expected to take",
+					"sp-link": "Follow our progress"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Want to talk to us about this maintenance?"
+		}		
+	},	
 	"error-page": {
 		"header": {
 			"title": "Nous sommes désolés, une erreur s'est produite."
