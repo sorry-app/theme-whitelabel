@@ -23,7 +23,7 @@
 			},
 			"timeliness": {
 				"planned": {
-					"underway": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
+					"underway": "Nous prévoyons avoir terminé <time class=\"ago\" datetime=\"%{ends_at}\">à %{ends_at}</time>"
 				}
 			},		
 			"disagree": {
@@ -33,26 +33,26 @@
 		},		
 		"body": {
 			"states": {
-				"scheduled": "Scheduled",
-				"complete": "Complete",
-				"closed": "Resolved"
+				"scheduled": "Prévu",
+				"complete": "Achevée",
+				"closed": "Résolu"
 			},			
 			"timeliness": {
 				"planned": {
-					"scheduled": "Expected to begin <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
-					"complete": "This was a planned incident, it took %{duration}."
+					"scheduled": "Prévu pour commencer <time class=\"ago\" datetime=\"%{begins_at}\">à %{begins_at}</time>",
+					"complete": "Il s'agissait d'un incident planifié %{duration}."
 				},
 				"unplanned": {
-					"closed": "This was an unplanned incident, it lasted %{duration}."
+					"closed": "Il s'agissait d'un incident non planifié %{duration}."
 				}
 			},
 			"schedule": {
-				"synopsis": "Overview",
-				"for": "Scheduled for %{begins_at}",
-				"expected_duration": "Expected to take %{expected_duration}"
+				"synopsis": "Vue d'ensemble",
+				"for": "Planifié pour %{begins_at}",
+				"expected_duration": "Prévu pour prendre %{expected_duration}"
 			},
 			"timeline-heading": {
-				"future": "Upcoming Maintenance",
+				"future": "Maintenance à venir",
 				"past_recent": "Incidents Précédents"
 			},
 			"no-more-notices": "Aucun incident signalé sur les %{days} derniers jours."
@@ -63,26 +63,26 @@
 	},
 	"maintenance-page": {
 		"header": {
-			"title": "We're performing some maintenance",
+			"title": "Nous effectuons des travaux d'entretien",
 			"subtitles": {
-				"with-maintenance": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>",
-				"without-maintenance": "This is unplanned emergency maintenance"
+				"with-maintenance": "Nous prévoyons avoir terminé <time class=\"ago\" datetime=\"%{ends_at}\">à %{ends_at}</time>",
+				"without-maintenance": "Il s'agit d'une maintenance d'urgence non planifiée"
 			}
 		},
 		"body": {
 			"states": {
 				"without-maintenance": {
-					"content": "We always try our best to pre-plan maintenance, yet this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+					"content": "Nous faisons toujours de notre mieux pour pré-planifier l'entretien, mais cela ne peut pas toujours être garanti. Nous vous remercions de votre patience et espérons être de nouveau en service dès que possible."
 				},
 				"with-maintenance": {
-					"began_at": "Started at",
-					"duration": "Expected to take",
-					"sp-link": "Follow our progress"
+					"began_at": "Commencé à",
+					"duration": "Prévu pour prendre",
+					"sp-link": "Suivre nos progrès"
 				}
 			}
 		},
 		"footer": {
-			"need-support": "Want to talk to us about this maintenance?"
+			"need-support": "Vous voulez nous parler de cet entretien?"
 		}		
 	},	
 	"error-page": {
