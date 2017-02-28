@@ -32,26 +32,26 @@
 		},	
 		"body": {
 			"states": {
-				"scheduled": "Scheduled",
-				"complete": "Complete",
-				"closed": "Resolved"
+				"scheduled": "Planlagt",
+				"complete": "Komplet",
+				"closed": "løst"
 			},			
 			"timeliness": {
 				"planned": {
-					"scheduled": "Expected to begin <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
-					"complete": "This was a planned incident, it took %{duration}."
+					"scheduled": "Forventes at begynde <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
+					"complete": "Dette var et planlagt hændelse, tog det %{duration}."
 				},
 				"unplanned": {
-					"closed": "This was an unplanned incident, it lasted %{duration}."
+					"closed": "Det var en ikke-planlagt hændelse, det varede %{duration}."
 				}
 			},
 			"schedule": {
-				"synopsis": "Overview",
-				"for": "Scheduled for %{begins_at}",
-				"expected_duration": "Expected to take %{expected_duration}"
+				"synopsis": "Oversigt",
+				"for": "Planlagt til %{begins_at}",
+				"expected_duration": "Forventes at tage %{expected_duration}"
 			},
 			"timeline-heading": {
-				"future": "Upcoming Maintenance",
+				"future": "Kommende Vedligeholdelse",
 				"past_recent": "Tidligere Hændelser"
 			},			
 			"no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."			
