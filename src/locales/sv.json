@@ -23,7 +23,7 @@
 			},
 			"timeliness": {
 				"planned": {
-					"underway": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
+					"underway": "Vi räknar med att vara klar <time class=\"ago\" datetime=\"%{ends_at}\">i %{ends_at}</time>"
 				}
 			},				
 			"disagree": {
@@ -33,26 +33,26 @@
 		},	
 		"body": {
 			"states": {
-				"scheduled": "Scheduled",
-				"complete": "Complete",
-				"closed": "Resolved"
+				"scheduled": "Planerad",
+				"complete": "Komplett",
+				"closed": "Löst"
 			},			
 			"timeliness": {
 				"planned": {
-					"scheduled": "Expected to begin <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
-					"complete": "This was a planned incident, it took %{duration}."
+					"scheduled": "Väntas börja på <time class=\"ago\" datetime=\"%{begins_at}\">%{begins_at}</time>",
+					"complete": "Detta var en planerad händelse, tog det %{duration}."
 				},
 				"unplanned": {
-					"closed": "This was an unplanned incident, it lasted %{duration}."
+					"closed": "Detta var en oplanerad incident, det varade %{duration}."
 				}
 			},
 			"schedule": {
-				"synopsis": "Overview",
-				"for": "Scheduled for %{begins_at}",
-				"expected_duration": "Expected to take %{expected_duration}"
+				"synopsis": "Översikt",
+				"for": "Schemalagt för %{begins_at}",
+				"expected_duration": "Förväntas ta %{expected_duration}"
 			},
 			"timeline-heading": {
-				"future": "Upcoming Maintenance",
+				"future": "Kommande underhåll",
 				"past_recent": "Tidigare Incidenter"
 			},			
 			"no-more-notices": "Inga ytterligare meddelanden de senaste %{days} dagarna."
@@ -63,26 +63,26 @@
 	},
 	"maintenance-page": {
 		"header": {
-			"title": "We're performing some maintenance",
+			"title": "Vi utför en del underhåll",
 			"subtitles": {
-				"with-maintenance": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>",
-				"without-maintenance": "This is unplanned emergency maintenance"
+				"with-maintenance": "Vi räknar med att vara klar i <time class=\"ago\" datetime=\"%{ends_at}\">%{ends_at}</time>",
+				"without-maintenance": "Detta är oplanerat akut underhåll"
 			}
 		},
 		"body": {
 			"states": {
 				"without-maintenance": {
-					"content": "We always try our best to pre-plan maintenance, yet this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+					"content": "Vi försöker alltid vårt bästa för att i förväg planera underhåll, men detta kan inte alltid garanteras. Vi uppskattar ditt tålamod och hoppas att vara igång igen så snart som möjligt."
 				},
 				"with-maintenance": {
-					"began_at": "Started at",
-					"duration": "Expected to take",
-					"sp-link": "Follow our progress"
+					"began_at": "började på",
+					"duration": "Förväntas ta",
+					"sp-link": "Följ vår utveckling"
 				}
 			}
 		},
 		"footer": {
-			"need-support": "Want to talk to us about this maintenance?"
+			"need-support": "Vill du prata med oss ​​om underhållet?"
 		}		
 	},	
 	"error-page": {
