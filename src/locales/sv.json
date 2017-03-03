@@ -43,7 +43,7 @@
 					"complete": "Detta var en planerad händelse, tog det %{duration}."
 				},
 				"unplanned": {
-					"closed": "Detta var en oplanerad incident, det varade %{duration}."
+					"closed": "Denna incident varade %{duration}."
 				}
 			},
 			"schedule": {

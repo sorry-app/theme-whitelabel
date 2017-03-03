@@ -43,7 +43,7 @@
 					"complete": "Dette var et planlagt hændelse, tog det %{duration}."
 				},
 				"unplanned": {
-					"closed": "Det var en ikke-planlagt hændelse, det varede %{duration}."
+					"closed": "Denne hændelse varede %{duration}."
 				}
 			},
 			"schedule": {
