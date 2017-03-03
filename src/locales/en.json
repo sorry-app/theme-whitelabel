@@ -43,7 +43,7 @@
 					"complete": "This was a planned incident, it took %{duration}."
 				},
 				"unplanned": {
-					"closed": "This was an unplanned incident, it lasted %{duration}."
+					"closed": "This incident lasted %{duration}."
 				}
 			},
 			"schedule": {

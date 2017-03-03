@@ -43,7 +43,7 @@
 					"complete": "Il s'agissait d'un incident planifié %{duration}."
 				},
 				"unplanned": {
-					"closed": "Il s'agissait d'un incident non planifié %{duration}."
+					"closed": "Cet incident a duré %{duration}."
 				}
 			},
 			"schedule": {
