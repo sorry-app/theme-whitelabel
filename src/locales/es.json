@@ -1,112 +1,112 @@
 {
 	"status-page": {
 		"navbar": {
-			"title": "System Status",
+			"title": "Estado del sistema",
 			"subscribe-button": {
-				"default": "Get Updates",
-				"via": "via",
+				"default": "Obtener actualizaciones",
+				"via": "Vía",
 				"slack": {
 					"name": "Slack",
-					"description": "Posted live to a #channel of your choice."
+					"description": "Publicado en directo a un canal # de su elección."
 				},
 				"email": {
 					"name": "Email",
-					"description": "Messages delivered right into your inbox."
+					"description": "Mensajes enviados directamente a su bandeja de entrada."
 				}
 			}
 		},
 		"header": {
 			"states": {
-				"all-systems-are-go": "All systems are go",
-				"open": "Ongoing",
-				"underway": "Underway"
+				"all-systems-are-go": "Todos los sistemas",
+				"open": "En marcha",
+				"underway": "En curso"
 			},
 			"timeliness": {
 				"planned": {
-					"underway": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
+					"underway": "Esperamos que terminemos en <time class=\"ago\" datetime=\"%{ends_at}\"> %{ends_at}</time>"
 				}
 			},			
 			"disagree": {
-				"question": "Don't agree with this?",
-				"answer": "Please let us know"
+				"question": "¿Tu oído es muy grande?",
+				"answer": "Por favor déjanos saber"
 			}		
 		},
 		"body": {
 			"states": {
-				"scheduled": "Scheduled",
-				"complete": "Complete",
-				"closed": "Resolved"
+				"scheduled": "Programado",
+				"complete": "Completar",
+				"closed": "Resuelto"
 			},			
 			"timeliness": {
 				"planned": {
-					"scheduled": "Expected to begin <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
-					"complete": "This was a planned incident, it took %{duration}."
+					"scheduled": "Se espera que comience en <time class=\"ago\" datetime=\"%{begins_at}\"> %{begins_at}</time>",
+					"complete": "Este fue un incidente planeado, %{duration}."
 				},
 				"unplanned": {
-					"closed": "This incident lasted %{duration}."
+					"closed": "Este incidente duró %{duration}."
 				}
 			},
 			"schedule": {
-				"synopsis": "Overview",
-				"for": "Scheduled for %{begins_at}",
-				"expected_duration": "Expected to take %{expected_duration}"
+				"synopsis": "Visión de conjunto",
+				"for": "Programado para %{begins_at}",
+				"expected_duration": "Se espera que tome %{expected_duration}"
 			},
 			"timeline-heading": {
-				"future": "Upcoming Maintenance",
-				"past_recent": "Previous Incidents"
+				"future": "Próximos Mantenimientos",
+				"past_recent": "Incidentes anteriores"
 			},
-			"no-more-notices": "No further notices from the past %{days} days."
+			"no-more-notices": "No hay más avisos del pasado %{days} days."
 		},
 		"footer": {
-			"need-support": "Need Support?"
+			"need-support": "¿Necesita ayuda?"
 		}
 	},
 	"maintenance-page": {
 		"header": {
-			"title": "We're performing some maintenance",
+			"title": "Estamos realizando algunos trabajos de mantenimiento",
 			"subtitles": {
-				"with-maintenance": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>",
-				"without-maintenance": "This is unplanned emergency maintenance"
+				"with-maintenance": "Esperamos que terminemos en <time class=\"ago\" datetime=\"%{ends_at}\"> %{ends_at}</time>",
+				"without-maintenance": "Se trata de un mantenimiento de emergencia no planificado"
 			}
 		},
 		"body": {
 			"states": {
 				"without-maintenance": {
-					"content": "We always try our best to pre-plan maintenance, yet this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+					"content": "Siempre hacemos todo lo posible para planificar el mantenimiento, pero esto no siempre puede garantizarse. Agradecemos su paciencia y esperamos estar de nuevo en funcionamiento tan pronto como sea posible."
 				},
 				"with-maintenance": {
-					"began_at": "Started at",
-					"duration": "Expected to take",
-					"sp-link": "Follow our progress"
+					"began_at": "Empezó a las",
+					"duration": "Se espera que tome",
+					"sp-link": "Sigue nuestro progreso"
 				}
 			}
 		},
 		"footer": {
-			"need-support": "Want to talk to us about this maintenance?"
+			"need-support": "¿Quieres hablar con nosotros sobre este mantenimiento?"
 		}		
 	},
 	"error-page": {
 		"header": {
-			"title": "Sorry, something has gone wrong"
+			"title": "Lo siento, algo ha salido mal"
 		},
 		"body": {
-			"subtitle": "It’s not you, it’s us",
-			"retry": "Give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
+			"subtitle": "No eres tú, somos nosotros",
+			"retry": "Dar que otro ir, y si todavía no funciona, asegúrese de que estamos conscientes y trabajando para solucionarlo.",
 			"states": {
 				"ongoing": {
-					"heading": "We are having issues at the moment.",
-					"body": "These may be related to this error, please take a look at our Status Page for more information.",
-					"sp-link": "Visit our Status Page"
+					"heading": "Estamos teniendo problemas en este momento.",
+					"body": "Estos pueden estar relacionados con este error, por favor eche un vistazo a nuestra página de estado para obtener más información.",
+					"sp-link": "Visita nuestra página de estado"
 				}
 			}
 		},
 		"footer": {
-			"need-support": "Want to talk to us about this error?"
+			"need-support": "¿Quieres hablar con nosotros sobre este error?"
 		}
 	},
 	"social-links": {
-		"twitter": "Follow us on Twitter",
-		"facebook": "Friend us on Facebook",
-		"google_plus": "Find us on Google+"
+		"twitter": "Siga con nosotros Twitter",
+		"facebook": "Amigo en nosotros Facebook",
+		"google_plus": "Encuéntranos en Google+"
 	}
 }
