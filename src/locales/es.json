@@ -17,7 +17,7 @@
 		},
 		"header": {
 			"states": {
-				"all-systems-are-go": "Todos los sistemas",
+				"all-systems-are-go": "Todos los sistemas están funcionando",
 				"open": "En marcha",
 				"underway": "En curso"
 			},
