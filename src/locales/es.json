@@ -17,7 +17,7 @@
 		},
 		"header": {
 			"states": {
-				"all-systems-are-go": "Todos los sistemas",
+				"all-systems-are-go": "Todos los sistemas están funcionando",
 				"open": "En marcha",
 				"underway": "En curso"
 			},
@@ -27,7 +27,7 @@
 				}
 			},			
 			"disagree": {
-				"question": "¿Tu oído es muy grande?",
+				"question": "¿No estás de acuerdo con esto?",
 				"answer": "Por favor déjanos saber"
 			}		
 		},
