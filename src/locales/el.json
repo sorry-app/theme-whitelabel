@@ -1,112 +1,112 @@
 {
 	"status-page": {
 		"navbar": {
-			"title": "System Status",
+			"title": "Κατάσταση συστήματος",
 			"subscribe-button": {
-				"default": "Get Updates",
+				"default": "Λάβετε ενημερώσεις",
 				"via": "via",
 				"slack": {
 					"name": "Slack",
-					"description": "Posted live to a #channel of your choice."
+					"description": "Δημοσιεύτηκε ζωντανά σε # κανάλι της επιλογής σας."
 				},
 				"email": {
-					"name": "Email",
-					"description": "Messages delivered right into your inbox."
+					"name": "ΗΛΕΚΤΡΟΝΙΚΗ ΔΙΕΥΘΥΝΣΗ",
+					"description": "Μηνύματα που παραδίδεται δεξιά στο inbox σας."
 				}
 			}
 		},
 		"header": {
 			"states": {
-				"all-systems-are-go": "All systems are go",
-				"open": "Ongoing",
-				"underway": "Underway"
+				"all-systems-are-go": "Όλα τα συστήματα είναι να πάει",
+				"open": "Σε εξέλιξη",
+				"underway": "σε εξέλιξη"
 			},
 			"timeliness": {
 				"planned": {
-					"underway": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
+					"underway": "Περιμένουμε να τελειώσει σε <time class=\"ago\" datetime=\"%{ends_at}\"> %{ends_at}</time>"
 				}
 			},			
 			"disagree": {
-				"question": "Don't agree with this?",
-				"answer": "Please let us know"
+				"question": "Δεν συμφωνώ με αυτό;",
+				"answer": "Παρακαλώ ενημερώστε μας"
 			}		
 		},
 		"body": {
 			"states": {
-				"scheduled": "Scheduled",
-				"complete": "Complete",
-				"closed": "Resolved"
+				"scheduled": "Προγραμματισμένος",
+				"complete": "Πλήρης",
+				"closed": "επιλυθεί"
 			},			
 			"timeliness": {
 				"planned": {
-					"scheduled": "Expected to begin <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
-					"complete": "This was a planned incident, it took %{duration}."
+					"scheduled": "Αναμένεται να ξεκινήσει σε <time class=\"ago\" datetime=\"%{begins_at}\"> %{begins_at}</time>",
+					"complete": "Αυτή ήταν μια προγραμματισμένη περιστατικό, πήρε %{duration}."
 				},
 				"unplanned": {
-					"closed": "This incident lasted %{duration}."
+					"closed": "Το περιστατικό διήρκεσε %{duration}."
 				}
 			},
 			"schedule": {
-				"synopsis": "Overview",
-				"for": "Scheduled for %{begins_at}",
-				"expected_duration": "Expected to take %{expected_duration}"
+				"synopsis": "Συνολική εικόνα",
+				"for": "Προγραμματισμενο για %{begins_at}",
+				"expected_duration": "Αναμένεται να λάβει %{expected_duration}"
 			},
 			"timeline-heading": {
-				"future": "Upcoming Maintenance",
-				"past_recent": "Previous Incidents"
+				"future": "Προσεχώς Συντήρηση",
+				"past_recent": "Προηγούμενο Επεισόδια"
 			},
-			"no-more-notices": "No further notices from the past %{days} days."
+			"no-more-notices": "Καμία περαιτέρω ανακοινώσεις από το παρελθόν %{days} ημέρες."
 		},
 		"footer": {
-			"need-support": "Need Support?"
+			"need-support": "Χρειάζεστε υποστήριξη;"
 		}
 	},
 	"maintenance-page": {
 		"header": {
-			"title": "We're performing some maintenance",
+			"title": "Είμαστε εκτελεί κάποια συντήρηση",
 			"subtitles": {
-				"with-maintenance": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>",
-				"without-maintenance": "This is unplanned emergency maintenance"
+				"with-maintenance": "Περιμένουμε να τελειώσει σε <time class=\"ago\" datetime=\"%{ends_at}\"> %{ends_at}</time>",
+				"without-maintenance": "Αυτό είναι μη προγραμματισμένης συντήρησης έκτακτης ανάγκης"
 			}
 		},
 		"body": {
 			"states": {
 				"without-maintenance": {
-					"content": "We always try our best to pre-plan maintenance, yet this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+					"content": "Προσπαθούμε πάντα το καλύτερο για να προ-πρόγραμμα συντήρησης, αλλά αυτό δεν είναι πάντα εγγυημένη. Σας ευχαριστούμε για την υπομονή σας, και ελπίζουμε να είναι και πάλι σε λειτουργία το συντομότερο δυνατόν."
 				},
 				"with-maintenance": {
-					"began_at": "Started at",
-					"duration": "Expected to take",
-					"sp-link": "Follow our progress"
+					"began_at": "ξεκίνησε στις",
+					"duration": "Αναμένεται να λάβει",
+					"sp-link": "Ακολουθήστε την πρόοδό μας"
 				}
 			}
 		},
 		"footer": {
-			"need-support": "Want to talk to us about this maintenance?"
+			"need-support": "Θέλετε να μας μιλήσετε για αυτή την συντήρηση;"
 		}		
 	},
 	"error-page": {
 		"header": {
-			"title": "Sorry, something has gone wrong"
+			"title": "Συγνώμη, κάτι δεν πάει καλά"
 		},
 		"body": {
-			"subtitle": "It’s not you, it’s us",
-			"retry": "Give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
+			"subtitle": "Δεν είναι εσείς, είναι μαζί μας",
+			"retry": "Δώστε ότι ένας άλλος πάει, και αν ακόμα δεν λειτουργεί είστε σίγουροι γνωρίζουμε και προσπαθούμε να το επιλύσουμε.",
 			"states": {
 				"ongoing": {
-					"heading": "We are having issues at the moment.",
-					"body": "These may be related to this error, please take a look at our Status Page for more information.",
-					"sp-link": "Visit our Status Page"
+					"heading": "Είμαστε έχοντας προβλήματα αυτή τη στιγμή.",
+					"body": "Αυτά μπορεί να σχετίζονται με αυτό το σφάλμα, παρακαλώ ρίξτε μια ματιά στο Status Page μας για περισσότερες πληροφορίες.",
+					"sp-link": "Επισκεφθείτε Κατάσταση σελίδας μας"
 				}
 			}
 		},
 		"footer": {
-			"need-support": "Want to talk to us about this error?"
+			"need-support": "Θέλετε να μας μιλήσετε για αυτό το σφάλμα;"
 		}
 	},
 	"social-links": {
-		"twitter": "Follow us on Twitter",
-		"facebook": "Friend us on Facebook",
-		"google_plus": "Find us on Google+"
+		"twitter": "Ακολουθήστε μας στο Twitter",
+		"facebook": "Φίλος μας στο Facebook",
+		"google_plus": "Βρείτε μας στο Google+"
 	}
 }
