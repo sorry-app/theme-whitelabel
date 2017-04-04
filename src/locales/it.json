@@ -1,0 +1,112 @@
+{
+	"status-page": {
+		"navbar": {
+			"title": "System Status",
+			"subscribe-button": {
+				"default": "Get Updates",
+				"via": "via",
+				"slack": {
+					"name": "Slack",
+					"description": "Posted live to a #channel of your choice."
+				},
+				"email": {
+					"name": "Email",
+					"description": "Messages delivered right into your inbox."
+				}
+			}
+		},
+		"header": {
+			"states": {
+				"all-systems-are-go": "All systems are go",
+				"open": "Ongoing",
+				"underway": "Underway"
+			},
+			"timeliness": {
+				"planned": {
+					"underway": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
+				}
+			},			
+			"disagree": {
+				"question": "Don't agree with this?",
+				"answer": "Please let us know"
+			}		
+		},
+		"body": {
+			"states": {
+				"scheduled": "Scheduled",
+				"complete": "Complete",
+				"closed": "Resolved"
+			},			
+			"timeliness": {
+				"planned": {
+					"scheduled": "Expected to begin <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
+					"complete": "This was a planned incident, it took %{duration}."
+				},
+				"unplanned": {
+					"closed": "This incident lasted %{duration}."
+				}
+			},
+			"schedule": {
+				"synopsis": "Overview",
+				"for": "Scheduled for %{begins_at}",
+				"expected_duration": "Expected to take %{expected_duration}"
+			},
+			"timeline-heading": {
+				"future": "Upcoming Maintenance",
+				"past_recent": "Previous Incidents"
+			},
+			"no-more-notices": "No further notices from the past %{days} days."
+		},
+		"footer": {
+			"need-support": "Need Support?"
+		}
+	},
+	"maintenance-page": {
+		"header": {
+			"title": "We're performing some maintenance",
+			"subtitles": {
+				"with-maintenance": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>",
+				"without-maintenance": "This is unplanned emergency maintenance"
+			}
+		},
+		"body": {
+			"states": {
+				"without-maintenance": {
+					"content": "We always try our best to pre-plan maintenance, yet this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+				},
+				"with-maintenance": {
+					"began_at": "Started at",
+					"duration": "Expected to take",
+					"sp-link": "Follow our progress"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Want to talk to us about this maintenance?"
+		}		
+	},
+	"error-page": {
+		"header": {
+			"title": "Sorry, something has gone wrong"
+		},
+		"body": {
+			"subtitle": "It’s not you, it’s us",
+			"retry": "Give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
+			"states": {
+				"ongoing": {
+					"heading": "We are having issues at the moment.",
+					"body": "These may be related to this error, please take a look at our Status Page for more information.",
+					"sp-link": "Visit our Status Page"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Want to talk to us about this error?"
+		}
+	},
+	"social-links": {
+		"twitter": "Follow us on Twitter",
+		"facebook": "Friend us on Facebook",
+		"google_plus": "Find us on Google+"
+	}
+}
