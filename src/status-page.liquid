@@ -112,6 +112,30 @@
         </div>
     </header>
 
+    <!-- Display the pages components, and their status. -->
+    <section id="page-components" class="container container-md">
+        <!-- See if the page has components or not. -->
+        {% if page.components %}
+            <!-- Page has components, display a list of them. -->
+            <ul class="list-components">
+                <!-- Loop over the components for the page. -->
+                {% for component in page.components %}
+                    <!-- Output the components details. -->
+                    <li id="component-{{ component.id }}">
+                        <!-- Component name and status. -->
+                        <strong>{{ component.name }} [{{ component.state }}]</strong>
+
+                        <!-- Optional description is one exists. -->
+                        {% if component.description %}
+                            <!-- Component has description, display it. -->
+                            <p>{{ component.description }}</p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </section>
+
     <!-- Main Timeline. -->
     <main>
         <div class="container container-md">
