@@ -16,5 +16,13 @@
 
             <!-- Include timeline of updates. -->
             {% include 'notices/timeline-update' %}
+
+            <!-- Optional components for the notice. -->
+            {% if notice.components %}
+                <!-- This notice affected specific components, display them. -->
+                <p class="text-muted affected-components">
+                    <strong>Affected components:</strong> {{ notice.components | map: 'name' | join: ', ' }}
+                </p>
+            {% endif %}
         </dl>
     </dd>
