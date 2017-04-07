@@ -79,3 +79,16 @@
 		}
 	}
 }
+
+/* List of affected components on a notice. */
+.list-affected-components {
+	/* Display labels inline. */
+	.list-inline();
+
+	.label.label-default {
+		font-weight: 300;
+		color: inherit;
+		background-color: transparent;
+		background-image: url(~"{{ 'shader-pixel-affected-component.svg' | asset_url }}");			
+	}
+}

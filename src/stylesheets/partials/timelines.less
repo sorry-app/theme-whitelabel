@@ -104,29 +104,35 @@ dl.timeline {
 
 	// Subject Lines.
 	// Applied to various h tags but standardizes type.
-	.notice-subject {
+	.notice-header {
 		font-size: 20px;
 		margin-top: 0;
 		margin-bottom: 20px;
 
-		/* Subheading styles. */
-		small { 
-			display: block;
-			opacity: 0.6;
-			padding-top: 10px;
-			font-size: 85%;
-			line-height: 1.41;
+		.notice-subject { 
+			margin-top: 0;
+			margin-bottom: (@line-height-computed / 2);
 		}
 
+		/* Subheading styles. */
+		.notice-type { 
+			display: block;
+			opacity: 0.6;
+			font-size: 85%;
+			line-height: 1.41;
+			margin-bottom: (@line-height-computed / 2);
+		}
+
+		.list-affected-components { font-size: 18px; }
+
 		// Bump the spacing on larger devices. */
-		@media (min-width: @grid-float-breakpoint) { margin-bottom: 30px; }
-	}		
-	// Padding on the previous timeline subjects to
-	// match the indents on the date boxes. */
-	h4.notice-subject  { 
-		/* Indent only applied on desktop devices. */
-		@media (min-width: @grid-float-breakpoint) { padding: 0 10px; }
+		@media (min-width: @grid-float-breakpoint) {
+			//padding: 0 10px; 
+			margin-bottom: 30px;
+		}
 	}
+
+
 
 	// Special end event style.
 	> dt.event-final + dd { opacity: 0.5; }
@@ -336,7 +342,10 @@ dl.timeline {
 			&:before, > dt:before, > dt + dd:before { 
 				background-color: ~"{{ page.brand.color_body_background }}"; 
 				background-image: url(~"{{ 'shader-pixel-body-timeline.svg' | asset_url }}");
-			}		
+			}
+
+			/* Indent header to the right. */
+			.notice-header { padding-left: 10px; }	
 		}
 	}
 
