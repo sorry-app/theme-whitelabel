@@ -18,7 +18,7 @@
             {% include 'notices/timeline-update' %}
 
             <!-- Optional components for the notice. -->
-            {% if notice.components %}
+            {% if notice.components != empty %}
                 <!-- This notice affected specific components, display them. -->
                 <p class="text-muted affected-components">
                     <strong>Affected components:</strong> {{ notice.components | map: 'name' | join: ', ' }}
