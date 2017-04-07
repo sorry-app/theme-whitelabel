@@ -4,6 +4,30 @@
 	/* Remove the bottom margin as no siblings below. */
 	margin-bottom: 0;
 
+	/* Basic padding, matches timeline. */
+	padding: @timeline-padding (@timeline-padding / 2);
+
+	/* Padding + Timeline Visual. */
+	@media (min-width: @grid-float-breakpoint) {
+		/* Position to contain the absolute timeline. */
+		position: relative;
+
+		// Vertical timeline line.
+		&:before {
+			content: " ";
+			width: 1px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -1px;
+			background-color: ~"{{ page.brand.color_body_background }}"; 
+			background-image: url(~"{{ 'shader-pixel-body-timeline.svg' | asset_url }}");			
+		}
+
+		// Pad the left side of the timeline.
+		padding: (@timeline-padding * 3) ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
+	}
+
 	/* Individual component list items. */
 	.list-component {
 		/* Display a shaded bar/block. */
