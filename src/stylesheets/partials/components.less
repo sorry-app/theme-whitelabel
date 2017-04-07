@@ -1,6 +1,8 @@
 .list-components {
 	/* Basic unstyled bootstrap list. */
 	.list-unstyled();
+	/* Remove the bottom margin as no siblings below. */
+	margin-bottom: 0;
 
 	/* Individual component list items. */
 	.list-component {
@@ -10,6 +12,9 @@
 		padding: 15px 20px;
 		border-radius: @border-radius-base;
 		margin-bottom: 20px;
+
+		/* Remove margin from the last child. */
+		&:last-child { margin-bottom: 0; }
 
 		/* Component State. */
 		.list-component-state {

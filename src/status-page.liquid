@@ -115,7 +115,8 @@
     <!-- See if the page has components or not. -->
     {% if page.components != empty %}
         <!-- Display the pages components, and their status. -->
-        <section id="page-components" class="container container-md">
+        <section id="page-components" class="section section-page-components">
+            <div  class="container container-md">
                 <!-- Page has components, display a list of them. -->
                 <ul class="list-components">
                     <!-- Loop over the components for the page. -->
@@ -138,6 +139,7 @@
                         </li>
                     {% endfor %}
                 </ul>
+            </div>
         </section>
     {% endif %}
 
