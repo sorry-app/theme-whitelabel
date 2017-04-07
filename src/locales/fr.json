@@ -30,7 +30,13 @@
 				"question": "Vous rencontrez un problème ?",
 				"answer": "N'hésitez pas à nous le faire savoir."
 			}
-		},		
+		},	
+		"components": {
+			"states": {
+				"operational": "Opérationnel",
+				"degraded": "Dégradé"
+			}
+		},			
 		"body": {
 			"states": {
 				"scheduled": "Prévu",

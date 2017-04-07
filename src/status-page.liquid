@@ -121,15 +121,20 @@
                     <!-- Loop over the components for the page. -->
                     {% for component in page.components %}
                         <!-- Output the components details. -->
-                        <li id="component-{{ component.id }}">
-                            <!-- Component name and status. -->
-                            <strong>{{ component.name }} [{{ component.state }}]</strong>
+                        <li id="component-{{ component.id }}" class="list-component">
+                            <div class="list-component-state list-component-state-{{ component.state }}">
+                                <span>{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="list-compoennt-body">
+                                <!-- Component name and status. -->
+                                <strong class="list-component-name">{{ component.name }}</strong>
 
-                            <!-- Optional description is one exists. -->
-                            {% if component.description %}
-                                <!-- Component has description, display it. -->
-                                <p>{{ component.description }}</p>
-                            {% endif %}
+                                <!-- Optional description is one exists. -->
+                                {% if component.description %}
+                                    <!-- Component has description, display it. -->
+                                    <p class="list-component-description">{{ component.description }}</p>
+                                {% endif %}
+                            </div>
                         </li>
                     {% endfor %}
                 </ul>
