@@ -62,16 +62,16 @@
                                     <dt><i class="fa fa-notice-state"></i> {{ 'status-page.header.states.' | append: notice.state | t }}</dt>
                                         <dd>
                                             <!-- Has a subject, display it. -->
-                                            <h3 class="notice-subject">
+                                            <div class="notice-header">
                                                 <!-- The basic subject line. -->
-                                                {{ notice.subject }}
+                                                <h3 class="notice-subject h4">{{ notice.subject }}</h3>
 
                                                 <!-- Display appropriate schedule information if we have it. -->
                                                 {% if notice.type == 'planned' %}
                                                     <!-- Display the schedule/runtime. -->
                                                     <small>{{ 'status-page.header.timeliness.planned.underway' | t: ends_at: notice.expected_ended_at }}</small>
                                                 {% endif %}
-                                            </h3>
+                                            </div>
 
                                             <dl>
                                                 <!-- Force sorting in reverse order for open notices. -->
@@ -111,6 +111,37 @@
             </section>
         </div>
     </header>
+
+    <!-- See if the page has components or not. -->
+    {% if page.components != empty %}
+        <!-- Display the pages components, and their status. -->
+        <section id="page-components" class="section section-page-components">
+            <div  class="container container-md">
+                <!-- Page has components, display a list of them. -->
+                <ul class="list-components">
+                    <!-- Loop over the components for the page. -->
+                    {% for component in page.components %}
+                        <!-- Output the components details. -->
+                        <li id="component-{{ component.id }}" class="list-component">
+                            <div class="list-component-state list-component-state-{{ component.state }}">
+                                <span>{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
+                            </div>
+                            <div class="list-component-body">
+                                <!-- Component name and status. -->
+                                <strong class="list-component-name">{{ component.name }}</strong>
+
+                                <!-- Optional description is one exists. -->
+                                {% if component.description %}
+                                    <!-- Component has description, display it. -->
+                                    <p class="list-component-description hidden-xs">{{ component.description }}</p>
+                                {% endif %}
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    {% endif %}
 
     <!-- Main Timeline. -->
     <main>

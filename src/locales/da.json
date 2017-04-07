@@ -31,6 +31,12 @@
 				"answer": "Så kontakt os her"
 			}			
 		},
+		"components": {
+			"states": {
+				"operational": "Operationel",
+				"degraded": "forringet"
+			}
+		},		
 		"body": {
 			"states": {
 				"scheduled": "Planlagt",

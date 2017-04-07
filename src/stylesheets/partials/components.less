@@ -1,0 +1,94 @@
+.list-components {
+	/* Basic unstyled bootstrap list. */
+	.list-unstyled();
+	/* Remove the bottom margin as no siblings below. */
+	margin-bottom: 0;
+
+	/* Basic padding, matches timeline. */
+	padding: @timeline-padding (@timeline-padding / 2);
+
+	/* Padding + Timeline Visual. */
+	@media (min-width: @grid-float-breakpoint) {
+		/* Position to contain the absolute timeline. */
+		position: relative;
+
+		// Vertical timeline line.
+		&:before {
+			content: " ";
+			width: 1px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -1px;
+			background-color: ~"{{ page.brand.color_body_background }}"; 
+			background-image: url(~"{{ 'shader-pixel-body-timeline.svg' | asset_url }}");			
+		}
+
+		// Pad the left side of the timeline.
+		padding: (@timeline-padding * 3) ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
+	}
+
+	/* Individual component list items. */
+	.list-component {
+		/* Display a shaded bar/block. */
+		background-image: url(~"{{ 'shader-pixel-components.svg' | asset_url }}");
+		padding: 15px 20px;
+		border-radius: @border-radius-base;
+		margin-bottom: 20px;
+
+		/* Remove margin from the last child. */
+		&:last-child { margin-bottom: 0; }
+
+		/* Component State. */
+		.list-component-state {
+			/* Right align the state. */
+			float: right;
+
+			/* Add spacing to the icon. */
+			.list-component-state-icon { margin-left: 10px; }
+
+			/* State-based styling/colours. */
+			&.list-component-state-operational { color: ~"{{ page.brand.color_state_ok }}"; }
+			&.list-component-state-degraded { color: ~"{{ page.brand.color_state_warning }}" }
+		}
+
+		/* Body of the component, includes name and description. */
+		.list-component-body {
+			/* Give it a little spacing between itself and the state. */
+			padding-right: 40px;
+
+			/* Force content onto a single line, with a nice truncation. */
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			/* Inline name and description. */
+			.list-component-name, .list-component-description { 
+				display: inline;
+				margin-bottom: 0;
+			}
+
+			/* Soften the styling on the name, less bold. */
+			.list-component-name {
+				font-weight: 600;
+				margin-right: 10px;
+			}
+
+			/* Fade out the description as not an important element. */
+			.list-component-description { .text-muted(); }
+		}
+	}
+}
+
+/* List of affected components on a notice. */
+.list-affected-components {
+	/* Display labels inline. */
+	.list-inline();
+
+	.label.label-default {
+		font-weight: 300;
+		color: inherit;
+		background-color: transparent;
+		background-image: url(~"{{ 'shader-pixel-affected-component.svg' | asset_url }}");			
+	}
+}

@@ -3,16 +3,28 @@
     <dd>
         <dl>
             <!-- Has a subject, display it. -->
-            <h4 class="notice-subject">
-                <!-- Subject and current state. -->
-                <span class="notice-state">[{{ 'status-page.body.states.' | append: notice.state | t }}]</span> 
+            <div class="notice-header">
+                <h4 class="notice-subject">
+                    <!-- Subject and current state. -->
+                    <span class="notice-state">[{{ 'status-page.body.states.' | append: notice.state | t }}]</span> 
 
-                <!-- The subject for the notice. -->
-                {{ notice.subject }}
+                    <!-- The subject for the notice. -->
+                    {{ notice.subject }}
+                </h4>
 
                 <!-- Include the timeliness subheading. -->
                 {% include 'notices/timeliness' %}
-            </h4>
+
+                <!-- Optional components for the notice. -->
+                {% if notice.components != empty %}
+                    <!-- This notice affected specific components, display them. -->
+                    <ul class="list-affected-components">
+                       {% for component in notice.components %}
+                            <li><span class="label label-default">{{ component.name }}</span></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
 
             <!-- Include timeline of updates. -->
             {% include 'notices/timeline-update' %}

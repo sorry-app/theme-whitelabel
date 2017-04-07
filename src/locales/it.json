@@ -31,6 +31,12 @@
 				"answer": "Please let us know"
 			}		
 		},
+		"components": {
+			"states": {
+				"operational": "operativo",
+				"degraded": "degradato"
+			}
+		},		
 		"body": {
 			"states": {
 				"scheduled": "Scheduled",

@@ -31,6 +31,12 @@
 				"answer": "Por favor déjanos saber"
 			}		
 		},
+		"components": {
+			"states": {
+				"operational": "Operacional",
+				"degraded": "Degradado"
+			}
+		},		
 		"body": {
 			"states": {
 				"scheduled": "Programado",

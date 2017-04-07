@@ -31,6 +31,12 @@
 				"answer": "Så kontakta oss här "
 			}			
 		},	
+		"components": {
+			"states": {
+				"operational": "Operativ",
+				"degraded": "degraderas"
+			}
+		},		
 		"body": {
 			"states": {
 				"scheduled": "Planerad",
