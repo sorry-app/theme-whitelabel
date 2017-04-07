@@ -55,6 +55,14 @@
 
 		/* Body of the component, includes name and description. */
 		.list-component-body {
+			/* Give it a little spacing between itself and the state. */
+			padding-right: 40px;
+
+			/* Force content onto a single line, with a nice truncation. */
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
 			/* Inline name and description. */
 			.list-component-name, .list-component-description { 
 				display: inline;
