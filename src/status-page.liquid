@@ -123,9 +123,9 @@
                         <!-- Output the components details. -->
                         <li id="component-{{ component.id }}" class="list-component">
                             <div class="list-component-state list-component-state-{{ component.state }}">
-                                <span>{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
+                                <span>{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
                             </div>
-                            <div class="list-compoennt-body">
+                            <div class="list-component-body">
                                 <!-- Component name and status. -->
                                 <strong class="list-component-name">{{ component.name }}</strong>
 

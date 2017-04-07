@@ -1,0 +1,45 @@
+.list-components {
+	/* Basic unstyled bootstrap list. */
+	.list-unstyled();
+
+	/* Individual component list items. */
+	.list-component {
+		/* Display a shaded bar/block. */
+		/* TODO: Switch for a shader pixel in font colour? */
+		background-color: rgba(0, 0, 0, .02);
+		padding: 15px 20px;
+		border-radius: @border-radius-base;
+		margin-bottom: 20px;
+
+		/* Component State. */
+		.list-component-state {
+			/* Right align the state. */
+			float: right;
+
+			/* Add spacing to the icon. */
+			.list-component-state-icon { margin-left: 10px; }
+
+			/* State-based styling/colours. */
+			&.list-component-state-operational { color: ~"{{ page.brand.color_state_ok }}"; }
+			&.list-component-state-degraded { color: ~"{{ page.brand.color_state_warning }}" }
+		}
+
+		/* Body of the component, includes name and description. */
+		.list-component-body {
+			/* Inline name and description. */
+			.list-component-name, .list-component-description { 
+				display: inline;
+				margin-bottom: 0;
+			}
+
+			/* Soften the styling on the name, less bold. */
+			.list-component-name {
+				font-weight: 600;
+				margin-right: 10px;
+			}
+
+			/* Fade out the description as not an important element. */
+			.list-component-description { .text-muted(); }
+		}
+	}
+}
