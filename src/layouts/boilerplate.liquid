@@ -60,7 +60,7 @@
         {{ page.content_for_head }}
     </head>
     <!-- We attach the current status to the body, for changing page styles based on current statue. -->
-    <body class="current-status {% if page.notices.present == empty %}status-ok{% else %}state-warning{% endif %} locale-{{ page.locale }}" data-locale="{{ page.locale }}">
+    <body class="current-status {% if page.notices.present == empty %}status-ok{% else %}state-warning{% endif %} locale-{{ page.locale }}" data-locale="{{ page.locale }}" data-timezone="{{ page.timezone }}">
 
         <!-- Include the individual page template content. -->
         {{ content_for_layout }}

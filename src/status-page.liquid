@@ -69,7 +69,7 @@
                                                 <!-- Display appropriate schedule information if we have it. -->
                                                 {% if notice.type == 'planned' %}
                                                     <!-- Display the schedule/runtime. -->
-                                                    <small>{{ 'status-page.header.timeliness.planned.underway' | t: ends_at: notice.expected_ended_at }}</small>
+                                                    {% include 'notices/timeliness' placement: 'header' %}
                                                 {% endif %}
                                             </div>
 
@@ -81,10 +81,8 @@
                                                 {% for update in ordered_updates reversed %}
                                                     <!-- Output the date for the update. -->
                                                     <dt id="update-{{ update.id }}">
-                                                        <!-- Datetime, augmented to 'time_ago_in_words' by moment.js -->
-                                                        <time class="ago" datetime="{{ update.created_at | date: '%FT%T%z' }}">
-                                                            {{ update.created_at | date: '%FT%TZ' }}
-                                                        </time>
+                                                        <!-- Use the timetag include. -->
+                                                        {% include 'notices/time_tag' datetime: update.created_at %}
                                                     </dt>
                                                         <!-- Output the text content of the update. -->
                                                         <dd>{% include 'notices/update-content' %}</dd>

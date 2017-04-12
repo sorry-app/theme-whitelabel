@@ -23,7 +23,7 @@
 			},
 			"timeliness": {
 				"planned": {
-					"underway": "Περιμένουμε να τελειώσει σε <time class=\"ago\" datetime=\"%{ends_at}\"> %{ends_at}</time>"
+					"underway": "Περιμένουμε να τελειώσει %{ends_in}"
 				}
 			},			
 			"disagree": {
@@ -45,7 +45,7 @@
 			},			
 			"timeliness": {
 				"planned": {
-					"scheduled": "Αναμένεται να ξεκινήσει σε <time class=\"ago\" datetime=\"%{begins_at}\"> %{begins_at}</time>",
+					"scheduled": "Αναμένεται να ξεκινήσει %{begins_in}",
 					"complete": "Αυτή ήταν μια προγραμματισμένη περιστατικό, πήρε %{duration}."
 				},
 				"unplanned": {
@@ -71,7 +71,7 @@
 		"header": {
 			"title": "Είμαστε εκτελεί κάποια συντήρηση",
 			"subtitles": {
-				"with-maintenance": "Περιμένουμε να τελειώσει σε <time class=\"ago\" datetime=\"%{ends_at}\"> %{ends_at}</time>",
+				"with-maintenance": "Περιμένουμε να τελειώσει %{ends_in}",
 				"without-maintenance": "Αυτό είναι μη προγραμματισμένης συντήρησης έκτακτης ανάγκης"
 			}
 		},

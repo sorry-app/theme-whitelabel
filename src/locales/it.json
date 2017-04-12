@@ -23,7 +23,7 @@
 			},
 			"timeliness": {
 				"planned": {
-					"underway": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>"
+					"underway": "We expect to be finished %{ends_in}"
 				}
 			},			
 			"disagree": {
@@ -45,7 +45,7 @@
 			},			
 			"timeliness": {
 				"planned": {
-					"scheduled": "Expected to begin <time class=\"ago\" datetime=\"%{begins_at}\">at %{begins_at}</time>",
+					"scheduled": "Expected to begin %{begins_in}",
 					"complete": "This was a planned incident, it took %{duration}."
 				},
 				"unplanned": {
@@ -71,7 +71,7 @@
 		"header": {
 			"title": "We're performing some maintenance",
 			"subtitles": {
-				"with-maintenance": "We expect to be finished <time class=\"ago\" datetime=\"%{ends_at}\">at %{ends_at}</time>",
+				"with-maintenance": "We expect to be finished %{ends_in}",
 				"without-maintenance": "This is unplanned emergency maintenance"
 			}
 		},
