@@ -1,0 +1,29 @@
+/*
+ * Utility to Truncate Block Elements.
+ *
+ * Also has an accompanying JS which allows for '.expandable' class
+ * to be added allowing dynamic toggling of show/hide.
+ */
+
+/* Apply to any classes you may want to truncate. */
+.truncate {
+	/* Apply to place into truncated state. */
+	&.truncated {
+		/* Force content onto a single line, with a nice truncation. */
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;	
+
+		/* Force nested block elements inline too. */
+		> * { display: inline !important; }
+	}
+
+	/* 
+	 * Apply to elements to make them clickable to toggle
+	 * the truncated / expended state.
+	 */
+	&.expandable {
+		/* Behave like a link with a pointer. */
+		&:hover, &:active { cursor: pointer; }
+	}
+}
