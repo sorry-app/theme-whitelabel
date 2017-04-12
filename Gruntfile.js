@@ -54,7 +54,8 @@ module.exports = function(grunt) {
             'src/javascripts/vendor/moment-timezone.js',
             'src/javascripts/vendor/is-element-in-viewport.js',
             'src/javascripts/smart-anchor.js',
-            'src/javascripts/status-page.js'
+            'src/javascripts/status-page.js',
+            'src/javascripts/truncate.js'
           ]
         }
       }

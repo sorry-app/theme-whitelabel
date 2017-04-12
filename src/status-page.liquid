@@ -122,16 +122,16 @@
                         <!-- Output the components details. -->
                         <li id="component-{{ component.id }}" class="list-component">
                             <div class="list-component-state list-component-state-{{ component.state }}">
-                                <span>{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
+                                <span class="hidden-xs">{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
                             </div>
-                            <div class="list-component-body">
+                            <div class="list-component-body truncate truncated">
                                 <!-- Component name and status. -->
                                 <strong class="list-component-name">{{ component.name }}</strong>
 
                                 <!-- Optional description is one exists. -->
                                 {% if component.description %}
                                     <!-- Component has description, display it. -->
-                                    <p class="list-component-description hidden-xs">{{ component.description }}</p>
+                                    <p class="list-component-description">{{ component.description }}</p>
                                 {% endif %}
                             </div>
                         </li>
