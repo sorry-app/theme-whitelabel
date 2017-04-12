@@ -23,7 +23,7 @@
 			},
 			"timeliness": {
 				"planned": {
-					"underway": "Vi räknar med att vara klar <time class=\"ago\" datetime=\"%{ends_at}\">i %{ends_at}</time>"
+					"underway": "Vi räknar med att vara klar %{ends_in}"
 				}
 			},				
 			"disagree": {
@@ -45,7 +45,7 @@
 			},			
 			"timeliness": {
 				"planned": {
-					"scheduled": "Väntas börja på <time class=\"ago\" datetime=\"%{begins_at}\">%{begins_at}</time>",
+					"scheduled": "Väntas börja på %{begins_in}",
 					"complete": "Detta var en planerad händelse, tog det %{duration}."
 				},
 				"unplanned": {
@@ -71,7 +71,7 @@
 		"header": {
 			"title": "Vi utför en del underhåll",
 			"subtitles": {
-				"with-maintenance": "Vi räknar med att vara klar i <time class=\"ago\" datetime=\"%{ends_at}\">%{ends_at}</time>",
+				"with-maintenance": "Vi räknar med att vara klar %{ends_in}",
 				"without-maintenance": "Detta är oplanerat akut underhåll"
 			}
 		},

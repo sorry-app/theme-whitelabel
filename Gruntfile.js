@@ -51,6 +51,7 @@ module.exports = function(grunt) {
             //'src/javascripts/vendor/bootstrap/tab.js',
             //'src/javascripts/vendor/bootstrap/affix.js',
             'src/javascripts/vendor/moment.js',
+            'src/javascripts/vendor/moment-timezone.js',
             'src/javascripts/vendor/is-element-in-viewport.js',
             'src/javascripts/smart-anchor.js',
             'src/javascripts/status-page.js'

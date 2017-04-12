@@ -1,4 +1,17 @@
 <!-- Determine a friendly duraiton. -->
 {% assign duration = notice.duration | distance_of_time_in_words %}
+
+<!-- Generate a moment.js time tag for the begins_at. -->
+{% capture begins_in %}
+	<!-- Use the timetag include. -->
+	{% include 'notices/time_tag' datetime: notice.begins_at %}
+{% endcapture %}
+
+<!-- Generate a moment.js time tag for the begins_at. -->
+{% capture ends_in %}
+	<!-- Use the timetag include. -->
+	{% include 'notices/time_tag' datetime: notice.expected_ended_at %}
+{% endcapture %}
+
 <!-- Display a simple subheading. -->
-<small class="notice-type">{{ 'status-page.body.timeliness.' | append: notice.type | append: '.' | append: notice.state | t: begins_at: notice.begins_at, ends_at: notice.ends_at, began_at: notice.began_at, ended_at: notice.ended_at, duration: duration }}</small>
+<small class="notice-type">{{ 'status-page.' | append: placement | append: '.timeliness.' | append: notice.type | append: '.' | append: notice.state | t: begins_in: begins_in, ends_in: ends_in, duration: duration }}</small>

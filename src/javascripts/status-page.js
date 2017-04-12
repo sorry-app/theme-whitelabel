@@ -7,6 +7,7 @@ $(document).ready(function() {
 	// Use moment.js to format all the datetimes.
 	$('time.ago').each(function(index) {
 		// Calculate the time ago in words from the dattime.
+		// Add format to help moment parse 2017-04-12 14:00:00 UTC cross browser as not ISO.
 		var time_ago_in_words = moment($(this).attr('datetime')).fromNow();
 		
 		// Update the test of the element to the time ago in words.

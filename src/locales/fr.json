@@ -23,7 +23,7 @@
 			},
 			"timeliness": {
 				"planned": {
-					"underway": "Nous prévoyons avoir terminé <time class=\"ago\" datetime=\"%{ends_at}\">à %{ends_at}</time>"
+					"underway": "Nous prévoyons avoir terminé %{ends_in}"
 				}
 			},		
 			"disagree": {
@@ -45,7 +45,7 @@
 			},			
 			"timeliness": {
 				"planned": {
-					"scheduled": "Prévu pour commencer <time class=\"ago\" datetime=\"%{begins_at}\">à %{begins_at}</time>",
+					"scheduled": "Prévu pour commencer %{begins_in}",
 					"complete": "Il s'agissait d'un incident planifié %{duration}."
 				},
 				"unplanned": {
@@ -71,7 +71,7 @@
 		"header": {
 			"title": "Nous effectuons des travaux d'entretien",
 			"subtitles": {
-				"with-maintenance": "Nous prévoyons avoir terminé <time class=\"ago\" datetime=\"%{ends_at}\">à %{ends_at}</time>",
+				"with-maintenance": "Nous prévoyons avoir terminé %{ends_in}",
 				"without-maintenance": "Il s'agit d'une maintenance d'urgence non planifiée"
 			}
 		},
