@@ -34,6 +34,7 @@
 		"components": {
 			"states": {
 				"operational": "Operationel",
+				"partially_degraded": "delvist nedbrudt",
 				"degraded": "forringet"
 			}
 		},		

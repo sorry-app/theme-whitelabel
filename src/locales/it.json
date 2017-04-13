@@ -34,6 +34,7 @@
 		"components": {
 			"states": {
 				"operational": "operativo",
+				"partially_degraded": "parziale degrado",
 				"degraded": "degradato"
 			}
 		},		
