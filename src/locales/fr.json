@@ -36,7 +36,8 @@
 				"operational": "Opérationnel",
 				"partially_degraded": "Dégradé partiellement",
 				"degraded": "Dégradé"
-			}
+			},
+			"long-description": "Cliquez ici pour voir la description complète de ce composant"
 		},			
 		"body": {
 			"states": {

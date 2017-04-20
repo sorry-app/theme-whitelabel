@@ -19,11 +19,17 @@
 
 	/* Individual component list items. */
 	.list-component {
+		position: relative;
+
 		/* Fade out the toggle icon. */
 		[data-toggle="collapse"] {
+			position: absolute;
 			color: inherit;
 			width: 24px; /* Matches sub-list indent, minus inline-block spacing. */
 			display: inline-block !important;
+			z-index: 1000;
+		
+			& ~ .list-component-details { padding-left: 28px; }
 		}
 
 		/* Remove margin from the last child. */
@@ -31,9 +37,6 @@
 
 		/* Component State. */
 		.list-component-state {
-			/* Right align the state. */
-			float: right;
-
 			/* Add spacing to the icon. */
 			.list-component-state-icon { margin-left: 10px; }
 
@@ -48,25 +51,25 @@
 
 		/* Body of the component, includes name and description. */
 		.list-component-body {
-			/* Give it a little spacing between itself and the state. */
-			padding-right: 40px;
+			/* Content for name/description. */
+			.list-component-details {
+				/* Inline name and description. */
+				.list-component-name, .list-component-description { 
+					//display: inline;
+					margin-bottom: 0;
+					display: block;
+				}
 
-			/* Inline name and description. */
-			.list-component-name, .list-component-description { 
-				//display: inline;
-				margin-bottom: 0;
-				display: block;
+				/* Soften the styling on the name, less bold. */
+				.list-component-name {
+					font-weight: 600;
+					margin-right: 10px;
+					margin-bottom: 5px;
+				}
+
+				/* Fade out the description as not an important element. */
+				.list-component-description { .text-muted(); }
 			}
-
-			/* Soften the styling on the name, less bold. */
-			.list-component-name {
-				font-weight: 600;
-				margin-right: 10px;
-				margin-bottom: 8px;
-			}
-
-			/* Fade out the description as not an important element. */
-			.list-component-description { .text-muted(); }
 		}
 	}
 }

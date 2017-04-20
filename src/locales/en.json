@@ -36,7 +36,8 @@
 				"operational": "Operational",
 				"partially_degraded": "Partially Degraded",
 				"degraded": "Degraded"
-			}
+			},
+			"long-description": "Click here to view the full description for this component"
 		},
 		"body": {
 			"states": {

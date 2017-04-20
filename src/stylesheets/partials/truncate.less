@@ -16,6 +16,7 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		padding-right: 28px;
 
 		/* Force nested block elements inline too. */
 		> * { display: inline !important; }
@@ -26,12 +27,18 @@
 		/* Display to the right of the truncated content. */
 		position: absolute;
 		right: 0;
+		top: 0;
+		color: inherit;
+		opacity: 0.2;
 
 		/* Hidden by default. */
 		visibility: hidden;
 
 		/* Links don't have an href to add a hover effect to make it appear clickable. */
-		&:hover, &:active { cursor: pointer; }
+		&:hover, &:active { 
+			cursor: pointer;
+			opacity: 1;
+		}
 	}
 
 	/* When expdnable show the toggle. */

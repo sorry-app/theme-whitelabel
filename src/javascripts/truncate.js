@@ -4,13 +4,22 @@
  */
 $(document).ready(function() {
 
-	/* 
-	 * Check all those truncate elements that are overflowing
-	 * and apply an expandable class to them.
-	 */
-	var expandable = function() {
+	/* Bind to any expandable truncate elements, so we can toggle the expanded state. */
+	$(document).on('click', '[data-toggle="truncate"]', function(e) {
+		/* Element was clicked, toggle the truncated/expended state. */
+		$(this).parent().toggleClass('truncated', 'expanded');
+	});
+
+	/* Run the truncate evaluation regularly to pickup changes in DOM structure. */
+	/* This is so we pickup when truncated text contains are hidden/expanded. */
+	setInterval(function() {
+		/* 
+		 * Check all those truncate elements that are overflowing
+		 * and apply an expandable class to them.
+		 */
+
 		/* Loop over the collection of truncation classes. */
-		$('.truncate').each(function() {
+		$('.truncate.truncated').each(function() {
 			/*
 			 * Check the width vs the scrollWidth to determine if these
 			 * elements are overflowing their content or not.
@@ -23,18 +32,7 @@ $(document).ready(function() {
 				$(this).removeClass('expandable');
 			}
 		});
-	};
-
-	/* Bind to any expandable truncate elements, so we can toggle the expanded state. */
-	$(document).on('click', '[data-toggle="truncate"]', function(e) {
-		/* Element was clicked, toggle the truncated/expended state. */
-		$($(this).data('target')).toggleClass('truncated', 'expanded');
-	});
-
-	/* Bind to the window resize event to re-run the expandable? method. */
-	$(window).resize(function() { expandable(); });
-
-	/* Run the setup once. */
-	expandable();
+	/* Run ever 100 milliseconds. */
+	}, 100);
 
 });

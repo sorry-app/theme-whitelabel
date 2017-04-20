@@ -36,7 +36,8 @@
 				"operational": "Operationel",
 				"partially_degraded": "delvist nedbrudt",
 				"degraded": "forringet"
-			}
+			},
+			"long-description": "Klik her for at se den fulde beskrivelse af denne komponent"
 		},		
 		"body": {
 			"states": {
