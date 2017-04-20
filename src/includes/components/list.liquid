@@ -28,6 +28,12 @@
                     <!-- Component has description, display it. -->
                     <p class="list-component-description">{{ component.description }}</p>
                 {% endif %}
+
+                <!-- Toggle truncation on long descriptions etc. -->
+                <a data-toggle="truncate" data-target="#component-{{ component.id }} > .truncate">
+                    <!-- Basic icon, can be overridden with CSS. -->
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </a>
             </div>
 
             <!-- See if component has children to display. -->
