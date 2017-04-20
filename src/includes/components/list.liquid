@@ -6,7 +6,7 @@
         <li id="component-{{ component.id }}" class="list-component {% if component.children != empty  %}has-components{% endif %}">
             <!-- Wrap in a grid to left/right align component details and state. -->
             <div class="row">
-                <div class="col-xs-9">
+                <div class="col-xs-10 col-sm-7 col-md-9">
                     <div class="list-component-body">
                         <!-- See if component has children to display. -->
                         {% if component.children != empty %}
@@ -37,8 +37,8 @@
                     </div>
                 </div>
 
-                <div class="col-xs-3">
-                    <div class="list-component-state list-component-state-{{ component.state }} text-right">
+                <div class="col-xs-2 col-sm-5 col-md-3 text-right">
+                    <div class="list-component-state list-component-state-{{ component.state }}">
                         <span class="hidden-xs">{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
                     </div> 
                 </div>               
