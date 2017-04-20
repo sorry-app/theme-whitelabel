@@ -1,0 +1,44 @@
+<!-- Page has components, display a list of them. -->
+<ul class="list-components">
+    <!-- Loop over the components for the page. -->
+    {% for component in components %}
+        <!-- Output the components details. -->
+        <li id="component-{{ component.id }}" class="list-component {% if component.children != empty  %}has-components{% endif %}">
+            
+            <div class="list-component-state list-component-state-{{ component.state }}">
+                <span class="hidden-xs">{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
+            </div>
+
+            <div class="list-component-body truncate truncated">
+                <!-- See if component has children to display. -->
+                {% if component.children != empty %}
+                    <!-- Button to toggle the collapsed children. -->
+                    <!-- Default collapse state based on whether component is operational or not. -->
+                    <a class="{% if component.state == 'operational'%}collapsed{% endif %}" type="button" data-toggle="collapse" data-target="#component_children_{{ component.id }}" aria-expanded="{{ component.state != 'operational' }}" aria-controls="component_children_{{ component.id }}">
+                        <!-- Icon for the toggle, [+] vs. [-] depending on state. -->
+                        <i class="fa fa-toggle" aria-hidden="true"></i>
+                    </a>
+                {% endif %}
+
+                <!-- Component name and status. -->
+                <strong class="list-component-name">{{ component.name }}</strong>
+
+                <!-- Optional description is one exists. -->
+                {% if component.description %}
+                    <!-- Component has description, display it. -->
+                    <p class="list-component-description">{{ component.description }}</p>
+                {% endif %}
+            </div>
+
+            <!-- See if component has children to display. -->
+            {% if component.children != empty %}
+                <!-- Wrap in a Bootstrap Collapse. -->
+                <!-- Only collapse if component is operational. -->
+                <div class="{% if component.state == 'operational'%}collapse{% else %}collapse in{% endif %}" id="component_children_{{ component.id }}">
+                    <!-- Recursive loop to render nested subcomponents. -->
+                    {% include 'components/list' components: component.children %}
+                </div>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

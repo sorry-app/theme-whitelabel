@@ -111,32 +111,12 @@
     </header>
 
     <!-- See if the page has components or not. -->
-    {% if page.components != empty %}
+    {% if page.components.roots != empty %}
         <!-- Display the pages components, and their status. -->
         <section id="page-components" class="section section-page-components">
             <div  class="container container-md">
-                <!-- Page has components, display a list of them. -->
-                <ul class="list-components">
-                    <!-- Loop over the components for the page. -->
-                    {% for component in page.components %}
-                        <!-- Output the components details. -->
-                        <li id="component-{{ component.id }}" class="list-component">
-                            <div class="list-component-state list-component-state-{{ component.state }}">
-                                <span class="hidden-xs">{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
-                            </div>
-                            <div class="list-component-body truncate truncated">
-                                <!-- Component name and status. -->
-                                <strong class="list-component-name">{{ component.name }}</strong>
-
-                                <!-- Optional description is one exists. -->
-                                {% if component.description %}
-                                    <!-- Component has description, display it. -->
-                                    <p class="list-component-description">{{ component.description }}</p>
-                                {% endif %}
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
+                <!-- Render the components, starting at the root level. -->
+                {% include 'components/list' components: page.components.roots %}
             </div>
         </section>
     {% endif %}

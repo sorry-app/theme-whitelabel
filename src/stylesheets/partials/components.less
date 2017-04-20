@@ -4,40 +4,30 @@
 	/* Remove the bottom margin as no siblings below. */
 	margin-bottom: 0;
 
-	/* Basic padding, matches timeline. */
-	padding: @timeline-padding (@timeline-padding / 2);
+	/* Nested lists have indenting. */
+	.list-components { 
+		margin-left: 52px;
+		margin-top: 15px;
 
-	/* Padding + Timeline Visual. */
-	@media (min-width: @grid-float-breakpoint) {
-		/* Position to contain the absolute timeline. */
-		position: relative;
+		.list-component {
+			margin-bottom: 15px;
 
-		// Vertical timeline line.
-		&:before {
-			content: " ";
-			width: 1px;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: -1px;
-			background-color: ~"{{ page.brand.color_body_background }}"; 
-			background-image: url(~"{{ 'shader-pixel-body-timeline.svg' | asset_url }}");			
+			/* Soften the indent to account for the toggle. */
+			&.has-components { margin-left: -28px; }
 		}
-
-		// Pad the left side of the timeline.
-		padding: (@timeline-padding * 3) ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
 	}
 
 	/* Individual component list items. */
 	.list-component {
-		/* Display a shaded bar/block. */
-		background-image: url(~"{{ 'shader-pixel-components.svg' | asset_url }}");
-		padding: 15px 20px;
-		border-radius: @border-radius-base;
-		margin-bottom: 20px;
+		/* Fade out the toggle icon. */
+		[data-toggle="collapse"] {
+			color: inherit;
+			width: 24px; /* Matches sub-list indent, minus inline-block spacing. */
+			display: inline-block !important;
+		}
 
 		/* Remove margin from the last child. */
-		&:last-child { margin-bottom: 0; }
+		&:last-child { margin-bottom: 0 !important; }		
 
 		/* Component State. */
 		.list-component-state {
@@ -78,6 +68,61 @@
 			/* Fade out the description as not an important element. */
 			.list-component-description { .text-muted(); }
 		}
+	}
+}
+
+/*
+ * Style the top level components to look like shaded bar/bubbles
+ * using a shader background and some border radios.
+ */
+.section-page-components > .container > .list-components {
+	// Block styling on the components.
+	> .list-component {
+		/* Display a shaded bar/block. */
+		background-image: url(~"{{ 'shader-pixel-components.svg' | asset_url }}");
+		padding: 15px 20px;
+		border-radius: @border-radius-base;
+		margin-bottom: 20px;
+	}
+
+	// Graphical timeline on larger scale devices.
+	// --------------------------------------------------
+
+	@media (min-width: @grid-float-breakpoint) {
+		// Contain the timeline illustration.
+		position: relative;
+
+		// Vertical timeline line.
+		&:before {
+			content: " ";
+			width: 1px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: -1px;
+			background-image: url(~"{{ 'shader-pixel-body-timeline.svg' | asset_url }}");
+		}
+
+		// Pad the left side of the timeline.
+		padding: 0 ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
+	}
+
+	/*
+	 * Vertical spacing of the entire list, based on
+	 * that of the .timeline class, scales with
+	 * device width.
+	 */
+	padding-top: @timeline-vertical-spacing-xs;
+	padding-bottom: @timeline-vertical-spacing-xs;
+
+	@media (min-width: @screen-sm-min) {
+		padding-top: @timeline-vertical-spacing-sm;
+		padding-bottom: @timeline-vertical-spacing-sm;
+	}
+
+	@media (min-width: @screen-md-min) {
+		padding-top: @timeline-vertical-spacing-md;
+		padding-bottom: @timeline-vertical-spacing-md;
 	}
 }
 
