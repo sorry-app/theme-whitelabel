@@ -25,12 +25,6 @@ $(document).ready(function() {
 		});
 	};
 
-	/* Bind to any expandable truncate elements, so we can toggle the expanded state. */
-	$(document).on('click', '.truncate.expandable', function(e) {
-		/* Element was clicked, toggle the truncated/expended state. */
-		$(this).toggleClass('truncated', 'expanded');
-	});
-
 	/* Bind to the window resize event to re-run the expandable? method. */
 	$(window).resize(function() { expandable(); });
 
