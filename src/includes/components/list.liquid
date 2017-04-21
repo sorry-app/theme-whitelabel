@@ -4,44 +4,37 @@
     {% for component in components %}
         <!-- Output the components details. -->
         <li id="component-{{ component.id }}" class="list-component {% if component.children != empty  %}has-components{% endif %}">
-            <!-- Wrap in a grid to left/right align component details and state. -->
-            <div class="row">
-                <div class="col-xs-10 col-sm-7 col-md-9">
-                    <div class="list-component-body">
-                        <!-- See if component has children to display. -->
-                        {% if component.children != empty %}
-                            <!-- Button to toggle the collapsed children. -->
-                            <!-- Default collapse state based on whether component is operational or not. -->
-                            <a class="{% if component.state == 'operational'%}collapsed{% endif %} list-component-toggle-collapse" type="button" data-toggle="collapse" data-target="#component_children_{{ component.id }}" aria-expanded="{{ component.state != 'operational' }}" aria-controls="component_children_{{ component.id }}">
-                                <!-- Icon for the toggle, [+] vs. [-] depending on state. -->
-                                <i class="fa fa-toggle" aria-hidden="true"></i>
-                            </a>
-                        {% endif %}
+            <div class="list-component-state list-component-state-{{ component.state }}">
+                <span class="hidden-xs">{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
+            </div>
 
-                        <div class="list-component-details truncate truncated">
-                            <!-- Component name and status. -->
-                            <strong class="list-component-name">{{ component.name }}</strong>
+            <!-- Toggle truncation on long descriptions etc. -->
+            <a data-toggle="truncate" data-target="#list-component-details-{{ component.id }}" title="{{ 'status-page.components.long-description' | t }}">
+                <!-- Basic icon, can be overridden with CSS. -->
+                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </a>
 
-                            <!-- Optional description is one exists. -->
-                            {% if component.description %}
-                                <!-- Component has description, display it. -->
-                                <p class="list-component-description">{{ component.description }}</p>
-                            {% endif %}
-                        </div>
+            <div class="list-component-body">
+                <!-- See if component has children to display. -->
+                {% if component.children != empty %}
+                    <!-- Button to toggle the collapsed children. -->
+                    <!-- Default collapse state based on whether component is operational or not. -->
+                    <a class="{% if component.state == 'operational'%}collapsed{% endif %} list-component-toggle-collapse" type="button" data-toggle="collapse" data-target="#component_children_{{ component.id }}" aria-expanded="{{ component.state != 'operational' }}" aria-controls="component_children_{{ component.id }}">
+                        <!-- Icon for the toggle, [+] vs. [-] depending on state. -->
+                        <i class="fa fa-toggle" aria-hidden="true"></i>
+                    </a>
+                {% endif %}
 
-                        <!-- Toggle truncation on long descriptions etc. -->
-                        <a data-toggle="truncate" title="{{ 'status-page.components.long-description' | t }}">
-                            <!-- Basic icon, can be overridden with CSS. -->
-                            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-                        </a>
-                    </div>
+                <div class="list-component-details truncate truncated" id="list-component-details-{{ component.id }}">
+                    <!-- Component name and status. -->
+                    <strong class="list-component-name">{{ component.name }}</strong>
+
+                    <!-- Optional description is one exists. -->
+                    {% if component.description %}
+                        <!-- Component has description, display it. -->
+                        <p class="list-component-description">{{ component.description }}</p>
+                    {% endif %}
                 </div>
-
-                <div class="col-xs-2 col-sm-5 col-md-3 text-right">
-                    <div class="list-component-state list-component-state-{{ component.state }}">
-                        <span class="hidden-xs">{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
-                    </div> 
-                </div>               
             </div>
 
             <!-- See if component has children to display. -->

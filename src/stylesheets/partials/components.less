@@ -19,6 +19,7 @@
 
 	/* Individual component list items. */
 	.list-component {
+		/* Contain the collapse toggle in the line. */
 		position: relative;
 
 		/* Fade out the toggle icon. */
@@ -32,11 +33,21 @@
 			& ~ .list-component-details { padding-left: 28px; }
 		}
 
+		/* Truncation toggle sits to right right of the details. */
+		[data-toggle="truncate"] {
+			float: right;
+			margin-left: 20px;
+		}
+
 		/* Remove margin from the last child. */
 		&:last-child { margin-bottom: 0 !important; }		
 
 		/* Component State. */
 		.list-component-state {
+			/* Right align. */
+			float: right;
+			margin-left: 20px;
+
 			/* Add spacing to the icon. */
 			.list-component-state-icon { margin-left: 10px; }
 

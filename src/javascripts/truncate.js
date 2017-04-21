@@ -7,7 +7,7 @@ $(document).ready(function() {
 	/* Bind to any expandable truncate elements, so we can toggle the expanded state. */
 	$(document).on('click', '[data-toggle="truncate"]', function(e) {
 		/* Element was clicked, toggle the truncated/expended state. */
-		$(this).prev('.truncate').toggleClass('truncated', 'expanded');
+		$($(this).data('target')).toggleClass('truncated');
 	});
 
 	/* Run the truncate evaluation regularly to pick-up changes in DOM structure. */
@@ -17,19 +17,24 @@ $(document).ready(function() {
 		 * Check all those truncate elements that are overflowing
 		 * and apply an expandable class to them.
 		 */
-
 		/* Loop over the collection of truncation classes. */
 		$('.truncate.truncated').each(function() {
+			/* 
+			 * Select the targeting toggle switches so that
+			 * so that we can update their class/state for truncated strings.
+			 */
+			var toggles = $('[data-toggle="truncate"][data-target="#' + this.id + '"]');
+
 			/*
 			 * Check the width vs. the scrollWidth to determine if these
 			 * elements are overflowing their content or not.
 			 */
 			if (this.offsetWidth < this.scrollWidth) {
-				/* This element is overflowing, add an expandable class to it. */
-				$(this).addClass('expandable');
+				/* They are overflowing and truncated, so update the toggles state. */
+				toggles.addClass('truncated');
 			} else {
-				/* This element is not overflowing it's content, remove the class. */
-				$(this).removeClass('expandable');
+				/* They are NOT overflowing or truncated, so update the toggles state. */
+				toggles.removeClass('truncated');
 			}
 		});
 	/* Run ever 100 milliseconds. */
