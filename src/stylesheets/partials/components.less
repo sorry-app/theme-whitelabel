@@ -1,24 +1,18 @@
+/*
+ * Component Lists
+ *
+ * Styling for the nested lists of components, their collapsed children,
+ * state and truncated descriptions.
+ */
 .list-components {
 	/* Basic unstyled bootstrap list. */
 	.list-unstyled();
-	/* Remove the bottom margin as no siblings below. */
-	margin-bottom: 0;
-
-	/* Nested lists have indenting. */
-	.list-components { 
-		margin-left: 52px;
-		margin-top: 15px;
-
-		.list-component {
-			margin-bottom: 15px;
-
-			/* Soften the indent to account for the toggle. */
-			&.has-components { margin-left: -28px; }
-		}
-	}
 
 	/* Individual component list items. */
 	.list-component {
+		/* Spacing against other components. */
+		margin-bottom: @list-component-vertical-spacing;
+	
 		/* Contain the collapse toggle in the line. */
 		position: relative;
 
@@ -26,30 +20,53 @@
 		[data-toggle="collapse"] {
 			position: absolute;
 			color: inherit;
-			width: 24px; /* Matches sub-list indent, minus inline-block spacing. */
-			display: inline-block !important;
+			width: @list-component-indent; /* Matches sub-list indent, minus inline-block spacing. */
+			display: inline-block;
 			z-index: 1000;
-		
-			& ~ .list-component-details { padding-left: 28px; }
+
+			/* Indent the content to allow space for the collapse toggle. */
+			& + .list-component-details { padding-left: @list-component-indent; }
+		}
+
+		/* Body of the component, includes name and description. */
+		.list-component-body {
+			/* Content for name/description. */
+			.list-component-details {
+				/* Inline name and description. */
+				.list-component-name, .list-component-description { 
+					//display: inline;
+					display: block;
+				}
+
+				/* Soften the styling on the name, less bold. */
+				.list-component-name {
+					font-weight: 600;
+					margin-right: (@list-component-horizontal-spacing / 2);
+					margin-bottom: (@list-component-vertical-spacing / 2);
+				}
+
+				/* Fade out the description as not an important element. */
+				.list-component-description { 
+					.text-muted();
+					margin-bottom: 0;
+				}
+			}
 		}
 
 		/* Truncation toggle sits to right right of the details. */
 		[data-toggle="truncate"] {
 			float: right;
-			margin-left: 20px;
-		}
-
-		/* Remove margin from the last child. */
-		&:last-child { margin-bottom: 0 !important; }		
+			margin-left: @list-component-horizontal-spacing;
+		}	
 
 		/* Component State. */
 		.list-component-state {
 			/* Right align. */
 			float: right;
-			margin-left: 20px;
+			margin-left: @list-component-horizontal-spacing;
 
 			/* Add spacing to the icon. */
-			.list-component-state-icon { margin-left: 10px; }
+			.list-component-state-icon { margin-left: (@list-component-horizontal-spacing / 2); }
 
 			/* State-based styling/colours. */
 			&.list-component-state-operational { color: ~"{{ page.brand.color_state_ok }}"; }
@@ -60,50 +77,44 @@
 			}
 		}
 
-		/* Body of the component, includes name and description. */
-		.list-component-body {
-			/* Content for name/description. */
-			.list-component-details {
-				/* Inline name and description. */
-				.list-component-name, .list-component-description { 
-					//display: inline;
-					margin-bottom: 0;
-					display: block;
-				}
+		/* Nested lists */
+		.list-components { 
+			/* Spacing to parent component. */
+			margin-top: (@list-component-vertical-spacing / 2);
+			/* Have additional indenting. */
+			padding-left: (@list-component-indent * 2) ;
 
-				/* Soften the styling on the name, less bold. */
-				.list-component-name {
-					font-weight: 600;
-					margin-right: 10px;
-					margin-bottom: 5px;
-				}
+			/* Nested list items. */
+			.list-component {
+				/* Smaller spacing on nested components. */
+				margin-bottom: (@list-component-vertical-spacing / 2);
+				/* Soften the indent to account for the toggle button.. */
+				/* This means the name/description is inline with one another, regardless of toggle. */
+				&.has-nested-components { margin-left: -@list-component-indent; }
 
-				/* Fade out the description as not an important element. */
-				.list-component-description { .text-muted(); }
+				/* Shrink spacing on name on nested list items. */
+				.list-component-name { margin-bottom: (@list-component-vertical-spacing / 4); }
 			}
 		}
 	}
 }
 
-/*
- * Style the top level components to look like shaded bar/bubbles
- * using a shader background and some border radios.
- */
+/* Style the top level components list. */
 .section-page-components > .container > .list-components {
-	// Block styling on the components.
-	> .list-component {
-		/* Display a shaded bar/block. */
-		background-image: url(~"{{ 'shader-pixel-components.svg' | asset_url }}");
-		padding: 15px 20px;
-		border-radius: @border-radius-base;
-		margin-bottom: 20px;
-	}
+	/* Remove margins. */
+	margin-bottom: 0 !important;
 
-	// Graphical timeline on larger scale devices.
-	// --------------------------------------------------
+	/*
+	 * Give it visual continuity with the timeline on
+	 * the rest of the page.
+	 */
 
+	/* Basic padding, matches timeline. */
+	padding: @timeline-padding (@timeline-padding / 2);
+
+	/* Visual timeline kicks in at larger view ports. */
 	@media (min-width: @grid-float-breakpoint) {
-		// Contain the timeline illustration.
+		/* Position to contain the absolute timeline. */
 		position: relative;
 
 		// Vertical timeline line.
@@ -114,29 +125,23 @@
 			top: 0;
 			bottom: 0;
 			left: -1px;
-			background-image: url(~"{{ 'shader-pixel-body-timeline.svg' | asset_url }}");
+			background-color: ~"{{ page.brand.color_body_background }}"; 
+			background-image: url(~"{{ 'shader-pixel-body-timeline.svg' | asset_url }}");			
 		}
 
 		// Pad the left side of the timeline.
-		padding: 0 ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
-	}
+		padding: (@timeline-padding * 3) ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
+	}	
 
 	/*
-	 * Vertical spacing of the entire list, based on
-	 * that of the .timeline class, scales with
-	 * device width.
+	 * Style the top level components to look like shaded bar/bubbles
+	 * using a shader background and some border radios.
 	 */
-	padding-top: @timeline-vertical-spacing-xs;
-	padding-bottom: @timeline-vertical-spacing-xs;
-
-	@media (min-width: @screen-sm-min) {
-		padding-top: @timeline-vertical-spacing-sm;
-		padding-bottom: @timeline-vertical-spacing-sm;
-	}
-
-	@media (min-width: @screen-md-min) {
-		padding-top: @timeline-vertical-spacing-md;
-		padding-bottom: @timeline-vertical-spacing-md;
+	 > .list-component {
+		/* Display a shaded bar/block. */
+		background-image: url(~"{{ 'shader-pixel-components.svg' | asset_url }}");
+		padding: @list-component-vertical-spacing @list-component-horizontal-spacing;
+		border-radius: @border-radius-base;
 	}
 }
 
