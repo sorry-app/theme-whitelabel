@@ -7,11 +7,11 @@ $(document).ready(function() {
 	/* Bind to any expandable truncate elements, so we can toggle the expanded state. */
 	$(document).on('click', '[data-toggle="truncate"]', function(e) {
 		/* Element was clicked, toggle the truncated/expended state. */
-		$(this).parent().toggleClass('truncated', 'expanded');
+		$(this).prev('.truncate').toggleClass('truncated', 'expanded');
 	});
 
-	/* Run the truncate evaluation regularly to pickup changes in DOM structure. */
-	/* This is so we pickup when truncated text contains are hidden/expanded. */
+	/* Run the truncate evaluation regularly to pick-up changes in DOM structure. */
+	/* This is so we pick-up when truncated text contains are hidden/expanded. */
 	setInterval(function() {
 		/* 
 		 * Check all those truncate elements that are overflowing
@@ -21,7 +21,7 @@ $(document).ready(function() {
 		/* Loop over the collection of truncation classes. */
 		$('.truncate.truncated').each(function() {
 			/*
-			 * Check the width vs the scrollWidth to determine if these
+			 * Check the width vs. the scrollWidth to determine if these
 			 * elements are overflowing their content or not.
 			 */
 			if (this.offsetWidth < this.scrollWidth) {

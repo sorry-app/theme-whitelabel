@@ -7,29 +7,34 @@
 
 /* Apply to any classes you may want to truncate. */
 .truncate {
-	/* Contain the content and toggle buttons. */
-	position: relative;
-
 	/* Apply to place into truncated state. */
 	&.truncated {
 		/* Force content onto a single line, with a nice truncation. */
+		display: inline-block;
+		width: 100%;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		padding-right: 28px;
 
 		/* Force nested block elements inline too. */
 		> * { display: inline !important; }
 	}
 
+	/* When expdnable show the toggle. */
+	&.expandable ~ [data-toggle="truncate"] {
+		/* Hidden by default. */
+		visibility: visible;
+	}
+
 	/* The toggle button/link. */
-	[data-toggle="truncate"] {
+	& ~ [data-toggle="truncate"] {
 		/* Display to the right of the truncated content. */
 		position: absolute;
-		right: 0;
+		right: -10px;
 		top: 0;
 		color: inherit;
 		opacity: 0.2;
+		z-index: 1000;
 
 		/* Hidden by default. */
 		visibility: hidden;
@@ -39,11 +44,5 @@
 			cursor: pointer;
 			opacity: 1;
 		}
-	}
-
-	/* When expdnable show the toggle. */
-	&.expandable [data-toggle="truncate"] {
-		/* Hidden by default. */
-		visibility: visible;
 	}
 }
