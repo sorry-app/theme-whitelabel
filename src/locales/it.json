@@ -34,8 +34,10 @@
 		"components": {
 			"states": {
 				"operational": "operativo",
+				"partially_degraded": "parziale degrado",
 				"degraded": "degradato"
-			}
+			},
+			"long-description": "Clicca qui per visualizzare la descrizione completa per questo componente"
 		},		
 		"body": {
 			"states": {

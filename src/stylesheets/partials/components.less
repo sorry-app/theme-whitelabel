@@ -1,13 +1,118 @@
+/*
+ * Component Lists
+ *
+ * Styling for the nested lists of components, their collapsed children,
+ * state and truncated descriptions.
+ */
 .list-components {
 	/* Basic unstyled bootstrap list. */
 	.list-unstyled();
-	/* Remove the bottom margin as no siblings below. */
-	margin-bottom: 0;
+
+	/* Individual component list items. */
+	.list-component {
+		/* Spacing against other components. */
+		margin-bottom: @list-component-vertical-spacing;
+	
+		/* Contain the collapse toggle in the line. */
+		position: relative;
+
+		/* Fade out the toggle icon. */
+		[data-toggle="collapse"] {
+			position: absolute;
+			color: inherit;
+			width: @list-component-indent; /* Matches sub-list indent, minus inline-block spacing. */
+			display: inline-block;
+			z-index: 1000;
+
+			/* Indent the content to allow space for the collapse toggle. */
+			& + .list-component-details { padding-left: @list-component-indent; }
+		}
+
+		/* Body of the component, includes name and description. */
+		.list-component-body {
+			/* Content for name/description. */
+			.list-component-details {
+				/* Inline name and description. */
+				.list-component-name, .list-component-description { 
+					//display: inline;
+					display: block;
+				}
+
+				/* Soften the styling on the name, less bold. */
+				.list-component-name {
+					font-weight: 600;
+					margin-right: (@list-component-horizontal-spacing / 2);
+					margin-bottom: (@list-component-vertical-spacing / 2);
+				}
+
+				/* Fade out the description as not an important element. */
+				.list-component-description { 
+					.text-muted();
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		/* Truncation toggle sits to right right of the details. */
+		[data-toggle="truncate"] {
+			float: right;
+			margin-left: @list-component-horizontal-spacing;
+		}	
+
+		/* Component State. */
+		.list-component-state {
+			/* Right align. */
+			float: right;
+			margin-left: @list-component-horizontal-spacing;
+
+			/* Add spacing to the icon. */
+			.list-component-state-icon { margin-left: (@list-component-horizontal-spacing / 2); }
+
+			/* State-based styling/colours. */
+			&.list-component-state-operational { color: ~"{{ page.brand.color_state_ok }}"; }
+			&.list-component-state-degraded { color: ~"{{ page.brand.color_state_warning }}" }
+			&.list-component-state-partially_degraded { 
+				color: ~"{{ page.brand.color_state_warning }}";
+				opacity: 0.6;
+			}
+		}
+
+		/* Nested lists */
+		.list-components { 
+			/* Spacing to parent component. */
+			margin-top: (@list-component-vertical-spacing / 2);
+			/* Have additional indenting. */
+			padding-left: (@list-component-indent * 2) ;
+
+			/* Nested list items. */
+			.list-component {
+				/* Smaller spacing on nested components. */
+				margin-bottom: (@list-component-vertical-spacing / 2);
+				/* Soften the indent to account for the toggle button.. */
+				/* This means the name/description is inline with one another, regardless of toggle. */
+				&.has-nested-components { margin-left: -@list-component-indent; }
+
+				/* Shrink spacing on name on nested list items. */
+				.list-component-name { margin-bottom: (@list-component-vertical-spacing / 4); }
+			}
+		}
+	}
+}
+
+/* Style the top level components list. */
+.section-page-components > .container > .list-components {
+	/* Remove margins. */
+	margin-bottom: 0 !important;
+
+	/*
+	 * Give it visual continuity with the timeline on
+	 * the rest of the page.
+	 */
 
 	/* Basic padding, matches timeline. */
 	padding: @timeline-padding (@timeline-padding / 2);
 
-	/* Padding + Timeline Visual. */
+	/* Visual timeline kicks in at larger view ports. */
 	@media (min-width: @grid-float-breakpoint) {
 		/* Position to contain the absolute timeline. */
 		position: relative;
@@ -26,54 +131,17 @@
 
 		// Pad the left side of the timeline.
 		padding: (@timeline-padding * 3) ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
-	}
+	}	
 
-	/* Individual component list items. */
-	.list-component {
+	/*
+	 * Style the top level components to look like shaded bar/bubbles
+	 * using a shader background and some border radios.
+	 */
+	 > .list-component {
 		/* Display a shaded bar/block. */
 		background-image: url(~"{{ 'shader-pixel-components.svg' | asset_url }}");
-		padding: 15px 20px;
+		padding: @list-component-vertical-spacing @list-component-horizontal-spacing;
 		border-radius: @border-radius-base;
-		margin-bottom: 20px;
-
-		/* Remove margin from the last child. */
-		&:last-child { margin-bottom: 0; }
-
-		/* Component State. */
-		.list-component-state {
-			/* Right align the state. */
-			float: right;
-
-			/* Add spacing to the icon. */
-			.list-component-state-icon { margin-left: 10px; }
-
-			/* State-based styling/colours. */
-			&.list-component-state-operational { color: ~"{{ page.brand.color_state_ok }}"; }
-			&.list-component-state-degraded { color: ~"{{ page.brand.color_state_warning }}" }
-		}
-
-		/* Body of the component, includes name and description. */
-		.list-component-body {
-			/* Give it a little spacing between itself and the state. */
-			padding-right: 40px;
-
-			/* Inline name and description. */
-			.list-component-name, .list-component-description { 
-				//display: inline;
-				margin-bottom: 0;
-				display: block;
-			}
-
-			/* Soften the styling on the name, less bold. */
-			.list-component-name {
-				font-weight: 600;
-				margin-right: 10px;
-				margin-bottom: 8px;
-			}
-
-			/* Fade out the description as not an important element. */
-			.list-component-description { .text-muted(); }
-		}
 	}
 }
 

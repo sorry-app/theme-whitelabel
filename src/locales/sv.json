@@ -34,8 +34,10 @@
 		"components": {
 			"states": {
 				"operational": "Operativ",
+				"partially_degraded": "delvis försämrat",
 				"degraded": "degraderas"
-			}
+			},
+			"long-description": "Klicka här för att se hela beskrivningen för den här komponenten"
 		},		
 		"body": {
 			"states": {

@@ -34,8 +34,10 @@
 		"components": {
 			"states": {
 				"operational": "Επιχειρήσεων",
+				"partially_degraded": "μερικώς υποβαθμισμένα",
 				"degraded": "Υποβάθμιση"
-			}
+			},
+			"long-description": "Κάντε κλικ εδώ για να δείτε την πλήρη περιγραφή αυτού του στοιχείου"
 		},		
 		"body": {
 			"states": {
