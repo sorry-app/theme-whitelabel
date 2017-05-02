@@ -1,0 +1,118 @@
+{
+    "status-page": {
+        "navbar": {
+            "title": "System-Status",
+            "subscribe-button": {
+                "default": "Aktualisierungen erhalten",
+                "via": "via",
+                "slack": {
+                    "name": "Slack",
+                    "description": "Live veröffentlicht in einem #Kanal Ihrer Wahl."
+                },
+                "email": {
+                    "name": "E-Mail-Adresse",
+                    "description": "Die Nachrichten werden direkt an Ihren Posteingang zugestellt."
+                }
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Alle Systeme funktionieren einwandfrei",
+                "open": "Fortlaufend",
+                "underway": "in Bearbeitung"
+            },
+            "timeliness": {
+                "planned": {
+                    "underway": "Wir erwarten, dass wir fertig sind am <time class=\"ago\" datetime=\"%{ends_at}\">um %{ends_at}</time>"
+                }
+            },
+            "disagree": {
+                "question": "Sind Sie damit nicht einverstanden?",
+                "answer": "Bitte geben Sie uns Bescheid"
+            }
+        },
+        "components": {
+            "states": {
+                "operational": "Funktionsfähig",
+                "degraded": "Beeinträchtigt"
+            }
+        },
+        "body": {
+            "states": {
+                "scheduled": "Geplant",
+                "complete": "Abgeschlossen",
+                "closed": "Gelöst"
+            },
+            "timeliness": {
+                "planned": {
+                    "scheduled": "Voraussichtlicher Beginn:  <time class=\"ago\" datetime=\"%{begins_at}\">um %{begins_at}</time>",
+                    "complete": "Dies war ein geplantes Ereignis, es dauerte %{duration}."
+                },
+                "unplanned": {
+                    "closed": "Dieses Ereignis dauerte %{duration}."
+                }
+            },
+            "schedule": {
+                "synopsis": "Übersicht",
+                "for": "Geplant für %{begins_at}",
+                "expected_duration": "Voraussichtliche Dauer:  %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Bevorstehende Wartungsarbeiten",
+                "past_recent": "Vorherige Ereignisse"
+            },
+            "no-more-notices": "Keine weiteren Hinweise aus den vergangenen %{days} Tagen."
+        },
+        "footer": {
+            "need-support": "Brauchen Sie Hilfe?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "Wir führen einige Wartungsarbeiten durch",
+            "subtitles": {
+                "with-maintenance": "Wir erwarten, dass wir fertig sind am <time class=\"ago\" datetime=\"%{ends_at}\">um %{ends_at}</time>",
+                "without-maintenance": "Das sind ungeplante notwendige Wartungsarbeiten"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "Wir versuchen, die Wartungsarbeiten so gut wie möglich zu planen, doch leider ist dies nicht immer möglich. Wir danken Ihnen für Ihre Geduld und hoffen, dass unser System so schnell wie möglich wieder betriebsbereit ist."
+                },
+                "with-maintenance": {
+                    "began_at": "Begann am",
+                    "duration": "Voraussichtliche Dauer",
+                    "sp-link": "Verfolgen Sie unsere Fortschritte"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Wollen Sie mit uns über die Wartungsarbeiten sprechen?"
+        }
+    },
+    "error-page": {
+        "header": {
+            "title": "Entschuldigen Sie, es ist ein Fehler aufgetreten."
+        },
+        "body": {
+            "subtitle": "Es ist nicht Ihre Schuld, sondern unsere.",
+            "retry": "Versuchen Sie es noch einmal. Wenn es dann noch immer nicht funktioniert, versichern wir Ihnen, dass wir bereits an diesem Problem arbeiten.",
+            "states": {
+                "ongoing": {
+                    "heading": "Wir haben momentan Probleme.",
+                    "body": "Dies könnte einen Zusammenhang mit diesem Fehler haben, bitten prüfen Sie unsere Status-Seite für weitere Informationen.",
+                    "sp-link": "Besuchen Sie unsere Status-Seite"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Möchten Sie mit uns über diesen Fehler sprechen?"
+        }
+    },
+    "social-links": {
+        "twitter": "Folgen Sie uns auf Twitter",
+        "facebook": "Befreunden Sie sich mit uns auf Facebook",
+        "google_plus": "inden Sie uns auf Google+"
+    }
+}
