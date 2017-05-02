@@ -23,7 +23,7 @@
             },
             "timeliness": {
                 "planned": {
-                    "underway": "Wir erwarten, dass wir fertig sind am <time class=\"ago\" datetime=\"%{ends_at}\">um %{ends_at}</time>"
+                    "underway": "Wir erwarten, dass wir fertig sind am um %{ends_in}"
                 }
             },
             "disagree": {
@@ -47,7 +47,7 @@
             },
             "timeliness": {
                 "planned": {
-                    "scheduled": "Voraussichtlicher Beginn:  <time class=\"ago\" datetime=\"%{begins_at}\">um %{begins_at}</time>",
+                    "scheduled": "Voraussichtlicher Beginn um %{begins_in}",
                     "complete": "Dies war ein geplantes Ereignis, es dauerte %{duration}."
                 },
                 "unplanned": {
@@ -73,7 +73,7 @@
         "header": {
             "title": "Wir führen einige Wartungsarbeiten durch",
             "subtitles": {
-                "with-maintenance": "Wir erwarten, dass wir fertig sind am <time class=\"ago\" datetime=\"%{ends_at}\">um %{ends_at}</time>",
+                "with-maintenance": "Wir erwarten, dass wir fertig sind am um %{ends_in}",
                 "without-maintenance": "Das sind ungeplante notwendige Wartungsarbeiten"
             }
         },
