@@ -34,8 +34,10 @@
         "components": {
             "states": {
                 "operational": "Funktionsfähig",
+                "partially_degraded": "Teilweise degradiert",
                 "degraded": "Beeinträchtigt"
-            }
+            },
+            "long-description": "Klicken Sie hier, um die vollständige Beschreibung für diese Komponente zu sehen"
         },
         "body": {
             "states": {
