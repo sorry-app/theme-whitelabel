@@ -12,6 +12,10 @@
 				"email": {
 					"name": "Email",
 					"description": "Mensajes enviados directamente a su bandeja de entrada."
+				},
+				"sms": {
+					"name": "SMS",
+					"description": "Mensajes enviados a su teléfono móvil."
 				}
 			}
 		},
