@@ -12,6 +12,10 @@
 				"email": {
 					"name": "Email",
 					"description": "Opdateringer leveret direkte på din email."
+				},
+				"sms": {
+					"name": "SMS",
+					"description": "Beskeder leveret til din mobiltelefon."
 				}
 			}
 		},

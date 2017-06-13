@@ -12,7 +12,11 @@
 				"email": {
 					"name": "Email",
 					"description": "Messages delivered right into your inbox."
-				}
+				},
+				"sms": {
+					"name": "SMS",
+					"description": "Messages delivered to your mobile phone."
+				}				
 			}
 		},
 		"header": {

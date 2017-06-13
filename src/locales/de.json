@@ -12,6 +12,10 @@
                 "email": {
                     "name": "E-Mail-Adresse",
                     "description": "Die Nachrichten werden direkt an Ihren Posteingang zugestellt."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Nachrichten an Ihr Mobiltelefon geliefert."
                 }
             }
         },
