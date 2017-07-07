@@ -22,6 +22,7 @@
 		"header": {
 			"states": {
 				"all-systems-are-go": "Allt fungerar normalt",
+				"investigating": "Undersöka",
 				"open": "Pågående",
 				"underway": "På gång"
 			},

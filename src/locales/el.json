@@ -22,6 +22,7 @@
 		"header": {
 			"states": {
 				"all-systems-are-go": "Όλα τα συστήματα είναι να πάει",
+				"investigating": "Διερεύνηση",
 				"open": "Σε εξέλιξη",
 				"underway": "σε εξέλιξη"
 			},
