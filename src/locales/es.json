@@ -22,6 +22,7 @@
 		"header": {
 			"states": {
 				"all-systems-are-go": "Todos los sistemas están funcionando",
+				"investigating": "Investigando",
 				"open": "En marcha",
 				"underway": "En curso"
 			},
