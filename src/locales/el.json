@@ -50,7 +50,8 @@
 			"states": {
 				"scheduled": "Προγραμματισμένος",
 				"complete": "Πλήρης",
-				"closed": "επιλυθεί"
+				"closed": "επιλυθεί",
+				"resolved": "επιλυθεί"
 			},			
 			"timeliness": {
 				"planned": {
@@ -58,7 +59,8 @@
 					"complete": "Αυτή ήταν μια προγραμματισμένη περιστατικό, πήρε %{duration}."
 				},
 				"unplanned": {
-					"closed": "Το περιστατικό διήρκεσε %{duration}."
+					"closed": "Το περιστατικό διήρκεσε %{duration}.",
+					"resolved": "Το περιστατικό διήρκεσε %{duration}."
 				}
 			},
 			"schedule": {

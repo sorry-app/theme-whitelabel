@@ -50,7 +50,8 @@
             "states": {
                 "scheduled": "Geplant",
                 "complete": "Abgeschlossen",
-                "closed": "Gelöst"
+                "closed": "Gelöst",
+                "resolved": "Gelöst"
             },
             "timeliness": {
                 "planned": {
@@ -58,7 +59,8 @@
                     "complete": "Dies war ein geplantes Ereignis, es dauerte %{duration}."
                 },
                 "unplanned": {
-                    "closed": "Dieses Ereignis dauerte %{duration}."
+                    "closed": "Dieses Ereignis dauerte %{duration}.",
+                    "resolved": "Dieses Ereignis dauerte %{duration}."
                 }
             },
             "schedule": {
