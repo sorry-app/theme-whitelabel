@@ -15,7 +15,8 @@
                     {% endif %}
 
                     <!-- Page Title. -->
-                    <span class="navbar-brand">{{ 'status-page.navbar.title' | t }}</span> 
+                    <!-- Hide the title on small screens of a logo exists. -->
+                    <span class="navbar-brand {% if page.brand.logo %}hidden-xs{% endif %}">{{ 'status-page.navbar.title' | t }}</span> 
 
                     <!-- Subscription button based on the various options for the page. -->
                     {% if page.subscription_options.size == 1 %}
