@@ -15,7 +15,7 @@
                             {% for link in page.support %}
                                 <!-- Provide a list item for each. -->
                                 <li class="support-link-{{ link[0] }}">
-                                    <!-- Conditionaly append mailto: and tel: for appropriate actions. -->
+                                    <!-- Conditionally append mailto: and tel: for appropriate actions. -->
                                     <a href="{% case link[0] %}{% when 'email' %}mailto:{% when 'telephone' %}tel:{% endcase %}{{ link[1] }}">{{ link[1] }}</a>
                                 </li>
                             {% endfor %}

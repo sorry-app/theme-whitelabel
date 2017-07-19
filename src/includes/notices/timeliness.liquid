@@ -1,15 +1,15 @@
-<!-- Determine a friendly duraiton. -->
+<!-- Determine a friendly duration. -->
 {% assign duration = notice.duration | distance_of_time_in_words %}
 
 <!-- Generate a moment.js time tag for the begins_at. -->
 {% capture begins_in %}
-	<!-- Use the timetag include. -->
+	<!-- Use the time tag include. -->
 	{% include 'notices/time_tag' datetime: notice.begins_at %}
 {% endcapture %}
 
 <!-- Generate a moment.js time tag for the begins_at. -->
 {% capture ends_in %}
-	<!-- Use the timetag include. -->
+	<!-- Use the time tag include. -->
 	{% include 'notices/time_tag' datetime: notice.expected_ended_at %}
 {% endcapture %}
 

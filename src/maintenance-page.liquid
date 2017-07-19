@@ -19,18 +19,18 @@
 
 		<div class="container container-sm">
 			<section class="maintenance-page-header">
-				<!-- Headline notice to state a problem has ocurred. -->
+				<!-- Headline notice to state a problem has occurred. -->
 				<h1>
 					{{ 'maintenance-page.header.title' | t }}
 
 					<!-- Display a duration if we have an open maintenance. -->
 					{% if page.notices.planned.present.size > 0 %}
-						<!-- Determin the longest running notice, based on it's expected end time. -->
+						<!-- Determine the longest running notice, based on it's expected end time. -->
 						{% assign longest_notice = page.notices.planned.present | sort: 'expected_ended_at' | last %}
 						
 						<!-- Generate a moment.js time tag for the begins_at. -->
 						{% capture ends_in %}
-							<!-- Use the timetag include. -->
+							<!-- Use the time tag include. -->
 							{% include 'notices/time_tag' datetime: longest_notice.expected_ended_at %}
 						{% endcapture %}
 
