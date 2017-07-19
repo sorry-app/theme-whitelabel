@@ -23,6 +23,7 @@
 			"states": {
 				"all-systems-are-go": "Όλα τα συστήματα είναι να πάει",
 				"investigating": "Διερεύνηση",
+				"identified": "Αναγνωρισθείς",
 				"open": "Σε εξέλιξη",
 				"underway": "σε εξέλιξη"
 			},

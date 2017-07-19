@@ -23,6 +23,7 @@
 			"states": {
 				"all-systems-are-go": "Alt kører normalt",
 				"investigating": "Undersøgelse",
+				"identified": "Identificerede",
 				"open": "Igangværende",
 				"underway": "Undervejs"
 			},

@@ -23,6 +23,7 @@
 			"states": {
 				"all-systems-are-go": "Allt fungerar normalt",
 				"investigating": "Undersöka",
+				"identified": "Identifierade",
 				"open": "Pågående",
 				"underway": "På gång"
 			},

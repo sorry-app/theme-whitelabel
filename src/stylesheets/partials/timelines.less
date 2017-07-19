@@ -249,7 +249,7 @@ dl.timeline {
 		}
 	}
 	> dt.event.event-present.event-unplanned {
-		&.event-open + dd > dl > dt {
+		&.event-open + dd > dl > dt, &.event-identified + dd > dl > dt {
 			// Use the theme colours for this.
 			background-color: ~"{{ page.brand.color_state_warning }}";
 
@@ -292,7 +292,7 @@ dl.timeline {
 		}
 	}
 	// Color the dots based on the state of the notice.
-	> dt.event.event-open + dd:before { background-color: ~"{{ page.brand.color_state_warning }}"; }
+	> dt.event.event-open + dd:before, > dt.event.event-identified + dd:before { background-color: ~"{{ page.brand.color_state_warning }}"; }
 	> dt.event.event-investigating + dd:before { background-color: ~"{{ page.brand.color_state_alert }}"; }
 	> dt.event.event-underway + dd:before { background-color: ~"{{ page.brand.color_state_info }}"; }
 

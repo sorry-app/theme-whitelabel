@@ -23,6 +23,7 @@
 			"states": {
 				"all-systems-are-go": "Tous les systèmes sont opérationnels.",
 				"investigating": "Enquête",
+				"identified": "Identifié",
 				"open": "En cours",
 				"underway": "En cours"
 			},

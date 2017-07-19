@@ -23,6 +23,7 @@
 			"states": {
 				"all-systems-are-go": "Todos los sistemas están funcionando",
 				"investigating": "Investigando",
+				"identified": "Identificado",
 				"open": "En marcha",
 				"underway": "En curso"
 			},
