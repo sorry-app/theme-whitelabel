@@ -51,7 +51,8 @@
 				"scheduled": "Scheduled",
 				"complete": "Complete",
 				"closed": "Resolved",
-				"resolved": "Resolved"
+				"resolved": "Resolved",
+				"false_alarm": "False Alarm"
 			},			
 			"timeliness": {
 				"planned": {
@@ -60,7 +61,8 @@
 				},
 				"unplanned": {
 					"closed": "This incident lasted %{duration}.",
-					"resolved": "This incident lasted %{duration}."
+					"resolved": "This incident lasted %{duration}.",
+					"false_alarm": "This incident was deemed a false alarm after %{duration}"
 				}
 			},
 			"schedule": {
