@@ -81,7 +81,7 @@
                                                 {% for update in ordered_updates reversed %}
                                                     <!-- Output the date for the update. -->
                                                     <dt id="update-{{ update.id }}">
-                                                        <!-- Use the timetag include. -->
+                                                        <!-- Use the time tag include. -->
                                                         {% include 'notices/time_tag' datetime: update.created_at %}
                                                     </dt>
                                                         <!-- Output the text content of the update. -->
@@ -100,7 +100,7 @@
                                     <!-- Check if any support / social links exists. -->
                                     {% if page.support.size > 0 or page.social.size > 0 %}
                                         <!-- Add a reference to support links. -->
-                                        <!-- Use the smart acnhor plugin to link/not-link based on visibility. -->
+                                        <!-- Use the smart anchor plugin to link/not-link based on visibility. -->
                                         <p>{{ 'status-page.header.disagree.question' | t }} <a data-smart-anchor="#contact-support">{{ 'status-page.header.disagree.answer' | t }}</a></p>
                                     {% endif %}
                             </dd>
@@ -126,7 +126,7 @@
         <div class="container container-md">
             <!-- Timeline of previous notices. -->
             <dl class="timeline timeline-body">
-                <!-- Timeline of upcomming notices. -->
+                <!-- Timeline of upcoming notices. -->
                 <!-- Only display if they exist. -->
                 {% if page.notices.future.size > 0 %}
                     <!-- Heading for the list. -->
@@ -138,7 +138,7 @@
                         {% include 'notices/timeline-notice' %}
                     {% endfor %}
 
-                    <!-- Seperator between timeline sections. -->
+                    <!-- Separator between timeline sections. -->
                     <hr />
                 {% endif %}
 
