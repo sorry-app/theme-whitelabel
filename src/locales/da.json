@@ -23,6 +23,8 @@
 			"states": {
 				"all-systems-are-go": "Alt kører normalt",
 				"investigating": "Undersøgelse",
+				"identified": "Identificerede",
+				"recovering": "Komme sig",
 				"open": "Igangværende",
 				"underway": "Undervejs"
 			},
@@ -48,7 +50,9 @@
 			"states": {
 				"scheduled": "Planlagt",
 				"complete": "Komplet",
-				"closed": "løst"
+				"closed": "løst",
+				"resolved": "løst",
+				"false_alarm": "Falsk Alarm"
 			},			
 			"timeliness": {
 				"planned": {
@@ -56,7 +60,9 @@
 					"complete": "Dette var et planlagt hændelse, tog det %{duration}."
 				},
 				"unplanned": {
-					"closed": "Denne hændelse varede %{duration}."
+					"closed": "Denne hændelse varede %{duration}.",
+					"resolved": "Denne hændelse varede %{duration}.",
+					"false_alarm": "Denne hændelse blev betragtet som en falsk alarm efter %{duration}"
 				}
 			},
 			"schedule": {

@@ -23,6 +23,8 @@
 			"states": {
 				"all-systems-are-go": "Όλα τα συστήματα είναι να πάει",
 				"investigating": "Διερεύνηση",
+				"identified": "Αναγνωρισθείς",
+				"recovering": "Ανάκτηση",
 				"open": "Σε εξέλιξη",
 				"underway": "σε εξέλιξη"
 			},
@@ -48,7 +50,9 @@
 			"states": {
 				"scheduled": "Προγραμματισμένος",
 				"complete": "Πλήρης",
-				"closed": "επιλυθεί"
+				"closed": "επιλυθεί",
+				"resolved": "επιλυθεί",
+				"false_alarm": "Λάθος συναγερμός"
 			},			
 			"timeliness": {
 				"planned": {
@@ -56,7 +60,9 @@
 					"complete": "Αυτή ήταν μια προγραμματισμένη περιστατικό, πήρε %{duration}."
 				},
 				"unplanned": {
-					"closed": "Το περιστατικό διήρκεσε %{duration}."
+					"closed": "Το περιστατικό διήρκεσε %{duration}.",
+					"resolved": "Το περιστατικό διήρκεσε %{duration}.",
+					"false_alarm": "Αυτό το περιστατικό θεωρήθηκε ψευδές συναγερμό μετά %{duration}"
 				}
 			},
 			"schedule": {

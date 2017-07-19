@@ -23,6 +23,8 @@
 			"states": {
 				"all-systems-are-go": "Tous les systèmes sont opérationnels.",
 				"investigating": "Enquête",
+				"identified": "Identifié",
+				"recovering": "Récupération",
 				"open": "En cours",
 				"underway": "En cours"
 			},
@@ -48,7 +50,9 @@
 			"states": {
 				"scheduled": "Prévu",
 				"complete": "Achevée",
-				"closed": "Résolu"
+				"closed": "Résolu",
+				"resolved": "Résolu",
+				"false_alarm": "Fausse Alarme"
 			},			
 			"timeliness": {
 				"planned": {
@@ -56,7 +60,9 @@
 					"complete": "Il s'agissait d'un incident planifié %{duration}."
 				},
 				"unplanned": {
-					"closed": "Cet incident a duré %{duration}."
+					"closed": "Cet incident a duré %{duration}.",
+					"resolved": "Cet incident a duré %{duration}.",
+					"false_alarm": "Cet incident a été considéré comme une fausse alarme après %{duration}"
 				}
 			},
 			"schedule": {

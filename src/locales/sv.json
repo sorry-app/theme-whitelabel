@@ -23,6 +23,8 @@
 			"states": {
 				"all-systems-are-go": "Allt fungerar normalt",
 				"investigating": "Undersöka",
+				"identified": "Identifierade",
+				"recovering": "Återställa",
 				"open": "Pågående",
 				"underway": "På gång"
 			},
@@ -48,7 +50,9 @@
 			"states": {
 				"scheduled": "Planerad",
 				"complete": "Komplett",
-				"closed": "Löst"
+				"closed": "Löst",
+				"resolved": "Löst",
+				"false_alarm": "Falskt Larm"
 			},			
 			"timeliness": {
 				"planned": {
@@ -56,7 +60,9 @@
 					"complete": "Detta var en planerad händelse, tog det %{duration}."
 				},
 				"unplanned": {
-					"closed": "Denna incident varade %{duration}."
+					"closed": "Denna incident varade %{duration}.",
+					"resolved": "Denna incident varade %{duration}.",
+					"false_alarm": "Denna händelse ansågs vara ett falskt larm efter %{duration}"
 				}
 			},
 			"schedule": {
