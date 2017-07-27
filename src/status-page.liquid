@@ -112,7 +112,7 @@
     </header>
 
     <!-- See if the page has components or not. -->
-    {% if page.components.roots != empty %}
+    {% if page.components.roots.size > 0 %}
         <!-- Display the pages components, and their status. -->
         <section id="page-components" class="section section-page-components">
             <div class="container container-md">
