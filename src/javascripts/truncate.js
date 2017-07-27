@@ -6,8 +6,11 @@ $(document).ready(function() {
 
 	/* Bind to any expandable truncate elements, so we can toggle the expanded state. */
 	$(document).on('click', '[data-toggle="truncate"]', function(e) {
+		/* Prevent the default click link behaviour. */
+		e.preventDefault();
+		
 		/* Element was clicked, toggle the truncated/expended state. */
-		$($(this).data('target')).toggleClass('truncated');
+		$($(this).attr('href')).toggleClass('truncated');
 	});
 
 	/* Run the truncate evaluation regularly to pick-up changes in DOM structure. */
@@ -23,7 +26,7 @@ $(document).ready(function() {
 			 * Select the targeting toggle switches so that
 			 * so that we can update their class/state for truncated strings.
 			 */
-			var toggles = $('[data-toggle="truncate"][data-target="#' + this.id + '"]');
+			var toggles = $('[data-toggle="truncate"][href="#' + this.id + '"]');
 
 			/*
 			 * Check the width vs. the scrollWidth to determine if these
