@@ -4,7 +4,7 @@
     {% for component in components %}
         <!-- Output the components details. -->
         <li id="component-{{ component.id }}" class="list-component {% if component.children.size > 0  %}has-nested-components{% endif %}">
-            <div class="list-component-state list-component-state-{{ component.state }}">
+            <div class="list-component-state list-component-state-{{ component.state }} {% if component.notices.present.size > 0 %}list-component-progress-{{ component.notices.present.first.state }}{% endif %}">
                 <span class="hidden-xs">{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
             </div>
 
