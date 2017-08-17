@@ -16,10 +16,10 @@
 
             <div class="list-component-body">
                 <!-- See if component has children to display. -->
-                {% if component.children.size > 0 %}
+                {% if component.children.size > 0 and component.state == 'operational' %}
                     <!-- Button to toggle the collapsed children. -->
                     <!-- Default collapse state based on whether component is operational or not. -->
-                    <a href="#component_children_{{ component.id }}" class="{% if component.state == 'operational'%}collapsed{% endif %} list-component-toggle-collapse" role="button" data-toggle="collapse" aria-expanded="{{ component.state != 'operational' }}" aria-controls="component_children_{{ component.id }}">
+                    <a href="#component_children_{{ component.id }}" class="collapsed list-component-toggle-collapse" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="component_children_{{ component.id }}">
                         <!-- Icon for the toggle, [+] vs. [-] depending on state. -->
                         <i class="fa fa-toggle" aria-hidden="true"></i>
                     </a>
