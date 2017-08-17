@@ -25,7 +25,10 @@
 			z-index: 1000;
 
 			/* Indent the content to allow space for the collapse toggle. */
-			& + .list-component-details { padding-left: @list-component-indent; }
+			& ~ .list-component-body { padding-left: @list-component-indent; }
+
+			/* Hide state when children expanded. */
+			&:not(.collapsed) ~ .list-component-state { visibility: hidden; }
 		}
 
 		/* Body of the component, includes name and description. */
