@@ -1,19 +1,29 @@
 /* Plus/Minor Icons in Toggled Buttons. */
 [data-toggle="collapse"] {
 	/* Faded by default. */
-	opacity: 0.6;
+	opacity: .6;
 
-	/* We don't supply an href on toggle links, so pointer needs style. */
-	&:hover, &:active { 
-		cursor: pointer;
-		opacity: 1;
+	/* Remove the button styling, make it look like a link text. */
+	border: none;
+	background: none;
+	padding: 0;
+	text-align: left;
+	outline: none;
+
+	/* Hover and active styles, if not disabled.. */
+	&:not(:disabled) {
+		&:hover, &:active { 
+			/* Darken the font, hand cursor to indicate click. */
+			cursor: pointer;
+			opacity: 1;
+		}
 	}
+
+	&:disabled { opacity: .2; }
 
 	/* Plus icon in the toggle button. */
 	.fa-toggle:before { content: "\f147"; }
 
 	/* Show a plus when collapsed. */
-	&.collapsed { 
-		.fa-toggle:before { content: "\f196"; }
-	}
+	&.collapsed { .fa-toggle:before { content: "\f196"; } }
 }

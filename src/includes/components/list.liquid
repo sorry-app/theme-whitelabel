@@ -8,10 +8,10 @@
             {% if component.children.size > 0 %}
                 <!-- Button to toggle the collapsed children. -->
                 <!-- Default collapse state based on whether component is operational or not. -->
-                <a href="#component_children_{{ component.id }}" class="{% if component.state == 'operational'%}collapsed{% endif %} list-component-toggle-collapse" role="button" data-toggle="collapse" aria-expanded="{{ component.state != 'operational' }}" aria-controls="component_children_{{ component.id }}">
+                <button type="button" data-target="#component_children_{{ component.id }}" class="{% if component.state == 'operational'%}collapsed{% endif %} list-component-toggle-collapse" role="button" data-toggle="collapse" aria-expanded="{{ component.state != 'operational' }}" aria-controls="component_children_{{ component.id }}" {% if component.state != 'operational'%}disabled{% endif %}>
                     <!-- Icon for the toggle, [+] vs. [-] depending on state. -->
                     <i class="fa fa-toggle" aria-hidden="true"></i>
-                </a>
+                </button>
             {% endif %}
 
             <div class="list-component-state list-component-state-{{ component.state }} {% if component.notices.present.size > 0 %}list-component-progress-{{ component.notices.present.first.state }}{% endif %}">
