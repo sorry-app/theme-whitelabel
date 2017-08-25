@@ -25,7 +25,10 @@
 			z-index: 1000;
 
 			/* Indent the content to allow space for the collapse toggle. */
-			& + .list-component-details { padding-left: @list-component-indent; }
+			& ~ .list-component-body { padding-left: @list-component-indent; }
+
+			/* Hide state when children expanded. */
+			&:not(.collapsed) ~ .list-component-state { visibility: hidden; }
 		}
 
 		/* Body of the component, includes name and description. */
@@ -70,10 +73,19 @@
 
 			/* State-based styling/colours. */
 			&.list-component-state-operational { color: ~"{{ page.brand.color_state_ok }}"; }
-			&.list-component-state-degraded { color: ~"{{ page.brand.color_state_warning }}" }
-			&.list-component-state-partially_degraded { 
-				color: ~"{{ page.brand.color_state_warning }}";
-				opacity: 0.6;
+
+			/* Degraded components inherit colour from progress. */
+			&.list-component-state-degraded { 
+				/* Unplanned Colour Schemes. */
+				&.list-component-progress-investigating, &.list-component-progress-open { color: ~"{{ page.brand.color_state_alert }}" }
+				&.list-component-progress-identified { color: ~"{{ page.brand.color_state_warning }}" }
+				&.list-component-progress-recovering { 
+					color: ~"{{ page.brand.color_state_ok }}";
+					opacity: .6;
+				}
+
+				/* Planned Colour Schemes. */
+				&.list-component-progress-underway { color: ~"{{ page.brand.color_state_info }}" }
 			}
 		}
 

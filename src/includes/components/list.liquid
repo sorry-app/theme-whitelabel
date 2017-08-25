@@ -4,7 +4,17 @@
     {% for component in components %}
         <!-- Output the components details. -->
         <li id="component-{{ component.id }}" class="list-component {% if component.children.size > 0  %}has-nested-components{% endif %}">
-            <div class="list-component-state list-component-state-{{ component.state }}">
+            <!-- See if component has children to display. -->
+            {% if component.children.size > 0 %}
+                <!-- Button to toggle the collapsed children. -->
+                <!-- Default collapse state based on whether component is operational or not. -->
+                <button type="button" data-target="#component_children_{{ component.id }}" class="{% if component.state == 'operational'%}collapsed{% endif %} list-component-toggle-collapse" role="button" data-toggle="collapse" aria-expanded="{{ component.state != 'operational' }}" aria-controls="component_children_{{ component.id }}" {% if component.state != 'operational'%}disabled{% endif %}>
+                    <!-- Icon for the toggle, [+] vs. [-] depending on state. -->
+                    <i class="fa fa-toggle" aria-hidden="true"></i>
+                </button>
+            {% endif %}
+
+            <div class="list-component-state list-component-state-{{ component.state }} {% if component.notices.present.size > 0 %}list-component-progress-{{ component.notices.present.first.state }}{% endif %}">
                 <span class="hidden-xs">{{ 'status-page.components.states.' | append: component.state | t }}</span> <i class="fa fa-dot-circle-o list-component-state-icon" aria-hidden="true"></i>
             </div>
 
@@ -15,16 +25,6 @@
             </a>
 
             <div class="list-component-body">
-                <!-- See if component has children to display. -->
-                {% if component.children.size > 0 %}
-                    <!-- Button to toggle the collapsed children. -->
-                    <!-- Default collapse state based on whether component is operational or not. -->
-                    <a href="#component_children_{{ component.id }}" class="{% if component.state == 'operational'%}collapsed{% endif %} list-component-toggle-collapse" role="button" data-toggle="collapse" aria-expanded="{{ component.state != 'operational' }}" aria-controls="component_children_{{ component.id }}">
-                        <!-- Icon for the toggle, [+] vs. [-] depending on state. -->
-                        <i class="fa fa-toggle" aria-hidden="true"></i>
-                    </a>
-                {% endif %}
-
                 <div class="list-component-details truncate truncated" id="list-component-details-{{ component.id }}">
                     <!-- Component name and status. -->
                     <strong class="list-component-name">{{ component.name }}</strong>
