@@ -77,8 +77,8 @@
 			/* Degraded components inherit colour from progress. */
 			&.list-component-state-degraded { 
 				/* Unplanned Colour Schemes. */
-				&.list-component-progress-investigating, &.list-component-progress-open { color: ~"{{ page.brand.color_state_alert }}" }
-				&.list-component-progress-identified { color: ~"{{ page.brand.color_state_warning }}" }
+				&.list-component-progress-investigating { color: ~"{{ page.brand.color_state_alert }}" }
+				&.list-component-progress-identified, &.list-component-progress-open { color: ~"{{ page.brand.color_state_warning }}" }
 				&.list-component-progress-recovering { 
 					color: ~"{{ page.brand.color_state_ok }}";
 					opacity: .6;
