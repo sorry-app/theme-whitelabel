@@ -1,0 +1,130 @@
+{
+	"status-page": {
+		"navbar": {
+			"title": "Süsteemi staatus",
+			"subscribe-button": {
+				"default": "Saa uuendusi",
+				"via": "via",
+				"slack": {
+					"name": "Slack",
+					"description": "Postitab automaatselt #kanal sinu soovi korral."
+				},
+				"email": {
+					"name": "Email",
+					"description": "E-mailid otse sinu postkasti."
+				},
+				"sms": {
+					"name": "SMS",
+					"description": "Kirjad sinu telefoni peale."
+				}				
+			}
+		},
+		"header": {
+			"states": {
+				"all-systems-are-go": "Kõik töötab",
+				"investigating": "Uurimisel",
+				"identified": "Tuvastatud",
+				"recovering": "Taastamisel",
+				"open": "Jätkuv",
+				"underway": "Käimasolev"
+			},
+			"timeliness": {
+				"planned": {
+					"underway": "Loodame valmis saada %{ends_in}"
+				}
+			},			
+			"disagree": {
+				"question": "Kas sa ei nõustu sellega?",
+				"answer": "Palun andke meile teada"
+			}		
+		},
+		"components": {
+			"states": {
+				"operational": "Töökorras",
+				"degraded": "Halvenenud"
+			},
+			"long-description": "Vajuta siia et näha kirjeldust selle kohta."
+		},
+		"body": {
+			"states": {
+				"scheduled": "Planeeritud",
+				"complete": "Lõppenud",
+				"closed": "Lahendatud",
+				"resolved": "Lahendatud",
+				"false_alarm": "Vale alarm"
+			},			
+			"timeliness": {
+				"planned": {
+					"scheduled": " %{begins_in}",
+					"complete": "See oli planeeritud intsident, ja see võttis %{duration}."
+				},
+				"unplanned": {
+					"closed": "See intsident kestis %{duration}.",
+					"resolved": "See intsident kestis %{duration}.",
+					"false_alarm": "See intsident oli vale alarm %{duration}"
+				}
+			},
+			"schedule": {
+				"synopsis": "Ülevaade",
+				"for": "Planeeritud: %{begins_at}",
+				"expected_duration": "Arvatud kestus %{expected_duration}"
+			},
+			"timeline-heading": {
+				"future": "Upcoming Maintenance",
+				"past_recent": "Viimased intsidendid"
+			},
+			"no-more-notices": "No further notices from the past %{days} days."
+		},
+		"footer": {
+			"need-support": "Vajad abi?"
+		}
+	},
+	"maintenance-page": {
+		"header": {
+			"title": "Me tegeleme hooldusega.",
+			"subtitles": {
+				"with-maintenance": "Me loodame saada valmis %{ends_in}",
+				"without-maintenance": "See on mitte planeeritud hädahooldus"
+			}
+		},
+		"body": {
+			"states": {
+				"without-maintenance": {
+					"content": "We always try our best to pre-plan maintenance, yet this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+				},
+				"with-maintenance": {
+					"began_at": "Algas",
+					"duration": "Arvatav aeg",
+					"sp-link": "Jälgi protsessi"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Kas tahad rääkida sellest hooldusest?"
+		}		
+	},
+	"error-page": {
+		"header": {
+			"title": "Vabandust, midagi läks valesti"
+		},
+		"body": {
+			"subtitle": "See ei ole sinu viga, see on meie viga.",
+			"retry": "Proovi veel üks kord, ja kui siis ka ei tööta siis võid kindel olla, et me juba anname endast kõik et see viga likvideerida.",
+			"states": {
+				"ongoing": {
+					"heading": "Meil on hetkel probleeme.",
+					"body": "These may be related to this error, please take a look at our Status Page for more information.",
+					"sp-link": "Külasta meie staatuselehte"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Kas tahad rääkida sellest veast?"
+		}
+	},
+	"social-links": {
+		"twitter": "Jälgi meid Twitteris",
+		"facebook": "Saa meie sõbraks Facebookis",
+		"google_plus": "Leia meid Google+"
+	}
+}
