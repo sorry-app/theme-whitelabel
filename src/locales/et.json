@@ -70,10 +70,10 @@
 				"expected_duration": "Arvatud kestus %{expected_duration}"
 			},
 			"timeline-heading": {
-				"future": "Upcoming Maintenance",
+				"future": "Tulemas hooldus",
 				"past_recent": "Viimased intsidendid"
 			},
-			"no-more-notices": "No further notices from the past %{days} days."
+			"no-more-notices": "Täiendavaid teated ei leitud viimastel %{days} päevadel."
 		},
 		"footer": {
 			"need-support": "Vajad abi?"
@@ -90,7 +90,7 @@
 		"body": {
 			"states": {
 				"without-maintenance": {
-					"content": "We always try our best to pre-plan maintenance, yet this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+					"content": "Me alati proovime planeerida hoolduseid, kuid see ei ole alati garanteeritud. Me hindame Teie kannatlikust ja loodame teenused uuesti tööle saada niipea kui võimalik."
 				},
 				"with-maintenance": {
 					"began_at": "Algas",
@@ -113,7 +113,7 @@
 			"states": {
 				"ongoing": {
 					"heading": "Meil on hetkel probleeme.",
-					"body": "These may be related to this error, please take a look at our Status Page for more information.",
+					"body": "Need võivad olla selle probleemiga seotud, palun vaadake meie staatuse lehte, et saada rohkem informatsiooni.",
 					"sp-link": "Külasta meie staatuselehte"
 				}
 			}
