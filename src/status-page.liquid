@@ -133,8 +133,11 @@
                     <!-- Heading for the list. -->
                     <lh>{{ 'status-page.body.timeline-heading.future' | t }}</lh>
 
+                    <!-- Sort them in the order in which they're happening. -->
+                    {% assign future_notices = page.notices.future | sort: 'begins_at' %}
+
                     <!-- Loop over the collection of future notices. -->
-                    {% for notice in page.notices.future %}
+                    {% for notice in future_notices %}
                         <!-- Include the timeline for each notice. -->
                         {% include 'notices/timeline-notice' %}
                     {% endfor %}
