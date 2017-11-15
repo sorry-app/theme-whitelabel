@@ -3,7 +3,7 @@
 		"navbar": {
 			"title": "Статус системы",
 			"subscribe-button": {
-				"default": "Получать уведомления об обновлениях",
+				"default": "Получать уведомления",
 				"via": "с помощью",
 				"slack": {
 					"name": "Slack",
