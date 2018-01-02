@@ -30,7 +30,7 @@
 			},
 			"timeliness": {
 				"planned": {
-					"underway": "Мы ожидаем закончить к %{ends_in}"
+					"underway": "Мы ожидаем закончить %{ends_in}"
 				}
 			},			
 			"disagree": {
