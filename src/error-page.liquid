@@ -7,11 +7,8 @@
 		    <nav class="navbar navbar-default navbar-center" role="navigation">
 		        <div class="container">
 		            <div class="navbar-header">
-	                	<!-- Display a logo if one is assigned. -->
-	                    <div class="navbar-logo">
-	                        <!-- Logo. -->
-	                        <img src="{{ page.brand.logo.url }}" alt="logo" />
-	                    </div>
+                        <!-- Include the logo. -->
+                        {% include 'logo' page: page %}
 		            </div>
 		        </div>    	
 		    </nav>

@@ -8,10 +8,8 @@
                 <div class="navbar-header">
                     <!-- Brand. -->
                     {% if page.brand.logo %}
-                        <div class="navbar-logo">
-                            <!-- Logo. -->
-                            <img src="{{ page.brand.logo.url }}" alt="logo" />
-                        </div>
+                        <!-- Include the logo. -->
+                        {% include 'logo' page: page %}
                     {% endif %}
 
                     <!-- Page Title. -->
