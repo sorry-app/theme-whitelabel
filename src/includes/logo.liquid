@@ -1,0 +1,14 @@
+<!-- Optional website URL. -->
+{% if page.website_url %}
+    <!-- Link logo to the website. -->
+    <a href="{{ page.website_url }}" class="navbar-logo">
+        <!-- Logo. -->
+        <img src="{{ page.brand.logo.url }}" alt="logo" />
+    </a>
+{% else %}
+    <!-- No website link, just use a container. -->
+    <div class="navbar-logo">
+        <!-- Logo. -->
+        <img src="{{ page.brand.logo.url }}" alt="logo" />
+    </div>
+{% endif %}
