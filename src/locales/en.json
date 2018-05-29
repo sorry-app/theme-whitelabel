@@ -126,5 +126,9 @@
 		"twitter": "Follow us on Twitter",
 		"facebook": "Friend us on Facebook",
 		"google_plus": "Find us on Google+"
+	},
+	"legal-links": {
+		"terms": "Terms of Service",
+		"privacy": "Privacy Policy"
 	}
 }

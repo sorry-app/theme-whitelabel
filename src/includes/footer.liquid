@@ -1,7 +1,7 @@
 <!-- The main footer include for each of the pages, not included directly in the boilerplate layout as it wouldn't allow proper nesting. -->
 <!-- Page Footer & Copyright. -->
 <footer>
-    <div class="container container-xs">
+    <div class="container container-md">
         <!-- Support Links If Defined. -->
         {% if page.support.size > 0 or page.social.size > 0 %}
             <div class="footer-body" id="contact-support">
@@ -37,9 +37,30 @@
             </div>
         {% endif %}
 
-        <!-- Accreditation link, we'd love it if you'd leave this in place. -->
-        <div class="footer-footer">
-            <p class="copyright">{{ page.copyright }}</p>
+        <div class="footer-footer copyright">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="list-inline">
+                         <!-- Accreditation link, we'd love it if you'd leave this in place. -->
+                        <li>{{ page.copyright }}</li>
+
+                        <!-- Optional legal links. -->
+                        {% assign link_names = 'terms, privacy' | split: ', ' %}
+
+                        <!-- Loop the collection of links. -->
+                        {% for link_name in link_names %}
+                            <!-- Set the link method name. -->
+                            {% assign link_method_name = link_name | append: '_url' %}
+
+                            <!-- See if link URL configured for page. -->
+                            {% if page[link_method_name] %}
+                                <!-- Output the link, translated text. -->
+                                <li><a href="{{ page[link_method_name] }}">{{ 'legal-links.' | append: link_name | t }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
