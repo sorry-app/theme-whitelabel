@@ -39,11 +39,13 @@
 
         <div class="footer-footer copyright">
             <div class="row">
-                <div class="col-sm-12">
-                    <ul class="list-inline">
-                         <!-- Accreditation link, we'd love it if you'd leave this in place. -->
-                        <li>{{ page.copyright }}</li>
+                <div class="col-sm-6 col-sm-push-6 text-right">
+                    <!-- Accreditation link, we'd love it if you'd leave this in place. -->
+                    <span>{{ page.copyright }}</span>
+                </div>
 
+                <div class="col-sm-6 col-sm-pull-6 text-left">
+                    <ul class="list-inline">
                         <!-- Optional legal links. -->
                         {% assign link_names = 'terms, privacy' | split: ', ' %}
 
