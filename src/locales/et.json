@@ -126,5 +126,9 @@
 		"twitter": "Jälgi meid Twitteris",
 		"facebook": "Saa meie sõbraks Facebookis",
 		"google_plus": "Leia meid Google+"
+	},
+	"legal-links": {
+		"terms": "Tingimused",
+		"privacy": "Privaatsus"
 	}
 }
