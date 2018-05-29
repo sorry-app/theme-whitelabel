@@ -16,7 +16,6 @@ footer {
 		// appearance whether present or not.
 		margin-bottom: @timeline-vertical-spacing-sm;
 		@media (min-width: @screen-md-min) { margin-bottom: @timeline-vertical-spacing-md; }
-		@media (min-width: @screen-lg-min) { margin-bottom: @timeline-vertical-spacing-lg; }
 
 		h4 {
 			margin-bottom: @line-height-computed;
@@ -25,6 +24,7 @@ footer {
 
 		ul.list-support-links {
 			.list-unstyled();
+			margin-bottom: @line-height-computed !important;
 			padding: 0 !important;
 
 			&:last-child { margin-bottom: 0; }
