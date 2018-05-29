@@ -1,9 +1,9 @@
 <!-- The main footer include for each of the pages, not included directly in the boilerplate layout as it wouldn't allow proper nesting. -->
 <!-- Page Footer & Copyright. -->
 <footer>
-    <div class="container container-md">
-        <!-- Support Links If Defined. -->
-        {% if page.support.size > 0 or page.social.size > 0 %}
+    <!-- Support Links If Defined. -->
+    {% if page.support.size > 0 or page.social.size > 0 %}
+        <div class="container container-sm">
             <div class="footer-body" id="contact-support">
                 <div class="row">
                     <div class="col-sm-12">
@@ -35,8 +35,10 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
+        </div>
+    {% endif %}
 
+    <div class="container container-md">
         <div class="footer-footer">
             <div class="row">
                 <!-- See if legal links are defined. -->
