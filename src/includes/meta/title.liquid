@@ -1,0 +1,15 @@
+<!-- Page title differs based on template. -->
+{% if template.name == 'status-page' %}
+    <!-- Status page. -->
+    <!-- Dynamicly set the title using the helper method. -->
+    <title>{{ page.meta_title }}</title>
+
+    <!-- Display a meta description. -->
+    <meta name="description" content="{{ page.meta_description }}" />
+{% else %}
+    <!-- Error Page. -->
+    <title>{{ template.name | append: '.header.title' | t }}</title>
+
+    <!-- Display a meta description. -->
+    <meta name="description" content="{{ template.name | append: '.body.subtitle' | t }}" />
+{% endif %}
