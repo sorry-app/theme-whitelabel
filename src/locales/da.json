@@ -126,5 +126,9 @@
 		"twitter": "Følg os på Twitter",
 		"facebook": "Bliv venner med os på Facebook",
 		"google_plus": "Find os på Google+"
+	},
+	"legal-links": {
+		"terms": "Betingelser",
+		"privacy": "Privatliv"
 	}
 }

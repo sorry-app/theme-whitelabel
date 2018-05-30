@@ -126,5 +126,9 @@
 		"twitter": "Volg ons op Twitter",
 		"facebook": "Wordt vrienden met ons op Facebook",
 		"google_plus": "Vind ons op Google+"
+	},
+	"legal-links": {
+		"terms": "Voorwaarden",
+		"privacy": "Privacy"
 	}
 }

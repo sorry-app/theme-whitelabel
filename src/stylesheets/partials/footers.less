@@ -12,7 +12,10 @@ footer {
 
 	// Main body content contains support and social links.
 	.footer-body {
-		margin-bottom: @line-height-computed;
+		// Spacing to next element matches timeline so has similar
+		// appearance whether present or not.
+		margin-bottom: @timeline-vertical-spacing-sm;
+		@media (min-width: @screen-md-min) { margin-bottom: @timeline-vertical-spacing-md; }
 
 		h4 {
 			margin-bottom: @line-height-computed;
@@ -63,6 +66,28 @@ footer {
 					}
 				}
 			}
+		}
+	}
+
+	.footer-footer { 
+		// Fade all links to grey
+		a {
+			font-size: 90%;
+			opacity: 0.5;
+			color: ~"{{ page.brand.color_body_text }}" !important;
+			text-decoration: none !important;
+
+			&:hover, &:active, &:visited {
+				color: ~"{{ page.brand.color_body_text }}";
+				opacity: 1;
+			}
+		}
+
+		// Make the powered-by pop a little more
+		// than the legal links.
+		.copyright a { 
+			opacity: 0.6;
+			font-weight: 400;
 		}
 	}
 }

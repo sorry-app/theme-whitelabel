@@ -1,9 +1,9 @@
 <!-- The main footer include for each of the pages, not included directly in the boilerplate layout as it wouldn't allow proper nesting. -->
 <!-- Page Footer & Copyright. -->
 <footer>
-    <div class="container container-xs">
-        <!-- Support Links If Defined. -->
-        {% if page.support.size > 0 or page.social.size > 0 %}
+    <!-- Support Links If Defined. -->
+    {% if page.support.size > 0 or page.social.size > 0 %}
+        <div class="container container-sm">
             <div class="footer-body" id="contact-support">
                 <div class="row">
                     <div class="col-sm-12">
@@ -35,11 +35,46 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
+        </div>
+    {% endif %}
 
-        <!-- Accreditation link, we'd love it if you'd leave this in place, but no hard feelings if you don't. -->
+    <div class="container container-md">
         <div class="footer-footer">
-            <bdo dir="ltr" class="copyright">{{ page.copyright }}</bdo>
+            <div class="row">
+                <!-- See if legal links are defined. -->
+                {% if page.terms_url or page.privacy_url %}
+                    <!-- Legal links, do a split-column layout. -->
+                    <div class="col-xs-6 col-xs-push-6 text-right">
+                        <!-- Accreditation link, we'd love it if you'd leave this in place. -->
+                        <span class="copyright">{{ page.copyright }}</span>
+                    </div>
+
+                    <div class="col-xs-6 col-xs-pull-6 text-left">
+                        <ul class="list-inline list-legal-links">
+                            <!-- Optional legal links. -->
+                            {% assign link_names = 'terms, privacy' | split: ', ' %}
+
+                            <!-- Loop the collection of links. -->
+                            {% for link_name in link_names %}
+                                <!-- Set the link method name. -->
+                                {% assign link_method_name = link_name | append: '_url' %}
+
+                                <!-- See if link URL configured for page. -->
+                                {% if page[link_method_name] %}
+                                    <!-- Output the link, translated text. -->
+                                    <li><a href="{{ page[link_method_name] }}">{{ 'legal-links.' | append: link_name | t }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% else %}
+                    <!-- No legal links, display powered-by alone. -->
+                    <div class="col-xs-12">
+                        <!-- Accreditation link, we'd love it if you'd leave this in place. -->
+                        <span class="copyright">{{ page.copyright }}</span>
+                    </div>
+                {% endif %}
+            </div>
         </div>
     </div>
 </footer>
