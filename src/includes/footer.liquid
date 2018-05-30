@@ -44,12 +44,12 @@
                 <!-- See if legal links are defined. -->
                 {% if page.terms_url or page.privacy_url %}
                     <!-- Legal links, do a split-column layout. -->
-                    <div class="col-sm-6 col-sm-push-6 text-right">
+                    <div class="col-xs-6 col-xs-push-6 text-right">
                         <!-- Accreditation link, we'd love it if you'd leave this in place. -->
                         <span class="copyright">{{ page.copyright }}</span>
                     </div>
 
-                    <div class="col-sm-6 col-sm-pull-6 text-left">
+                    <div class="col-xs-6 col-xs-pull-6 text-left">
                         <ul class="list-inline list-legal-links">
                             <!-- Optional legal links. -->
                             {% assign link_names = 'terms, privacy' | split: ', ' %}
@@ -69,7 +69,7 @@
                     </div>
                 {% else %}
                     <!-- No legal links, display powered-by alone. -->
-                    <div class="col-sm-12">
+                    <div class="col-xs-12">
                         <!-- Accreditation link, we'd love it if you'd leave this in place. -->
                         <span class="copyright">{{ page.copyright }}</span>
                     </div>
