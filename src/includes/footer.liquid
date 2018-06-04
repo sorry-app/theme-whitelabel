@@ -16,7 +16,7 @@
                                 <!-- Provide a list item for each. -->
                                 <li class="support-link-{{ link[0] }}">
                                     <!-- Conditionally append mailto: and tel: for appropriate actions. -->
-                                    <a href="{% case link[0] %}{% when 'email' %}mailto:{% when 'telephone' %}tel:{% endcase %}{{ link[1] }}">{{ link[1] }}</a>
+                                    <a href="{% case link[0] %}{% when 'email' %}mailto:{% when 'telephone' %}tel:{% endcase %}{{ link[1] }}" target="_top">{{ link[1] }}</a>
                                 </li>
                             {% endfor %}
 
@@ -25,7 +25,7 @@
                                 <!-- Output a link for each social channel. -->
                                 <li class="support-link-{{ link[0] }}">
                                     <!-- Dynamicly build a link to each type. -->
-                                    <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_blank">
+                                    <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_top">
                                         <!-- Use the locale switched string for each type too. -->
                                         <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'social-links.' | append: link[0] | t }}
                                     </a>
@@ -62,7 +62,9 @@
                                 <!-- See if link URL configured for page. -->
                                 {% if page[link_method_name] %}
                                     <!-- Output the link, translated text. -->
-                                    <li><a href="{{ page[link_method_name] }}">{{ 'legal-links.' | append: link_name | t }}</a></li>
+                                    <li>
+                                        <a href="{{ page[link_method_name] }}" target="_top">{{ 'legal-links.' | append: link_name | t }}</a>
+                                    </li>
                                 {% endif %}
                             {% endfor %}
                         </ul>
