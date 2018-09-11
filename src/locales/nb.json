@@ -1,0 +1,134 @@
+{
+	"status-page": {
+		"navbar": {
+			"title": "System Status",
+			"subscribe-button": {
+				"default": "Få oppdateringer",
+				"via": "via",
+				"slack": {
+					"name": "Slack",
+					"description": "Sendt direkte til en #channel som du ønsker."
+				},
+				"email": {
+					"name": "E-post",
+					"description": "Mail levert direkte til din innboks."
+				},
+				"sms": {
+					"name": "SMS",
+					"description": "SMS levert direkte til din telefon."
+				}
+			}
+		},
+		"header": {
+			"states": {
+				"all-systems-are-go": "System OK",
+				"investigating": "Undersøker",
+				"identified": "Identifisert",
+				"recovering": "Gjennoppretter",
+				"open": "Pågående",
+				"underway": "Underveis"
+			},
+			"timeliness": {
+				"planned": {
+					"underway": "Vi planlegger å være ferdig %{ends_in}"
+				}
+			},			
+			"disagree": {
+				"question": "Er du uenig i dette?",
+				"answer": "Vennligst gi oss beskjed"
+			}		
+		},
+		"components": {
+			"states": {
+				"operational": "OK",
+				"degraded": "Advarsel"
+			},
+			"long-description": "Klikk her for å se beskrivelse av komponenten"
+		},
+		"body": {
+			"states": {
+				"scheduled": "Planlagt",
+				"complete": "Fullført",
+				"closed": "Lukket",
+				"resolved": "Løst",
+				"false_alarm": "Falsk Alarm"
+			},			
+			"timeliness": {
+				"planned": {
+					"scheduled": "Forventet å begynne %{begins_in}",
+					"complete": "Dette var en planlagt hendelse, det tok %{duration}."
+				},
+				"unplanned": {
+					"closed": "Denne hendelsen varte %{duration}.",
+					"resolved": "Denne hendelsen varte %{duration}.",
+					"false_alarm": "Denne hendelsen ble ansett som en falsk alarm etter %{duration}"
+				}
+			},
+			"schedule": {
+				"synopsis": "Oversikt",
+				"for": "Planlagt %{begins_at}",
+				"expected_duration": "Forventet å ta %{expected_duration}"
+			},
+			"timeline-heading": {
+				"future": "Planlagt vedlikehold",
+				"past_recent": "Tidligere hendelser"
+			},
+			"no-more-notices": "Ingen flere hendelser de siste %{days} dagene."
+		},
+		"footer": {
+			"need-support": "Trenger du support?"
+		}
+	},
+	"maintenance-page": {
+		"header": {
+			"title": "Vi utfører vedlikehold",
+			"subtitles": {
+				"with-maintenance": "Vi forventer å være ferdig %{ends_in}",
+				"without-maintenance": "Dette er et uplanlagt akutt vedlikehold"
+			}
+		},
+		"body": {
+			"states": {
+				"without-maintenance": {
+					"content": "Vi prøver alltid å planlegge vedlikehold, men dette kan vi ikke alltid garantere. Vi setter pris på din tålmodighet og håper å være operativ igjen så fort som mulig."
+				},
+				"with-maintenance": {
+					"began_at": "Startet",
+					"duration": "Forventet å ta",
+					"sp-link": "Følg framgangen"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Ønsker du å prate med oss dette vedlikeholdet?"
+		}		
+	},
+	"error-page": {
+		"header": {
+			"title": "Beklager, noe gikk galt"
+		},
+		"body": {
+			"subtitle": "Det er ikke deg, det er oss",
+			"retry": "Prøv igjen og hvis det ikke fungerer, vær trygg på at vi jobber med saken for å få fikset dette.",
+			"states": {
+				"ongoing": {
+					"heading": "Vi har problemer for øyeblikket.",
+					"body": "Dette kan være relatert til denne feilen, vennligst se på vår status side for mer informasjon.",
+					"sp-link": "Vennligst besøk vår status side"
+				}
+			}
+		},
+		"footer": {
+			"need-support": "Vil du snakke med oss om denne feilen?"
+		}
+	},
+	"social-links": {
+		"twitter": "Følg oss på Twitter",
+		"facebook": "Lik oss på Facebook",
+		"google_plus": "Finn oss på Google+"
+	},
+	"legal-links": {
+		"terms": "Betingelser",
+		"privacy": "Personvern"
+	}
+}
