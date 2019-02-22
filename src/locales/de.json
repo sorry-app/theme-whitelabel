@@ -11,11 +11,11 @@
                 },
                 "email": {
                     "name": "E-Mail-Adresse",
-                    "description": "Die Nachrichten werden direkt an Ihren Posteingang zugestellt."
+                    "description": "Die Nachrichten werden per E-Mail zugestellt."
                 },
                 "sms": {
                     "name": "SMS",
-                    "description": "Nachrichten an Ihr Mobiltelefon geliefert."
+                    "description": "Nachrichten werden an Ihr Mobiltelefon gesendet."
                 }
             }
         },
@@ -30,7 +30,7 @@
             },
             "timeliness": {
                 "planned": {
-                    "underway": "Wir erwarten, dass wir fertig sind am um %{ends_in}"
+                    "underway": "Wir erwarten, dass wir %{ends_in} fertig sind"
                 }
             },
             "disagree": {
@@ -55,19 +55,19 @@
             },
             "timeliness": {
                 "planned": {
-                    "scheduled": "Voraussichtlicher Beginn um %{begins_in}",
+                    "scheduled": "Voraussichtlicher Beginn %{begins_in}",
                     "complete": "Dies war ein geplantes Ereignis, es dauerte %{duration}."
                 },
                 "unplanned": {
                     "closed": "Dieses Ereignis dauerte %{duration}.",
                     "resolved": "Dieses Ereignis dauerte %{duration}.",
-                    "false_alarm": "Dieser Vorfall wurde als falscher Alarm nach %{duration}"
+                    "false_alarm": "Dieser Vorfall wurde als falscher Alarm nach %{duration} geschloßen."
                 }
             },
             "schedule": {
                 "synopsis": "Übersicht",
                 "for": "Geplant für %{begins_at}",
-                "expected_duration": "Voraussichtliche Dauer:  %{expected_duration}"
+                "expected_duration": "Voraussichtliche Dauer: %{expected_duration}"
             },
             "timeline-heading": {
                 "future": "Bevorstehende Wartungsarbeiten",
@@ -83,8 +83,8 @@
         "header": {
             "title": "Wir führen einige Wartungsarbeiten durch",
             "subtitles": {
-                "with-maintenance": "Wir erwarten, dass wir fertig sind am um %{ends_in}",
-                "without-maintenance": "Das sind ungeplante notwendige Wartungsarbeiten"
+                "with-maintenance": "Wir erwarten, dass wir %{ends_in} fertig sind",
+                "without-maintenance": "Das sind ungeplante, aber notwendige Wartungsarbeiten"
             }
         },
         "body": {
@@ -113,7 +113,7 @@
             "states": {
                 "ongoing": {
                     "heading": "Wir haben momentan Probleme.",
-                    "body": "Dies könnte einen Zusammenhang mit diesem Fehler haben, bitten prüfen Sie unsere Status-Seite für weitere Informationen.",
+                    "body": "Dies könnte in Zusammenhang mit diesem Fehler stehen, bitten prüfen Sie unsere Status-Seite um mehr zu erfahren.",
                     "sp-link": "Besuchen Sie unsere Status-Seite"
                 }
             }
@@ -125,10 +125,10 @@
     "social-links": {
         "twitter": "Folgen Sie uns auf Twitter",
         "facebook": "Befreunden Sie sich mit uns auf Facebook",
-        "google_plus": "inden Sie uns auf Google+"
+        "google_plus": "Finden Sie uns auf Google+"
     },
     "legal-links": {
-        "terms": "Begriffe",
+        "terms": "Bedingungen",
         "privacy": "Privatsphäre"
     }
 }
