@@ -41,7 +41,7 @@
 		"components": {
 			"states": {
 				"operational": "Operationel",
-				"degraded": "forringet"
+				"degraded": "Forringet"
 			},
 			"long-description": "Klik her for at se den fulde beskrivelse af denne komponent"
 		},		
@@ -49,8 +49,8 @@
 			"states": {
 				"scheduled": "Planlagt",
 				"complete": "Komplet",
-				"closed": "løst",
-				"resolved": "løst",
+				"closed": "Løst",
+				"resolved": "Løst",
 				"false_alarm": "Falsk Alarm"
 			},			
 			"timeliness": {
@@ -71,7 +71,7 @@
 			},
 			"timeline-heading": {
 				"future": "Kommende Vedligeholdelse",
-				"past_recent": "Tidligere Hændelser"
+				"past_recent": "Tidligere hændelser"
 			},			
 			"no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."			
 		},
@@ -93,7 +93,7 @@
 					"content": "Vi forsøger altid vores bedste for at pre-plan vedligeholdelse, men dette kan ikke altid garanteres. Vi sætter pris på din tålmodighed, og håber at være oppe at køre igen så hurtigt som muligt."
 				},
 				"with-maintenance": {
-					"began_at": "startede på",
+					"began_at": "Startede på",
 					"duration": "Forventes at tage",
 					"sp-link": "Følg vores fremskridt"
 				}
