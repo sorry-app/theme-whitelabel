@@ -70,7 +70,7 @@
 				"expected_duration": "Forventes at tage %{expected_duration}"
 			},
 			"timeline-heading": {
-				"future": "Kommende Vedligeholdelse",
+				"future": "Kommende vedligeholdelse",
 				"past_recent": "Tidligere hændelser"
 			},			
 			"no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."			
@@ -90,10 +90,10 @@
 		"body": {
 			"states": {
 				"without-maintenance": {
-					"content": "Vi forsøger altid vores bedste for at pre-plan vedligeholdelse, men dette kan ikke altid garanteres. Vi sætter pris på din tålmodighed, og håber at være oppe at køre igen så hurtigt som muligt."
+					"content": "Vi forsøger altid vores bedste for at planlægge vedligeholdelse, men dette kan ikke altid garanteres. Vi sætter pris på din tålmodighed, og håber at være oppe at køre igen så hurtigt som muligt."
 				},
 				"with-maintenance": {
-					"began_at": "Startede på",
+					"began_at": "Begyndte kl",
 					"duration": "Forventes at tage",
 					"sp-link": "Følg vores fremskridt"
 				}
@@ -109,11 +109,11 @@
 		},
 		"body": {
 			"subtitle": "Det er ikke dig - det er os",
-			"retry": "Giv det endnu it forsøg, og hvis det stadig ikke virker, så stol på at vi er i gang med at fikse det.",
+			"retry": "Giv det endnu et forsøg, og hvis det stadig ikke virker, så stol på at vi er i gang med at fikse det.",
 			"states": {
 				"ongoing": {
 					"heading": "Vi har problemer i øjeblikket.",
-					"body": "Måske er problemerne relateret til denne fejl. Check status her.",
+					"body": "Måske er problemerne relateret til denne fejl. Kontrollere status her.",
 					"sp-link": "Besøg vores statusside"
 				}
 			}
