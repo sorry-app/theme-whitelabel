@@ -1,0 +1,134 @@
+{
+    "status-page": {
+        "navbar": {
+            "title": "Status systemu",
+            "subscribe-button": {
+                "default": "Bądź na bieżąco",
+                "via": "za pośrednictwem",
+                "slack": {
+                    "name": "Slacka",
+                    "description": "Wskaż #kanał i odczytuj tam komunikaty."
+                },
+                "email": {
+                    "name": "Poczty elektronicznej",
+                    "description": "Wiadomości dostarczane są do Twojej skrzynki pocztowej."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Wiadomości dostarczane są na Twój telefon."
+                }               
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Wszystkie systemy sprawne",
+                "investigating": "Trwa sprawdzanie",
+                "identified": "Zidentyfikowano problem",
+                "recovering": "Przywracanie sprawności systemu",
+                "open": "Zidentyfikowano problem",
+                "underway": "W trakcie"
+            },
+            "timeliness": {
+                "planned": {
+                    "underway": "Szacowany czas zakończenia prac %{ends_in}"
+                }
+            },          
+            "disagree": {
+                "question": "Nie zgadzasz się?",
+                "answer": "Daj nam znać"
+            }       
+        },
+        "components": {
+            "states": {
+                "operational": "Sprawny",
+                "degraded": "Niesprawny"
+            },
+            "long-description": "Kliknij tutaj, aby zapoznać się z opisem komponentu"
+        },
+        "body": {
+            "states": {
+                "scheduled": "Zaplanowany",
+                "complete": "Zakończony",
+                "closed": "Zamknięty",
+                "resolved": "Rozwiązany",
+                "false_alarm": "Fałszywy alarm"
+            },          
+            "timeliness": {
+                "planned": {
+                    "scheduled": "Start za %{begins_in} ",
+                    "complete": "To była zaplanowana operacja, która trwała %{duration}."
+                },
+                "unplanned": {
+                    "closed": "Awaria trwała %{duration}.",
+                    "resolved": "Awaria trwała %{duration}.",
+                    "false_alarm": "Incydent został uznany za fałszywy alarm po %{duration}"
+                }
+            },
+            "schedule": {
+                "synopsis": "Przegląd",
+                "for": "Start za %{begins_at}",
+                "expected_duration": "Szacowny czas pracy %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Nadchodząca przerwa techniczna",
+                "past_recent": "Poprzednie incydenty"
+            },
+            "no-more-notices": "To już wszystkie powiadomienia z ostatnich %{days} dni."
+        },
+        "footer": {
+            "need-support": "Potrzebujesz pomocy?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "Przerwa techniczna",
+            "subtitles": {
+                "with-maintenance": "Szacowany czas zakończenia prac %{ends_in}",
+                "without-maintenance": "Nieplanowana przerwa techniczna"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "Choć zawsze staramy się zaplanować przerwy techniczne, czasem sprawy przybierają nieoczekiwany obrót. Prosimy o cierpliwość - robimy co możemy, żeby jak najszybciej usunąć awarię."
+                },
+                "with-maintenance": {
+                    "began_at": "Start",
+                    "duration": "Szacowany czas trwania",
+                    "sp-link": "Śledź postęp prac"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Chcesz się podzielić uwagami o tej przerwie technicznej?"
+        }       
+    },
+    "error-page": {
+        "header": {
+            "title": "Przepraszamy, ale coś poszło nie tak"
+        },
+        "body": {
+            "subtitle": "To nie Twoja wina, tylko nasza",
+            "retry": "Spróbuj jeszcze raz, ale jeśli znów nie zadziała, zapewniamy Cię, że wiemy o tym i działamy.",
+            "states": {
+                "ongoing": {
+                    "heading": "Mamy chwilowe problemy.",
+                    "body": "Mogą być one związane z tym błędem. Zajrzyj na stronę Statusu, żeby dowiedzieć się więcej.",
+                    "sp-link": "Zajrzyj na stronę Statusu"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Chcesz się podzielić uwagami o tym błędzie?"
+        }
+    },
+    "social-links": {
+        "twitter": "Śledź nas na Twitterze",
+        "facebook": "Dołącz do nas na Facebooku",
+        "google_plus": "Znajdź nas na Google+"
+    },
+    "legal-links": {
+        "terms": "Warunki użytkowania",
+        "privacy": "Polityka prywatności"
+    }
+}
