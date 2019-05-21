@@ -2,7 +2,7 @@
 <ul class="list-unstyled list-schedule-overview text-muted" id="#schedule-overview-{{ notice.id }}">
 	<li class="schedule-datetime">
 		<!-- Format the begins-date datetime as something more friendly. -->
-		{% assign begins_at = notice.begins_at | date: '%a, %-d %b %Y %-l:%M %p %Z' %}
+		{% assign begins_at = notice.begins_at | date: '%a, %-d %b %Y %H:%M %Z' %}
 		<!-- Display the begins-at datetime for the notice. -->
 		<i class="fa fa-fw fa-calendar"></i> {{ 'status-page.body.schedule.for' | t: begins_at: begins_at }}
 	</li>
