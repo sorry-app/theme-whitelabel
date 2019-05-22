@@ -16,27 +16,27 @@
                 "sms": {
                     "name": "SMS",
                     "description": "Wiadomości dostarczane są na Twój telefon."
-                }               
+                }
             }
         },
         "header": {
             "states": {
                 "all-systems-are-go": "Wszystkie systemy sprawne",
-                "investigating": "Trwa sprawdzanie",
-                "identified": "Zidentyfikowano problem",
-                "recovering": "Przywracanie sprawności systemu",
-                "open": "Zidentyfikowano problem",
-                "underway": "W trakcie"
+                "investigating": "Weryfikacja",
+                "identified": "Zidentyfikowany",
+                "recovering": "Przywracanie",
+                "open": "W trakcie",
+                "underway": "W toku"
             },
             "timeliness": {
                 "planned": {
                     "underway": "Szacowany czas zakończenia prac %{ends_in}"
                 }
-            },          
+            },
             "disagree": {
                 "question": "Nie zgadzasz się?",
                 "answer": "Daj nam znać"
-            }       
+            }
         },
         "components": {
             "states": {
@@ -52,7 +52,7 @@
                 "closed": "Zamknięty",
                 "resolved": "Rozwiązany",
                 "false_alarm": "Fałszywy alarm"
-            },          
+            },
             "timeliness": {
                 "planned": {
                     "scheduled": "Start za %{begins_in} ",
@@ -66,7 +66,7 @@
             },
             "schedule": {
                 "synopsis": "Przegląd",
-                "for": "Start za %{begins_at}",
+                "for": "Start %{begins_at}",
                 "expected_duration": "Szacowny czas pracy %{expected_duration}"
             },
             "timeline-heading": {
@@ -101,7 +101,7 @@
         },
         "footer": {
             "need-support": "Chcesz się podzielić uwagami o tej przerwie technicznej?"
-        }       
+        }
     },
     "error-page": {
         "header": {
