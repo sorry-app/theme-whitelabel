@@ -22,9 +22,9 @@
 		"header": {
 			"states": {
 				"all-systems-are-go": "Allt fungerar normalt",
-				"investigating": "Undersöka",
-				"identified": "Identifierade",
-				"recovering": "Återställa",
+				"investigating": "Undersöks",
+				"identified": "Identifierat",
+				"recovering": "Åtgärdas",
 				"open": "Pågående",
 				"underway": "På gång"
 			},
@@ -50,8 +50,8 @@
 				"scheduled": "Planerad",
 				"complete": "Komplett",
 				"closed": "Löst",
-				"resolved": "Löst",
-				"false_alarm": "Falskt Larm"
+				"resolved": "Åtgärdat",
+				"false_alarm": "Falsklarm"
 			},			
 			"timeliness": {
 				"planned": {
