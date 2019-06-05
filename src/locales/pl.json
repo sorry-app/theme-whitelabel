@@ -22,7 +22,7 @@
         "header": {
             "states": {
                 "all-systems-are-go": "Wszystkie systemy sprawne",
-                "investigating": "Weryfikacja",
+                "investigating": "Sprawdzanie",
                 "identified": "Zidentyfikowany",
                 "recovering": "Przywracanie",
                 "open": "W trakcie",
@@ -30,7 +30,7 @@
             },
             "timeliness": {
                 "planned": {
-                    "underway": "Szacowany czas zakończenia prac %{ends_in}"
+                    "underway": "Szacujemy, że zakończymy prace %{ends_in}"
                 }
             },
             "disagree": {
@@ -47,10 +47,10 @@
         },
         "body": {
             "states": {
-                "scheduled": "Zaplanowany",
-                "complete": "Zakończony",
-                "closed": "Zamknięty",
-                "resolved": "Rozwiązany",
+                "scheduled": "Zaplanowana",
+                "complete": "Zakończone",
+                "closed": "Zamknięte",
+                "resolved": "Rozwiązane",
                 "false_alarm": "Fałszywy alarm"
             },
             "timeliness": {
@@ -59,21 +59,21 @@
                     "complete": "To była zaplanowana operacja, która trwała %{duration}."
                 },
                 "unplanned": {
-                    "closed": "Awaria trwała %{duration}.",
-                    "resolved": "Awaria trwała %{duration}.",
-                    "false_alarm": "Incydent został uznany za fałszywy alarm po %{duration}"
+                    "closed": "Zdarzenie trwało %{duration}.",
+                    "resolved": "Zdarzenie trwało %{duration}.",
+                    "false_alarm": "Zdarzenie zostało uznane za fałszywy alarm po %{duration}"
                 }
             },
             "schedule": {
                 "synopsis": "Przegląd",
                 "for": "Start %{begins_at}",
-                "expected_duration": "Szacowny czas pracy %{expected_duration}"
+                "expected_duration": "Szacowany czas pracy %{expected_duration}"
             },
             "timeline-heading": {
                 "future": "Nadchodząca przerwa techniczna",
-                "past_recent": "Poprzednie incydenty"
+                "past_recent": "Poprzednie zdarzenia"
             },
-            "no-more-notices": "To już wszystkie powiadomienia z ostatnich %{days} dni."
+            "no-more-notices": "To już wszystkie zdarzenia z ostatnich %{days} dni."
         },
         "footer": {
             "need-support": "Potrzebujesz pomocy?"
@@ -83,14 +83,14 @@
         "header": {
             "title": "Przerwa techniczna",
             "subtitles": {
-                "with-maintenance": "Szacowany czas zakończenia prac %{ends_in}",
+                "with-maintenance": "Szacujemy, że zakończymy prace %{ends_in}",
                 "without-maintenance": "Nieplanowana przerwa techniczna"
             }
         },
         "body": {
             "states": {
                 "without-maintenance": {
-                    "content": "Choć zawsze staramy się zaplanować przerwy techniczne, czasem sprawy przybierają nieoczekiwany obrót. Prosimy o cierpliwość - robimy co możemy, żeby jak najszybciej usunąć awarię."
+                    "content": "Zawsze staramy się zaplanować przerwy techniczne, jednak czasem sprawy przybierają nieoczekiwany obrót. Prosimy o cierpliwość - pracujemy, żeby jak najszybciej wrócić do działania."
                 },
                 "with-maintenance": {
                     "began_at": "Start",
