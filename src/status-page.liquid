@@ -133,7 +133,6 @@
 
                     <!-- Sort them in the order in which they're happening. -->
                     {% assign future_notices = page.notices.future | sort: 'begins_at' %}
-
                     <!-- Loop over the collection of future notices. -->
                     {% for notice in future_notices %}
                         <!-- Include the timeline for each notice. -->
