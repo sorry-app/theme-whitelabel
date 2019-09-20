@@ -146,8 +146,10 @@
                 <!-- Heading for the list. -->
                 <lh>{{ 'status-page.body.timeline-heading.past_recent' | t }}</lh>
 
+                <!-- Sort the historic notice by ended_at, recent to oldest. -->
+                {% assign historic_notices = page.notices.past_recent | sort: 'ended_at' %}
                 <!-- Loop over the collection of previous notices, order date descending. -->
-                {% for notice in page.notices.past_recent %}
+                {% for notice in historic_notices reversed %}
                     <!-- Include the timeline for each notice. -->
                     {% include 'notices/timeline-notice' %}
                 {% endfor %}
