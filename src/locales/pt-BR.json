@@ -1,0 +1,134 @@
+{
+    "status-page": {
+        "navbar": {
+            "title": "Status do Sistema",
+            "subscribe-button": {
+                "default": "Receba Atualizações",
+                "via": "via",
+                "slack": {
+                    "name": "Slack",
+                    "description": "Postagem em tempo real no #channel da sua escolha."
+                },
+                "email": {
+                    "name": "Email",
+                    "description": "Envio de mensagens na sua caixa de entrada."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Envio de mensagens no seu celular."
+                }
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Todos os nossos sistemas estão em funcionamento",
+                "investigating": "Em investigação",
+                "identified": "Identificado",
+                "recovering": "Em recuperação",
+                "open": "Em andamento",
+                "underway": "Em andamento"
+            },
+            "timeliness": {
+                "planned": {
+                    "underway": "Esperamos concluir em %{ends_in}"
+                }
+            },
+            "disagree": {
+                "question": "Não concorda?",
+                "answer": "Por favor, informe-nos o motivo."
+            }
+        },
+        "components": {
+            "states": {
+                "operational": "Em operação",
+                "degraded": "Cód. Erro"
+            },
+            "long-description": "Clique aqui para ver a descrição completa deste componente."
+        },
+        "body": {
+            "states": {
+                "scheduled": "Programado",
+                "complete": "Completo",
+                "closed": "Resolvido",
+                "resolved": "Resolvido",
+                "false_alarm": "Alarme Falso"
+            },
+            "timeliness": {
+                "planned": {
+                    "scheduled": "Esperado para começar em %{begins_in}",
+                    "complete": "Este incidente planejado teve duração de %{duration}."
+                },
+                "unplanned": {
+                    "closed": "Este incidente teve duração de %{duration}.",
+                    "resolved": "Este incidente teve duração de %{duration}.",
+                    "false_alarm": "Este incidente foi considerado um alarme falso após %{duration}"
+                }
+            },
+            "schedule": {
+                "synopsis": "Panorama geral",
+                "for": "Programado para %{begins_at}",
+                "expected_duration": "Esperado durar %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Próximas manutenções",
+                "past_recent": "Incidentes anteriores"
+            },
+            "no-more-notices": "Nenhum aviso nos últimos %{days} dias."
+        },
+        "footer": {
+            "need-support": "Precisa de suporte?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "Manutenção em andamento",
+            "subtitles": {
+                "with-maintenance": "Esperado terminar em %{ends_in}",
+                "without-maintenance": "Esta é uma manutenção de emergência não planejada"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "Nós fazemos o nosso melhor para planejar as manutenções necessárias, contudo isso não pode ser garantido sempre. Nós agradecemos a sua paciência, e esperamos normalizar o funcionamento assim que possível."
+                },
+                "with-maintenance": {
+                    "began_at": "Iniciado às",
+                    "duration": "Esperado durar",
+                    "sp-link": "Acompanhe o nosso progresso"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Gostaria de conversar conosco sobre esta manutenção?"
+        }
+    },
+    "error-page": {
+        "header": {
+            "title": "Desculpe-nos, algo deu errado"
+        },
+        "body": {
+            "subtitle": "Não é você, e sim nós.",
+            "retry": "Tente novamente. Se ainda assim não funcionar, fique traquilo, nós estamos cientes e solucionando esta questão.",
+            "states": {
+                "ongoing": {
+                    "heading": "Nós estamos com problema nesse momento.",
+                    "body": "Isso pode estar relacionado com este erro. Dê uma olhada na nossa Página de Status para mais informações.",
+                    "sp-link": "Visite a nossa Página de Status"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Gostaria de conversar sobre este erro?"
+        }
+    },
+    "social-links": {
+        "twitter": "Siga-nos no Twitter",
+        "facebook": "Adicione-nos no Facebook",
+        "google_plus": "Encontre-nos no Google+"
+    },
+    "legal-links": {
+        "terms": "Termos",
+        "privacy": "Privacidade"
+    }
+}
