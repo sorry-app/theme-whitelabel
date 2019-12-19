@@ -12,8 +12,11 @@
                     {{ notice.subject }}
                 </h4>
 
-                <!-- Include the timeliness subheading. -->
-                {% include 'notices/timeliness' placement: 'body' %}
+                <!-- Timeliness for all notices except drills. -->
+                {% if notice.state != 'drill' %}
+                    <!-- Include the timeliness subheading. -->
+                    {% include 'notices/timeliness' placement: 'body' %}
+                {% endif %}
 
                 <!-- Optional components for the notice. -->
                 {% if notice.components != empty %}
