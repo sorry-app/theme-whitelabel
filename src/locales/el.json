@@ -51,7 +51,8 @@
 				"complete": "Πλήρης",
 				"closed": "επιλυθεί",
 				"resolved": "επιλυθεί",
-				"false_alarm": "Λάθος συναγερμός"
+				"false_alarm": "Λάθος συναγερμός",
+				"drill": "άσκηση"
 			},			
 			"timeliness": {
 				"planned": {

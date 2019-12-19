@@ -51,7 +51,8 @@
 				"complete": "Voltooid",
 				"closed": "Gesloten",
 				"resolved": "Opgelost",
-				"false_alarm": "Vals alarm"
+				"false_alarm": "Vals alarm",
+				"drill": "Uitoefening"
 			},			
 			"timeliness": {
 				"planned": {

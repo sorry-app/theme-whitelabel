@@ -51,7 +51,8 @@
 				"complete": "Lõppenud",
 				"closed": "Lahendatud",
 				"resolved": "Lahendatud",
-				"false_alarm": "Vale alarm"
+				"false_alarm": "Vale alarm",
+				"drill": "Harjutama"
 			},			
 			"timeliness": {
 				"planned": {

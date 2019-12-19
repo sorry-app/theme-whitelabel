@@ -51,7 +51,8 @@
 				"complete": "Завершено",
 				"closed": "Закрыто",
 				"resolved": "Найдено решение",
-				"false_alarm": "Ложная тревога"
+				"false_alarm": "Ложная тревога",
+				"drill": "Yпражнение"
 			},			
 			"timeliness": {
 				"planned": {

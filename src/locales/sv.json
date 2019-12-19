@@ -51,7 +51,8 @@
 				"complete": "Komplett",
 				"closed": "Löst",
 				"resolved": "Åtgärdat",
-				"false_alarm": "Falsklarm"
+				"false_alarm": "Falsklarm",
+				"drill": "Träna"
 			},			
 			"timeliness": {
 				"planned": {
