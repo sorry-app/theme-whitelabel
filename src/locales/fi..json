@@ -51,7 +51,8 @@
 				"complete": "Valmis",
 				"closed": "Suljettu",
 				"resolved": "Ratkaistu",
-				"false_alarm": "Väärä hälytys"
+				"false_alarm": "Väärä hälytys",
+				"drill": "Harjoittaa"
 			},
 			"timeliness": {
 				"planned": {

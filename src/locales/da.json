@@ -51,7 +51,8 @@
 				"complete": "Komplet",
 				"closed": "Løst",
 				"resolved": "Løst",
-				"false_alarm": "Falsk Alarm"
+				"false_alarm": "Falsk Alarm",
+				"drill": "Bore"
 			},			
 			"timeliness": {
 				"planned": {

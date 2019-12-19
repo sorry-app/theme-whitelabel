@@ -51,7 +51,8 @@
 				"complete": "Achevée",
 				"closed": "Résolu",
 				"resolved": "Résolu",
-				"false_alarm": "Fausse Alarme"
+				"false_alarm": "Fausse Alarme",
+				"drill": "l' exercice"
 			},			
 			"timeliness": {
 				"planned": {
