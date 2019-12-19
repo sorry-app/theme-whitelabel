@@ -51,7 +51,8 @@
 				"complete": "Complete",
 				"closed": "Resolved",
 				"resolved": "Resolved",
-				"false_alarm": "False Alarm"
+				"false_alarm": "False Alarm",
+				"drill": "Drill"
 			},			
 			"timeliness": {
 				"planned": {
