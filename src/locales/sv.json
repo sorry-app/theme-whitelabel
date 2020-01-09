@@ -61,7 +61,7 @@
 				},
 				"unplanned": {
 					"closed": "Denna incident varade %{duration}.",
-                    "resolved": "Började: %{began_at} - Avslutat: %{ended_at} - Varaktighet: %{duration}.",
+					"resolved": "Denna incident varade %{duration}.",
 					"false_alarm": "Denna händelse ansågs vara ett falskt larm efter %{duration}"
 				}
 			},

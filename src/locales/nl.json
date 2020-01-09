@@ -61,7 +61,7 @@
 				},
 				"unplanned": {
 					"closed": "Dit incident duurde %{duration}.",
-                    "resolved": "Begon: %{began_at} - Beëindigd: %{ended_at} - Duur: %{duration}.",
+					"resolved": "Dit incident duurde %{duration}.",
 					"false_alarm": "Dit incident werd gemarkeerd als vals alarm na %{duration}"
 				}
 			},

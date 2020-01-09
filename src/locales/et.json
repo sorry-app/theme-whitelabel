@@ -61,7 +61,7 @@
 				},
 				"unplanned": {
 					"closed": "See intsident kestis %{duration}.",
-                    "resolved": "Algus: %{began_at} - lõppenud: %{ended_at} - kestus: %{duration}.",
+					"resolved": "See intsident kestis %{duration}.",
 					"false_alarm": "See intsident oli vale alarm %{duration}"
 				}
 			},

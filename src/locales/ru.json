@@ -61,7 +61,7 @@
 				},
 				"unplanned": {
 					"closed": "Этот инцидент длился %{duration}.",
-                    "resolved": "Начало: %{began_at} - Закончено: %{ended_at} - Продолжительность: %{duration}.",
+					"resolved": "Этот инцидент длился %{duration}.",
 					"false_alarm": "Этот инцидент был признан ложной тревогой через %{duration}"
 				}
 			},
