@@ -61,7 +61,7 @@
 				},
 				"unplanned": {
 					"closed": "Tapahtuman kesto oli %{duration}.",
-					"resolved": "Tapahtuman kesto oli %{duration}.",
+                    "resolved": "Aloitettu: %{began_at} - päättynyt: %{ended_at} - Kesto: %{duration}.",
 					"false_alarm": "Tämä tapahtuma katsottiin olevan väärä hälytys %{duration} jälkeen"
 				}
 			},
