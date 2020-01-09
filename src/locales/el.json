@@ -61,7 +61,7 @@
 				},
 				"unplanned": {
 					"closed": "Το περιστατικό διήρκεσε %{duration}.",
-                    "resolved": "Ξεκίνησε: %{began_at} - Τέλος: %{ended_at} - Διάρκεια: %{duration}.",
+					"resolved": "Το περιστατικό διήρκεσε %{duration}.",
 					"false_alarm": "Αυτό το περιστατικό θεωρήθηκε ψευδές συναγερμό μετά %{duration}"
 				}
 			},
