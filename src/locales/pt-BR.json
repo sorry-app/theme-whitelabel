@@ -61,7 +61,7 @@
                 },
                 "unplanned": {
                     "closed": "Este incidente teve duração de %{duration}.",
-                    "resolved": "Este incidente teve duração de %{duration}.",
+                    "resolved": "Início: %{began_at} - Finalizado: %{ended_at} - Duração: %{duration}.",
                     "false_alarm": "Este incidente foi considerado um alarme falso após %{duration}"
                 }
             },
