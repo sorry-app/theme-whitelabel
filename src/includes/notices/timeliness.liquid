@@ -1,5 +1,7 @@
 <!-- Determine a friendly duration. -->
 {% assign duration = notice.duration | distance_of_time_in_words %}
+{% assign began_at = notice.began_at | date: '%e %B %k:%M' %}
+{% assign ended_at = notice.ended_at | date: '%e %B %k:%M' %}
 
 <!-- Generate a moment.js time tag for the begins_at. -->
 {% capture begins_in %}
@@ -14,4 +16,4 @@
 {% endcapture %}
 
 <!-- Display a simple subheading. -->
-<small class="notice-type">{{ 'status-page.' | append: placement | append: '.timeliness.' | append: notice.type | append: '.' | append: notice.state | t: begins_in: begins_in, ends_in: ends_in, duration: duration, began_at: notice.began_at, ended_at: notice.ended_at }}</small>
+<small class="notice-type">{{ 'status-page.' | append: placement | append: '.timeliness.' | append: notice.type | append: '.' | append: notice.state | t: begins_in: begins_in, ends_in: ends_in, duration: duration, began_at: began_at, ended_at: ended_at }}</small>
