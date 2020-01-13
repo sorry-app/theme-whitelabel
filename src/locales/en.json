@@ -1,135 +1,135 @@
 {
-	"status-page": {
-		"navbar": {
-			"title": "System Status",
-			"subscribe-button": {
-				"default": "Get Updates",
-				"via": "via",
-				"slack": {
-					"name": "Slack",
-					"description": "Posted live to a #channel of your choice."
-				},
-				"email": {
-					"name": "Email",
-					"description": "Messages delivered right into your inbox."
-				},
-				"sms": {
-					"name": "SMS",
-					"description": "Messages delivered to your mobile phone."
-				}				
-			}
-		},
-		"header": {
-			"states": {
-				"all-systems-are-go": "All systems are go",
-				"investigating": "Investigating",
-				"identified": "Identified",
-				"recovering": "Recovering",
-				"open": "Ongoing",
-				"underway": "Underway"
-			},
-			"timeliness": {
-				"planned": {
-					"underway": "We expect to be finished %{ends_in}"
-				}
-			},			
-			"disagree": {
-				"question": "Don't agree with this?",
-				"answer": "Please let us know"
-			}		
-		},
-		"components": {
-			"states": {
-				"operational": "Operational",
-				"degraded": "Degraded"
-			},
-			"long-description": "Click here to view the full description for this component"
-		},
-		"body": {
-			"states": {
-				"scheduled": "Scheduled",
-				"complete": "Complete",
-				"closed": "Resolved",
-				"resolved": "Resolved",
-				"false_alarm": "False Alarm",
-				"drill": "Drill"
-			},			
-			"timeliness": {
-				"planned": {
-					"scheduled": "Expected to begin %{begins_in}",
-					"complete": "This was a planned incident, it took %{duration}."
-				},
-				"unplanned": {
-					"closed": "This incident lasted %{duration}.",
-					"resolved": "This incident lasted %{duration}.",
-					"false_alarm": "This incident was deemed a false alarm after %{duration}"
-				}
-			},
-			"schedule": {
-				"synopsis": "Overview",
-				"for": "Scheduled for %{begins_at}",
-				"expected_duration": "Expected to take %{expected_duration}"
-			},
-			"timeline-heading": {
-				"future": "Upcoming Maintenance",
-				"past_recent": "Previous Incidents"
-			},
-			"no-more-notices": "No further notices from the past %{days} days."
-		},
-		"footer": {
-			"need-support": "Need Support?"
-		}
-	},
-	"maintenance-page": {
-		"header": {
-			"title": "We're performing some maintenance",
-			"subtitles": {
-				"with-maintenance": "We expect to be finished %{ends_in}",
-				"without-maintenance": "This is unplanned emergency maintenance"
-			}
-		},
-		"body": {
-			"states": {
-				"without-maintenance": {
-					"content": "We always try our best to pre-plan maintenance, yet this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
-				},
-				"with-maintenance": {
-					"began_at": "Started at",
-					"duration": "Expected to take",
-					"sp-link": "Follow our progress"
-				}
-			}
-		},
-		"footer": {
-			"need-support": "Want to talk to us about this maintenance?"
-		}		
-	},
-	"error-page": {
-		"header": {
-			"title": "Sorry, something has gone wrong"
-		},
-		"body": {
-			"subtitle": "It’s not you, it’s us",
-			"retry": "Give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
-			"states": {
-				"ongoing": {
-					"heading": "We are having issues at the moment.",
-					"body": "These may be related to this error, please take a look at our Status Page for more information.",
-					"sp-link": "Visit our Status Page"
-				}
-			}
-		},
-		"footer": {
-			"need-support": "Want to talk to us about this error?"
-		}
-	},
-	"social-links": {
-		"twitter": "Follow us on Twitter",
-		"facebook": "Friend us on Facebook",
-		"google_plus": "Find us on Google+"
-	},
-	"legal-links": {
-		"terms": "Terms",
-		"privacy": "Privacy"
-	}
+    "status-page": {
+        "navbar": {
+            "title": "System Status",
+            "subscribe-button": {
+                "default": "Get Updates",
+                "via": "via",
+                "slack": {
+                    "name": "Slack",
+                    "description": "Posted live to a #channel of your choice."
+                },
+                "email": {
+                    "name": "Email",
+                    "description": "Messages delivered right into your inbox."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Messages delivered to your mobile phone."
+                }               
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "All systems are go",
+                "investigating": "Investigating",
+                "identified": "Identified",
+                "recovering": "Recovering",
+                "open": "Ongoing",
+                "underway": "Underway"
+            },
+            "timeliness": {
+                "planned": {
+                    "underway": "We expect to be finished %{ends_in}"
+                }
+            },          
+            "disagree": {
+                "question": "Don't agree with this?",
+                "answer": "Please let us know"
+            }       
+        },
+        "components": {
+            "states": {
+                "operational": "Operational",
+                "degraded": "Degraded"
+            },
+            "long-description": "Click here to view the full description for this component"
+        },
+        "body": {
+            "states": {
+                "scheduled": "Scheduled",
+                "complete": "Complete",
+                "closed": "Resolved",
+                "resolved": "Resolved",
+                "false_alarm": "False Alarm",
+                "drill": "Drill"
+            },          
+            "timeliness": {
+                "planned": {
+                    "scheduled": "Expected to begin %{begins_in}",
+                    "complete": "This was a planned incident, it took %{duration}."
+                },
+                "unplanned": {
+                    "closed": "This incident lasted %{duration}.",
+                    "resolved": "This incident lasted %{duration}.",
+                    "false_alarm": "This incident was deemed a false alarm after %{duration}"
+                }
+            },
+            "schedule": {
+                "synopsis": "Overview",
+                "for": "Scheduled for %{begins_at}",
+                "expected_duration": "Expected to take %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Upcoming Maintenance",
+                "past_recent": "Previous Incidents"
+            },
+            "no-more-notices": "No further notices from the past %{days} days."
+        },
+        "footer": {
+            "need-support": "Need Support?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "We're performing some maintenance",
+            "subtitles": {
+                "with-maintenance": "We expect to be finished %{ends_in}",
+                "without-maintenance": "This is unplanned emergency maintenance"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "We always try our best to pre-plan maintenance, yet this can't always be guaranteed. We appreciate your patience, and hope to be back up and running as soon as possible."
+                },
+                "with-maintenance": {
+                    "began_at": "Started at",
+                    "duration": "Expected to take",
+                    "sp-link": "Follow our progress"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Want to talk to us about this maintenance?"
+        }       
+    },
+    "error-page": {
+        "header": {
+            "title": "Sorry, something has gone wrong"
+        },
+        "body": {
+            "subtitle": "It’s not you, it’s us",
+            "retry": "Give that another go, and if it still doesn’t work rest assured we are aware and working to fix it.",
+            "states": {
+                "ongoing": {
+                    "heading": "We are having issues at the moment.",
+                    "body": "These may be related to this error, please take a look at our Status Page for more information.",
+                    "sp-link": "Visit our Status Page"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Want to talk to us about this error?"
+        }
+    },
+    "social-links": {
+        "twitter": "Follow us on Twitter",
+        "facebook": "Friend us on Facebook",
+        "google_plus": "Find us on Google+"
+    },
+    "legal-links": {
+        "terms": "Terms",
+        "privacy": "Privacy"
+    }
 }

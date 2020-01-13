@@ -1,135 +1,135 @@
 {
-	"status-page": {
-		"navbar": {
-			"title": "Systeem Status",
-			"subscribe-button": {
-				"default": "Ontvang updates",
-				"via": "via",
-				"slack": {
-					"name": "Slack",
-					"description": "Direct in een eigen #kanaal."
-				},
-				"email": {
-					"name": "E-mail",
-					"description": "Berichten direct in je inbox."
-				},
-				"sms": {
-					"name": "SMS",
-					"description": "Berichten direct op je mobiele telefoon."
-				}				
-			}
-		},
-		"header": {
-			"states": {
-				"all-systems-are-go": "Alle systemen zijn online",
-				"investigating": "In onderzoek",
-				"identified": "Geïdentificeerd",
-				"recovering": "Herstellende",
-				"open": "Open",
-				"underway": "Bezig"
-			},
-			"timeliness": {
-				"planned": {
-					"underway": "We verwachten klaar te zijn over %{ends_in}"
-				}
-			},			
-			"disagree": {
-				"question": "Werkt er iets niet?",
-				"answer": "Laat het ons weten"
-			}		
-		},
-		"components": {
-			"states": {
-				"operational": "Operationeel",
-				"degraded": "Verminderd beschikbaar"
-			},
-			"long-description": "Klik hier voor de uitgebreide toelichting over dit component"
-		},
-		"body": {
-			"states": {
-				"scheduled": "Gepland",
-				"complete": "Voltooid",
-				"closed": "Gesloten",
-				"resolved": "Opgelost",
-				"false_alarm": "Vals alarm",
-				"drill": "Uitoefening"
-			},			
-			"timeliness": {
-				"planned": {
-					"scheduled": "We verwachten te beginnen over %{begins_in}",
-					"complete": "Dit geplande onderhoud duurde %{duration}."
-				},
-				"unplanned": {
-					"closed": "Dit incident duurde %{duration}.",
-					"resolved": "Dit incident duurde %{duration}.",
-					"false_alarm": "Dit incident werd gemarkeerd als vals alarm na %{duration}"
-				}
-			},
-			"schedule": {
-				"synopsis": "Overzicht",
-				"for": "Gepland voor %{begins_at}",
-				"expected_duration": "Verwachte duur %{expected_duration}"
-			},
-			"timeline-heading": {
-				"future": "Gepland onderhoud",
-				"past_recent": "Eerdere incidenten"
-			},
-			"no-more-notices": "Geen incidenten in de afgelopen %{days} dagen."
-		},
-		"footer": {
-			"need-support": "Support nodig?"
-		}
-	},
-	"maintenance-page": {
-		"header": {
-			"title": "We zijn bezig met onderhoud",
-			"subtitles": {
-				"with-maintenance": "We verwachten klaar te zijn over %{ends_in}",
-				"without-maintenance": "Dit is ongepland noodonderhoud"
-			}
-		},
-		"body": {
-			"states": {
-				"without-maintenance": {
-					"content": "We doen er alles aan om onderhoud vooraf te plannen maar jammer genoeg lukt dit niet altijd. We doen er alles aan om zo snel mogelijk online te zijn."
-				},
-				"with-maintenance": {
-					"began_at": "Begonnen om",
-					"duration": "Verwachte duur",
-					"sp-link": "Volg de voortgang"
-				}
-			}
-		},
-		"footer": {
-			"need-support": "Heb je vragen over het onderhoud?"
-		}		
-	},
-	"error-page": {
-		"header": {
-			"title": "Sorry, er is iets mis gegaan"
-		},
-		"body": {
-			"subtitle": "Het ligt niet aan jou, wij zijn het",
-			"retry": "Probeer het nog een keer. Werkt het dan nog niet? Dan werken we waarschijnlijk nog hard aan een oplossing.",
-			"states": {
-				"ongoing": {
-					"heading": "We ervaren wat problemen.",
-					"body": "Dit is misschien gerelateerd aan dit probleem. Bekijk onze status pagina voor meer informatie.",
-					"sp-link": "Bekijk onze statuspagina"
-				}
-			}
-		},
-		"footer": {
-			"need-support": "Heb je vragen over deze foutmelding?"
-		}
-	},
-	"social-links": {
-		"twitter": "Volg ons op Twitter",
-		"facebook": "Wordt vrienden met ons op Facebook",
-		"google_plus": "Vind ons op Google+"
-	},
-	"legal-links": {
-		"terms": "Voorwaarden",
-		"privacy": "Privacy"
-	}
+    "status-page": {
+        "navbar": {
+            "title": "Systeem Status",
+            "subscribe-button": {
+                "default": "Ontvang updates",
+                "via": "via",
+                "slack": {
+                    "name": "Slack",
+                    "description": "Direct in een eigen #kanaal."
+                },
+                "email": {
+                    "name": "E-mail",
+                    "description": "Berichten direct in je inbox."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Berichten direct op je mobiele telefoon."
+                }               
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Alle systemen zijn online",
+                "investigating": "In onderzoek",
+                "identified": "Geïdentificeerd",
+                "recovering": "Herstellende",
+                "open": "Open",
+                "underway": "Bezig"
+            },
+            "timeliness": {
+                "planned": {
+                    "underway": "We verwachten klaar te zijn over %{ends_in}"
+                }
+            },          
+            "disagree": {
+                "question": "Werkt er iets niet?",
+                "answer": "Laat het ons weten"
+            }       
+        },
+        "components": {
+            "states": {
+                "operational": "Operationeel",
+                "degraded": "Verminderd beschikbaar"
+            },
+            "long-description": "Klik hier voor de uitgebreide toelichting over dit component"
+        },
+        "body": {
+            "states": {
+                "scheduled": "Gepland",
+                "complete": "Voltooid",
+                "closed": "Gesloten",
+                "resolved": "Opgelost",
+                "false_alarm": "Vals alarm",
+                "drill": "Uitoefening"
+            },          
+            "timeliness": {
+                "planned": {
+                    "scheduled": "We verwachten te beginnen over %{begins_in}",
+                    "complete": "Dit geplande onderhoud duurde %{duration}."
+                },
+                "unplanned": {
+                    "closed": "Dit incident duurde %{duration}.",
+                    "resolved": "Dit incident duurde %{duration}.",
+                    "false_alarm": "Dit incident werd gemarkeerd als vals alarm na %{duration}"
+                }
+            },
+            "schedule": {
+                "synopsis": "Overzicht",
+                "for": "Gepland voor %{begins_at}",
+                "expected_duration": "Verwachte duur %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Gepland onderhoud",
+                "past_recent": "Eerdere incidenten"
+            },
+            "no-more-notices": "Geen incidenten in de afgelopen %{days} dagen."
+        },
+        "footer": {
+            "need-support": "Support nodig?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "We zijn bezig met onderhoud",
+            "subtitles": {
+                "with-maintenance": "We verwachten klaar te zijn over %{ends_in}",
+                "without-maintenance": "Dit is ongepland noodonderhoud"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "We doen er alles aan om onderhoud vooraf te plannen maar jammer genoeg lukt dit niet altijd. We doen er alles aan om zo snel mogelijk online te zijn."
+                },
+                "with-maintenance": {
+                    "began_at": "Begonnen om",
+                    "duration": "Verwachte duur",
+                    "sp-link": "Volg de voortgang"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Heb je vragen over het onderhoud?"
+        }       
+    },
+    "error-page": {
+        "header": {
+            "title": "Sorry, er is iets mis gegaan"
+        },
+        "body": {
+            "subtitle": "Het ligt niet aan jou, wij zijn het",
+            "retry": "Probeer het nog een keer. Werkt het dan nog niet? Dan werken we waarschijnlijk nog hard aan een oplossing.",
+            "states": {
+                "ongoing": {
+                    "heading": "We ervaren wat problemen.",
+                    "body": "Dit is misschien gerelateerd aan dit probleem. Bekijk onze status pagina voor meer informatie.",
+                    "sp-link": "Bekijk onze statuspagina"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Heb je vragen over deze foutmelding?"
+        }
+    },
+    "social-links": {
+        "twitter": "Volg ons op Twitter",
+        "facebook": "Wordt vrienden met ons op Facebook",
+        "google_plus": "Vind ons op Google+"
+    },
+    "legal-links": {
+        "terms": "Voorwaarden",
+        "privacy": "Privacy"
+    }
 }
