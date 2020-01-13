@@ -1,27 +1,27 @@
 header {
-	color: ~"{{ page.brand.color_header_text }}";
+    color: ~"{{ page.brand.color_header_text }}";
 
-	// We have a background image - assign it.
-	background-color: ~"{{ page.brand.color_header_background }}"; 
-	background-image: ~"{% if page.brand.header_background %} url('{{ page.brand.header_background.url }}') {% else %} none {% endif %}";
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: cover;
+    // We have a background image - assign it.
+    background-color: ~"{{ page.brand.color_header_background }}"; 
+    background-image: ~"{% if page.brand.header_background %} url('{{ page.brand.header_background.url }}') {% else %} none {% endif %}";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 
-	a {
-		color: ~"{{ page.brand.color_header_links }}";
-		opacity: 0.9;
+    a {
+        color: ~"{{ page.brand.color_header_links }}";
+        opacity: 0.9;
 
-		&:hover,
-		&:focus {
-			opacity: 1;
-			color: ~"{{ page.brand.color_header_links }}";
-		}
+        &:hover,
+        &:focus {
+            opacity: 1;
+            color: ~"{{ page.brand.color_header_links }}";
+        }
 
-		&:not([href]) { 
-			color: ~"{{ page.brand.color_header_text }}";
-			text-decoration: none;
-		}
-	}
+        &:not([href]) { 
+            color: ~"{{ page.brand.color_header_text }}";
+            text-decoration: none;
+        }
+    }
 
 }
