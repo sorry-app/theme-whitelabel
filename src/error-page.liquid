@@ -1,46 +1,46 @@
 <!-- Create a container for the template specific styles. -->
 <div class="template-error-page">
-	<header>
-		<!-- Navbar if a logo is available. -->
-		{% if page.brand.logo %}
-		    <!-- Page Navbar. -->
-		    <nav class="navbar navbar-default navbar-center" role="navigation">
-		        <div class="container">
-		            <div class="navbar-header">
+    <header>
+        <!-- Navbar if a logo is available. -->
+        {% if page.brand.logo %}
+            <!-- Page Navbar. -->
+            <nav class="navbar navbar-default navbar-center" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
                         <!-- Include the logo. -->
                         {% include 'logo' page: page %}
-		            </div>
-		        </div>    	
-		    </nav>
-	    {% endif %}
+                    </div>
+                </div>      
+            </nav>
+        {% endif %}
 
-		<div class="container container-sm">
-			<section class="error-page-header">
-				<!-- Headline notice to state a problem has occurred. -->
-				<h1>{{ 'error-page.header.title' | t }}</h1>
-			</section>
-		</div>
-	</header>
+        <div class="container container-sm">
+            <section class="error-page-header">
+                <!-- Headline notice to state a problem has occurred. -->
+                <h1>{{ 'error-page.header.title' | t }}</h1>
+            </section>
+        </div>
+    </header>
 
-	<main>
-		<div class="container container-sm">
-			<div class="content-block">
-				<!-- Apologise, and suggest the users retry. -->
-				<h2>{{ 'error-page.body.subtitle' | t }}</h2>
-					<p>{{ 'error-page.body.retry' | t }}</p>
+    <main>
+        <div class="container container-sm">
+            <div class="content-block">
+                <!-- Apologise, and suggest the users retry. -->
+                <h2>{{ 'error-page.body.subtitle' | t }}</h2>
+                    <p>{{ 'error-page.body.retry' | t }}</p>
 
-				<!-- Check to see if the status page has any notices on it. -->
-				{% if page.notices.present.size > 0 %}
-					<!-- The SP does have noticed, display an ongoing statement and link. -->
-					<p><strong>{{ 'error-page.body.states.ongoing.heading' | t }}</strong> {{ 'error-page.body.states.ongoing.body' | t }}</p>
+                <!-- Check to see if the status page has any notices on it. -->
+                {% if page.notices.present.size > 0 %}
+                    <!-- The SP does have noticed, display an ongoing statement and link. -->
+                    <p><strong>{{ 'error-page.body.states.ongoing.heading' | t }}</strong> {{ 'error-page.body.states.ongoing.body' | t }}</p>
 
-					<br />
+                    <br />
 
-					<a href="{{ page.link }}" target="_blank" rel="noopener noreferrer" class="btn btn-link btn-lg btn-external">{{ 'error-page.body.states.ongoing.sp-link' | t }}</a>
-				{% endif %}
-			</div>
-		</div>
-	</main>
+                    <a href="{{ page.link }}" target="_blank" rel="noopener noreferrer" class="btn btn-link btn-lg btn-external">{{ 'error-page.body.states.ongoing.sp-link' | t }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </main>
 
     <!-- Include the page footer. -->
     {% include 'footer' %}
