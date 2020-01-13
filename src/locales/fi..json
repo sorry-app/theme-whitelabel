@@ -1,135 +1,135 @@
 {
-	"status-page": {
-		"navbar": {
-			"title": "Järjestelmätila",
-			"subscribe-button": {
-				"default": "Saa päivtiyksiä",
-				"via": "",
-				"slack": {
-					"name": "Slackillä",
-					"description": "Lähetetty suoraan valitsemallesi #kanavalle."
-				},
-				"email": {
-					"name": "Sähköpostilla",
-					"description": "Viestit lähetettynä suoraan sähköpostiisi."
-				},
-				"sms": {
-					"name": "Tekstiviestillä",
-					"description": "Viestit jotka lähetetään puhelimeesi."
-				}
-			}
-		},
-		"header": {
-			"states": {
-				"all-systems-are-go": "Kaikki toimii normaalisti",
-				"investigating": "Tutkitaan",
-				"identified": "Tunnistettu",
-				"recovering": "Palautetaan",
-				"open": "Avoin",
-				"underway": "Käynnissä"
-			},
-			"timeliness": {
-				"planned": {
-					"underway": "Odotettu valmistuminen %{ends_in}"
-				}
-			},
-			"disagree": {
-				"question": "Et ole samaa mieltä?",
-				"answer": "Ota meihin yhteyttä "
-			}
-		},	
-		"components": {
-			"states": {
-				"operational": "Toiminnassa",
-				"degraded": " Hajonnut"
-			},
-			"long-description": "Klikkaa tästä nähdäksesi komponentin täyden kuvauksen"
-		},
-		"body": {
-			"states": {
-				"scheduled": "Suunniteltu",
-				"complete": "Valmis",
-				"closed": "Suljettu",
-				"resolved": "Ratkaistu",
-				"false_alarm": "Väärä hälytys",
-				"drill": "Harjoittaa"
-			},
-			"timeliness": {
-				"planned": {
-					"scheduled": "Odotettu aloitus %{begins_in}",
-					"complete": "Tämä oli suunniteltu tapahtuma, kesto %{duration}."
-				},
-				"unplanned": {
-					"closed": "Tapahtuman kesto oli %{duration}.",
-					"resolved": "Tapahtuman kesto oli %{duration}.",
-					"false_alarm": "Tämä tapahtuma katsottiin olevan väärä hälytys %{duration} jälkeen"
-				}
-			},
-			"schedule": {
-				"synopsis": "Kuvaus",
-				"for": "Ajoitettu %{begins_at}",
-				"expected_duration": "Odotettu kesto %{expected_duration}"
-			},
-			"timeline-heading": {
-				"future": "Tuleva huolto",
-				"past_recent": "Aikaisemmat tapahtumat"
-			},
-			"no-more-notices": "Ei uusia tapahtumia viimeiseen %{days} päivään."
-		},
-		"footer": {
-			"need-support": "Tarvitsetko apua?"
-		}
-	},
-	"maintenance-page": {
-		"header": {
-			"title": "Suoritamme huoltoa",
-			"subtitles": {
-				"with-maintenance": "Odotamme valmistuvan %{ends_in}",
-				"without-maintenance": "Tämä on suunnittelematon akuutti huolto"
-			}
-		},
-		"body": {
-			"states": {
-				"without-maintenance": {
-					"content": "Pyrimme aina parhaamme mukaan suunnittelemaan huollot etukäteen, mutta tätä ei aina voida taata. Arvostamme kärsivällisyyttänne ja pyrimme olemaan täydessä toiminnassa mahdollisimman nopeasti."
-				},
-				"with-maintenance": {
-					"began_at": "Aloitettu",
-					"duration": "Arvioitu kesto",
-					"sp-link": "Seuraa edistystämme"
-				}
-			}
-		},
-		"footer": {
-			"need-support": "Haluatko keskustella kanssamme huollosta?"
-		}
-	},	
-	"error-page": {
-		"header": {
-			"title": "Pahoittelemme, on tapahtunut virhe"
-		},
-		"body": {
-			"subtitle": "Vika ei ole sinussa, vika on meissä.",
-			"retry": "Kokeile uudestaan ja jos ei se vieläkään toimi ole varma siitä että me olemme tietoisia ongelmasta ja työstämme jo korjausta.",
-			"states": {
-				"ongoing": {
-					"heading": "Meillä on ongelmia tällä hetkellä.",
-					"body": "Ongelmat johtuvat mahdollisesti tästä viasta. Tarkista tilanne täältä.",
-					"sp-link": "Vieraile meidän tilannesivustollamme"
-				}
-			}
-		},
-		"footer": {
-			"need-support": "Haluatko ottaa meihin yhteyttä liittyen tähän virheeseen?"
-		}
-	},
-	"social-links": {
-		"twitter": "Seuraa meitä Twitterissä",
-		"facebook": "Tule meidän kaveriksi Facebookissa",
-		"google_plus": "Löydä meidät Google+:sta"
-	},
-	"legal-links": {
-		"terms": "Ehdot",
-		"privacy": "Yksityisyys"
-	}
+    "status-page": {
+        "navbar": {
+            "title": "Järjestelmätila",
+            "subscribe-button": {
+                "default": "Saa päivtiyksiä",
+                "via": "",
+                "slack": {
+                    "name": "Slackillä",
+                    "description": "Lähetetty suoraan valitsemallesi #kanavalle."
+                },
+                "email": {
+                    "name": "Sähköpostilla",
+                    "description": "Viestit lähetettynä suoraan sähköpostiisi."
+                },
+                "sms": {
+                    "name": "Tekstiviestillä",
+                    "description": "Viestit jotka lähetetään puhelimeesi."
+                }
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Kaikki toimii normaalisti",
+                "investigating": "Tutkitaan",
+                "identified": "Tunnistettu",
+                "recovering": "Palautetaan",
+                "open": "Avoin",
+                "underway": "Käynnissä"
+            },
+            "timeliness": {
+                "planned": {
+                    "underway": "Odotettu valmistuminen %{ends_in}"
+                }
+            },
+            "disagree": {
+                "question": "Et ole samaa mieltä?",
+                "answer": "Ota meihin yhteyttä "
+            }
+        },  
+        "components": {
+            "states": {
+                "operational": "Toiminnassa",
+                "degraded": " Hajonnut"
+            },
+            "long-description": "Klikkaa tästä nähdäksesi komponentin täyden kuvauksen"
+        },
+        "body": {
+            "states": {
+                "scheduled": "Suunniteltu",
+                "complete": "Valmis",
+                "closed": "Suljettu",
+                "resolved": "Ratkaistu",
+                "false_alarm": "Väärä hälytys",
+                "drill": "Harjoittaa"
+            },
+            "timeliness": {
+                "planned": {
+                    "scheduled": "Odotettu aloitus %{begins_in}",
+                    "complete": "Tämä oli suunniteltu tapahtuma, kesto %{duration}."
+                },
+                "unplanned": {
+                    "closed": "Tapahtuman kesto oli %{duration}.",
+                    "resolved": "Tapahtuman kesto oli %{duration}.",
+                    "false_alarm": "Tämä tapahtuma katsottiin olevan väärä hälytys %{duration} jälkeen"
+                }
+            },
+            "schedule": {
+                "synopsis": "Kuvaus",
+                "for": "Ajoitettu %{begins_at}",
+                "expected_duration": "Odotettu kesto %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Tuleva huolto",
+                "past_recent": "Aikaisemmat tapahtumat"
+            },
+            "no-more-notices": "Ei uusia tapahtumia viimeiseen %{days} päivään."
+        },
+        "footer": {
+            "need-support": "Tarvitsetko apua?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "Suoritamme huoltoa",
+            "subtitles": {
+                "with-maintenance": "Odotamme valmistuvan %{ends_in}",
+                "without-maintenance": "Tämä on suunnittelematon akuutti huolto"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "Pyrimme aina parhaamme mukaan suunnittelemaan huollot etukäteen, mutta tätä ei aina voida taata. Arvostamme kärsivällisyyttänne ja pyrimme olemaan täydessä toiminnassa mahdollisimman nopeasti."
+                },
+                "with-maintenance": {
+                    "began_at": "Aloitettu",
+                    "duration": "Arvioitu kesto",
+                    "sp-link": "Seuraa edistystämme"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Haluatko keskustella kanssamme huollosta?"
+        }
+    },  
+    "error-page": {
+        "header": {
+            "title": "Pahoittelemme, on tapahtunut virhe"
+        },
+        "body": {
+            "subtitle": "Vika ei ole sinussa, vika on meissä.",
+            "retry": "Kokeile uudestaan ja jos ei se vieläkään toimi ole varma siitä että me olemme tietoisia ongelmasta ja työstämme jo korjausta.",
+            "states": {
+                "ongoing": {
+                    "heading": "Meillä on ongelmia tällä hetkellä.",
+                    "body": "Ongelmat johtuvat mahdollisesti tästä viasta. Tarkista tilanne täältä.",
+                    "sp-link": "Vieraile meidän tilannesivustollamme"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Haluatko ottaa meihin yhteyttä liittyen tähän virheeseen?"
+        }
+    },
+    "social-links": {
+        "twitter": "Seuraa meitä Twitterissä",
+        "facebook": "Tule meidän kaveriksi Facebookissa",
+        "google_plus": "Löydä meidät Google+:sta"
+    },
+    "legal-links": {
+        "terms": "Ehdot",
+        "privacy": "Yksityisyys"
+    }
 }

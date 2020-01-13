@@ -3,14 +3,14 @@
 
 <!-- Generate a moment.js time tag for the begins_at. -->
 {% capture begins_in %}
-	<!-- Use the time tag include. -->
-	{% include 'notices/time_tag' datetime: notice.begins_at %}
+    <!-- Use the time tag include. -->
+    {% include 'notices/time_tag' datetime: notice.begins_at %}
 {% endcapture %}
 
 <!-- Generate a moment.js time tag for the begins_at. -->
 {% capture ends_in %}
-	<!-- Use the time tag include. -->
-	{% include 'notices/time_tag' datetime: notice.expected_ended_at %}
+    <!-- Use the time tag include. -->
+    {% include 'notices/time_tag' datetime: notice.expected_ended_at %}
 {% endcapture %}
 
 <!-- Display a simple subheading. -->

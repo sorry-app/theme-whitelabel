@@ -1,73 +1,73 @@
 .navbar-logo {
-	padding: 0 @navbar-padding-horizontal;
-	float: left;
-	line-height: @navbar-height;
+    padding: 0 @navbar-padding-horizontal;
+    float: left;
+    line-height: @navbar-height;
 
-	img {
-		max-height: 72px;
-		max-width: 132px;
+    img {
+        max-height: 72px;
+        max-width: 132px;
 
-		@media (min-width: @grid-float-breakpoint) {
-			max-width: none;
-		}
-	}
+        @media (min-width: @grid-float-breakpoint) {
+            max-width: none;
+        }
+    }
 
-	@media (min-width: @grid-float-breakpoint) {
-		padding-left: 0;
-    margin-right: 15px;
-	}
+    @media (min-width: @grid-float-breakpoint) {
+        padding-left: 0;
+        margin-right: 15px;
+    }
 }
 
 .navbar {
-  @media (min-width: @grid-float-breakpoint) {
-    padding: 12.5px 0;
-  }
+    @media (min-width: @grid-float-breakpoint) {
+        padding: 12.5px 0;
+    }
 }
 
 .navbar-header {
-  @media (min-width: @grid-float-breakpoint) {
-    width: 100%;
-  }
+    @media (min-width: @grid-float-breakpoint) {
+        width: 100%;
+    }
 
-  .navbar-header-btn {
-    float: right;
-    margin-left: @navbar-padding-horizontal;
-    margin-right: @navbar-padding-horizontal;
-  }
+    .navbar-header-btn {
+        float: right;
+        margin-left: @navbar-padding-horizontal;
+        margin-right: @navbar-padding-horizontal;
+    }
 }
 
 // Centre aligned navbar.
 .navbar-center {
-  .navbar-header {
-    text-align: center;
+    .navbar-header {
+        text-align: center;
 
-    .navbar-brand, .navbar-logo {
-      float: none;
-      display: inline-block;
-      text-align: center;
-      margin-left: none;
+        .navbar-brand, .navbar-logo {
+            float: none;
+            display: inline-block;
+            text-align: center;
+            margin-left: none;
+        }
     }
-  }
 }
 
 // Default navbar
 .navbar-default {
-  background-color: ~"{{ page.brand.color_navbar_background }}";
-  border-color: ~"{{ page.brand.color_navbar_background }}";
+    background-color: ~"{{ page.brand.color_navbar_background }}";
+    border-color: ~"{{ page.brand.color_navbar_background }}";
 
-  .navbar-brand {
-    color: ~"{{ page.brand.color_navbar_links }}";
-    opacity: 0.7;
+    .navbar-brand {
+        color: ~"{{ page.brand.color_navbar_links }}";
+        opacity: 0.7;
 
-    // Trim long brand names on mobile devices.
-    // TODO: Can we replace this with flex-box? So it fills all the available space?
-    max-width: 45%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
+        // Trim long brand names on mobile devices.
+        // TODO: Can we replace this with flex-box? So it fills all the available space?
+        max-width: 45%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 
-  .navbar-text {
-    color: ~"{{ page.brand.color_navbar_links }}";
-  }
+    .navbar-text {
+        color: ~"{{ page.brand.color_navbar_links }}";
+    }
 }

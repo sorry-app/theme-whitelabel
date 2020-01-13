@@ -1,45 +1,45 @@
 .template-error-page, .template-maintenance-page {
-	header { 
-		text-align: center;
+    header { 
+        text-align: center;
 
-		small { 
-			display: block; 
-			margin-top: 10px;
-			color: inherit;
-			opacity: 0.8;
-			font-weight: 500;
-		}
-	}
+        small { 
+            display: block; 
+            margin-top: 10px;
+            color: inherit;
+            opacity: 0.8;
+            font-weight: 500;
+        }
+    }
 
-	h1 {
-		background-color: #ccc;
-		display: inline-block;
-		border-radius: 6px;
-		padding: 30px 50px;
-		margin: 0;
-		background-color: ~"{{ page.brand.color_header_background }}"; 
-		background-image: url(~"{{ 'shader-pixel-header-timeline-faint.svg' | asset_url }}");
-		line-height: 1.4;
-		width: 100%;
-	}
+    h1 {
+        background-color: #ccc;
+        display: inline-block;
+        border-radius: 6px;
+        padding: 30px 50px;
+        margin: 0;
+        background-color: ~"{{ page.brand.color_header_background }}"; 
+        background-image: url(~"{{ 'shader-pixel-header-timeline-faint.svg' | asset_url }}");
+        line-height: 1.4;
+        width: 100%;
+    }
 
-	h2 {
-		margin: 0;
-		margin-bottom: 1em;
-	}
+    h2 {
+        margin: 0;
+        margin-bottom: 1em;
+    }
 
-	.content-block, header {
-		p {
-			margin-bottom: 20px;
-			font-size: 18px;
+    .content-block, header {
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
 
-			&:last-child { margin-bottom: 0; }
-		}
+            &:last-child { margin-bottom: 0; }
+        }
 
-		padding: @timeline-padding (@timeline-padding / 2);
+        padding: @timeline-padding (@timeline-padding / 2);
 
-		@media (min-width: @grid-float-breakpoint) {
-			padding: ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
-		}
-	}
+        @media (min-width: @grid-float-breakpoint) {
+            padding: ((@timeline-horizontal-spacing * 2) + (@timeline-bullet-size / 2));
+        }
+    }
 }

@@ -1,135 +1,135 @@
 {
-	"status-page": {
-		"navbar": {
-			"title": "Systemstatus",
-			"subscribe-button": {
-				"default": "Få uppdateringar",
-				"via": "via",
-				"slack": {
-					"name": "Slack",
-					"description": "Skickad direkt till en #kanal du väljer."
-				},
-				"email": {
-					"name": "E-post",
-					"description": "Uppdateringar levererade direkt till din mejl."
-				},
-				"sms": {
-					"name": "SMS",
-					"description": "Meddelanden som levereras till din mobiltelefon."
-				}
-			}
-		},
-		"header": {
-			"states": {
-				"all-systems-are-go": "Allt fungerar normalt",
-				"investigating": "Undersöks",
-				"identified": "Identifierat",
-				"recovering": "Åtgärdas",
-				"open": "Pågående",
-				"underway": "På gång"
-			},
-			"timeliness": {
-				"planned": {
-					"underway": "Vi räknar med att vara klar %{ends_in}"
-				}
-			},				
-			"disagree": {
-				"question": "Är du inte enig?",
-				"answer": "Så kontakta oss här "
-			}			
-		},	
-		"components": {
-			"states": {
-				"operational": "Operativ",
-				"degraded": "degraderas"
-			},
-			"long-description": "Klicka här för att se hela beskrivningen för den här komponenten"
-		},		
-		"body": {
-			"states": {
-				"scheduled": "Planerad",
-				"complete": "Komplett",
-				"closed": "Löst",
-				"resolved": "Åtgärdat",
-				"false_alarm": "Falsklarm",
-				"drill": "Träna"
-			},			
-			"timeliness": {
-				"planned": {
-					"scheduled": "Väntas börja på %{begins_in}",
-					"complete": "Detta var en planerad händelse, tog det %{duration}."
-				},
-				"unplanned": {
-					"closed": "Denna incident varade %{duration}.",
-					"resolved": "Denna incident varade %{duration}.",
-					"false_alarm": "Denna händelse ansågs vara ett falskt larm efter %{duration}"
-				}
-			},
-			"schedule": {
-				"synopsis": "Översikt",
-				"for": "Schemalagt för %{begins_at}",
-				"expected_duration": "Förväntas ta %{expected_duration}"
-			},
-			"timeline-heading": {
-				"future": "Kommande underhåll",
-				"past_recent": "Tidigare Incidenter"
-			},			
-			"no-more-notices": "Inga ytterligare meddelanden de senaste %{days} dagarna."
-		},
-		"footer": {
-			"need-support": "Behöver du hjälp?"
-		}
-	},
-	"maintenance-page": {
-		"header": {
-			"title": "Vi utför en del underhåll",
-			"subtitles": {
-				"with-maintenance": "Vi räknar med att vara klar %{ends_in}",
-				"without-maintenance": "Detta är oplanerat akut underhåll"
-			}
-		},
-		"body": {
-			"states": {
-				"without-maintenance": {
-					"content": "Vi försöker alltid vårt bästa för att i förväg planera underhåll, men detta kan inte alltid garanteras. Vi uppskattar ditt tålamod och hoppas att vara igång igen så snart som möjligt."
-				},
-				"with-maintenance": {
-					"began_at": "började på",
-					"duration": "Förväntas ta",
-					"sp-link": "Följ vår utveckling"
-				}
-			}
-		},
-		"footer": {
-			"need-support": "Vill du prata med oss ​​om underhållet?"
-		}		
-	},	
-	"error-page": {
-		"header": {
-			"title": "Beklagar, det har uppstått ett fel"
-		},
-		"body": {
-			"subtitle": "Det är inte du - det är vi",
-			"retry": "Försök igen och fungerar det fortfarande inte så var säker på att vi försöker att ordna det.",
-			"states": {
-				"ongoing": {
-					"heading": "Vi har problem för närvarande.",
-					"body": "Problemen har eventuellt orsakats av det här felet. Kontrollera status här.",
-					"sp-link": "Besök vår statussida"
-				}
-			}
-		},
-		"footer": {
-			"need-support": "Vill du kontakta oss angående detta fel?"
-		}
-	},
-	"social-links": {
-		"twitter": "Följ oss på Twitter",
-		"facebook": "Bli vän med oss på Facebook",
-		"google_plus": "Hitta oss på Google+"
-	},
-	"legal-links": {
-		"terms": "Villkor",
-		"privacy": "Integritet"
-	}
+    "status-page": {
+        "navbar": {
+            "title": "Systemstatus",
+            "subscribe-button": {
+                "default": "Få uppdateringar",
+                "via": "via",
+                "slack": {
+                    "name": "Slack",
+                    "description": "Skickad direkt till en #kanal du väljer."
+                },
+                "email": {
+                    "name": "E-post",
+                    "description": "Uppdateringar levererade direkt till din mejl."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Meddelanden som levereras till din mobiltelefon."
+                }
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Allt fungerar normalt",
+                "investigating": "Undersöks",
+                "identified": "Identifierat",
+                "recovering": "Åtgärdas",
+                "open": "Pågående",
+                "underway": "På gång"
+            },
+            "timeliness": {
+                "planned": {
+                    "underway": "Vi räknar med att vara klar %{ends_in}"
+                }
+            },              
+            "disagree": {
+                "question": "Är du inte enig?",
+                "answer": "Så kontakta oss här "
+            }           
+        },  
+        "components": {
+            "states": {
+                "operational": "Operativ",
+                "degraded": "degraderas"
+            },
+            "long-description": "Klicka här för att se hela beskrivningen för den här komponenten"
+        },      
+        "body": {
+            "states": {
+                "scheduled": "Planerad",
+                "complete": "Komplett",
+                "closed": "Löst",
+                "resolved": "Åtgärdat",
+                "false_alarm": "Falsklarm",
+                "drill": "Träna"
+            },          
+            "timeliness": {
+                "planned": {
+                    "scheduled": "Väntas börja på %{begins_in}",
+                    "complete": "Detta var en planerad händelse, tog det %{duration}."
+                },
+                "unplanned": {
+                    "closed": "Denna incident varade %{duration}.",
+                    "resolved": "Denna incident varade %{duration}.",
+                    "false_alarm": "Denna händelse ansågs vara ett falskt larm efter %{duration}"
+                }
+            },
+            "schedule": {
+                "synopsis": "Översikt",
+                "for": "Schemalagt för %{begins_at}",
+                "expected_duration": "Förväntas ta %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Kommande underhåll",
+                "past_recent": "Tidigare Incidenter"
+            },          
+            "no-more-notices": "Inga ytterligare meddelanden de senaste %{days} dagarna."
+        },
+        "footer": {
+            "need-support": "Behöver du hjälp?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "Vi utför en del underhåll",
+            "subtitles": {
+                "with-maintenance": "Vi räknar med att vara klar %{ends_in}",
+                "without-maintenance": "Detta är oplanerat akut underhåll"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "Vi försöker alltid vårt bästa för att i förväg planera underhåll, men detta kan inte alltid garanteras. Vi uppskattar ditt tålamod och hoppas att vara igång igen så snart som möjligt."
+                },
+                "with-maintenance": {
+                    "began_at": "började på",
+                    "duration": "Förväntas ta",
+                    "sp-link": "Följ vår utveckling"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Vill du prata med oss ​​om underhållet?"
+        }       
+    },  
+    "error-page": {
+        "header": {
+            "title": "Beklagar, det har uppstått ett fel"
+        },
+        "body": {
+            "subtitle": "Det är inte du - det är vi",
+            "retry": "Försök igen och fungerar det fortfarande inte så var säker på att vi försöker att ordna det.",
+            "states": {
+                "ongoing": {
+                    "heading": "Vi har problem för närvarande.",
+                    "body": "Problemen har eventuellt orsakats av det här felet. Kontrollera status här.",
+                    "sp-link": "Besök vår statussida"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Vill du kontakta oss angående detta fel?"
+        }
+    },
+    "social-links": {
+        "twitter": "Följ oss på Twitter",
+        "facebook": "Bli vän med oss på Facebook",
+        "google_plus": "Hitta oss på Google+"
+    },
+    "legal-links": {
+        "terms": "Villkor",
+        "privacy": "Integritet"
+    }
 }
