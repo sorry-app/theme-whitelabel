@@ -15,22 +15,22 @@
 // Invoke on load, scroll and window change.
 $(window).on('DOMContentLoaded load resize scroll', function(e) {
 
-	// Get all the smart anchor elements on the page.
-	$("a[data-smart-anchor]").each(function() {
-		// Get the target of the data attribute.
-		var $target = $($(this).data('smart-anchor'));
+    // Get all the smart anchor elements on the page.
+    $("a[data-smart-anchor]").each(function() {
+        // Get the target of the data attribute.
+        var $target = $($(this).data('smart-anchor'));
 
-		// Toggle the href attribute on the link based on the visibility
-		// of the target element so if it's visible we don't link to it.
-		if (isElementInViewport($target)) {
-			// The element is currently visible, make sure the href attribute
-			// is removed from the link.
-			$(this).removeAttr('href');
-		} else {
-			// This element is NOT currently visible, so we want to provide
-			// an anchor link to it.
-			$(this).attr('href', '#' + $target.attr('id'));
-		}
-	});
+        // Toggle the href attribute on the link based on the visibility
+        // of the target element so if it's visible we don't link to it.
+        if (isElementInViewport($target)) {
+            // The element is currently visible, make sure the href attribute
+            // is removed from the link.
+            $(this).removeAttr('href');
+        } else {
+            // This element is NOT currently visible, so we want to provide
+            // an anchor link to it.
+            $(this).attr('href', '#' + $target.attr('id'));
+        }
+    });
 
-}); 
+});
