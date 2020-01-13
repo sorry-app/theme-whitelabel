@@ -66,7 +66,6 @@
                 }
             },
             "schedule": {
-                "synopsis": "Visión de conjunto",
                 "for": "Programado para %{begins_at}",
                 "expected_duration": "Se espera que tome %{expected_duration}"
             },

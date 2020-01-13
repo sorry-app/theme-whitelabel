@@ -66,7 +66,6 @@
                 }
             },
             "schedule": {
-                "synopsis": "Обзор",
                 "for": "Запланировано на %{begins_at} ",
                 "expected_duration": "Должно занять %{expected_duration}"
             },
