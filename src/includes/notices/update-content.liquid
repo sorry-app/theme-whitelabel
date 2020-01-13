@@ -10,10 +10,6 @@
 
 <!-- Check if this is maintenance and synopsis. -->
 {% if notice.type == 'planned' and update.id == synopsis.id %}
-    <!-- This is a planned notice synopsis, so we want heading + schedule -->
-    <!-- Include the synopsis header. -->
-    <h5 class="update-heading">{{ 'status-page.body.schedule.synopsis' | t }}</h5>
-
     <!-- Just a standard update, output the content. -->
     {{ update.content | simple_format }}
 

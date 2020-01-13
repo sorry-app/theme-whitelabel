@@ -66,7 +66,6 @@
                 }
             },
             "schedule": {
-                "synopsis": "Kuvaus",
                 "for": "Ajoitettu %{begins_at}",
                 "expected_duration": "Odotettu kesto %{expected_duration}"
             },

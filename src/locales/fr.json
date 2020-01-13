@@ -66,7 +66,6 @@
                 }
             },
             "schedule": {
-                "synopsis": "Vue d'ensemble",
                 "for": "Planifié pour %{begins_at}",
                 "expected_duration": "Prévu pour prendre %{expected_duration}"
             },
