@@ -27,11 +27,6 @@
                 "recovering": "Ανάκτηση",
                 "open": "Σε εξέλιξη",
                 "underway": "σε εξέλιξη"
-            },
-            "timeliness": {
-                "planned": {
-                    "underway": "Περιμένουμε να τελειώσει %{ends_in}"
-                }
             },          
             "disagree": {
                 "question": "Δεν συμφωνώ με αυτό;",
@@ -53,17 +48,11 @@
                 "resolved": "επιλυθεί",
                 "false_alarm": "Λάθος συναγερμός",
                 "drill": "άσκηση"
-            },          
+            },
             "timeliness": {
-                "planned": {
-                    "scheduled": "Αναμένεται να ξεκινήσει %{begins_in}",
-                    "complete": "Αυτή ήταν μια προγραμματισμένη περιστατικό, πήρε %{duration}."
-                },
-                "unplanned": {
-                    "closed": "Το περιστατικό διήρκεσε %{duration}.",
-                    "resolved": "Το περιστατικό διήρκεσε %{duration}.",
-                    "false_alarm": "Αυτό το περιστατικό θεωρήθηκε ψευδές συναγερμό μετά %{duration}"
-                }
+                "began_at": "Άρχισε",
+                "ended_at": "Τέλος",
+                "duration": "Διάρκεια"
             },
             "schedule": {
                 "for": "Προγραμματισμενο για %{begins_at}",

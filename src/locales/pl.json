@@ -28,11 +28,6 @@
                 "open": "W trakcie",
                 "underway": "W toku"
             },
-            "timeliness": {
-                "planned": {
-                    "underway": "Szacujemy, że zakończymy prace %{ends_in}"
-                }
-            },
             "disagree": {
                 "question": "Nie zgadzasz się?",
                 "answer": "Daj nam znać"
@@ -55,15 +50,9 @@
                 "drill": "Musztrować"
             },
             "timeliness": {
-                "planned": {
-                    "scheduled": "Start za %{begins_in} ",
-                    "complete": "To była zaplanowana operacja, która trwała %{duration}."
-                },
-                "unplanned": {
-                    "closed": "Zdarzenie trwało %{duration}.",
-                    "resolved": "Zdarzenie trwało %{duration}.",
-                    "false_alarm": "Zdarzenie zostało uznane za fałszywy alarm po %{duration}"
-                }
+                "began_at": "Zaczynać",
+                "ended_at": "Zakończony",
+                "duration": "Trwanie"
             },
             "schedule": {
                 "for": "Start %{begins_at}",

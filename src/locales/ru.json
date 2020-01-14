@@ -27,11 +27,6 @@
                 "recovering": "Восстановление",
                 "open": "Открыто",
                 "underway": "В процессе"
-            },
-            "timeliness": {
-                "planned": {
-                    "underway": "Мы ожидаем закончить %{ends_in}"
-                }
             },          
             "disagree": {
                 "question": "Не согласны с этим?",
@@ -53,17 +48,11 @@
                 "resolved": "Найдено решение",
                 "false_alarm": "Ложная тревога",
                 "drill": "Yпражнение"
-            },          
+            },
             "timeliness": {
-                "planned": {
-                    "scheduled": "Должно начаться %{begins_in}",
-                    "complete": "Это был запланированный инцидент, он занял %{duration}."
-                },
-                "unplanned": {
-                    "closed": "Этот инцидент длился %{duration}.",
-                    "resolved": "Этот инцидент длился %{duration}.",
-                    "false_alarm": "Этот инцидент был признан ложной тревогой через %{duration}"
-                }
+                "began_at": "Начал",
+                "ended_at": "Закончилось",
+                "duration": "длительность"
             },
             "schedule": {
                 "for": "Запланировано на %{begins_at} ",

@@ -15,7 +15,7 @@
                 <!-- Timeliness for all notices except drills. -->
                 {% if notice.state != 'drill' %}
                     <!-- Include the timeliness subheading. -->
-                    {% include 'notices/timeliness' placement: 'body' %}
+                    {% include 'notices/timeliness' %}
                 {% endif %}
 
                 <!-- Optional components for the notice. -->

@@ -27,11 +27,6 @@
                 "recovering": "Herstellende",
                 "open": "Open",
                 "underway": "Bezig"
-            },
-            "timeliness": {
-                "planned": {
-                    "underway": "We verwachten klaar te zijn over %{ends_in}"
-                }
             },          
             "disagree": {
                 "question": "Werkt er iets niet?",
@@ -53,17 +48,11 @@
                 "resolved": "Opgelost",
                 "false_alarm": "Vals alarm",
                 "drill": "Uitoefening"
-            },          
+            },
             "timeliness": {
-                "planned": {
-                    "scheduled": "We verwachten te beginnen over %{begins_in}",
-                    "complete": "Dit geplande onderhoud duurde %{duration}."
-                },
-                "unplanned": {
-                    "closed": "Dit incident duurde %{duration}.",
-                    "resolved": "Dit incident duurde %{duration}.",
-                    "false_alarm": "Dit incident werd gemarkeerd als vals alarm na %{duration}"
-                }
+                "began_at": "Begon",
+                "ended_at": "Ended",
+                "duration": "Looptijd"
             },
             "schedule": {
                 "for": "Gepland voor %{begins_at}",

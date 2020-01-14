@@ -1,17 +1,15 @@
-<!-- Determine a friendly duration. -->
-{% assign duration = notice.duration | distance_of_time_in_words %}
+<small class="notice-timeliness">
+    {% if notice.began_at %}
+        <span class="notice-timeliness-began-at">
+            {{ 'status-page.body.timeliness.began_at' | t }}: <time datetime="{{ notice.began_at | date: '%FT%T%z' }}">{{ notice.began_at | date: '%-d %b %R' }}</time>
+        </span> - 
 
-<!-- Generate a moment.js time tag for the begins_at. -->
-{% capture begins_in %}
-    <!-- Use the time tag include. -->
-    {% include 'notices/time_tag' datetime: notice.begins_at %}
-{% endcapture %}
+        {% if notice.ended_at %}
+            <span class="notice-timeliness-ended-at">
+                {{ 'status-page.body.timeliness.ended_at' | t }}: <time datetime="{{ notice.ended_at | date: '%FT%T%z' }}">{{ notice.ended_at | date: '%-d %b %R' }}</time>
+            </span> - 
+        {% endif %}
 
-<!-- Generate a moment.js time tag for the begins_at. -->
-{% capture ends_in %}
-    <!-- Use the time tag include. -->
-    {% include 'notices/time_tag' datetime: notice.expected_ended_at %}
-{% endcapture %}
-
-<!-- Display a simple subheading. -->
-<small class="notice-type">{{ 'status-page.' | append: placement | append: '.timeliness.' | append: notice.type | append: '.' | append: notice.state | t: begins_in: begins_in, ends_in: ends_in, duration: duration }}</small>
+        <span class="notice-timeliness-duration">{{ 'status-page.body.timeliness.duration' | t }}: {{ notice.duration | distance_of_time_in_words }}</span>
+    {% endif %}
+</small>

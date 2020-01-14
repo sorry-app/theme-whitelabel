@@ -28,11 +28,6 @@
                 "open": "Avoin",
                 "underway": "Käynnissä"
             },
-            "timeliness": {
-                "planned": {
-                    "underway": "Odotettu valmistuminen %{ends_in}"
-                }
-            },
             "disagree": {
                 "question": "Et ole samaa mieltä?",
                 "answer": "Ota meihin yhteyttä "
@@ -55,15 +50,9 @@
                 "drill": "Harjoittaa"
             },
             "timeliness": {
-                "planned": {
-                    "scheduled": "Odotettu aloitus %{begins_in}",
-                    "complete": "Tämä oli suunniteltu tapahtuma, kesto %{duration}."
-                },
-                "unplanned": {
-                    "closed": "Tapahtuman kesto oli %{duration}.",
-                    "resolved": "Tapahtuman kesto oli %{duration}.",
-                    "false_alarm": "Tämä tapahtuma katsottiin olevan väärä hälytys %{duration} jälkeen"
-                }
+                "began_at": "Alkoi",
+                "ended_at": "Päättynyt",
+                "duration": "Kesto"
             },
             "schedule": {
                 "for": "Ajoitettu %{begins_at}",

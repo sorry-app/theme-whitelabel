@@ -27,11 +27,6 @@
                 "recovering": "Udbedres",
                 "open": "Igangværende",
                 "underway": "Undervejs"
-            },
-            "timeliness": {
-                "planned": {
-                    "underway": "Vi forventer at være færdige på %{ends_in}"
-                }
             },              
             "disagree": {
                 "question": "Er du ikke enig?",
@@ -53,18 +48,12 @@
                 "resolved": "Løst",
                 "false_alarm": "Falsk Alarm",
                 "drill": "Bore"
-            },          
-            "timeliness": {
-                "planned": {
-                    "scheduled": "Forventes at begynde %{begins_in}",
-                    "complete": "Dette var et planlagt hændelse, tog det %{duration}."
-                },
-                "unplanned": {
-                    "closed": "Denne hændelse varede %{duration}.",
-                    "resolved": "Denne hændelse varede %{duration}.",
-                    "false_alarm": "Denne hændelse blev betragtet som en falsk alarm efter %{duration}"
-                }
             },
+            "timeliness": {
+                "began_at": "Begyndte",
+                "ended_at": "Endte",
+                "duration": "Varighed"
+            },            
             "schedule": {
                 "for": "Planlagt til %{begins_at}",
                 "expected_duration": "Forventes at tage %{expected_duration}"
