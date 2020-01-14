@@ -49,6 +49,11 @@
                 "false_alarm": "Λάθος συναγερμός",
                 "drill": "άσκηση"
             },
+            "timeliness": {
+                "began_at": "Began",
+                "ended_at": "Ended",
+                "duration": "Duration"
+            },
             "schedule": {
                 "for": "Προγραμματισμενο για %{begins_at}",
                 "expected_duration": "Αναμένεται να λάβει %{expected_duration}"

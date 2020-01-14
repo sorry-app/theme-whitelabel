@@ -54,6 +54,11 @@
                 "ended_at": "Ended",
                 "duration": "Duration"
             },
+            "timeliness": {
+                "began_at": "Began",
+                "ended_at": "Ended",
+                "duration": "Duration"
+            },
             "schedule": {
                 "for": "Scheduled for %{begins_at}",
                 "expected_duration": "Expected to take %{expected_duration}"

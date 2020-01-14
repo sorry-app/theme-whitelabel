@@ -49,6 +49,11 @@
                 "false_alarm": "Fałszywy alarm",
                 "drill": "Musztrować"
             },
+            "timeliness": {
+                "began_at": "Began",
+                "ended_at": "Ended",
+                "duration": "Duration"
+            },
             "schedule": {
                 "for": "Start %{begins_at}",
                 "expected_duration": "Szacowany czas pracy %{expected_duration}"

@@ -49,6 +49,11 @@
                 "false_alarm": "Ложная тревога",
                 "drill": "Yпражнение"
             },
+            "timeliness": {
+                "began_at": "Began",
+                "ended_at": "Ended",
+                "duration": "Duration"
+            },
             "schedule": {
                 "for": "Запланировано на %{begins_at} ",
                 "expected_duration": "Должно занять %{expected_duration}"

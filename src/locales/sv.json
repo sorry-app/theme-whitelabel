@@ -49,6 +49,11 @@
                 "false_alarm": "Falsklarm",
                 "drill": "Träna"
             },
+            "timeliness": {
+                "began_at": "Began",
+                "ended_at": "Ended",
+                "duration": "Duration"
+            },
             "schedule": {
                 "for": "Schemalagt för %{begins_at}",
                 "expected_duration": "Förväntas ta %{expected_duration}"

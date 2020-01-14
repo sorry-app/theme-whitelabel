@@ -49,6 +49,11 @@
                 "false_alarm": "Fausse Alarme",
                 "drill": "l' exercice"
             },
+            "timeliness": {
+                "began_at": "Began",
+                "ended_at": "Ended",
+                "duration": "Duration"
+            },
             "schedule": {
                 "for": "Planifié pour %{begins_at}",
                 "expected_duration": "Prévu pour prendre %{expected_duration}"

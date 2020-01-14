@@ -49,6 +49,11 @@
                 "false_alarm": "Vals alarm",
                 "drill": "Uitoefening"
             },
+            "timeliness": {
+                "began_at": "Began",
+                "ended_at": "Ended",
+                "duration": "Duration"
+            },
             "schedule": {
                 "for": "Gepland voor %{begins_at}",
                 "expected_duration": "Verwachte duur %{expected_duration}"

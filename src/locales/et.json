@@ -49,6 +49,11 @@
                 "false_alarm": "Vale alarm",
                 "drill": "Harjutama"
             },
+            "timeliness": {
+                "began_at": "Began",
+                "ended_at": "Ended",
+                "duration": "Duration"
+            },
             "schedule": {
                 "for": "Planeeritud: %{begins_at}",
                 "expected_duration": "Arvatud kestus %{expected_duration}"

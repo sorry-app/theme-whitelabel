@@ -49,6 +49,11 @@
                 "false_alarm": "Väärä hälytys",
                 "drill": "Harjoittaa"
             },
+            "timeliness": {
+                "began_at": "Began",
+                "ended_at": "Ended",
+                "duration": "Duration"
+            },
             "schedule": {
                 "for": "Ajoitettu %{begins_at}",
                 "expected_duration": "Odotettu kesto %{expected_duration}"
