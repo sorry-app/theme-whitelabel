@@ -28,11 +28,6 @@
                 "open": "Em andamento",
                 "underway": "Em andamento"
             },
-            "timeliness": {
-                "planned": {
-                    "underway": "Esperamos concluir em %{ends_in}"
-                }
-            },
             "disagree": {
                 "question": "Não concorda?",
                 "answer": "Por favor, informe-nos o motivo."
@@ -53,17 +48,6 @@
                 "resolved": "Resolvido",
                 "false_alarm": "Alarme Falso",
                 "drill": "A prática"
-            },
-            "timeliness": {
-                "planned": {
-                    "scheduled": "Esperado para começar em %{begins_in}",
-                    "complete": "Este incidente planejado teve duração de %{duration}."
-                },
-                "unplanned": {
-                    "closed": "Este incidente teve duração de %{duration}.",
-                    "resolved": "Este incidente teve duração de %{duration}.",
-                    "false_alarm": "Este incidente foi considerado um alarme falso após %{duration}"
-                }
             },
             "schedule": {
                 "for": "Programado para %{begins_at}",

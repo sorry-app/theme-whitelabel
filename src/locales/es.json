@@ -27,12 +27,7 @@
                 "recovering": "Recuperante",
                 "open": "En marcha",
                 "underway": "En curso"
-            },
-            "timeliness": {
-                "planned": {
-                    "underway": "Esperamos que terminemos %{ends_in}"
-                }
-            },          
+            },       
             "disagree": {
                 "question": "¿No estás de acuerdo con esto?",
                 "answer": "Por favor déjanos saber"
@@ -53,17 +48,6 @@
                 "resolved": "Resuelto",
                 "false_alarm": "Falsa Alarma",
                 "drill": "Ejercitarse"
-            },          
-            "timeliness": {
-                "planned": {
-                    "scheduled": "Se espera que comience %{begins_in}",
-                    "complete": "Este fue un incidente planeado, %{duration}."
-                },
-                "unplanned": {
-                    "closed": "Este incidente duró %{duration}.",
-                    "resolved": "Este incidente duró %{duration}.",
-                    "false_alarm": "Este incidente fue considerado una falsa alarma %{duration}"
-                }
             },
             "schedule": {
                 "for": "Programado para %{begins_at}",

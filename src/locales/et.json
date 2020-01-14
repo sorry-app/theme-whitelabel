@@ -27,11 +27,6 @@
                 "recovering": "Taastamisel",
                 "open": "Jätkuv",
                 "underway": "Käimasolev"
-            },
-            "timeliness": {
-                "planned": {
-                    "underway": "Loodame valmis saada %{ends_in}"
-                }
             },          
             "disagree": {
                 "question": "Kas sa ei nõustu sellega?",
@@ -53,17 +48,6 @@
                 "resolved": "Lahendatud",
                 "false_alarm": "Vale alarm",
                 "drill": "Harjutama"
-            },          
-            "timeliness": {
-                "planned": {
-                    "scheduled": " %{begins_in}",
-                    "complete": "See oli planeeritud intsident, ja see võttis %{duration}."
-                },
-                "unplanned": {
-                    "closed": "See intsident kestis %{duration}.",
-                    "resolved": "See intsident kestis %{duration}.",
-                    "false_alarm": "See intsident oli vale alarm %{duration}"
-                }
             },
             "schedule": {
                 "for": "Planeeritud: %{begins_at}",

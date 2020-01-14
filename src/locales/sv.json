@@ -27,11 +27,6 @@
                 "recovering": "Åtgärdas",
                 "open": "Pågående",
                 "underway": "På gång"
-            },
-            "timeliness": {
-                "planned": {
-                    "underway": "Vi räknar med att vara klar %{ends_in}"
-                }
             },              
             "disagree": {
                 "question": "Är du inte enig?",
@@ -53,17 +48,6 @@
                 "resolved": "Åtgärdat",
                 "false_alarm": "Falsklarm",
                 "drill": "Träna"
-            },          
-            "timeliness": {
-                "planned": {
-                    "scheduled": "Väntas börja på %{begins_in}",
-                    "complete": "Detta var en planerad händelse, tog det %{duration}."
-                },
-                "unplanned": {
-                    "closed": "Denna incident varade %{duration}.",
-                    "resolved": "Denna incident varade %{duration}.",
-                    "false_alarm": "Denna händelse ansågs vara ett falskt larm efter %{duration}"
-                }
             },
             "schedule": {
                 "for": "Schemalagt för %{begins_at}",
