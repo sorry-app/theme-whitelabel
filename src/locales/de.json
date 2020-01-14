@@ -50,9 +50,9 @@
                 "drill": "Exerzieren"
             },
             "timeliness": {
-                "began_at": "Began",
-                "ended_at": "Ended",
-                "duration": "Duration"
+                "began_at": "Begann",
+                "ended_at": "Beendet",
+                "duration": "Dauer"
             },
             "schedule": {
                 "for": "Geplant für %{begins_at}",

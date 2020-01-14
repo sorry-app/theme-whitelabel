@@ -50,9 +50,9 @@
                 "drill": "Harjoittaa"
             },
             "timeliness": {
-                "began_at": "Began",
-                "ended_at": "Ended",
-                "duration": "Duration"
+                "began_at": "Alkoi",
+                "ended_at": "Päättynyt",
+                "duration": "Kesto"
             },
             "schedule": {
                 "for": "Ajoitettu %{begins_at}",

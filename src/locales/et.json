@@ -50,9 +50,9 @@
                 "drill": "Harjutama"
             },
             "timeliness": {
-                "began_at": "Began",
-                "ended_at": "Ended",
-                "duration": "Duration"
+                "began_at": "Algas",
+                "ended_at": "Lõppenud",
+                "duration": "Kestus"
             },
             "schedule": {
                 "for": "Planeeritud: %{begins_at}",

@@ -50,9 +50,9 @@
                 "drill": "Bore"
             },
             "timeliness": {
-                "began_at": "Began",
-                "ended_at": "Ended",
-                "duration": "Duration"
+                "began_at": "Begyndte",
+                "ended_at": "Endte",
+                "duration": "Varighed"
             },            
             "schedule": {
                 "for": "Planlagt til %{begins_at}",

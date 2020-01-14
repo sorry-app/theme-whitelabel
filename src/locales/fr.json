@@ -50,9 +50,9 @@
                 "drill": "l' exercice"
             },
             "timeliness": {
-                "began_at": "Began",
-                "ended_at": "Ended",
-                "duration": "Duration"
+                "began_at": "A commencé",
+                "ended_at": "Terminé",
+                "duration": "Durée"
             },
             "schedule": {
                 "for": "Planifié pour %{begins_at}",

@@ -50,9 +50,9 @@
                 "drill": "Uitoefening"
             },
             "timeliness": {
-                "began_at": "Began",
+                "began_at": "Begon",
                 "ended_at": "Ended",
-                "duration": "Duration"
+                "duration": "Looptijd"
             },
             "schedule": {
                 "for": "Gepland voor %{begins_at}",

@@ -50,9 +50,9 @@
                 "drill": "A prática"
             },
             "timeliness": {
-                "began_at": "Began",
-                "ended_at": "Ended",
-                "duration": "Duration"
+                "began_at": "Começasse",
+                "ended_at": "Terminado",
+                "duration": "Duração"
             },
             "schedule": {
                 "for": "Programado para %{begins_at}",

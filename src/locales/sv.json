@@ -50,9 +50,9 @@
                 "drill": "Träna"
             },
             "timeliness": {
-                "began_at": "Began",
-                "ended_at": "Ended",
-                "duration": "Duration"
+                "began_at": "Började",
+                "ended_at": "Slutade",
+                "duration": "Varaktighet"
             },
             "schedule": {
                 "for": "Schemalagt för %{begins_at}",

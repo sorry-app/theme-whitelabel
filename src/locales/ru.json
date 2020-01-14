@@ -50,9 +50,9 @@
                 "drill": "Yпражнение"
             },
             "timeliness": {
-                "began_at": "Began",
-                "ended_at": "Ended",
-                "duration": "Duration"
+                "began_at": "Начал",
+                "ended_at": "Закончилось",
+                "duration": "длительность"
             },
             "schedule": {
                 "for": "Запланировано на %{begins_at} ",

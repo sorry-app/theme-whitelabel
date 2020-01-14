@@ -50,9 +50,9 @@
                 "drill": "άσκηση"
             },
             "timeliness": {
-                "began_at": "Began",
-                "ended_at": "Ended",
-                "duration": "Duration"
+                "began_at": "Άρχισε",
+                "ended_at": "Τέλος",
+                "duration": "Διάρκεια"
             },
             "schedule": {
                 "for": "Προγραμματισμενο για %{begins_at}",
