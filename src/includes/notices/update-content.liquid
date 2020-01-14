@@ -12,9 +12,6 @@
 {% if notice.type == 'planned' and update.id == synopsis.id %}
     <!-- Just a standard update, output the content. -->
     {{ update.content | simple_format }}
-
-    <!-- Render the schedule overview. -->
-    {% include 'notices/schedule-overview' notice: notice %}
 {% else %}
     <!-- Just a standard update, output the content. -->
     {{ update.content | simple_format }}

@@ -87,6 +87,11 @@
                                                         <dd>{% include 'notices/update-content' %}</dd>
                                                 {% endfor %}
                                             </dl>
+
+                                            {% if notice.type == 'planned' %}
+                                                <!-- Render the schedule overview. -->
+                                                {% include 'notices/schedule-overview' notice: notice %}
+                                            {% endif %}
                                         </dd>
                                 </dl>
                             </dd>

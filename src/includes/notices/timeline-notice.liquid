@@ -63,6 +63,11 @@
                 {% if forloop.last %}
                     <!-- Close off the nested list. -->
                         </dl>
+
+                        {% if notice.type == 'planned' %}
+                            <!-- Render the schedule overview. -->
+                            {% include 'notices/schedule-overview' notice: notice %}
+                        {% endif %}
                     </dd>
                 {% endif %}
 
