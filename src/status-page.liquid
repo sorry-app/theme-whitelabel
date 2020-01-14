@@ -84,9 +84,14 @@
                                                         {% include 'notices/time_tag' datetime: update.created_at %}
                                                     </dt>
                                                         <!-- Output the text content of the update. -->
-                                                        <dd>{% include 'notices/update-content' %}</dd>
+                                                        <dd>{{ update.content | simple_format }}</dd>
                                                 {% endfor %}
                                             </dl>
+
+                                            {% if notice.type == 'planned' %}
+                                                <!-- Render the schedule overview. -->
+                                                {% include 'notices/schedule-overview' notice: notice %}
+                                            {% endif %}
                                         </dd>
                                 </dl>
                             </dd>

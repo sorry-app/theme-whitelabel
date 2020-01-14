@@ -57,12 +57,17 @@
                 <!-- Output the time for the given update. -->
                 <dt id="update-{{ update.id }}">{{ update.created_at | date: '%X %Z' }}</dt>
                     <!-- Output the text content of the update. -->
-                    <dd>{% include 'notices/update-content' %}</dd>
+                    <dd>{{ update.content | simple_format }}</dd>
 
                 <!-- Check if this is the last instance of the loop. -->
                 {% if forloop.last %}
                     <!-- Close off the nested list. -->
                         </dl>
+
+                        {% if notice.type == 'planned' %}
+                            <!-- Render the schedule overview. -->
+                            {% include 'notices/schedule-overview' notice: notice %}
+                        {% endif %}
                     </dd>
                 {% endif %}
 
