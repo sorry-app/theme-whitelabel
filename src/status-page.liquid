@@ -65,11 +65,8 @@
                                                 <!-- The basic subject line. -->
                                                 <h3 class="notice-subject h4">{{ notice.subject }}</h3>
 
-                                                <!-- Display appropriate schedule information if we have it. -->
-                                                {% if notice.type == 'planned' %}
-                                                    <!-- Display the schedule/runtime. -->
-                                                    {% include 'notices/timeliness' %}
-                                                {% endif %}
+                                                <!-- Display the schedule/runtime. -->
+                                                {% include 'notices/timeliness' %}
                                             </div>
 
                                             <dl>
