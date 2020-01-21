@@ -9,7 +9,9 @@
                 {{ 'status-page.body.timeliness.ended_at' | t }}: <time datetime="{{ notice.ended_at | date: '%FT%T%z' }}">{{ notice.ended_at | date: '%-d %b %R' }}</time>
             </span> - 
         {% endif %}
+    {% endif %}
 
+    {% if notice.duration %}
         <span class="notice-timeliness-duration">{{ 'status-page.body.timeliness.duration' | t }}: {{ notice.duration | distance_of_time_in_words }}</span>
     {% endif %}
 </small>
