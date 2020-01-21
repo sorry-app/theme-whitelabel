@@ -2,14 +2,18 @@
     {% if notice.began_at %}
         <span class="notice-timeliness-began-at">
             {{ 'status-page.body.timeliness.began_at' | t }}: <time datetime="{{ notice.began_at | date: '%FT%T%z' }}">{{ notice.began_at | date: '%-d %b %R' }}</time>
-        </span> - 
+        </span>
 
         {% if notice.ended_at %}
             <span class="notice-timeliness-ended-at">
                 {{ 'status-page.body.timeliness.ended_at' | t }}: <time datetime="{{ notice.ended_at | date: '%FT%T%z' }}">{{ notice.ended_at | date: '%-d %b %R' }}</time>
-            </span> - 
+            </span>
         {% endif %}
+    {% endif %}
 
-        <span class="notice-timeliness-duration">{{ 'status-page.body.timeliness.duration' | t }}: {{ notice.duration | distance_of_time_in_words }}</span>
+    {% if notice.duration %}
+        <span class="notice-timeliness-duration">{{ 'status-page.body.timeliness.duration' | t }}: 
+            <time datetime="PT{{ notice.duration }}S">{{ notice.duration | distance_of_time_in_words }}</time>
+        </span>
     {% endif %}
 </small>
