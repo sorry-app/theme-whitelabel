@@ -4,12 +4,12 @@
         <!-- Format the begins-date datetime as something more friendly. -->
         {% assign begins_at = notice.begins_at | date: '%a, %-d %b %Y %H:%M %Z' %}
         <!-- Display the begins-at datetime for the notice. -->
-        <i class="fa fa-fw fa-calendar"></i> {{ 'status-page.body.schedule.for' | t: begins_at: begins_at }}
+        <i class="fa fa-fw fa-calendar"></i> <time datetime="{{ notice.begins_at | date: '%FT%T%z' }}">{{ 'status-page.body.schedule.for' | t: begins_at: begins_at }}</time>
     </li>
     <li class="schedule-duration">
         <!-- Create a friendly version of the duration. -->
         {% assign expected_duration = notice.expected_duration | distance_of_time_in_words %}
         <!-- Output the duration. -->
-        <i class="fa fa-fw fa-clock-o"></i> {{ 'status-page.body.schedule.expected_duration' | t: expected_duration: expected_duration }}
+        <i class="fa fa-fw fa-clock-o"></i> <time datetime="PT{{ notice.expected_duration }}S">{{ 'status-page.body.schedule.expected_duration' | t: expected_duration: expected_duration }}</time>
     </li>
 </ul>
