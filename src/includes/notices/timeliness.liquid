@@ -2,12 +2,12 @@
     {% if notice.began_at %}
         <span class="notice-timeliness-began-at">
             {{ 'status-page.body.timeliness.began_at' | t }}: <time datetime="{{ notice.began_at | date: '%FT%T%z' }}">{{ notice.began_at | date: '%-d %b %R' }}</time>
-        </span> - 
+        </span>
 
         {% if notice.ended_at %}
             <span class="notice-timeliness-ended-at">
                 {{ 'status-page.body.timeliness.ended_at' | t }}: <time datetime="{{ notice.ended_at | date: '%FT%T%z' }}">{{ notice.ended_at | date: '%-d %b %R' }}</time>
-            </span> - 
+            </span>
         {% endif %}
     {% endif %}
 

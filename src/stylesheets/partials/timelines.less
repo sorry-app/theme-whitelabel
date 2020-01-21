@@ -121,6 +121,13 @@ dl.timeline {
             font-size: 85%;
             line-height: 1.41;
             margin-bottom: (@line-height-computed / 2);
+
+            span:not(:last-child):after {
+                display: inline-block;
+                content: '-';
+                margin-left: 4px;
+                margin-right: 4px;
+            }
         }
 
         .list-affected-components { font-size: 18px; }
