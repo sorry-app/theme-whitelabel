@@ -37,7 +37,9 @@
                 <!-- See if this is the first iteration of the loop. -->
                 {% if forloop.first %}
                     <!-- First iteration, as a date stamp to it. -->
-                    <dt>{{ grouped_date }}</dt>
+                    <dt>
+                        <time datetime="{{ update.created_at | date: '%F' }}">{{ grouped_date }}</time>
+                    </dt>
                     <dd>
                         <dl>
                 {% else %}
@@ -48,7 +50,9 @@
                         </dd>
 
                         <!-- End start a new nested collection. -->
-                        <dt>{{ grouped_date }}</dt>
+                        <dt>
+                            <time datetime="{{ update.created_at | date: '%F' }}">{{ grouped_date }}</time>
+                        </dt>    
                         <dd>
                             <dl>
                     {% endif %}
