@@ -12,6 +12,8 @@
     {% endif %}
 
     {% if notice.duration %}
-        <span class="notice-timeliness-duration">{{ 'status-page.body.timeliness.duration' | t }}: {{ notice.duration | distance_of_time_in_words }}</span>
+        <span class="notice-timeliness-duration">{{ 'status-page.body.timeliness.duration' | t }}: 
+            <time datetime="PT{{ notice.duration }}S">{{ notice.duration | distance_of_time_in_words }}</time>
+        </span>
     {% endif %}
 </small>
