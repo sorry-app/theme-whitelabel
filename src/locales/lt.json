@@ -1,0 +1,123 @@
+{
+    "status-page": {
+        "navbar": {
+            "title": "Sistemos statusas",
+            "subscribe-button": {
+                "default": "Prenumeruokite naujienas",
+                "via": "per",
+                "slack": {
+                    "name": "Slack",
+                    "description": "Gaukite naujienas į pasirinktą Slack kanalą."
+                },
+                "email": {
+                    "name": "El. paštas",
+                    "description": "Gaukite naujienas į el. paštą."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Gaukite naujienas SMS žinute."
+                }
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Sistema veikia sklandžiai",
+                "investigating": "Tiriama problema",
+                "identified": "Problema identifikuota",
+                "recovering": "Problema sprendžiama",
+                "open": "Problema pašalinta",
+                "underway": "Vyksta atnaujinimas"
+            },
+            "disagree": {
+                "question": "Pastebėjote trikdį?",
+                "answer": "Prašau informuokite mus"
+            }
+        },
+        "components": {
+            "states": {
+                "operational": "Sistema veikia sklandžiai",
+                "degraded": "Sistemoje yra trikdis"
+            },
+            "long-description": "Daugiau informacijos rasite čia"
+        },
+        "body": {
+            "states": {
+                "scheduled": "Suplanuotas sistemos atnaujinimas",
+                "complete": "Sistema atnaujinta",
+                "closed": "Sistema atnaujinta",
+                "resolved": "Problema išspręsta",
+                "false_alarm": "Netikras pavojus",
+                "drill": "Pastebėtas sutrikimas"
+            },
+            "timeliness": {
+                "began_at": "Pastebėtas sutrikimas",
+                "ended_at": "Sutrikimas išspręstas",
+                "duration": "Trukmė"
+            },
+            "schedule": {
+                "for": "Sistemą planuojama atnaujinti %{begins_at}",
+                "expected_duration": "Numatyta problemos sprendimo trukmė %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Artimiausi sistemos priežiūros darbai",
+                "past_recent": "Įvykę sistemos priežiūros darbai"
+            },
+            "no-more-notices": "Daugiau pranešimų nėra."
+        },
+        "footer": {
+            "need-support": "Reikalinga pagalba?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "Vyksta sistemos priežiūros darbai",
+            "subtitles": {
+                "with-maintenance": "Planuojama priežiūros darbų pabaiga %{ends_in}",
+                "without-maintenance": "Nenumatyti sistemos priežiūros darbai"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "Sistemos atnaujinimus planuojame iš anksto, tačiau kartais pasitaiko nenumatytų atvejų. Dėkojame Jums už kantrybę - sistema greitu metu veiks sklandžiai."
+                },
+                "with-maintenance": {
+                    "began_at": "Pradžia",
+                    "duration": "Planuojama trukmė",
+                    "sp-link": "Sekite progresą"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Norite pasidomėti apie sistemos priežiūrą?"
+        }
+    },
+    "error-page": {
+        "header": {
+            "title": "Atsiprašome, sistema laikinai nepasiekiama. "
+        },
+        "body": {
+            "subtitle": "Pabandykite atlikti šį veiksmą dar kartą.",
+            "retry": "Jei susidūrėte su trikdžiais, užtikriname - jie jau sprendžiami.",
+            "states": {
+                "ongoing": {
+                    "heading": "Sistemoje pastebėtas trikdis.",
+                    "body": "Jis gali būti susijęs su šia klaida - sekite informaciją sistemos statuso puslapyje.",
+                    "sp-link": "Eiti į sistemos statuso puslapį"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Jei pastebėjote dar neužfiksuotą trikdį, susisiekite su mumis. "
+        }
+    },
+    "social-links": {
+        "twitter": "Sekite mus Twitter",
+        "facebook": "Sekite mus Facebook",
+        "google_plus": "Sekite mus Google+"
+    },
+    "legal-links": {
+        "terms": "Taisyklės",
+        "privacy": "Privatumas"
+    }
+}
