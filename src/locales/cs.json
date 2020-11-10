@@ -1,0 +1,128 @@
+{
+    "status-page": {
+        "navbar": {
+            "title": "Stav systému",
+            "subscribe-button": {
+                "default": "Získejte update",
+                "via": "přes",
+                "slack": {
+                    "name": "Slack",
+                    "description": "Publikováno přímo do #kanálu dle vašeho výběru."
+                },
+                "email": {
+                    "name": "Email",
+                    "description": "Zpráva byla doručena do vašeho emailu."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Zpráva byla doručena na váš mobil."
+                }               
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Všechny systémy jsou funkční",
+                "investigating": "Zkoumání",
+                "identified": "Identifikování",
+                "recovering": "Zotavování",
+                "open": "Probíhající",
+                "underway": "V plném proudu"
+            },          
+            "disagree": {
+                "question": "Nesouhlasíte s tím?",
+                "answer": "Prosím, dejte nám vědět"
+            }       
+        },
+        "components": {
+            "states": {
+                "operational": "Provozní",
+                "degraded": "Degradováno"
+            },
+            "long-description": "Kliknutím zobrazíte úplný popis této komponenty"
+        },
+        "body": {
+            "states": {
+                "scheduled": "Naplánováno",
+                "complete": "Dokončeno",
+                "closed": "Vyřešeno",
+                "resolved": "Vyřešeno",
+                "false_alarm": "Planý poplach",
+                "drill": "Zkouška"
+            },
+            "timeliness": {
+                "began_at": "Spuštěno",
+                "ended_at": "Ukončeno",
+                "duration": "Délka"
+            },
+            "timeliness": {
+                "began_at": "Spuštěno",
+                "ended_at": "Ukončeno",
+                "duration": "Délka"
+            },
+            "schedule": {
+                "for": "Naplánováno na %{begins_at}",
+                "expected_duration": "Očekávaná délka %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Nadcházející údržba",
+                "past_recent": "Předchozí incidenty"
+            },
+            "no-more-notices": "Žádná další upozornění za posledních %{days} dnů."
+        },
+        "footer": {
+            "need-support": "Potřebujete pomoc?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "Provádíme nějakou údržbu",
+            "subtitles": {
+                "with-maintenance": "Očekáváme její ukončení %{ends_in}",
+                "without-maintenance": "Toto je neplánovaná nouzová údržba"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "Vždy se snažíme naplánovat údržbu dopředu. Přesto to někdy nejde provést. Moc vám děkujeme za vaši trpělivost a doufáme, že se co nejdříve vrátíme do provozu."
+                },
+                "with-maintenance": {
+                    "began_at": "Spuštěno v",
+                    "duration": "Očekávaná délka",
+                    "sp-link": "Sledujte průběh"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Chcete nám něco k této údržbě říct?"
+        }       
+    },
+    "error-page": {
+        "header": {
+            "title": "Pardon, něco se pokazilo"
+        },
+        "body": {
+            "subtitle": "Nejsme to vy, jsme to my",
+            "retry": "Dejte tomu ještě šanci, ale pokud to stále nefunguje, buďte si jistí, že o tom víme a pracujeme na opravě.",
+            "states": {
+                "ongoing": {
+                    "heading": "V tuto chvíli máme nějaké problémy.",
+                    "body": "Ty mohou souviset s touto chybou. Další informace najdete na naší stavové stránce.",
+                    "sp-link": "Navštivte naši stavovou stránku"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Chcete s námi mluvit ohledně tohoto problému?"
+        }
+    },
+    "social-links": {
+        "twitter": "Sledujte nás na Twitteru",
+        "facebook": "Buďme kamarádi na Facebooku",
+        "google_plus": "Najdete nás na Google+"
+    },
+    "legal-links": {
+        "terms": "Podmínky",
+        "privacy": "Soukromí"
+    }
+}
