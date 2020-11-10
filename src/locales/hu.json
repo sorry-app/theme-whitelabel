@@ -54,11 +54,6 @@
                 "ended_at": "Vége",
                 "duration": "Időtartam"
             },
-            "timeliness": {
-                "began_at": "Kezdés ideje",
-                "ended_at": "Vége",
-                "duration": "Időtartam"
-            },
             "schedule": {
                 "for": "Időzítve %{begins_at}",
                 "expected_duration": "Várható időtartam %{expected_duration}"
