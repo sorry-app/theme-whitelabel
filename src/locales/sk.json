@@ -1,0 +1,128 @@
+{
+    "status-page": {
+        "navbar": {
+            "title": "Stav systému",
+            "subscribe-button": {
+                "default": "Dostávať aktuálne správy",
+                "via": "prostredníctvom",
+                "slack": {
+                    "name": "Slacku",
+                    "description": "uverejňované do ľubovoľného #kanálu v reálnom čase."
+                },
+                "email": {
+                    "name": "Emailov",
+                    "description": "Správy doručené priamo do vašej schránky."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Správy doručené priamo na telefón."
+                }               
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Všetky systémy fungujú",
+                "investigating": "Prešetrujeme",
+                "identified": "Rozpoznaný",
+                "recovering": "V procese obnovy",
+                "open": "Pretrvávajúci",
+                "underway": "Prebiehajúci"
+            },          
+            "disagree": {
+                "question": "Nesúhlasíte?",
+                "answer": "Dajte nám vedieť"
+            }       
+        },
+        "components": {
+            "states": {
+                "operational": "V prevádzke",
+                "degraded": "Degradovaný"
+            },
+            "long-description": "Kliknutím sem zobrazíte celý popis komponentu"
+        },
+        "body": {
+            "states": {
+                "scheduled": "Plánovaný",
+                "complete": "Dokončený",
+                "closed": "Vyriešený",
+                "resolved": "Vyriešený",
+                "false_alarm": "Falošný poplach",
+                "drill": "Cvičenie"
+            },
+            "timeliness": {
+                "began_at": "Začal",
+                "ended_at": "Skončil",
+                "duration": "Trvanie"
+            },
+            "timeliness": {
+                "began_at": "Začal",
+                "ended_at": "Skončil",
+                "duration": "Trvanie"
+            },
+            "schedule": {
+                "for": "Naplánovaný na %{begins_at}",
+                "expected_duration": "Očakávané trvanie %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Plánovaná údržba",
+                "past_recent": "Predchádzajúce incidenty"
+            },
+            "no-more-notices": "Žiadne ďalšie upozornenia za uplynulé %{days} dni."
+        },
+        "footer": {
+            "need-support": "Potrebujete podporu?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "Momentálne prevádzkujeme údržbu",
+            "subtitles": {
+                "with-maintenance": "Mala by byť hotová %{ends_in}",
+                "without-maintenance": "Ide o neplánovanú núdzovú údržbu"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "Zo všetkých síl sa snažíme údržbu plánovať vopred, no nevieme to vždy garantovať. Vážime si vašu trpezlivosť a dúfame, že všetko bude čoskoro opäť k dispozícii."
+                },
+                "with-maintenance": {
+                    "began_at": "Začiatok",
+                    "duration": "Očakávané trvanie",
+                    "sp-link": "Sledujte, ako postupujeme"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Chceli by ste sa s nami porozprávať o tejto údržbe?"
+        }       
+    },
+    "error-page": {
+        "header": {
+            "title": "Prepáčte, nastal problém"
+        },
+        "body": {
+            "subtitle": "Nie je na vašej strane, ale našej.",
+            "retry": "Skúste znova a ak vám to opät nepôjde, prosíme vedzte, že o probléme vieme a robíme všetko preto, aby sme ho napravili.",
+            "states": {
+                "ongoing": {
+                    "heading": "Momentálne u nás nastali problémy.",
+                    "body": "Môžu súvisieť s touto chybou. Pre viac informácii prosím skontrolujte našu stránku so správami o stave.",
+                    "sp-link": "Skontrolovať stránku so správami o stave"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Chceli by ste sa s nami o tejto chybe porozprávať?"
+        }
+    },
+    "social-links": {
+        "twitter": "Sledujte nás na Twitteri",
+        "facebook": "Sledujte nás na Facebooku",
+        "google_plus": "Nájdite nás na Google+"
+    },
+    "legal-links": {
+        "terms": "Podmienky",
+        "privacy": "Ochrana súkromia"
+    }
+}
