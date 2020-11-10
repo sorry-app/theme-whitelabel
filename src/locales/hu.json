@@ -1,0 +1,128 @@
+﻿{
+    "status-page": {
+        "navbar": {
+            "title": "Rendszer állapota",
+            "subscribe-button": {
+                "default": "Értesítések kérése",
+                "via": "ezen:",
+                "slack": {
+                    "name": "Slack",
+                    "description": "Egy általad választott #csatornára."
+                },
+                "email": {
+                    "name": "Email",
+                    "description": "Email egyenesen a postafiókodba."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Értesítések kérése SMS-ben a telefonodra."
+                }               
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Minden rendszer rendben",
+                "investigating": "Vizsgálat folyamatban",
+                "identified": "Azonosítva",
+                "recovering": "Visszaállítás",
+                "open": "Nyitott",
+                "underway": "Folyamatban"
+            },          
+            "disagree": {
+                "question": "Nem értesz ezzel egyet?",
+                "answer": "Mondd el nekünk."
+            }       
+        },
+        "components": {
+            "states": {
+                "operational": "Működőképes",
+                "degraded": "Leromlott"
+            },
+            "long-description": "Kattints ide a komponens teljes leírásához"
+        },
+        "body": {
+            "states": {
+                "scheduled": "Időzítve",
+                "complete": "Kész",
+                "closed": "Lezárva",
+                "resolved": "Megoldva",
+                "false_alarm": "Téves riasztás",
+                "drill": "Gyakorlat"
+            },
+            "timeliness": {
+                "began_at": "Kezdés ideje",
+                "ended_at": "Vége",
+                "duration": "Időtartam"
+            },
+            "timeliness": {
+                "began_at": "Kezdés ideje",
+                "ended_at": "Vége",
+                "duration": "Időtartam"
+            },
+            "schedule": {
+                "for": "Időzítve %{begins_at}",
+                "expected_duration": "Várható időtartam %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Következő karbantartás",
+                "past_recent": "Előző incidens"
+            },
+            "no-more-notices": "Nincs több értesítés az elmúlt %{days} napból."
+        },
+        "footer": {
+            "need-support": "Segítségre van szüksége?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "Jelenleg karbantartást végzünk.",
+            "subtitles": {
+                "with-maintenance": "Várható befejezési idő %{ends_in}",
+                "without-maintenance": "Épp egy nem tervezett karbantartás zajlik."
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "Igyekszünk a karbantartást mindig előre tervezni, de ezt nem tudjuk garantálni. Köszönjük a türelmed, és megteszünk mindent, hogy a lehető leghamarabb helyreálljon minden."
+                },
+                "with-maintenance": {
+                    "began_at": "Kezdés ideje",
+                    "duration": "Várható időtartam",
+                    "sp-link": "Kövesd a folyamatot"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Kérdésed van a karbantartással kapcsolatban?"
+        }       
+    },
+    "error-page": {
+        "header": {
+            "title": "Elnézést kérünk, valami nem jól sikerült"
+        },
+        "body": {
+            "subtitle": "Nálunk van a hiba",
+            "retry": "Próbáld meg újra, ha ezt követően sem működik, akkor valószínűleg tudunk a problémáról és épp dolgozunk rajta.",
+            "states": {
+                "ongoing": {
+                    "heading": "Jelenleg egy hibát javítunk ki.",
+                    "body": "Ennek köze lehet ehhez a hibához, kérjük nézd meg a Státusz oldalt a további részletekért.",
+                    "sp-link": "Irány a Státusz oldal"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Kérdésed van erről a hibáról?"
+        }
+    },
+    "social-links": {
+        "twitter": "Kövess Twitteren",
+        "facebook": "Facebook oldalunk",
+        "google_plus": "Google+ oldalunk"
+    },
+    "legal-links": {
+        "terms": "ÁSZF",
+        "privacy": "Adatvédelem"
+    }
+}
