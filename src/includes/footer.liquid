@@ -25,7 +25,7 @@
                                 <!-- Output a link for each social channel. -->
                                 <li class="support-link-{{ link[0] }}">
                                     <!-- Dynamicly build a link to each type. -->
-                                    <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% when 'google_plus' %}plus.google.com{% endcase %}/{{ link[1] }}" target="_top">
+                                    <a href="https://{% case link[0] %}{% when 'twitter' %}twitter.com{% when 'facebook' %}www.facebook.com{% endcase %}/{{ link[1] }}" target="_top">
                                         <!-- Use the locale switched string for each type too. -->
                                         <i class="fa fa-{{ link[0] }} fa-fw"></i>{{ 'social-links.' | append: link[0] | t }}
                                     </a>
