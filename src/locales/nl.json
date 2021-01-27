@@ -16,7 +16,7 @@
                 "sms": {
                     "name": "SMS",
                     "description": "Berichten direct op je mobiele telefoon."
-                }               
+                }
             }
         },
         "header": {
@@ -27,11 +27,11 @@
                 "recovering": "Herstellende",
                 "open": "Open",
                 "underway": "Bezig"
-            },          
+            },
             "disagree": {
                 "question": "Werkt er iets niet?",
                 "answer": "Laat het ons weten"
-            }       
+            }
         },
         "components": {
             "states": {
@@ -90,7 +90,7 @@
         },
         "footer": {
             "need-support": "Heb je vragen over het onderhoud?"
-        }       
+        }
     },
     "error-page": {
         "header": {

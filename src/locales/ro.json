@@ -16,7 +16,7 @@
                 "sms": {
                     "name": "SMS",
                     "description": "Mesaje livrate pe telefonul mobil."
-                }               
+                }
             }
         },
         "header": {
@@ -27,11 +27,11 @@
                 "recovering": "Se recuperează",
                 "open": "În curs de desfășurare",
                 "underway": "În curs de desfășurare"
-            },          
+            },
             "disagree": {
                 "question": "Nu ești de acord cu asta?",
                 "answer": "Te rugăm să ne anunți"
-            }       
+            }
         },
         "components": {
             "states": {
@@ -90,7 +90,7 @@
         },
         "footer": {
             "need-support": "Vrei să ne vorbești despre această mentenanță?"
-        }       
+        }
     },
     "error-page": {
         "header": {

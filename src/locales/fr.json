@@ -17,7 +17,7 @@
                     "name": "SMS",
                     "description": "Messages envoyés sur votre téléphone portable."
                 }
-            }           
+            }
         },
         "header": {
             "states": {
@@ -27,19 +27,19 @@
                 "recovering": "Récupération",
                 "open": "En cours",
                 "underway": "En cours"
-            },      
+            },
             "disagree": {
                 "question": "Vous rencontrez un problème ?",
                 "answer": "N'hésitez pas à nous le faire savoir."
             }
-        },  
+        },
         "components": {
             "states": {
                 "operational": "Opérationnel",
                 "degraded": "Dégradé"
             },
             "long-description": "Cliquez ici pour voir la description complète de ce composant"
-        },          
+        },
         "body": {
             "states": {
                 "scheduled": "Prévu",
@@ -90,8 +90,8 @@
         },
         "footer": {
             "need-support": "Vous voulez nous parler de cet entretien?"
-        }       
-    },  
+        }
+    },
     "error-page": {
         "header": {
             "title": "Nous sommes désolés, une erreur s'est produite."
@@ -103,7 +103,7 @@
                 "ongoing": {
                     "heading": "Oups, quelque chose s'est mal passé.",
                     "body": "Ceci est peut-être lié à un problème en cours, s'il vous plait, consultez notre page d’état du service pour plus d'informations.",
-                    "sp-link": "Parcourez notre page d’état du service "        
+                    "sp-link": "Parcourez notre page d’état du service "
                 }
             }
         },

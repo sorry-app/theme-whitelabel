@@ -27,11 +27,11 @@
                 "recovering": "Recuperante",
                 "open": "En marcha",
                 "underway": "En curso"
-            },       
+            },
             "disagree": {
                 "question": "¿No estás de acuerdo con esto?",
                 "answer": "Por favor déjanos saber"
-            }       
+            }
         },
         "components": {
             "states": {
@@ -39,7 +39,7 @@
                 "degraded": "Degradado"
             },
             "long-description": "Haga clic aquí para ver la descripción completa de este componente"
-        },      
+        },
         "body": {
             "states": {
                 "scheduled": "Programado",
@@ -90,7 +90,7 @@
         },
         "footer": {
             "need-support": "¿Quieres hablar con nosotros sobre este mantenimiento?"
-        }       
+        }
     },
     "error-page": {
         "header": {

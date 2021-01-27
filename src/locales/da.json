@@ -27,11 +27,11 @@
                 "recovering": "Udbedres",
                 "open": "Igangværende",
                 "underway": "Undervejs"
-            },              
+            },
             "disagree": {
                 "question": "Er du ikke enig?",
                 "answer": "Så kontakt os her"
-            }           
+            }
         },
         "components": {
             "states": {
@@ -39,7 +39,7 @@
                 "degraded": "Forringet"
             },
             "long-description": "Klik her for at se den fulde beskrivelse af denne komponent"
-        },      
+        },
         "body": {
             "states": {
                 "scheduled": "Planlagt",
@@ -53,7 +53,7 @@
                 "began_at": "Begyndte",
                 "ended_at": "Endte",
                 "duration": "Varighed"
-            },            
+            },
             "schedule": {
                 "for": "Planlagt til %{begins_at}",
                 "expected_duration": "Forventes at tage %{expected_duration}"
@@ -61,8 +61,8 @@
             "timeline-heading": {
                 "future": "Kommende vedligeholdelse",
                 "past_recent": "Tidligere hændelser"
-            },          
-            "no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."            
+            },
+            "no-more-notices": "Ikke flere beskeder fra de sidste %{days} dage."
         },
         "footer": {
             "need-support": "Har du brug for support?"
@@ -90,8 +90,8 @@
         },
         "footer": {
             "need-support": "Ønsker du at tale med os om denne vedligeholdelse?"
-        }       
-    },  
+        }
+    },
     "error-page": {
         "header": {
             "title": "Beklager, der er sket en fejl"

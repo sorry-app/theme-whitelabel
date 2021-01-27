@@ -27,11 +27,11 @@
                 "recovering": "Gjennoppretter",
                 "open": "Pågående",
                 "underway": "Underveis"
-            },          
+            },
             "disagree": {
                 "question": "Er du uenig i dette?",
                 "answer": "Vennligst gi oss beskjed"
-            }       
+            }
         },
         "components": {
             "states": {
@@ -90,7 +90,7 @@
         },
         "footer": {
             "need-support": "Ønsker du å prate med oss dette vedlikeholdet?"
-        }       
+        }
     },
     "error-page": {
         "header": {
