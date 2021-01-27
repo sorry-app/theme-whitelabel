@@ -16,7 +16,7 @@
                 "sms": {
                     "name": "SMS",
                     "description": "Értesítések kérése SMS-ben a telefonodra."
-                }               
+                }
             }
         },
         "header": {
@@ -27,11 +27,11 @@
                 "recovering": "Visszaállítás",
                 "open": "Nyitott",
                 "underway": "Folyamatban"
-            },          
+            },
             "disagree": {
                 "question": "Nem értesz ezzel egyet?",
                 "answer": "Mondd el nekünk."
-            }       
+            }
         },
         "components": {
             "states": {
@@ -90,7 +90,7 @@
         },
         "footer": {
             "need-support": "Kérdésed van a karbantartással kapcsolatban?"
-        }       
+        }
     },
     "error-page": {
         "header": {

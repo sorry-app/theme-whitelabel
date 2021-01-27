@@ -27,19 +27,19 @@
                 "recovering": "Åtgärdas",
                 "open": "Pågående",
                 "underway": "På gång"
-            },              
+            },
             "disagree": {
                 "question": "Är du inte enig?",
                 "answer": "Så kontakta oss här "
-            }           
-        },  
+            }
+        },
         "components": {
             "states": {
                 "operational": "Operativ",
                 "degraded": "degraderas"
             },
             "long-description": "Klicka här för att se hela beskrivningen för den här komponenten"
-        },      
+        },
         "body": {
             "states": {
                 "scheduled": "Planerad",
@@ -61,7 +61,7 @@
             "timeline-heading": {
                 "future": "Kommande underhåll",
                 "past_recent": "Tidigare Incidenter"
-            },          
+            },
             "no-more-notices": "Inga ytterligare meddelanden de senaste %{days} dagarna."
         },
         "footer": {
@@ -90,8 +90,8 @@
         },
         "footer": {
             "need-support": "Vill du prata med oss ​​om underhållet?"
-        }       
-    },  
+        }
+    },
     "error-page": {
         "header": {
             "title": "Beklagar, det har uppstått ett fel"

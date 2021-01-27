@@ -16,7 +16,7 @@
                 "sms": {
                     "name": "SMS",
                     "description": "Messages delivered to your mobile phone."
-                }               
+                }
             }
         },
         "header": {
@@ -27,11 +27,11 @@
                 "recovering": "Recovering",
                 "open": "Ongoing",
                 "underway": "Underway"
-            },          
+            },
             "disagree": {
                 "question": "Don't agree with this?",
                 "answer": "Please let us know"
-            }       
+            }
         },
         "components": {
             "states": {
@@ -95,7 +95,7 @@
         },
         "footer": {
             "need-support": "Want to talk to us about this maintenance?"
-        }       
+        }
     },
     "error-page": {
         "header": {

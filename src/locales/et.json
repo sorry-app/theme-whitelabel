@@ -16,7 +16,7 @@
                 "sms": {
                     "name": "SMS",
                     "description": "Kirjad sinu telefoni peale."
-                }               
+                }
             }
         },
         "header": {
@@ -27,11 +27,11 @@
                 "recovering": "Taastamisel",
                 "open": "Jätkuv",
                 "underway": "Käimasolev"
-            },          
+            },
             "disagree": {
                 "question": "Kas sa ei nõustu sellega?",
                 "answer": "Palun andke meile teada"
-            }       
+            }
         },
         "components": {
             "states": {
@@ -90,7 +90,7 @@
         },
         "footer": {
             "need-support": "Kas tahad rääkida sellest hooldusest?"
-        }       
+        }
     },
     "error-page": {
         "header": {

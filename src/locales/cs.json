@@ -16,7 +16,7 @@
                 "sms": {
                     "name": "SMS",
                     "description": "Zpráva byla doručena na váš mobil."
-                }               
+                }
             }
         },
         "header": {
@@ -27,11 +27,11 @@
                 "recovering": "Zotavování",
                 "open": "Probíhající",
                 "underway": "V plném proudu"
-            },          
+            },
             "disagree": {
                 "question": "Nesouhlasíte s tím?",
                 "answer": "Prosím, dejte nám vědět"
-            }       
+            }
         },
         "components": {
             "states": {
@@ -95,7 +95,7 @@
         },
         "footer": {
             "need-support": "Chcete nám něco k této údržbě říct?"
-        }       
+        }
     },
     "error-page": {
         "header": {

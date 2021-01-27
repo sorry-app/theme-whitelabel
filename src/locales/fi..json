@@ -32,7 +32,7 @@
                 "question": "Et ole samaa mieltä?",
                 "answer": "Ota meihin yhteyttä "
             }
-        },  
+        },
         "components": {
             "states": {
                 "operational": "Toiminnassa",
@@ -91,7 +91,7 @@
         "footer": {
             "need-support": "Haluatko keskustella kanssamme huollosta?"
         }
-    },  
+    },
     "error-page": {
         "header": {
             "title": "Pahoittelemme, on tapahtunut virhe"

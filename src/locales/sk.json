@@ -16,7 +16,7 @@
                 "sms": {
                     "name": "SMS",
                     "description": "Správy doručené priamo na telefón."
-                }               
+                }
             }
         },
         "header": {
@@ -27,11 +27,11 @@
                 "recovering": "V procese obnovy",
                 "open": "Pretrvávajúci",
                 "underway": "Prebiehajúci"
-            },          
+            },
             "disagree": {
                 "question": "Nesúhlasíte?",
                 "answer": "Dajte nám vedieť"
-            }       
+            }
         },
         "components": {
             "states": {
@@ -95,7 +95,7 @@
         },
         "footer": {
             "need-support": "Chceli by ste sa s nami porozprávať o tejto údržbe?"
-        }       
+        }
     },
     "error-page": {
         "header": {
