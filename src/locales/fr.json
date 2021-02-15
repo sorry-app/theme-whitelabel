@@ -9,6 +9,10 @@
                     "name": "Slack",
                     "description": "Publié en direct au #channel de votre choix."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Publié en direct au #channel de votre choix."
+                },
                 "email": {
                     "name": "Email",
                     "description": "Les messages sont envoyés directement dans votre boite de réception. "

@@ -9,6 +9,10 @@
                     "name": "Slacku",
                     "description": "uverejňované do ľubovoľného #kanálu v reálnom čase."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "uverejňované do ľubovoľného #kanálu v reálnom čase."
+                },
                 "email": {
                     "name": "Emailov",
                     "description": "Správy doručené priamo do vašej schránky."

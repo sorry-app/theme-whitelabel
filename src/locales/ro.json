@@ -9,6 +9,10 @@
                     "name": "Slack",
                     "description": "Postat live pe un #canal la alegere."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Postat live pe un #canal la alegere."
+                },
                 "email": {
                     "name": "Email",
                     "description": "Mesaje livrate direct in casuta de e-mail."
