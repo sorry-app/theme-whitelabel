@@ -16,6 +16,10 @@
                 "sms": {
                     "name": "SMS",
                     "description": "Messages delivered to your mobile phone."
+                },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Posted live to a #channel of your choice."
                 }
             }
         },
