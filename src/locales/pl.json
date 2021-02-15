@@ -9,6 +9,10 @@
                     "name": "Slacka",
                     "description": "Wskaż #kanał i odczytuj tam komunikaty."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Wskaż #kanał i odczytuj tam komunikaty."
+                },
                 "email": {
                     "name": "Poczty elektronicznej",
                     "description": "Wiadomości dostarczane są do Twojej skrzynki pocztowej."

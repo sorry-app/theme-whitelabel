@@ -9,6 +9,10 @@
                     "name": "Slack",
                     "description": "Posted live to a #channel of your choice."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Posted live to a #channel of your choice."
+                },
                 "email": {
                     "name": "Email",
                     "description": "Messages delivered right into your inbox."

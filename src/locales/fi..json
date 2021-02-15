@@ -9,6 +9,10 @@
                     "name": "Slackillä",
                     "description": "Lähetetty suoraan valitsemallesi #kanavalle."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Lähetetty suoraan valitsemallesi #kanavalle."
+                },
                 "email": {
                     "name": "Sähköpostilla",
                     "description": "Viestit lähetettynä suoraan sähköpostiisi."

@@ -9,6 +9,10 @@
                     "name": "Slack",
                     "description": "Gaukite naujienas į pasirinktą Slack kanalą."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Gaukite naujienas į pasirinktą Slack kanalą."
+                },
                 "email": {
                     "name": "El. paštas",
                     "description": "Gaukite naujienas į el. paštą."

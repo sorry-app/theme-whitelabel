@@ -9,6 +9,10 @@
                     "name": "Slack",
                     "description": "Live veröffentlicht in einem #Kanal Ihrer Wahl."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Live veröffentlicht in einem #Kanal Ihrer Wahl."
+                },
                 "email": {
                     "name": "E-Mail-Adresse",
                     "description": "Die Nachrichten werden per E-Mail zugestellt."

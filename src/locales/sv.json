@@ -9,6 +9,10 @@
                     "name": "Slack",
                     "description": "Skickad direkt till en #kanal du väljer."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Skickad direkt till en #kanal du väljer."
+                },
                 "email": {
                     "name": "E-post",
                     "description": "Uppdateringar levererade direkt till din mejl."

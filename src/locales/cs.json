@@ -9,6 +9,10 @@
                     "name": "Slack",
                     "description": "Publikováno přímo do #kanálu dle vašeho výběru."
                 },
+                "slack": {
+                    "name": "Slack",
+                    "description": "Publikováno přímo do #kanálu dle vašeho výběru."
+                },
                 "email": {
                     "name": "Email",
                     "description": "Zpráva byla doručena do vašeho emailu."

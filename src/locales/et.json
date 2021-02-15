@@ -9,6 +9,10 @@
                     "name": "Slack",
                     "description": "Postitab automaatselt #kanal sinu soovi korral."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Postitab automaatselt #kanal sinu soovi korral."
+                },
                 "email": {
                     "name": "Email",
                     "description": "E-mailid otse sinu postkasti."

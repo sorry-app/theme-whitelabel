@@ -9,6 +9,10 @@
                     "name": "Slack",
                     "description": "Egy általad választott #csatornára."
                 },
+                "microsoft_team": {
+                    "name": "Microsoft Teams",
+                    "description": "Egy általad választott #csatornára."
+                },
                 "email": {
                     "name": "Email",
                     "description": "Email egyenesen a postafiókodba."
