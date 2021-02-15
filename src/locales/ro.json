@@ -1,9 +1,9 @@
-﻿{
+{
     "status-page": {
         "navbar": {
-            "title": "Condiția sistemului",
+            "title": "Conditia sistemului",
             "subscribe-button": {
-                "default": "Primeşte actualizări",
+                "default": "Primeste actualizari",
                 "via": "prin",
                 "slack": {
                     "name": "Slack",
@@ -11,7 +11,7 @@
                 },
                 "email": {
                     "name": "Email",
-                    "description": "Mesaje livrate direct în căsuța de e-mail."
+                    "description": "Mesaje livrate direct in casuta de e-mail."
                 },
                 "sms": {
                     "name": "SMS",
@@ -21,24 +21,24 @@
         },
         "header": {
             "states": {
-                "all-systems-are-go": "Toate sistemele sunt funcționale",
-                "investigating": "Se investighează",
+                "all-systems-are-go": "Toate sistemele sunt functionale",
+                "investigating": "Se investigheaza",
                 "identified": "Identificat",
-                "recovering": "Se recuperează",
-                "open": "În curs de desfășurare",
-                "underway": "În curs de desfășurare"
+                "recovering": "Se recupereaza",
+                "open": "In curs de desfasurare",
+                "underway": "In curs de desfasurare"
             },
             "disagree": {
-                "question": "Nu ești de acord cu asta?",
-                "answer": "Te rugăm să ne anunți"
+                "question": "Nu esti de acord cu asta?",
+                "answer": "Te rugam sa ne anunti"
             }
         },
         "components": {
             "states": {
-                "operational": "Funcțional",
-                "degraded": "Întrerupt"
+                "operational": "Functional",
+                "degraded": "Intrerupt"
             },
-            "long-description": "Clic aici pentru a vizualiza descrierea completă a acestei componente"
+            "long-description": "Clic aici pentru a vizualiza descrierea completa a acestei componente"
         },
         "body": {
             "states": {
@@ -46,78 +46,78 @@
                 "complete": "Finalizat",
                 "closed": "Rezolvat",
                 "resolved": "Rezolvat",
-                "false_alarm": "Alarmă falsă",
-                "drill": "Exercițiu"
+                "false_alarm": "Alarma falsa",
+                "drill": "Exercitiu"
             },
             "timeliness": {
                 "began_at": "Inceput",
                 "ended_at": "Finalizat",
-                "duration": "Durată"
+                "duration": "Durata"
             },
             "schedule": {
                 "for": "Programat pentru %{begins_at}",
-                "expected_duration": "De așteptat să dureze %{expected_duration}"
+                "expected_duration": "De asteptat sa dureze %{expected_duration}"
             },
             "timeline-heading": {
-                "future": "Mentenanța viitoare",
+                "future": "Mentenanta viitoare",
                 "past_recent": "Incidente anterioare"
             },
-            "no-more-notices": "Nu există alte notificări din ultimele %{days} zile."
+            "no-more-notices": "Nu exista alte notificari din ultimele %{days} zile."
         },
         "footer": {
-            "need-support": "Ai nevoie de asistență?"
+            "need-support": "Ai nevoie de asistenta?"
         }
     },
     "maintenance-page": {
         "header": {
-            "title": "Efectuăm o mentenanță",
+            "title": "Efectuam o mentenanta",
             "subtitles": {
-                "with-maintenance": "Ne așteptăm să fie finalizată %{ends_in}",
-                "without-maintenance": "Aceasta este o mentenanță de urgență neplanificată"
+                "with-maintenance": "Ne asteptam sa fie finalizata %{ends_in}",
+                "without-maintenance": "Aceasta este o mentenanta de urgenta neplanificata"
             }
         },
         "body": {
             "states": {
                 "without-maintenance": {
-                    "content": "Încercăm întotdeauna tot posibilul să planificăm mentenanța, însă acest lucru nu poate fi întotdeauna garantat. Mulțumim pentru răbdare și sperăm să revenim cât mai curând posibil."
+                    "content": "Incercam intotdeauna tot posibilul sa planificam mentenanta, insa acest lucru nu poate fi intotdeauna garantat. Multumim pentru rabdare si speram sa revenim cat mai curand posibil."
                 },
                 "with-maintenance": {
-                    "began_at": "Incepută la",
-                    "duration": "De așteptat să dureze",
-                    "sp-link": "Urmărește progresul nostru"
+                    "began_at": "Inceputa la",
+                    "duration": "De asteptat sa dureze",
+                    "sp-link": "Urmareste progresul nostru"
                 }
             }
         },
         "footer": {
-            "need-support": "Vrei să ne vorbești despre această mentenanță?"
+            "need-support": "Vrei sa ne vorbesti despre aceasta mentenanta?"
         }
     },
     "error-page": {
         "header": {
-            "title": "Ne pare rău, ceva nu a funcționat corect"
+            "title": "Ne pare rau, ceva nu a functionat corect"
         },
         "body": {
-            "subtitle": "Nu este din partea ta, este din partea noastră",
-            "retry": "Încearcă din nou, dacă tot nu funcționează, să fii sigur că suntem conștienți de acest lucru și lucrăm la o remediere.",
+            "subtitle": "Nu este din partea ta, este din partea noastra",
+            "retry": "Incearca din nou, daca tot nu functioneaza, sa fii sigur ca suntem constienti de acest lucru si lucram la o remediere.",
             "states": {
                 "ongoing": {
-                    "heading": "Întâmpinăm probleme în acest moment.",
-                    "body": "Acestea pot fi legate de această eroare. Te rugăm să consulți Condiția Paginii pentru mai multe informații.",
-                    "sp-link": "Vizitează Condiția Paginii"
+                    "heading": "Intampinam probleme in acest moment.",
+                    "body": "Acestea pot fi legate de aceasta eroare. Te rugam sa consulti Conditia Paginii pentru mai multe informatii.",
+                    "sp-link": "Viziteaza Conditia Paginii"
                 }
             }
         },
         "footer": {
-            "need-support": "Vrei să ne vorbești despre această eroare?"
+            "need-support": "Vrei sa ne vorbesti despre aceasta eroare?"
         }
     },
     "social-links": {
         "twitter": "Urmareste-ne pe Twitter",
         "facebook": "Trimite-ne o cerere de prietenie pe Facebook",
-        "google_plus": "Găsește-ne pe Google+"
+        "google_plus": "Gaseste-ne pe Google+"
     },
     "legal-links": {
         "terms": "Termeni",
-        "privacy": "Confidențialitate"
+        "privacy": "Confidentialitate"
     }
 }
