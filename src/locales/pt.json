@@ -1,0 +1,122 @@
+{
+    "status-page": {
+        "navbar": {
+            "title": "Estado do Sistema",
+            "subscribe-button": {
+                "default": "Receba Atualizações",
+                "via": "via",
+                "slack": {
+                    "name": "Slack",
+                    "description": "Publicação em tempo real num #channel à sua escolha."
+                },
+                "email": {
+                    "name": "Email",
+                    "description": "Envio de mensagens diretamente para o seu email."
+                },
+                "sms": {
+                    "name": "SMS",
+                    "description": "Envio de mensagens para o seu telefone."
+                }
+            }
+        },
+        "header": {
+            "states": {
+                "all-systems-are-go": "Todos os nossos sistemas estão a funcionar",
+                "investigating": "Em investigação",
+                "identified": "Identificado",
+                "recovering": "Em recuperação",
+                "open": "Aberto",
+                "underway": "Em andamento"
+            },
+            "disagree": {
+                "question": "Não concorda?",
+                "answer": "Por favor, indique o motivo."
+            }
+        },
+        "components": {
+            "states": {
+                "operational": "Operacional",
+                "degraded": "Cód. Erro"
+            },
+            "long-description": "Clique aqui para ver a descrição completa deste componente."
+        },
+        "body": {
+            "states": {
+                "scheduled": "Programado",
+                "complete": "Completo",
+                "closed": "Fechado",
+                "resolved": "Resolvido",
+                "false_alarm": "Falso Alarme",
+                "drill": "Prática"
+            },
+            "timeliness": {
+                "began_at": "Começou",
+                "ended_at": "Terminou",
+                "duration": "Duração"
+            },
+            "schedule": {
+                "for": "Programado para %{begins_at}",
+                "expected_duration": "Duração esperada %{expected_duration}"
+            },
+            "timeline-heading": {
+                "future": "Próximas manutenções",
+                "past_recent": "Incidentes anteriores"
+            },
+            "no-more-notices": "Nenhum aviso nos últimos %{days} dias."
+        },
+        "footer": {
+            "need-support": "Precisa de apoio?"
+        }
+    },
+    "maintenance-page": {
+        "header": {
+            "title": "Manutenção em andamento",
+            "subtitles": {
+                "with-maintenance": "Esperamos terminar %{ends_in}",
+                "without-maintenance": "Esta é uma manutenção de emergência não planeada"
+            }
+        },
+        "body": {
+            "states": {
+                "without-maintenance": {
+                    "content": "Fazemos o nosso melhor para planear antecipadamente as manutenções necessárias, contudo nem sempre conseguimos. Agradecemos a sua compreensão, e esperamos normalizar a situação o mais rápido possível."
+                },
+                "with-maintenance": {
+                    "began_at": "Iniciado às",
+                    "duration": "Duração",
+                    "sp-link": "Acompanhe o nosso progresso"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Gostaria de conversar conosco sobre esta manutenção?"
+        }
+    },
+    "error-page": {
+        "header": {
+            "title": "Desculpe, alguma coisa correu mal"
+        },
+        "body": {
+            "subtitle": "Não é você, somos nós.",
+            "retry": "Tente novamente. Se ainda não funcionar, fique traquilo, nós estamos cientes e a trabalhar para resolver esta situação.",
+            "states": {
+                "ongoing": {
+                    "heading": "Estamos com constrangimentos nesse momento.",
+                    "body": "Isso pode estar relacionado com este erro. Verifique a nossa Página de Estado para mais informações.",
+                    "sp-link": "Visite a nossa Página de Estado"
+                }
+            }
+        },
+        "footer": {
+            "need-support": "Gostaria de conversar sobre este erro?"
+        }
+    },
+    "social-links": {
+        "twitter": "Siga-nos no Twitter",
+        "facebook": "Adicione-nos no Facebook"
+    },
+    "legal-links": {
+        "terms": "Termos",
+        "privacy": "Privacidade"
+    }
+}
