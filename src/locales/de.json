@@ -15,7 +15,7 @@
                 },
                 "email": {
                     "name": "E-Mail-Adresse",
-                    "description": "Die Nachrichten werden per E-Mail zugestellt."
+                    "description": "Die Nachrichten werden per E-Mail gesendet."
                 },
                 "sms": {
                     "name": "SMS",
@@ -29,7 +29,7 @@
                 "investigating": "Untersuchen",
                 "identified": "Identifiziert",
                 "recovering": "Wiederherstellung",
-                "open": "Fortlaufend",
+                "open": "Offen",
                 "underway": "in Bearbeitung"
             },
             "disagree": {
@@ -48,7 +48,7 @@
             "states": {
                 "scheduled": "Geplant",
                 "complete": "Abgeschlossen",
-                "closed": "Gelöst",
+                "closed": "Beendet",
                 "resolved": "Gelöst",
                 "false_alarm": "Falscher Alarm",
                 "drill": "Exerzieren"
