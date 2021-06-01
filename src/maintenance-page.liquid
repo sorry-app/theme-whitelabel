@@ -52,7 +52,7 @@
                         <div class="notice" id="{{ notice.id }}">
                             <!-- The SP does have noticed, display an ongoing statement and link. -->
                             <h2 class="h4 notice-subject">{{ notice.subject }}</h2>
-                                <p class="notice-synopsis">{{ notice.synopsis | simple_format }}</p>
+                                <p class="notice-synopsis">{{ notice.synopsis }}</p>
                                 <p class="notice-schedule"><small><strong>{{ 'maintenance-page.body.states.with-maintenance.began_at' | t }}:</strong> {{ notice.began_at | date: '%A, %-d %b %Y %H:%M %Z' }} <br /> <strong>{{ 'maintenance-page.body.states.with-maintenance.duration' | t }}:</strong> <time class="duration" datetime="PT{{ notice.expected_duration }}S">{{ notice.expected_duration | distance_of_time_in_words }}</time></small></p>
                         </div>
 
