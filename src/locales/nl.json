@@ -2,6 +2,7 @@
     "status-page": {
         "navbar": {
             "title": "Systeem Status",
+            "signout": "Logga ut",
             "subscribe-button": {
                 "default": "Ontvang updates",
                 "via": "via",

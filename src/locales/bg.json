@@ -2,6 +2,7 @@
     "status-page": {
         "navbar": {
             "title": "Системен статус",
+            "signout": "Отписване",
             "subscribe-button": {
                 "default": "Получавайте ъпдейти",
                 "via": "в",

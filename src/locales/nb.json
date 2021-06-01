@@ -2,6 +2,7 @@
     "status-page": {
         "navbar": {
             "title": "System Status",
+            "signout": "Logg ut",
             "subscribe-button": {
                 "default": "Få oppdateringer",
                 "via": "via",

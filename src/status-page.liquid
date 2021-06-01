@@ -16,34 +16,42 @@
                     <!-- Hide the title on small screens of a logo exists. -->
                     <span class="navbar-brand {% if page.brand.logo %}hidden-xs{% endif %}">{{ 'status-page.navbar.title' | t }}</span> 
 
-                    <!-- Subscription button based on the various options for the page. -->
-                    {% if page.subscription_options.size == 1 %}
-                        <!-- Page only has a single subscription option, display a consolidated button. -->
-                        <a href="{{ page.subscription_options.first[1].url }}" class="btn btn-subscribe navbar-btn navbar-header-btn">
-                            <i class="{{ page.subscription_options.first[1].icon }}"></i> 
-                                <span class="visible-xs-inline">{{ 'status-page.navbar.subscribe-button.default' | t }}</span>
-                                <span class="hidden-xs">{{ 'status-page.navbar.subscribe-button.default' | t }} {{ 'status-page.navbar.subscribe-button.via' | t }} {{ 'status-page.navbar.subscribe-button.' | append: page.subscription_options.first[0] | append: '.name' | t }}</span>
-                        </a>
-                    {% elsif page.subscription_options.size > 1 %}
-                        <!-- Button group containing the dropdown. -->
-                        <div class="btn-group navbar-header-btn navbar-btn">
-                            <!-- Core subscription button, activates dropdown for choices. -->
-                            <button class="btn btn-subscribe dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell hidden-xs"></i> {{ 'status-page.navbar.subscribe-button.default' | t }} <span class="caret"></span>
-                            </button>
+                    <div class="pull-right">
+                        {% if current_subscriber %}
+                            <a href="{{ current_subscriber.sign_out_link }}" class="btn btn-link navbar-btn">
+                                {{ 'status-page.navbar.signout' | t }}<span class="hidden-xs hidden-sm">: {{ current_subscriber.email }}</span>
+                            </a>
+                        {% endif %}
 
-                            <!-- Dropdown with subscription options in it. -->
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <!-- Loop over the collection of subscription options. -->
-                                {% for option in page.subscription_options %}
-                                    <!-- Output a link for this subscription option. -->
-                                    <li>
-                                        <a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'status-page.navbar.subscribe-button.' | append: option[0] | append: '.name' | t }} <small>{{ 'status-page.navbar.subscribe-button.' | append: option[0] | append: '.description' | t }}</small></a>
-                                    </li>
-                                {% endfor %}
-                            </ul>                            
-                        </div>
-                    {% endif %}                       
+                        <!-- Subscription button based on the various options for the page. -->
+                        {% if page.subscription_options.size == 1 %}
+                            <!-- Page only has a single subscription option, display a consolidated button. -->
+                            <a href="{{ page.subscription_options.first[1].url }}" class="btn btn-subscribe navbar-btn">
+                                <i class="{{ page.subscription_options.first[1].icon }}"></i> 
+                                    <span class="visible-xs-inline">{{ 'status-page.navbar.subscribe-button.default' | t }}</span>
+                                    <span class="hidden-xs">{{ 'status-page.navbar.subscribe-button.default' | t }} {{ 'status-page.navbar.subscribe-button.via' | t }} {{ 'status-page.navbar.subscribe-button.' | append: page.subscription_options.first[0] | append: '.name' | t }}</span>
+                            </a>
+                        {% elsif page.subscription_options.size > 1 %}
+                            <!-- Button group containing the dropdown. -->
+                            <div class="btn-group navbar-btn">
+                                <!-- Core subscription button, activates dropdown for choices. -->
+                                <button class="btn btn-subscribe dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-bell hidden-xs"></i> {{ 'status-page.navbar.subscribe-button.default' | t }} <span class="caret"></span>
+                                </button>
+
+                                <!-- Dropdown with subscription options in it. -->
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <!-- Loop over the collection of subscription options. -->
+                                    {% for option in page.subscription_options %}
+                                        <!-- Output a link for this subscription option. -->
+                                        <li>
+                                            <a href="{{ option[1].url }}"><i class="{{ option[1].icon }}"></i> {{ 'status-page.navbar.subscribe-button.' | append: option[0] | append: '.name' | t }} <small>{{ 'status-page.navbar.subscribe-button.' | append: option[0] | append: '.description' | t }}</small></a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </nav>
