@@ -2,6 +2,7 @@
     "status-page": {
         "navbar": {
             "title": "Järjestelmätila",
+            "signout": "Sign Out",
             "subscribe-button": {
                 "default": "Saa päivtiyksiä",
                 "via": "",
