@@ -63,7 +63,7 @@
                     <time datetime="{{ update.created_at | date: '%T%z' }}">{{ update.created_at | date: '%X %Z' }}</time>
                 </dt>
                     <!-- Output the text content of the update. -->
-                    <dd>{{ update.content | simple_format }}</dd>
+                    <dd>{{ update.content }}</dd>
 
                 <!-- Check if this is the last instance of the loop. -->
                 {% if forloop.last %}

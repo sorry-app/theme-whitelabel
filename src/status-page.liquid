@@ -89,7 +89,7 @@
                                                         {% include 'notices/time_tag' datetime: update.created_at %}
                                                     </dt>
                                                         <!-- Output the text content of the update. -->
-                                                        <dd>{{ update.content | simple_format }}</dd>
+                                                        <dd>{{ update.content }}</dd>
                                                 {% endfor %}
                                             </dl>
 
