@@ -19,7 +19,7 @@
                     <div class="pull-right">
                         {% if current_subscriber %}
                             <a href="{{ current_subscriber.sign_out_link }}" class="btn btn-link navbar-btn">
-                                Sign Out<span class="hidden-xs hidden-sm">: {{ current_subscriber.email }}</span>
+                                {{ 'status-page.navbar.signout' | t }}<span class="hidden-xs hidden-sm">: {{ current_subscriber.email }}</span>
                             </a>
                         {% endif %}
 
