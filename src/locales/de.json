@@ -2,7 +2,7 @@
     "status-page": {
         "navbar": {
             "title": "System-Status",
-            "signout": "Sign Out",
+            "signout": "Austragen",
             "subscribe-button": {
                 "default": "Aktualisierungen erhalten",
                 "via": "via",

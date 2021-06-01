@@ -2,7 +2,7 @@
     "status-page": {
         "navbar": {
             "title": "Süsteemi staatus",
-            "signout": "Sign Out",
+            "signout": "Logi välja",
             "subscribe-button": {
                 "default": "Saa uuendusi",
                 "via": "via",

@@ -2,7 +2,7 @@
     "status-page": {
         "navbar": {
             "title": "Статус сервиса",
-            "signout": "Sign Out",
+            "signout": "Выход",
             "subscribe-button": {
                 "default": "Получать уведомления",
                 "via": "с помощью",

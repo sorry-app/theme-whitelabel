@@ -2,7 +2,7 @@
     "status-page": {
         "navbar": {
             "title": "Rendszer állapota",
-            "signout": "Sign Out",
+            "signout": "Kijelentkezés",
             "subscribe-button": {
                 "default": "Értesítések kérése",
                 "via": "ezen:",

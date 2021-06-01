@@ -2,7 +2,7 @@
     "status-page": {
         "navbar": {
             "title": "Starea sistemului",
-            "signout": "Sign Out",
+            "signout": "Sign out",
             "subscribe-button": {
                 "default": "Primeşte actualizări",
                 "via": "prin",
