@@ -27,3 +27,21 @@ a {
     color: inherit;
     opacity: 0.6;
 }
+
+blockquote {
+    position: relative;
+    border-left: none;
+    padding-left: @line-height-computed + 5px;
+
+    &:before {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: " ";
+        width: 5px;
+        height: 100%;
+        background-color: ~"{{ page.brand.color_header_links }}";
+        opacity: .2;
+    }
+}
