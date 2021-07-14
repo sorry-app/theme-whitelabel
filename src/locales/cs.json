@@ -43,7 +43,7 @@
                 "operational": "Provozní",
                 "degraded": "Degradováno"
             },
-            "long-description": "Kliknutím zobrazíte úplný popis této komponenty"
+            "long-description": "Kliknutím zobrazíte úplný popis tohoto komponentu"
         },
         "body": {
             "states": {
@@ -89,7 +89,7 @@
         "body": {
             "states": {
                 "without-maintenance": {
-                    "content": "Vždy se snažíme naplánovat údržbu dopředu. Přesto to někdy nejde provést. Moc vám děkujeme za vaši trpělivost a doufáme, že se co nejdříve vrátíme do provozu."
+                    "content": "Vždy se snažíme naplánovat údržbu dopředu. Přesto to někdy nejde provést. Velice vám děkujeme za vaši trpělivost a doufáme, že se co nejdříve vrátíme do provozu."
                 },
                 "with-maintenance": {
                     "began_at": "Spuštěno v",
@@ -104,7 +104,7 @@
     },
     "error-page": {
         "header": {
-            "title": "Pardon, něco se pokazilo"
+            "title": "Omlouváme se, něco se pokazilo"
         },
         "body": {
             "subtitle": "Nejsme to vy, jsme to my",
