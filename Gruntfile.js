@@ -37,7 +37,7 @@ module.exports = function(grunt) {
             my_target: {
                 files: {
                     'build/assets/status-page.min.js': [
-                        'src/javascripts/vendor/jquery-2.2.4.js',          
+                        'src/javascripts/vendor/jquery-3.6.1.js',          
                         //'src/javascripts/vendor/bootstrap/transition.js',
                         //'src/javascripts/vendor/bootstrap/alert.js',
                         //'src/javascripts/vendor/bootstrap/button.js',
