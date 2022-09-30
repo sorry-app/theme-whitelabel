@@ -37,7 +37,7 @@ module.exports = function(grunt) {
             my_target: {
                 files: {
                     'build/assets/status-page.min.js': [
-                        'src/javascripts/vendor/jquery-2.2.4.js',          
+                        'src/javascripts/vendor/jquery-3.6.1.js',          
                         //'src/javascripts/vendor/bootstrap/transition.js',
                         //'src/javascripts/vendor/bootstrap/alert.js',
                         //'src/javascripts/vendor/bootstrap/button.js',
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
                         //'src/javascripts/vendor/bootstrap/scrollspy.js',
                         //'src/javascripts/vendor/bootstrap/tab.js',
                         //'src/javascripts/vendor/bootstrap/affix.js',
-                        'src/javascripts/vendor/moment.js',
+                        'src/javascripts/vendor/moment-with-locales.js',
                         'src/javascripts/vendor/moment-timezone.js',
                         'src/javascripts/vendor/is-element-in-viewport.js',
                         'src/javascripts/smart-anchor.js',
